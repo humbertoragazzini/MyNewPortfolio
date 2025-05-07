@@ -9,7 +9,7 @@ export default function Experience() {
       <Canvas className="z-[0]" shadows>
         <ambientLight intensity={7}></ambientLight>
         <OrbitControls></OrbitControls>
-        <Environment preset="sunset" />
+        {/* <Environment preset="sunset" /> */}
         <MainScene></MainScene>
       </Canvas>
     </div>
