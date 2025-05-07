@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls } from "@react-three/drei";
 import { useState } from "react";
 import MainScene from "../MainScene";
+import Enviroment from "../atoms/Enviroment";
 
 export default function Experience() {
   return (
@@ -10,6 +11,7 @@ export default function Experience() {
         <ambientLight intensity={7}></ambientLight>
         <OrbitControls></OrbitControls>
         {/* <Environment preset="sunset" /> */}
+        <Enviroment></Enviroment>
         <MainScene></MainScene>
       </Canvas>
     </div>
