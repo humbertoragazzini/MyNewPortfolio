@@ -11,7 +11,7 @@ export default function Experience() {
         <ambientLight intensity={7}></ambientLight>
         <OrbitControls></OrbitControls>
         {/* <Environment preset="sunset" /> */}
-        <Enviroment></Enviroment>
+        {/* <Enviroment></Enviroment> */}
         <MainScene></MainScene>
       </Canvas>
     </div>

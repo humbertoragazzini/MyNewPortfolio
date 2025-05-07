@@ -5,6 +5,7 @@ import {
     Lightformer,
     OrbitControls,
     SoftShadows,
+    useGLTF,
     useHelper,
 } from "@react-three/drei";
 import { useLayoutEffect, useRef } from "react";
@@ -15,13 +16,9 @@ export default function Enviroment() {
     const ringRef = useRef();
     const scene = useThree((state) => state.scene);
 
+    const { nodes, materials } = useGLTF('/models/scene.glb')
 
-    useFrame((delta, state) => {
-        if (ringRef.current !== null) {
-            ringRef.current.rotation.y += 0.001;
-            ringRef.current.rotation.z += 0.001;
-        }
-    });
+
     return (
         <Environment resolution={2048} background frames={Infinity}>
             <color args={["black"]} attach="background"></color>
@@ -31,6 +28,71 @@ export default function Enviroment() {
                     <meshBasicMaterial color={"white"}></meshBasicMaterial>
                 </mesh>
             </group>
+            <group dispose={null}>
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Torus.geometry}
+                    material={materials['Material.002']}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Torus001.geometry}
+                    material={materials['Material.002']}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Torus002.geometry}
+                    material={materials['Material.002']}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Torus003.geometry}
+                    material={materials['Material.002']}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Torus004.geometry}
+                    material={materials['Material.002']}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Torus005.geometry}
+                    material={materials['Material.002']}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Torus006.geometry}
+                    material={materials['Material.002']}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Torus007.geometry}
+                    material={materials['Material.002']}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Plane.geometry}
+                    material={materials['Material.001']}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Torus008.geometry}
+                    material={materials['Material.002']}
+                />
+            </group>
         </Environment>
     )
 }
+
+
+useGLTF.preload('/models/scene.glb')
