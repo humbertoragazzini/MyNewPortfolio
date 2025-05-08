@@ -1,7 +1,86 @@
-import { useGLTF } from "@react-three/drei";
+import React, { useRef } from "react";
+import { MeshReflectorMaterial, useGLTF } from "@react-three/drei";
 
-export default function MainScene() {
-  const { scene } = useGLTF("./models/scene.glb");
-  console.log(scene);
-  return <primitive object={scene} />;
+export default function Model(props) {
+  const { nodes, materials } = useGLTF("./models/scene.glb");
+  return (
+    <group {...props} dispose={null}>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Torus.geometry}
+        material={materials["Material.002"]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Torus001.geometry}
+        material={materials["Material.002"]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Torus002.geometry}
+        material={materials["Material.002"]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Torus003.geometry}
+        material={materials["Material.002"]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Torus004.geometry}
+        material={materials["Material.002"]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Torus005.geometry}
+        material={materials["Material.002"]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Torus006.geometry}
+        material={materials["Material.002"]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Torus007.geometry}
+        material={materials["Material.002"]}
+      />
+      <mesh
+        rotation={[-Math.PI / 2, 0, 0]}
+        position={[0, -10, -100]}
+        castShadow
+        receiveShadow
+      >
+        <planeGeometry args={[15, 350]}></planeGeometry>
+        <MeshReflectorMaterial
+          blur={[300, 100]}
+          resolution={2048}
+          mixBlur={0.4}
+          mixStrength={80}
+          roughness={1}
+          depthScale={1.2}
+          minDepthThreshold={0.4}
+          maxDepthThreshold={1.4}
+          color="#050505"
+          metalness={0.5}
+        />
+      </mesh>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Torus008.geometry}
+        material={materials["Material.002"]}
+      />
+    </group>
+  );
 }
+
+useGLTF.preload("./models/scene.glb");
