@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useScroll, motion } from "framer-motion";
 import MainScene from "../MainScene";
 import Project from "../atoms/Project";
+import Camera from "../atoms/Camera";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -31,11 +32,8 @@ export default function Experience() {
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas shadows>
               <ambientLight intensity={7} />
-              <PerspectiveCamera
-                makeDefault
-                position={[0, 0, 80 - 1 * 300 * Scroll]}
-              />
               {/* <OrbitControls /> */}
+              <Camera></Camera>
               <Project />
               <MainScene />
             </Canvas>
