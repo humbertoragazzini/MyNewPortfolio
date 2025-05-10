@@ -6,6 +6,7 @@ import MainScene from "../MainScene";
 import ProjectRight from "../atoms/ProjectRight";
 import Camera from "../atoms/Camera";
 import ProjectLeft from "../atoms/ProjectLeft";
+import IframedLeft from "../atoms/IframedLeft";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -30,10 +31,12 @@ export default function Experience() {
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas shadows>
               <ambientLight intensity={7} />
-              {/* <OrbitControls /> */}
               <Camera scroll={scroll}></Camera>
+              <IframedLeft
+                positionZ={10}
+                url={"https://www.primalports.com/"}
+              ></IframedLeft>
               <ProjectRight positionZ={10} />
-              <ProjectLeft positionZ={10} />
               <ProjectRight positionZ={-25} />
               <ProjectLeft positionZ={-25} />
               <ProjectRight positionZ={-60} />
