@@ -50,7 +50,7 @@ export default function Project() {
               <div className="grid w-full h-full grid-cols-3 text-white">
                 <div className="col-span-1 p-4">
                   <div className="overflow-hidden rounded-full">
-                    <img src="https://placehold.co/600x600"></img>
+                    <img src="/public/img/primalport_img.png"></img>
                   </div>
                 </div>
                 <div className="col-span-2 p-4">

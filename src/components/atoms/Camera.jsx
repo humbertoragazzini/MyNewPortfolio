@@ -4,7 +4,7 @@ import * as THREE from "three";
 
 export default function Camera({ scroll }) {
   const { camera } = useThree();
-  const targetZ = 80 - 1 * 300 * scroll;
+  const targetZ = 80 - 1 * 350 * scroll;
   const lerpSpeed = 0.05;
 
   useFrame(() => {
