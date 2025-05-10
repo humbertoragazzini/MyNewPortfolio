@@ -47,6 +47,11 @@ export default function Camera({ scroll }) {
       vertical,
       lerpSpeed
     );
+    camera.rotation.z = THREE.MathUtils.lerp(
+      camera.rotation.z,
+      horizontal * 0.05 + vertical * 0.05,
+      lerpSpeed
+    );
     camera.updateProjectionMatrix();
   });
   return <PerspectiveCamera makeDefault />;

@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
-export default function ProjectRight() {
+export default function ProjectRight({ positionZ }) {
   const htmlRef = useRef();
   const meshRef = useRef();
   const geoRef = useRef();
@@ -34,7 +34,11 @@ export default function ProjectRight() {
   }, [geometry]);
 
   return (
-    <mesh ref={meshRef} position={[30, 0, 0]} rotation={[0, -Math.PI / 4, 0]}>
+    <mesh
+      ref={meshRef}
+      position={[30, 0, positionZ]}
+      rotation={[0, -Math.PI / 4, 0]}
+    >
       <mesh ref={geoRef} position={[0, 0, 0]}>
         <planeGeometry args={[30, 20, 2]}></planeGeometry>
         <meshStandardMaterial

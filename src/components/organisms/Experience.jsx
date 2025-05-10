@@ -32,8 +32,12 @@ export default function Experience() {
               <ambientLight intensity={7} />
               {/* <OrbitControls /> */}
               <Camera scroll={scroll}></Camera>
-              <ProjectRight />
-              <ProjectLeft />
+              <ProjectRight positionZ={10} />
+              <ProjectLeft positionZ={10} />
+              <ProjectRight positionZ={-25} />
+              <ProjectLeft positionZ={-25} />
+              <ProjectRight positionZ={-60} />
+              <ProjectLeft positionZ={-60} />
               <MainScene />
             </Canvas>
           </motion.div>
