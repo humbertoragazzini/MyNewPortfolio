@@ -1,6 +1,5 @@
-# name of the action
 name: Deploy
-# when trigger
+
 on:
   push:
     branches:
@@ -9,27 +8,37 @@ on:
     branches:
       - main
   workflow_dispatch:
-# persmissions
+
 permissions:
   contents: write
-# jobs
+
 jobs:
   run-deploy-app:
     runs-on: ubuntu-latest
-    # steps
     steps:
       - uses: actions/checkout@v2
-      - name: Get Nodejs
+
+      - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: "18.x"
+
       - name: Install dependencies
-        run: npm install --frozen-lockfile
+        run: npm install --include=optional
+
+      - name: Rebuild lightningcss
+        run: npm rebuild lightningcss --build-from-source
+
+      - name: Check Files 1
+        run: ls -al
+
       - name: Build Project
         run: npm run build
-      - name: Check Files
+
+      - name: Check Files 2
         run: ls -al
-      - name: Deply to Github Pages
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
