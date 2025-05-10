@@ -3,10 +3,10 @@ import "./App.css";
 import Experience from "./components/organisms/Experience";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [Scroll, setScroll] = useState(0);
 
   return (
-    <main className="h-screen w-screen">
+    <main className="w-screen h-screen overflow-hidden">
       <Experience></Experience>
     </main>
   );

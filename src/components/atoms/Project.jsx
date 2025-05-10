@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
 export default function Project() {
+  const htmlRef = useRef();
   const meshRef = useRef();
   const geoRef = useRef();
   const mainContainerRef = useRef();
@@ -11,12 +12,11 @@ export default function Project() {
   const [show, setShow] = useState(false);
 
   useFrame(() => {
-    if (geoRef.current && mainContainerRef.current) {
+    if (geoRef.current && mainContainerRef.current && htmlRef.current) {
       const geometry = geoRef.current.geometry;
       geometry.computeBoundingBox();
       const size = new THREE.Vector3();
       geometry.boundingBox.getSize(size);
-      console.log(size);
       mainContainerRef.current.style.width = `${size.x * 38}px`;
       mainContainerRef.current.style.height = `${size.y * 38}px`;
     }
@@ -40,6 +40,7 @@ export default function Project() {
         <meshBasicMaterial color={"white"}></meshBasicMaterial>
         {show && (
           <Html
+            ref={htmlRef}
             portal={geoRef.current}
             position={[0, 0, 1]}
             occlude="blending"
