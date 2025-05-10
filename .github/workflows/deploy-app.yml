@@ -24,10 +24,10 @@ jobs:
           node-version: "18.x"
 
       - name: Install dependencies
-        run: npm install --include=optional
+        run: npm ci- -include=optional
 
-      - name: Rebuild lightningcss
-        run: npm rebuild lightningcss --build-from-source
+      - name: Rebuild native modules
+        run: npm rebuild
 
       - name: Move up Files 1
         run: cd ..
