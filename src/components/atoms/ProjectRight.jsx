@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
-export default function Project() {
+export default function ProjectRight() {
   const htmlRef = useRef();
   const meshRef = useRef();
   const geoRef = useRef();
@@ -37,7 +37,11 @@ export default function Project() {
     <mesh ref={meshRef} position={[30, 0, 0]} rotation={[0, -Math.PI / 4, 0]}>
       <mesh ref={geoRef} position={[0, 0, 0]}>
         <planeGeometry args={[30, 20, 2]}></planeGeometry>
-        <meshBasicMaterial color={"white"}></meshBasicMaterial>
+        <meshStandardMaterial
+          color={"white"}
+          opacity={0}
+          transparent
+        ></meshStandardMaterial>
         {show && (
           <Html
             ref={htmlRef}
@@ -46,7 +50,7 @@ export default function Project() {
             occlude="blending"
             transform
           >
-            <div ref={mainContainerRef}>
+            <div className="bg-black" ref={mainContainerRef}>
               <div className="grid w-full h-full grid-cols-3 text-white">
                 <div className="col-span-1 p-4">
                   <div className="overflow-hidden rounded-full">

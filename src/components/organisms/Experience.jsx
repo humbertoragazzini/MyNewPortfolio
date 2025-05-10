@@ -3,8 +3,9 @@ import { Html, OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
 import { useScroll, motion } from "framer-motion";
 import MainScene from "../MainScene";
-import Project from "../atoms/Project";
+import ProjectRight from "../atoms/ProjectRight";
 import Camera from "../atoms/Camera";
+import ProjectLeft from "../atoms/ProjectLeft";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -21,20 +22,18 @@ export default function Experience() {
           const scrollTop = target.scrollTop;
           const scrollHeight = target.scrollHeight;
           const clientHeight = target.clientHeight;
-
           const scrollProgress = scrollTop / (scrollHeight - clientHeight);
-
-          console.log("Scroll progress:", scrollProgress); // value from 0 to 1
           setScroll(scrollProgress);
         }}
       >
-        <div style={{ height: "300vh" }}>
+        <div style={{ height: "600vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas shadows>
               <ambientLight intensity={7} />
               {/* <OrbitControls /> */}
               <Camera scroll={scroll}></Camera>
-              <Project />
+              <ProjectRight />
+              <ProjectLeft />
               <MainScene />
             </Canvas>
           </motion.div>
