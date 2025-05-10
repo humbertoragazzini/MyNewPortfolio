@@ -29,6 +29,12 @@ jobs:
       - name: Rebuild lightningcss
         run: npm rebuild lightningcss --build-from-source
 
+      - name: Move up Files 1
+        run: cd ..
+
+      - name: Move up Files 1
+        run: cd ..
+
       - name: Check Files 1
         run: ls -al
 
