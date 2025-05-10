@@ -5,13 +5,17 @@ import * as THREE from "three";
 
 export default function Project() {
   const meshRef = useRef();
+  const mainContainerRef = useRef();
 
   useFrame(() => {
-    if (meshRef.current) {
-      const box = new THREE.Box3().setFromObject(meshRef.current);
+    if (meshRef.current && mainContainerRef.current) {
+      const geometry = meshRef.current.geometry;
+      geometry.computeBoundingBox();
       const size = new THREE.Vector3();
-      box.getSize(size);
-      console.log("Live size:", size);
+      geometry.boundingBox.getSize(size);
+      console.log(size);
+      mainContainerRef.current.style.width = `${size.x * 38}px`;
+      mainContainerRef.current.style.height = `${size.y * 38}px`;
     }
   });
 
@@ -19,9 +23,9 @@ export default function Project() {
     <mesh ref={meshRef} position={[30, 0, 0]} rotation={[0, -Math.PI / 4, 0]}>
       <planeGeometry args={[30, 20]}></planeGeometry>
       <meshBasicMaterial color={"white"}></meshBasicMaterial>
-      <Html occlude transform>
-        <div>
-          <div className="grid grid-cols-3 bg-white">
+      <Html position={[0, 0, 1]} occlude transform>
+        <div ref={mainContainerRef}>
+          <div className="grid w-full h-full grid-cols-3 bg-white">
             <div className="col-span-1">
               <img src="https://placehold.co/600x600"></img>
             </div>
