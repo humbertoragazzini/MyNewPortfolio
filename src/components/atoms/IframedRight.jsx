@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
-export default function IframedLeft({ positionZ, url }) {
+export default function IframedRight({ positionZ, url }) {
   const htmlRef = useRef();
   const meshRef = useRef();
   const geoRef = useRef();
@@ -36,8 +36,8 @@ export default function IframedLeft({ positionZ, url }) {
   return (
     <mesh
       ref={meshRef}
-      position={[-30, 0, positionZ]}
-      rotation={[0, Math.PI / 4, 0]}
+      position={[30, 0, positionZ]}
+      rotation={[0, -Math.PI / 4, 0]}
     >
       <mesh ref={geoRef} position={[0, 0, 0]}>
         <planeGeometry args={[30, 20, 2]}></planeGeometry>

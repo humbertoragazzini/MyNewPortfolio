@@ -7,6 +7,7 @@ import ProjectRight from "../atoms/ProjectRight";
 import Camera from "../atoms/Camera";
 import ProjectLeft from "../atoms/ProjectLeft";
 import IframedLeft from "../atoms/IframedLeft";
+import IframedRight from "../atoms/IframedRight";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -37,10 +38,16 @@ export default function Experience() {
                 url={"https://www.primalports.com/"}
               ></IframedLeft>
               <ProjectRight positionZ={10} />
-              <ProjectRight positionZ={-25} />
+              <IframedRight
+                positionZ={-25}
+                url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
+              />
               <ProjectLeft positionZ={-25} />
               <ProjectRight positionZ={-60} />
-              <ProjectLeft positionZ={-60} />
+              <IframedLeft
+                positionZ={-60}
+                url={"https://humbertoragazzini.github.io/TheSuperGame/"}
+              ></IframedLeft>
               <MainScene />
             </Canvas>
           </motion.div>
