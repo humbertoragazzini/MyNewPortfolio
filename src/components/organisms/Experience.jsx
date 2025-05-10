@@ -13,6 +13,7 @@ export default function Experience() {
         <OrbitControls></OrbitControls>
         {/* <Environment preset="sunset" /> */}
         {/* <Enviroment></Enviroment> */}
+        {/* <Effects></Effects> */}
         <Project></Project>
         <MainScene></MainScene>
       </Canvas>
