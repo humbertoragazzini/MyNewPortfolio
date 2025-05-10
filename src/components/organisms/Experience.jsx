@@ -8,7 +8,7 @@ import Camera from "../atoms/Camera";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
-  const [Scroll, setScroll] = useState(0);
+  const [scroll, setScroll] = useState(0);
 
   return (
     <div className="w-full h-screen overflow-hidden bg-black">
@@ -33,7 +33,7 @@ export default function Experience() {
             <Canvas shadows>
               <ambientLight intensity={7} />
               {/* <OrbitControls /> */}
-              <Camera></Camera>
+              <Camera scroll={scroll}></Camera>
               <Project />
               <MainScene />
             </Canvas>
