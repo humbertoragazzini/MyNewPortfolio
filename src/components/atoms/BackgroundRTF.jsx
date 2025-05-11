@@ -5,7 +5,7 @@ import { text } from "framer-motion/m";
 
 export function BackgroundRTF(props) {
   const { nodes, materials } = useGLTF(
-    "./blender/scene-background-no-envmap-v2.glb"
+    "./blender/scene-background-no-envmap-v3.glb"
   );
   const texture = useTexture("./blender/Baked-texture.jpg");
   texture.flipY = false;
@@ -18,46 +18,42 @@ export function BackgroundRTF(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube514.geometry}
+        geometry={nodes.Cube4410.geometry}
         material={textureMaterial}
-        position={[257.72, 308.574, -304.905]}
-        rotation={[-Math.PI, 0, Math.PI / 2]}
+        position={[227.495, 0.655, -150.677]}
+        rotation={[0, -1.571, 0]}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Plane.geometry}
-        material={materials["Material.003"]}
-        position={[225.09, -111.575, -147.642]}
-        rotation={[0, 0, 0.911]}
-        scale={[4.173, 4.408, 228.28]}
+        material={materials["Material.006"]}
+        position={[206.166, -140.529, -151.655]}
+        rotation={[0, 0, 0.799]}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Plane001.geometry}
-        material={materials["Material.003"]}
-        position={[-235.344, -111.575, -147.642]}
-        rotation={[0, 0, -0.918]}
-        scale={[4.173, 4.408, 228.28]}
+        material={materials["Material.006"]}
+        position={[-210.641, 148.076, -151.655]}
+        rotation={[0, 0, 0.799]}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Plane002.geometry}
-        material={materials["Material.003"]}
-        position={[-235.344, 313.034, -147.642]}
-        rotation={[0, 0, -2.413]}
-        scale={[4.173, 4.408, 228.28]}
+        material={materials["Material.006"]}
+        position={[-210.641, -145.998, -151.655]}
+        rotation={[0, 0, 2.42]}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Plane003.geometry}
-        material={materials["Material.003"]}
-        position={[236.753, 313.034, -147.642]}
-        rotation={[0, 0, 2.134]}
-        scale={[4.173, 4.408, 228.28]}
+        material={materials["Material.006"]}
+        position={[208.597, 146.253, -151.655]}
+        rotation={[0, 0, 2.42]}
       />
     </group>
   );
