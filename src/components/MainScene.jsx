@@ -1,8 +1,19 @@
-import React, { useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { MeshReflectorMaterial, useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import {
+  LinearMipmapLinearFilter,
+  RGBFormat,
+  WebGLCubeRenderTarget,
+} from "three";
+import { useEnvMap } from "./atoms/Camera";
 
 export default function Model(props) {
   const { nodes, materials } = useGLTF("./models/scene.glb");
+  const envMap = useEnvMap();
+  useEffect(() => {
+    console.log("env map", envMap);
+  }, []);
   return (
     <group {...props} dispose={null}>
       {/* <mesh
@@ -56,21 +67,19 @@ export default function Model(props) {
       /> */}
       <mesh
         rotation={[-Math.PI / 2, 0, 0]}
-        position={[0, -9, -120]}
+        position={[0, -10, -120]}
         castShadow
         receiveShadow
       >
         <boxGeometry args={[15, 420, 0.1]}></boxGeometry>
         <meshStandardMaterial
-          color={"black"}
           metalness={1}
-          roughness={0}
-          opacity={0.5}
-          envMapIntensity={1}
-          transparent={true}
+          roughness={0.2}
+          color="white"
+          envMap={envMap}
         />
       </mesh>
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -10, -120]}>
+      {/* <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -10, -120]}>
         <planeGeometry args={[15, 420]}></planeGeometry>
         <MeshReflectorMaterial
           blur={[300, 100]}
@@ -84,7 +93,7 @@ export default function Model(props) {
           color="#050505"
           metalness={0.5}
         />
-      </mesh>
+      </mesh> */}
       <mesh
         castShadow
         receiveShadow

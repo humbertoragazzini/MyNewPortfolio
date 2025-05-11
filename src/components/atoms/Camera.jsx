@@ -1,21 +1,40 @@
 import { PerspectiveCamera } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
-import { useEffect, useState } from "react";
+import { useThree, useFrame } from "@react-three/fiber";
+import {
+  createContext,
+  useContext,
+  useRef,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import * as THREE from "three";
 
-export default function Camera({ scroll }) {
-  const { camera } = useThree();
+const EnvMapContext = createContext();
+export const useEnvMap = () => useContext(EnvMapContext);
+
+export default function Camera({ scroll, children }) {
+  const { camera, gl, scene } = useThree();
   const targetZ = 100 - 1 * 450 * scroll;
   const lerpSpeed = 0.05;
   const [horizontal, setHorizontal] = useState(0);
   const [vertical, setVertical] = useState(0);
 
-  useEffect(() => {
-    console.log(scroll);
-  }, [scroll]);
+  // CubeCamera render target
+  const cubeRenderTarget = useMemo(
+    () =>
+      new THREE.WebGLCubeRenderTarget(256, {
+        format: THREE.RGBFormat,
+        generateMipmaps: true,
+        minFilter: THREE.LinearMipmapLinearFilter,
+      }),
+    []
+  );
+
+  const cubeCameraRef = useRef();
 
   useEffect(() => {
-    const moveHorizontal = (e) => {
+    const move = (e) => {
       setHorizontal(
         (-(e.clientX - window.outerWidth / 2) / window.outerWidth) * 1
       );
@@ -23,15 +42,12 @@ export default function Camera({ scroll }) {
         (-(e.clientY - window.outerHeight / 2) / window.outerHeight) * 0.25
       );
     };
-
-    window.addEventListener("mousemove", moveHorizontal); // 👈 add the type!
-
-    return () => {
-      window.removeEventListener("mousemove", moveHorizontal); // 👈 clean up!
-    };
+    window.addEventListener("mousemove", move);
+    return () => window.removeEventListener("mousemove", move);
   }, []);
 
   useFrame(() => {
+    // update your main camera
     camera.position.z = THREE.MathUtils.lerp(
       camera.position.z,
       targetZ,
@@ -53,6 +69,19 @@ export default function Camera({ scroll }) {
       lerpSpeed
     );
     camera.updateProjectionMatrix();
+
+    // update cube camera from current camera position
+    if (cubeCameraRef.current) {
+      cubeCameraRef.current.position.copy(camera.position);
+      cubeCameraRef.current.update(gl, scene);
+    }
   });
-  return <PerspectiveCamera makeDefault />;
+
+  return (
+    <EnvMapContext.Provider value={cubeRenderTarget.texture}>
+      <PerspectiveCamera makeDefault />
+      <cubeCamera ref={cubeCameraRef} args={[0.1, 1000, cubeRenderTarget]} />
+      {children}
+    </EnvMapContext.Provider>
+  );
 }
