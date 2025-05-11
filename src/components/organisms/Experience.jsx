@@ -57,12 +57,10 @@ export default function Experience() {
               >
                 <boxGeometry args={[5, 5, 5]}></boxGeometry>
                 <meshStandardMaterial color={"white"}></meshStandardMaterial>
-                {/* <meshBasicMaterial></meshBasicMaterial> */}
               </mesh>
               <mesh
                 rotation={[-Math.PI / 2, 0, 0]}
                 position={[0, -6, 50]}
-                castShadow
                 receiveShadow
               >
                 <planeGeometry args={[15, 15]}></planeGeometry>
@@ -70,11 +68,10 @@ export default function Experience() {
                   color={"white"}
                   side={THREE.DoubleSide}
                 ></meshStandardMaterial>
-                {/* <meshBasicMaterial></meshBasicMaterial> */}
               </mesh>
               <MainScene />
               <OrbitControls></OrbitControls>
-              <ambientLight targetRef={targetRef} intensity={7} />
+              {/* <ambientLight targetRef={targetRef} intensity={2} /> */}
               {/* <Camera scroll={scroll}></Camera> */}
               <Lights targetRef={targetRef}></Lights>
             </Canvas>
