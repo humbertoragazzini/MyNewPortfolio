@@ -60,11 +60,11 @@ export default function Experience() {
                 </group>
                 <Background></Background>
               </Environment> */}
-              {/* <Environment
+              <Environment
                 map={texture}
                 background
-                rotation={[0, Math.PI / 2, 0]}
-              /> */}
+                rotation={[0, Math.PI * 1.5, 0]}
+              />
               <IframedRight
                 positionZ={-25}
                 url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
@@ -97,7 +97,7 @@ export default function Experience() {
               </mesh> */}
               <MainScene />
               {/* <OrbitControls></OrbitControls> */}
-              <Background></Background>
+              {/* <Background></Background> */}
               <ambientLight intensity={0.1} />
               <Camera scroll={scroll}></Camera>
               {/* <Lights targetRef={targetRef}></Lights> */}
