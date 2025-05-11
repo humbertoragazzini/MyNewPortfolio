@@ -90,6 +90,21 @@ export default function Model(props) {
           color="#ffffff"
         /> 
       </mesh> */}
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -9, -120]}>
+        <boxGeometry args={[16, 420, 0.5]}></boxGeometry>
+        <meshPhysicalMaterial
+          transmission={1}
+          transparent={true}
+          roughness={0}
+          thickness={0.5}
+          ior={1.5}
+          reflectivity={1}
+          clearcoat={1}
+          clearcoatRoughness={0}
+          envMapIntensity={2}
+          color="#ffffff"
+        />
+      </mesh>
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -10, -120]}>
         <planeGeometry args={[15, 420]}></planeGeometry>
         <MeshReflectorMaterial
