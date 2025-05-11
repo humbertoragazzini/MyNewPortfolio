@@ -1,4 +1,4 @@
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useLoader } from "@react-three/fiber";
 import {
   Environment,
   EnvironmentMap,
@@ -18,11 +18,14 @@ import IframedRight from "../atoms/IframedRight";
 import * as THREE from "three";
 import Lights from "../atoms/Lights";
 import { Background } from "../atoms/Background";
+import { RGBELoader } from "three/examples/jsm/Addons.js";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
   const [scroll, setScroll] = useState(0);
   const targetRef = useRef();
+  const texture = useLoader(RGBELoader, "./environ/env-2k-v1.hdr");
+  texture.mapping = THREE.EquirectangularReflectionMapping;
 
   return (
     <div className="w-full h-screen overflow-hidden bg-black">
@@ -31,12 +34,12 @@ export default function Experience() {
         ref={scrollContainerRef}
         className="relative z-[9999] w-screen h-screen overflow-y-scroll"
         onScroll={(e) => {
-          // const target = e.currentTarget;
-          // const scrollTop = target.scrollTop;
-          // const scrollHeight = target.scrollHeight;
-          // const clientHeight = target.clientHeight;
-          // const scrollProgress = scrollTop / (scrollHeight - clientHeight);
-          // setScroll(scrollProgress);
+          const target = e.currentTarget;
+          const scrollTop = target.scrollTop;
+          const scrollHeight = target.scrollHeight;
+          const clientHeight = target.clientHeight;
+          const scrollProgress = scrollTop / (scrollHeight - clientHeight);
+          setScroll(scrollProgress);
         }}
       >
         <div style={{ height: "600vh" }}>
@@ -47,24 +50,21 @@ export default function Experience() {
                 url={"https://www.primalports.com/"}
               ></IframedLeft>
               <ProjectRight positionZ={10} />
-              <Environment background resolution={256}>
-                {/* This object will be rendered into the environment map */}
-                <mesh position={[0, 0, 0]}>
-                  <sphereGeometry args={[1, 32, 32]} />
-                  <MeshReflectorMaterial
-                    blur={[300, 100]}
-                    resolution={2048}
-                    mixBlur={0.4}
-                    mixStrength={80}
-                    roughness={1}
-                    depthScale={1.2}
-                    minDepthThreshold={0.4}
-                    maxDepthThreshold={1.4}
-                    color="#050505"
-                    metalness={0.5}
-                  />
-                </mesh>
-              </Environment>
+              {/* <Environment resolution={2048} background frames={Infinity}>
+                <color args={["black"]} attach="background"></color>
+                <group>
+                  <mesh position={[0, 0, -2]}>
+                    <torusGeometry args={[30, 0.5, 50]}></torusGeometry>
+                    <meshBasicMaterial color={"white"}></meshBasicMaterial>
+                  </mesh>
+                </group>
+                <Background></Background>
+              </Environment> */}
+              {/* <Environment
+                map={texture}
+                background
+                rotation={[0, Math.PI / 2, 0]}
+              /> */}
               <IframedRight
                 positionZ={-25}
                 url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
@@ -75,7 +75,7 @@ export default function Experience() {
                 positionZ={-60}
                 url={"https://humbertoragazzini.github.io/TheSuperGame/"}
               ></IframedLeft>
-              <mesh
+              {/* <mesh
                 ref={targetRef}
                 position={[0, 0, 50]}
                 castShadow
@@ -83,8 +83,8 @@ export default function Experience() {
               >
                 <boxGeometry args={[5, 5, 5]}></boxGeometry>
                 <meshStandardMaterial color={"white"}></meshStandardMaterial>
-              </mesh>
-              <mesh
+              </mesh> */}
+              {/* <mesh
                 rotation={[-Math.PI / 2, 0, 0]}
                 position={[0, -6, 50]}
                 receiveShadow
@@ -94,13 +94,13 @@ export default function Experience() {
                   color={"white"}
                   side={THREE.DoubleSide}
                 ></meshStandardMaterial>
-              </mesh>
+              </mesh> */}
               <MainScene />
-              <OrbitControls></OrbitControls>
+              {/* <OrbitControls></OrbitControls> */}
               <Background></Background>
-              <ambientLight targetRef={targetRef} intensity={0.1} />
-              {/* <Camera scroll={scroll}></Camera> */}
-              <Lights targetRef={targetRef}></Lights>
+              <ambientLight intensity={0.1} />
+              <Camera scroll={scroll}></Camera>
+              {/* <Lights targetRef={targetRef}></Lights> */}
             </Canvas>
           </motion.div>
         </div>

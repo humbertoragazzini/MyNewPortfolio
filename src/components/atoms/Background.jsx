@@ -20,7 +20,59 @@ export function Background(props) {
     });
   }, [gltf]);
 
-  return <primitive object={gltf.scene} {...props} />;
+  return (
+    <mesh>
+      <mesh position={[150, 250, 0]}>
+        <mesh position={[0, 0, 20]}>
+          <pointLight color="white" intensity={5000} castShadow />
+          <sphereGeometry args={[10, 10, 10]}></sphereGeometry>
+          <meshBasicMaterial></meshBasicMaterial>
+        </mesh>
+        <mesh position={[0, 0, -300]}>
+          <pointLight color="white" intensity={5000} castShadow />
+          <sphereGeometry args={[10, 10, 10]}></sphereGeometry>
+          <meshBasicMaterial></meshBasicMaterial>
+        </mesh>
+      </mesh>
+      <mesh position={[150, -40, 0]}>
+        <mesh position={[0, 0, 20]}>
+          <pointLight color="white" intensity={5000} castShadow />
+          <sphereGeometry args={[10, 10, 10]}></sphereGeometry>
+          <meshBasicMaterial></meshBasicMaterial>
+        </mesh>
+        <mesh position={[0, 0, -300]}>
+          <pointLight color="white" intensity={5000} castShadow />
+          <sphereGeometry args={[10, 10, 10]}></sphereGeometry>
+          <meshBasicMaterial></meshBasicMaterial>
+        </mesh>
+      </mesh>
+      <mesh position={[-150, 250, 0]}>
+        <mesh position={[0, 0, 20]}>
+          <pointLight color="white" intensity={5000} castShadow />
+          <sphereGeometry args={[10, 10, 10]}></sphereGeometry>
+          <meshBasicMaterial></meshBasicMaterial>
+        </mesh>
+        <mesh position={[0, 0, -300]}>
+          <pointLight color="white" intensity={5000} castShadow />
+          <sphereGeometry args={[10, 10, 10]}></sphereGeometry>
+          <meshBasicMaterial></meshBasicMaterial>
+        </mesh>
+      </mesh>
+      <mesh position={[-150, -40, 0]}>
+        <mesh position={[0, 0, 20]}>
+          <pointLight color="white" intensity={5000} castShadow />
+          <sphereGeometry args={[10, 10, 10]}></sphereGeometry>
+          <meshBasicMaterial></meshBasicMaterial>
+        </mesh>
+        <mesh position={[0, 0, -300]}>
+          <pointLight color="white" intensity={5000} castShadow />
+          <sphereGeometry args={[10, 10, 10]}></sphereGeometry>
+          <meshBasicMaterial></meshBasicMaterial>
+        </mesh>
+      </mesh>
+      <primitive object={gltf.scene} {...props} />
+    </mesh>
+  );
 }
 
 // Preload for faster loading (optional)
