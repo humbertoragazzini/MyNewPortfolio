@@ -1,5 +1,12 @@
 import { Canvas } from "@react-three/fiber";
-import { Html, OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import {
+  Environment,
+  EnvironmentMap,
+  Html,
+  MeshReflectorMaterial,
+  OrbitControls,
+  PerspectiveCamera,
+} from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
 import { useScroll, motion } from "framer-motion";
 import MainScene from "../MainScene";
@@ -10,6 +17,7 @@ import IframedLeft from "../atoms/IframedLeft";
 import IframedRight from "../atoms/IframedRight";
 import * as THREE from "three";
 import Lights from "../atoms/Lights";
+import { Background } from "../atoms/Background";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -39,6 +47,24 @@ export default function Experience() {
                 url={"https://www.primalports.com/"}
               ></IframedLeft>
               <ProjectRight positionZ={10} />
+              <Environment background resolution={256}>
+                {/* This object will be rendered into the environment map */}
+                <mesh position={[0, 0, 0]}>
+                  <sphereGeometry args={[1, 32, 32]} />
+                  <MeshReflectorMaterial
+                    blur={[300, 100]}
+                    resolution={2048}
+                    mixBlur={0.4}
+                    mixStrength={80}
+                    roughness={1}
+                    depthScale={1.2}
+                    minDepthThreshold={0.4}
+                    maxDepthThreshold={1.4}
+                    color="#050505"
+                    metalness={0.5}
+                  />
+                </mesh>
+              </Environment>
               <IframedRight
                 positionZ={-25}
                 url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
@@ -71,7 +97,8 @@ export default function Experience() {
               </mesh>
               <MainScene />
               <OrbitControls></OrbitControls>
-              {/* <ambientLight targetRef={targetRef} intensity={2} /> */}
+              <Background></Background>
+              <ambientLight targetRef={targetRef} intensity={0.1} />
               {/* <Camera scroll={scroll}></Camera> */}
               <Lights targetRef={targetRef}></Lights>
             </Canvas>
