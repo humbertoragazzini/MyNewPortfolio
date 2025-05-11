@@ -56,10 +56,21 @@ export default function Model(props) {
       /> */}
       <mesh
         rotation={[-Math.PI / 2, 0, 0]}
-        position={[0, -10, -120]}
+        position={[0, -9, -120]}
         castShadow
         receiveShadow
       >
+        <boxGeometry args={[15, 420, 0.1]}></boxGeometry>
+        <meshStandardMaterial
+          color={"black"}
+          metalness={1}
+          roughness={0}
+          opacity={0.5}
+          envMapIntensity={1}
+          transparent={true}
+        />
+      </mesh>
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -10, -120]}>
         <planeGeometry args={[15, 420]}></planeGeometry>
         <MeshReflectorMaterial
           blur={[300, 100]}

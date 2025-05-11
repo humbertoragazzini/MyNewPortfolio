@@ -15,6 +15,7 @@ export function BackgroundRTF(props) {
 
   return (
     <group {...props} dispose={null}>
+      <ambientLight intensity={1} />
       <mesh
         castShadow
         receiveShadow

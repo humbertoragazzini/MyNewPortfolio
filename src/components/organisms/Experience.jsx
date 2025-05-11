@@ -20,6 +20,7 @@ import Lights from "../atoms/Lights";
 import { Background } from "../atoms/Background";
 import { RGBELoader } from "three/examples/jsm/Addons.js";
 import { BackgroundRTF } from "../atoms/BackgroundRTF";
+import MovingMap from "../atoms/MovingMap";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -51,21 +52,12 @@ export default function Experience() {
                 url={"https://www.primalports.com/"}
               ></IframedLeft>
               <ProjectRight positionZ={-25} />
-              {/* <Environment resolution={2048} background frames={Infinity}>
-                <color args={["black"]} attach="background"></color>
-                <group>
-                  <mesh position={[0, 0, -2]}>
-                    <torusGeometry args={[30, 0.5, 50]}></torusGeometry>
-                    <meshBasicMaterial color={"white"}></meshBasicMaterial>
-                  </mesh>
-                </group>
-                <Background></Background>
-              </Environment> */}
-              {/* <Environment
-                map={texture}
-                background
-                rotation={[0, Math.PI * 1.5, 0]}
-              /> */}
+              <Environment resolution={2048} background frames={Infinity}>
+                <MovingMap scroll={scroll}>
+                  <BackgroundRTF></BackgroundRTF>
+                </MovingMap>
+              </Environment>
+
               <ProjectRight positionZ={-90} />
               <IframedLeft
                 positionZ={-90}
@@ -100,8 +92,7 @@ export default function Experience() {
               <MainScene />
               {/* <OrbitControls></OrbitControls> */}
               {/* <Background></Background> */}
-              <BackgroundRTF></BackgroundRTF>
-              <ambientLight intensity={1} />
+              {/* <BackgroundRTF></BackgroundRTF> */}
               <Camera scroll={scroll}></Camera>
               {/* <Lights targetRef={targetRef}></Lights> */}
             </Canvas>
