@@ -17,10 +17,10 @@ export default function Camera({ scroll }) {
   useEffect(() => {
     const moveHorizontal = (e) => {
       setHorizontal(
-        (-(e.clientX - window.outerWidth / 2) / window.outerWidth) * 2
+        (-(e.clientX - window.outerWidth / 2) / window.outerWidth) * 1
       );
       setVertical(
-        (-(e.clientY - window.outerHeight / 2) / window.outerHeight) * 0.5
+        (-(e.clientY - window.outerHeight / 2) / window.outerHeight) * 0.25
       );
     };
 

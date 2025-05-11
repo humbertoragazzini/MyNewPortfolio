@@ -19,6 +19,7 @@ import * as THREE from "three";
 import Lights from "../atoms/Lights";
 import { Background } from "../atoms/Background";
 import { RGBELoader } from "three/examples/jsm/Addons.js";
+import { BackgroundRTF } from "../atoms/BackgroundRTF";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -60,11 +61,11 @@ export default function Experience() {
                 </group>
                 <Background></Background>
               </Environment> */}
-              <Environment
+              {/* <Environment
                 map={texture}
                 background
                 rotation={[0, Math.PI * 1.5, 0]}
-              />
+              /> */}
               <IframedRight
                 positionZ={-25}
                 url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
@@ -98,7 +99,8 @@ export default function Experience() {
               <MainScene />
               {/* <OrbitControls></OrbitControls> */}
               {/* <Background></Background> */}
-              <ambientLight intensity={0.1} />
+              <BackgroundRTF></BackgroundRTF>
+              <ambientLight intensity={1} />
               <Camera scroll={scroll}></Camera>
               {/* <Lights targetRef={targetRef}></Lights> */}
             </Canvas>
