@@ -47,10 +47,10 @@ export default function Experience() {
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas shadows>
               <IframedLeft
-                positionZ={10}
+                positionZ={-25}
                 url={"https://www.primalports.com/"}
               ></IframedLeft>
-              <ProjectRight positionZ={10} />
+              <ProjectRight positionZ={-25} />
               {/* <Environment resolution={2048} background frames={Infinity}>
                 <color args={["black"]} attach="background"></color>
                 <group>
@@ -66,16 +66,17 @@ export default function Experience() {
                 background
                 rotation={[0, Math.PI * 1.5, 0]}
               /> */}
-              <IframedRight
-                positionZ={-25}
-                url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
-              />
-              <ProjectLeft positionZ={-25} />
-              <ProjectRight positionZ={-60} />
+              <ProjectRight positionZ={-90} />
               <IframedLeft
-                positionZ={-60}
+                positionZ={-90}
                 url={"https://humbertoragazzini.github.io/TheSuperGame/"}
               ></IframedLeft>
+
+              <IframedRight
+                positionZ={-185}
+                url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
+              />
+              <ProjectLeft positionZ={-185} />
               {/* <mesh
                 ref={targetRef}
                 position={[0, 0, 50]}

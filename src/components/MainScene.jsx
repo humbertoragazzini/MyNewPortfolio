@@ -5,12 +5,12 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF("./models/scene.glb");
   return (
     <group {...props} dispose={null}>
-      <mesh
+      {/* <mesh
         castShadow
         receiveShadow
         geometry={nodes.Torus.geometry}
         material={materials["Material.002"]}
-      />
+      /> */}
       <mesh
         castShadow
         receiveShadow
@@ -23,43 +23,44 @@ export default function Model(props) {
         geometry={nodes.Torus002.geometry}
         material={materials["Material.002"]}
       />
-      <mesh
+      {/* <mesh
         castShadow
         receiveShadow
         geometry={nodes.Torus003.geometry}
         material={materials["Material.002"]}
-      />
+      /> */}
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Torus004.geometry}
         material={materials["Material.002"]}
       />
-      <mesh
+      {/* <mesh
         castShadow
         receiveShadow
         geometry={nodes.Torus005.geometry}
         material={materials["Material.002"]}
-      />
+      /> */}
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Torus006.geometry}
         material={materials["Material.002"]}
+        position={[0, 0, -140]}
       />
-      <mesh
+      {/* <mesh
         castShadow
         receiveShadow
         geometry={nodes.Torus007.geometry}
         material={materials["Material.002"]}
-      />
+      /> */}
       <mesh
         rotation={[-Math.PI / 2, 0, 0]}
-        position={[0, -10, -100]}
+        position={[0, -10, -120]}
         castShadow
         receiveShadow
       >
-        <planeGeometry args={[15, 350]}></planeGeometry>
+        <planeGeometry args={[15, 420]}></planeGeometry>
         <MeshReflectorMaterial
           blur={[300, 100]}
           resolution={2048}
