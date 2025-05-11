@@ -52,11 +52,11 @@ export default function Experience() {
                 url={"https://www.primalports.com/"}
               ></IframedLeft>
               <ProjectRight positionZ={-25} />
-              <Environment resolution={2048} background frames={Infinity}>
+              {/* <Environment resolution={2048} background frames={Infinity}>
                 <MovingMap scroll={scroll}>
                   <BackgroundRTF></BackgroundRTF>
                 </MovingMap>
-              </Environment>
+              </Environment> */}
 
               <ProjectRight positionZ={-90} />
               <IframedLeft
@@ -92,7 +92,7 @@ export default function Experience() {
               <MainScene />
               {/* <OrbitControls></OrbitControls> */}
               {/* <Background></Background> */}
-              {/* <BackgroundRTF></BackgroundRTF> */}
+              <BackgroundRTF></BackgroundRTF>
               <Camera scroll={scroll}></Camera>
               {/* <Lights targetRef={targetRef}></Lights> */}
             </Canvas>
