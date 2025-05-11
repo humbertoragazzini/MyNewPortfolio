@@ -46,7 +46,10 @@ export default function Experience() {
       >
         <div style={{ height: "600vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
-            <Canvas shadows>
+            <Canvas
+              shadows
+              // gl={{ physicallyCorrectLights: true }}
+            >
               <IframedLeft
                 positionZ={-25}
                 url={"https://www.primalports.com/"}
@@ -89,11 +92,12 @@ export default function Experience() {
                   side={THREE.DoubleSide}
                 ></meshStandardMaterial>
               </mesh> */}
-              <MainScene />
+
               {/* <OrbitControls></OrbitControls> */}
               {/* <Background></Background> */}
               <BackgroundRTF></BackgroundRTF>
               <Camera scroll={scroll}></Camera>
+              <MainScene />
               {/* <Lights targetRef={targetRef}></Lights> */}
             </Canvas>
           </motion.div>

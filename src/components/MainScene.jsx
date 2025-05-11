@@ -6,14 +6,12 @@ import {
   RGBFormat,
   WebGLCubeRenderTarget,
 } from "three";
-import { useEnvMap } from "./atoms/Camera";
+// import { useEnvMap } from "./atoms/Camera";
 
 export default function Model(props) {
   const { nodes, materials } = useGLTF("./models/scene.glb");
-  const envMap = useEnvMap();
-  useEffect(() => {
-    console.log("env map", envMap);
-  }, []);
+  // const envMap = useEnvMap();
+
   return (
     <group {...props} dispose={null}>
       {/* <mesh
@@ -65,21 +63,34 @@ export default function Model(props) {
         geometry={nodes.Torus007.geometry}
         material={materials["Material.002"]}
       /> */}
-      <mesh
+      {/* <mesh
         rotation={[-Math.PI / 2, 0, 0]}
-        position={[0, -10, -120]}
+        position={[0, -20, -120]}
         castShadow
         receiveShadow
       >
-        <boxGeometry args={[15, 420, 0.1]}></boxGeometry>
+        <planeGeometry args={[50, 450]}></planeGeometry>
         <meshStandardMaterial
           metalness={1}
-          roughness={0.2}
-          color="white"
+          roughness={0}
+          color="black"
           envMap={envMap}
         />
-      </mesh>
-      {/* <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -10, -120]}>
+         <meshPhysicalMaterial
+          transmission={1}
+          transparent={true}
+          roughness={0}
+          thickness={0.5}
+          ior={1.5}
+          reflectivity={1}
+          clearcoat={1}
+          clearcoatRoughness={0}
+          envMap={envMap}
+          envMapIntensity={2}
+          color="#ffffff"
+        /> 
+      </mesh> */}
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -10, -120]}>
         <planeGeometry args={[15, 420]}></planeGeometry>
         <MeshReflectorMaterial
           blur={[300, 100]}
@@ -93,7 +104,7 @@ export default function Model(props) {
           color="#050505"
           metalness={0.5}
         />
-      </mesh> */}
+      </mesh>
       <mesh
         castShadow
         receiveShadow
