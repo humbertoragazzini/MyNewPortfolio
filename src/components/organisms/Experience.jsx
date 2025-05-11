@@ -9,18 +9,12 @@ import ProjectLeft from "../atoms/ProjectLeft";
 import IframedLeft from "../atoms/IframedLeft";
 import IframedRight from "../atoms/IframedRight";
 import * as THREE from "three";
+import Lights from "../atoms/Lights";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
   const [scroll, setScroll] = useState(0);
-  const lightRef = useRef();
   const targetRef = useRef();
-
-  useEffect(() => {
-    if (lightRef.current && targetRef.current) {
-      lightRef.current.target = targetRef.current;
-    }
-  }, []);
 
   return (
     <div className="w-full h-screen overflow-hidden bg-black">
@@ -29,19 +23,17 @@ export default function Experience() {
         ref={scrollContainerRef}
         className="relative z-[9999] w-screen h-screen overflow-y-scroll"
         onScroll={(e) => {
-          const target = e.currentTarget;
-          const scrollTop = target.scrollTop;
-          const scrollHeight = target.scrollHeight;
-          const clientHeight = target.clientHeight;
-          const scrollProgress = scrollTop / (scrollHeight - clientHeight);
-          setScroll(scrollProgress);
+          // const target = e.currentTarget;
+          // const scrollTop = target.scrollTop;
+          // const scrollHeight = target.scrollHeight;
+          // const clientHeight = target.clientHeight;
+          // const scrollProgress = scrollTop / (scrollHeight - clientHeight);
+          // setScroll(scrollProgress);
         }}
       >
         <div style={{ height: "600vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas shadows>
-              <ambientLight intensity={7} />
-              <Camera scroll={scroll}></Camera>
               <IframedLeft
                 positionZ={10}
                 url={"https://www.primalports.com/"}
@@ -57,20 +49,6 @@ export default function Experience() {
                 positionZ={-60}
                 url={"https://humbertoragazzini.github.io/TheSuperGame/"}
               ></IframedLeft>
-              <directionalLight
-                ref={lightRef}
-                position={[0, 25, 0]}
-                intensity={1}
-                castShadow
-                shadow-mapSize-width={2048}
-                shadow-mapSize-height={2048}
-                shadow-camera-left={-25}
-                shadow-camera-right={25}
-                shadow-camera-top={25}
-                shadow-camera-bottom={-25}
-                shadow-camera-near={1}
-                shadow-camera-far={50}
-              />
               <mesh
                 ref={targetRef}
                 position={[0, 0, 50]}
@@ -95,6 +73,10 @@ export default function Experience() {
                 {/* <meshBasicMaterial></meshBasicMaterial> */}
               </mesh>
               <MainScene />
+              <OrbitControls></OrbitControls>
+              <ambientLight targetRef={targetRef} intensity={7} />
+              {/* <Camera scroll={scroll}></Camera> */}
+              <Lights targetRef={targetRef}></Lights>
             </Canvas>
           </motion.div>
         </div>
