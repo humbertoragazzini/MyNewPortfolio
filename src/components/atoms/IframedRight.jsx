@@ -54,11 +54,23 @@ export default function IframedRight({ positionZ, url }) {
             occlude="blending"
             transform
           >
-            <iframe
-              src={url}
-              className="bg-black pointer-events-none"
+            <div
+              className="flex items-center justify-center bg-black pointer-events-none"
               ref={mainContainerRef}
-            ></iframe>
+            >
+              <video
+                className="w-full h-auto"
+                loop
+                autoPlay
+                muted
+                playsInline
+                width="640"
+                height="360"
+              >
+                <source src="videos/Testing_Video_h_264.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </Html>
         )}
       </mesh>

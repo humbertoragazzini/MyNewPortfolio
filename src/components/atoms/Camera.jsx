@@ -20,7 +20,7 @@ export default function Camera({ scroll }) {
         (-(e.clientX - window.outerWidth / 2) / window.outerWidth) * 2
       );
       setVertical(
-        (-(e.clientY - window.outerHeight / 2) / window.outerHeight) * 2
+        (-(e.clientY - window.outerHeight / 2) / window.outerHeight) * 0.5
       );
     };
 
@@ -49,7 +49,7 @@ export default function Camera({ scroll }) {
     );
     camera.rotation.z = THREE.MathUtils.lerp(
       camera.rotation.z,
-      horizontal * 0.05 + vertical * 0.05,
+      horizontal * 0.01 + vertical * 0.01,
       lerpSpeed
     );
     camera.updateProjectionMatrix();
