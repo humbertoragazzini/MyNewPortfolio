@@ -42,19 +42,17 @@ export default function OverlayMenu() {
             toggleMenu();
             console.log("click menu");
           }}
-          className={`m-2 rounded-2xl right-[0px] duration-500 ease-initial cursor-pointer ${
-            isMenuOpen ? "-translate-y-[calc(100%+50px)]" : "translate-y-0"
-          }`}
+          className={`m-2 rounded-2xl right-[0px] duration-500 ease-initial cursor-pointer ${isMenuOpen ? "-translate-y-[calc(100%+50px)]" : "translate-y-0"
+            }`}
         >
           <LuMenu className="relative z-[1000] w-[35px] h-[35px] stroke-white pointer-events-none"></LuMenu>
         </button>
       </div>
       <div
-        className={`fixed ${
-          isMenuOpen
+        className={`fixed ${isMenuOpen
             ? "translate-y-0 bg-[rgba(120,0,110,0.40)] "
             : "translate-y-[120vh] bg-[rgba(200,50,180,0.45)] "
-        } z-[9999] backdrop-blur-md transition-all duration-500 ease-initial trans h-[100dvh] w-screen flex justify-center items-center overflow-hidden`}
+          } z-[9999] backdrop-blur-md transition-all duration-500 ease-initial trans h-[100dvh] w-screen flex justify-center items-center overflow-hidden`}
       >
         <div className="flex flex-col items-center justify-center">
           <motion.div
@@ -316,9 +314,9 @@ export default function OverlayMenu() {
           </motion.div>
         </div>
       </div>
-      <LoadingSystems></LoadingSystems>
       {/* <LiquidGlassEffect></LiquidGlassEffect> */}
-      <LiquidGlassDisplay width={500} height={500}></LiquidGlassDisplay>
+      <LiquidGlassDisplay width={500} height={500}>
+        <LoadingSystems></LoadingSystems></LiquidGlassDisplay>
     </>
   );
 }
