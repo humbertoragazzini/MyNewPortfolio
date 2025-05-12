@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-export default function LiquidGlassDisplay({ width, height }) {
+export default function LiquidGlassDisplay({ width, height, className, children }) {
   const previewRef = useRef(null);
   const effectSvgRef = useRef(null);
   const thing9Ref = useRef(null);
@@ -83,7 +83,7 @@ export default function LiquidGlassDisplay({ width, height }) {
   }, [width, height]);
 
   return (
-    <>
+    <div className={`relative z-[9999] ${className}`}>
       <div style={{ position: "absolute", top: 0, left: 0 }}>
         <svg
           ref={effectSvgRef}
@@ -186,9 +186,13 @@ export default function LiquidGlassDisplay({ width, height }) {
           </filter>
         </svg>
       </div>
+
+      <div className="absolute top-0 left-0 p-2 w-full h-full">
+        {children}
+      </div>
       <div
         ref={previewRef}
-        className="absolute top-0 right-0 border-2 border-amber-300"
+        className="absolute top-0 left-0 border-2 border-amber-300"
         style={{
           position: "",
           zIndex: 9999,
@@ -197,6 +201,6 @@ export default function LiquidGlassDisplay({ width, height }) {
           backdropFilter: "url(#displacementFilter4)",
         }}
       />
-    </>
+    </div>
   );
 }

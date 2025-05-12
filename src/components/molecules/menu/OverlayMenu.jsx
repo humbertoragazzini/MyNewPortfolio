@@ -50,8 +50,8 @@ export default function OverlayMenu() {
       </div>
       <div
         className={`fixed ${isMenuOpen
-            ? "translate-y-0 bg-[rgba(120,0,110,0.40)] "
-            : "translate-y-[120vh] bg-[rgba(200,50,180,0.45)] "
+          ? "translate-y-0 bg-[rgba(120,0,110,0.40)] "
+          : "translate-y-[120vh] bg-[rgba(200,50,180,0.45)] "
           } z-[9999] backdrop-blur-md transition-all duration-500 ease-initial trans h-[100dvh] w-screen flex justify-center items-center overflow-hidden`}
       >
         <div className="flex flex-col items-center justify-center">
@@ -315,8 +315,10 @@ export default function OverlayMenu() {
         </div>
       </div>
       {/* <LiquidGlassEffect></LiquidGlassEffect> */}
-      <LiquidGlassDisplay width={500} height={500}>
-        <LoadingSystems></LoadingSystems></LiquidGlassDisplay>
+      <div className="fixed top-0 left-0 z-[9999]">
+        <LiquidGlassDisplay width={500} height={500}>
+          <LoadingSystems></LoadingSystems></LiquidGlassDisplay>
+      </div>
     </>
   );
 }

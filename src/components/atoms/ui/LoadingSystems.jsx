@@ -26,10 +26,10 @@ const messages = [
 ];
 
 export default function LoadingSystems() {
-  useLayoutEffect(() => {}, []);
+  useLayoutEffect(() => { }, []);
 
   return (
-    <div className="h-[200px] m-2 bg-[rgba(0,0,0,0.55)] rounded-2xl orbitron fixed w-[280px] top-0 left-0 z-[9999] p-3 text-[rgba(255,255,255,1)] overflow-hidden">
+    <div className="relative m-2 bg-[rgba(0,0,0,0.55)] rounded-2xl orbitron w-full h-full z-[9999] p-3 text-[rgba(255,255,255,1)] overflow-hidden">
       <motion.div
         initial={{
           y: "20%",
