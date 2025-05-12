@@ -5,7 +5,7 @@ import { text } from "framer-motion/m";
 
 export function BackgroundRTF(props) {
   const { nodes, materials } = useGLTF(
-    "./blender/scene-background-no-envmap-v3.glb"
+    "./blender/scene-background-no-envmap.glb"
   );
   const texture = useTexture("./blender/Baked-texture.jpg");
   texture.flipY = false;
@@ -15,47 +15,31 @@ export function BackgroundRTF(props) {
 
   return (
     <group {...props} dispose={null}>
-      <ambientLight intensity={0.1} />
+      <ambientLight intensity={0.5}></ambientLight>
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube4410.geometry}
+        geometry={nodes.Cube246.geometry}
         material={textureMaterial}
-        position={[227.495, 0.655, -150.677]}
-        rotation={[0, -1.571, 0]}
+        position={[168.002, 210, 105.573]}
       />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Plane.geometry}
-        material={materials["Material.006"]}
-        position={[206.166, -140.529, -151.655]}
-        rotation={[0, 0, 0.799]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Plane001.geometry}
-        material={materials["Material.006"]}
-        position={[-210.641, 148.076, -151.655]}
-        rotation={[0, 0, 0.799]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Plane002.geometry}
-        material={materials["Material.006"]}
-        position={[-210.641, -145.998, -151.655]}
-        rotation={[0, 0, 2.42]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Plane003.geometry}
-        material={materials["Material.006"]}
-        position={[208.597, 146.253, -151.655]}
-        rotation={[0, 0, 2.42]}
-      />
+      <group
+        position={[167.984, -178.017, -318.675]}
+        rotation={[Math.PI / 2, 0, Math.PI / 2]}
+      >
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube5544.geometry}
+          material={materials["Material.001"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube5544_1.geometry}
+          material={materials.Material}
+        />
+      </group>
     </group>
   );
 }
