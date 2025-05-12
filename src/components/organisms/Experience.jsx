@@ -21,6 +21,7 @@ import { Background } from "../atoms/Background";
 import { RGBELoader } from "three/examples/jsm/Addons.js";
 import { BackgroundRTF } from "../atoms/BackgroundRTF";
 import MovingMap from "../atoms/MovingMap";
+import { useInputMethod } from "../atoms/CheckInput";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -28,6 +29,11 @@ export default function Experience() {
   const targetRef = useRef();
   const texture = useLoader(RGBELoader, "./environ/env-2k-v1.hdr");
   texture.mapping = THREE.EquirectangularReflectionMapping;
+  const inputMethod = useInputMethod();
+
+  useEffect(()=>{
+    console.log(inputMethod)
+  },[])
 
   return (
     <div className="w-full h-screen overflow-hidden bg-black">
