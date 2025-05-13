@@ -102,7 +102,7 @@ export default function Experience() {
               <OrbitControls></OrbitControls>
               {/* <Background></Background> */}
               <BackgroundRTF></BackgroundRTF>
-              <Camera scroll={scroll}></Camera>
+              {/* <Camera scroll={scroll}></Camera> */}
               <MainScene />
               {/* <Lights targetRef={targetRef}></Lights> */}
             </Canvas>
