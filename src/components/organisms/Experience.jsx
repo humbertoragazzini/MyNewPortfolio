@@ -31,9 +31,9 @@ export default function Experience() {
   texture.mapping = THREE.EquirectangularReflectionMapping;
   const inputMethod = useInputMethod();
 
-  useEffect(()=>{
-    console.log(inputMethod)
-  },[])
+  useEffect(() => {
+    console.log(inputMethod);
+  }, []);
 
   return (
     <div className="w-full h-screen overflow-hidden bg-black">
@@ -42,12 +42,12 @@ export default function Experience() {
         ref={scrollContainerRef}
         className="relative z-[9999] w-screen h-screen overflow-y-scroll"
         onScroll={(e) => {
-          const target = e.currentTarget;
-          const scrollTop = target.scrollTop;
-          const scrollHeight = target.scrollHeight;
-          const clientHeight = target.clientHeight;
-          const scrollProgress = scrollTop / (scrollHeight - clientHeight);
-          setScroll(scrollProgress);
+          // const target = e.currentTarget;
+          // const scrollTop = target.scrollTop;
+          // const scrollHeight = target.scrollHeight;
+          // const clientHeight = target.clientHeight;
+          // const scrollProgress = scrollTop / (scrollHeight - clientHeight);
+          // setScroll(scrollProgress);
         }}
       >
         <div style={{ height: "600vh" }}>
@@ -99,7 +99,7 @@ export default function Experience() {
                 ></meshStandardMaterial>
               </mesh> */}
 
-              {/* <OrbitControls></OrbitControls> */}
+              <OrbitControls></OrbitControls>
               {/* <Background></Background> */}
               <BackgroundRTF></BackgroundRTF>
               <Camera scroll={scroll}></Camera>
