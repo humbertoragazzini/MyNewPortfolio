@@ -18,7 +18,7 @@ export default function Lights({ targetRef }) {
     <directionalLight
       ref={lightRef}
       position={[0, 40, 50]}
-      intensity={1}
+      intensity={4}
       castShadow
       shadow-mapSize-width={2048}
       shadow-mapSize-height={2048}

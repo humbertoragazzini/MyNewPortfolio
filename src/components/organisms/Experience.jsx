@@ -42,15 +42,15 @@ export default function Experience() {
         ref={scrollContainerRef}
         className="relative z-[9999] w-screen h-screen overflow-y-scroll"
         onScroll={(e) => {
-          // const target = e.currentTarget;
-          // const scrollTop = target.scrollTop;
-          // const scrollHeight = target.scrollHeight;
-          // const clientHeight = target.clientHeight;
-          // const scrollProgress = scrollTop / (scrollHeight - clientHeight);
-          // setScroll(scrollProgress);
+          const target = e.currentTarget;
+          const scrollTop = target.scrollTop;
+          const scrollHeight = target.scrollHeight;
+          const clientHeight = target.clientHeight;
+          const scrollProgress = scrollTop / (scrollHeight - clientHeight);
+          setScroll(scrollProgress);
         }}
       >
-        <div style={{ height: "600vh" }}>
+        <div style={{ height: "2000vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas
               shadows
@@ -99,12 +99,12 @@ export default function Experience() {
                 ></meshStandardMaterial>
               </mesh> */}
 
-              <OrbitControls></OrbitControls>
+              {/* <OrbitControls></OrbitControls> */}
               {/* <Background></Background> */}
               <BackgroundRTF></BackgroundRTF>
-              {/* <Camera scroll={scroll}></Camera> */}
+              <Camera scroll={scroll}></Camera>
               <MainScene />
-              {/* <Lights targetRef={targetRef}></Lights> */}
+              <Lights targetRef={targetRef}></Lights>
             </Canvas>
           </motion.div>
         </div>
