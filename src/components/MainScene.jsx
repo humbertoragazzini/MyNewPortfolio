@@ -50,6 +50,12 @@ export default function Model(props) {
 
   return (
     <group {...props} dispose={null} position={[0, -10, 0]}>
+      <pointLight
+        position={[0, 15.708, 0]}
+        intensity={50}
+        distance={60}
+        decay={2}
+      ></pointLight>
       <mesh
         castShadow
         receiveShadow

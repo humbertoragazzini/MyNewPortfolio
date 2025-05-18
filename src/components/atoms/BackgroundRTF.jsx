@@ -65,26 +65,32 @@ export function BackgroundRTF(props) {
     <group {...props} dispose={null}>
       <ambientLight intensity={1}></ambientLight>
       <group {...props} dispose={null}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube.geometry}
-          material={materials.Material}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube001.geometry}
-          material={textureMaterial}
-          position={[-2.887, 2.765, 2.643]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube002.geometry}
-          material={textureMaterial1}
-          position={[-5.548, 4.291, 3.777]}
-        />
+        <group position={[-2.887, 2.765, 2.643]}>
+          <pointLight
+            position={[0, 15.708, -1250]}
+            intensity={500}
+            distance={100} // Increase to cover a wider area
+            decay={1} // Keep default or adjust lower to make it fall off slower
+          />
+          <pointLight
+            position={[0, 15.708, -1050]}
+            intensity={500}
+            distance={100} // Increase to cover a wider area
+            decay={1} // Keep default or adjust lower to make it fall off slower
+          />
+          <pointLight
+            position={[0, 15.708, -750]}
+            intensity={500}
+            distance={100} // Increase to cover a wider area
+            decay={1} // Keep default or adjust lower to make it fall off slower
+          />
+          <pointLight
+            position={[0, 15.708, -500]}
+            intensity={500}
+            distance={100} // Increase to cover a wider area
+            decay={1} // Keep default or adjust lower to make it fall off slower
+          />
+        </group>
       </group>
     </group>
   );
