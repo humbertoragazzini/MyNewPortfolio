@@ -12,22 +12,44 @@ import * as THREE from "three";
 export default function Model(props) {
   const { nodes, materials } = useGLTF("./blender/main-scene.glb");
   // const envMap = useEnvMap();
-  const texture = useTexture("./blender/WALLS6.jpg");
+  const texture = useTexture("./blender/WALL1.jpg");
+  const texture2 = useTexture("./blender/WALL2.jpg");
+  const texture3 = useTexture("./blender/WALL3.jpg");
+  const texture4 = useTexture("./blender/WALL4.jpg");
+  const texture5 = useTexture("./blender/WALL5.jpg");
+  const texture6 = useTexture("./blender/WALL6.jpg");
+  const floor = useTexture("./blender/FLOOR.jpg");
   texture.flipY = false;
+  texture2.flipY = false;
+  texture3.flipY = false;
+  texture4.flipY = false;
+  texture5.flipY = false;
+  texture6.flipY = false;
+  floor.flipY = false;
   const textureMaterial = new THREE.MeshStandardMaterial({
     map: texture,
+  });
+  const textureMaterial2 = new THREE.MeshStandardMaterial({
+    map: texture2,
+  });
+  const textureMaterial3 = new THREE.MeshStandardMaterial({
+    map: texture3,
+  });
+  const textureMaterial4 = new THREE.MeshStandardMaterial({
+    map: texture4,
+  });
+  const textureMaterial5 = new THREE.MeshStandardMaterial({
+    map: texture5,
+  });
+  const textureMaterial6 = new THREE.MeshStandardMaterial({
+    map: texture6,
+  });
+  const textureMaterialFloor = new THREE.MeshStandardMaterial({
+    map: floor,
   });
 
   return (
     <group {...props} dispose={null} position={[0, -10, 0]}>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube441.geometry}
-        material={materials["Material.003"]}
-        position={[0, -4.466, -163.964]}
-        scale={[11.52, 1.341, 4.007]}
-      />
       <mesh
         castShadow
         receiveShadow
@@ -85,8 +107,14 @@ export default function Model(props) {
       <mesh
         castShadow
         receiveShadow
+        geometry={nodes.Cube.geometry}
+        material={textureMaterialFloor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.WALL1.geometry}
-        material={materials.Walls5}
+        material={textureMaterial}
         position={[-189.016, 184.43, -360.711]}
         rotation={[-Math.PI / 2, 0, Math.PI / 2]}
       />
@@ -94,7 +122,7 @@ export default function Model(props) {
         castShadow
         receiveShadow
         geometry={nodes.WALL3.geometry}
-        material={materials.Walls6}
+        material={textureMaterial3}
         position={[-189.016, -181.538, -360.735]}
         rotation={[Math.PI / 2, 0, Math.PI / 2]}
       />
@@ -102,7 +130,7 @@ export default function Model(props) {
         castShadow
         receiveShadow
         geometry={nodes.WALL2.geometry}
-        material={materials.Walls1}
+        material={textureMaterial2}
         position={[-258.667, 210.655, -276.675]}
         rotation={[-Math.PI, 1.571, 0]}
       />
@@ -110,7 +138,7 @@ export default function Model(props) {
         castShadow
         receiveShadow
         geometry={nodes.WALL4.geometry}
-        material={materials.Walls3}
+        material={textureMaterial4}
         position={[248.121, 210.655, -360.735]}
         rotation={[0, -1.571, 0]}
       />
@@ -118,21 +146,21 @@ export default function Model(props) {
         castShadow
         receiveShadow
         geometry={nodes.WALL5.geometry}
-        material={materials.Walls2}
+        material={textureMaterial5}
         position={[252.941, 210, 107.045]}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.WALL6.geometry}
-        material={textureMaterial}
+        material={textureMaterial6}
         position={[252.941, 210, -398.664]}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Cube3363.geometry}
-        material={materials["Material.002"]}
+        material={materials.CubeLight}
         position={[209.984, 187.755, -360.711]}
         rotation={[-Math.PI / 2, 0, Math.PI / 2]}
       />
