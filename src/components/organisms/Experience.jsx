@@ -53,33 +53,36 @@ export default function Experience() {
         <div style={{ height: "2000vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas shadows gl={{ physicallyCorrectLights: true }}>
-              <IframedLeft
-                positionZ={-25}
-                url={"https://www.primalports.com/"}
-              ></IframedLeft>
-              <ProjectRight positionZ={-25} />
-              <Environment resolution={2048} background frames={Infinity}>
+              {/* <Environment
+                resolution={2048}
+                background
+                frames={1}
+                intensity={5}
+              >
                 <MovingMap scroll={scroll}>
-                  <ambientLight intensity={2}></ambientLight>
+                  <ambientLight intensity={1}></ambientLight>
                   <BackgroundRTF></BackgroundRTF>
                 </MovingMap>
-              </Environment>
-
-              <ProjectRight positionZ={-90} />
+              </Environment> */}
               <IframedLeft
-                positionZ={-90}
-                url={"https://humbertoragazzini.github.io/TheSuperGame/"}
+                positionZ={-40}
+                url={"https://www.primalports.com/"}
               ></IframedLeft>
-
               <IframedRight
-                positionZ={-185}
+                positionZ={-145}
+                url={"https://humbertoragazzini.github.io/TheSuperGame/"}
+              ></IframedRight>
+              <IframedLeft
+                positionZ={-245}
                 url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
               />
-              <ProjectLeft positionZ={-185} />
-              {/* <OrbitControls></OrbitControls> */}
-              <BackgroundRTF></BackgroundRTF>
-              <Camera scroll={scroll}></Camera>
-              {/* <MainScene /> */}
+              <ProjectRight positionZ={-40} />
+              <ProjectLeft positionZ={-145} />
+              <ProjectRight positionZ={-245} />
+              <OrbitControls></OrbitControls>
+              {/* <BackgroundRTF></BackgroundRTF> */}
+              {/* <Camera scroll={scroll}></Camera> */}
+              <MainScene scale={1} />
               <Lights targetRef={targetRef}></Lights>
             </Canvas>
           </motion.div>

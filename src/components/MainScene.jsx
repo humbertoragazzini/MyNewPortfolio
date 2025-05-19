@@ -49,7 +49,7 @@ export default function Model(props) {
   });
 
   return (
-    <group {...props} dispose={null} position={[0, -10, 0]}>
+    <group {...props} dispose={null} position={[0, -10, 0]} scale={props.scale}>
       <mesh
         castShadow
         receiveShadow
@@ -58,6 +58,20 @@ export default function Model(props) {
         position={[0, -15.057, -163.964]}
         scale={[11.624, 1.341, 4.007]}
       />
+      <mesh position={[0, -7.057, -197.964]}>
+        <boxGeometry args={[20, 0.25, 480.0]}></boxGeometry>
+        <meshPhysicalMaterial
+          transmission={1}
+          roughness={0}
+          thickness={0.5}
+          ior={1.5}
+          reflectivity={1}
+          clearcoat={1}
+          clearcoatRoughness={0}
+          metalness={0}
+          color="#ffffff"
+        />
+      </mesh>
       <mesh
         castShadow
         receiveShadow

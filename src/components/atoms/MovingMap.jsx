@@ -13,7 +13,7 @@ export default function MovingMap({ scroll, children }) {
     const newZ = -(100 - 450 * scroll);
     targetZ.current = THREE.MathUtils.lerp(targetZ.current, newZ, lerpSpeed);
 
-    meshRef.current.position.z = targetZ.current;
+    // meshRef.current.position.z = targetZ.current;
   });
 
   return <group ref={meshRef}>{children}</group>;

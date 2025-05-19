@@ -77,7 +77,7 @@ export default function Camera({ scroll, children }) {
     // }
   });
 
-  return <PerspectiveCamera makeDefault />;
+  return <PerspectiveCamera makeDefault far={25000} />;
 }
 // <EnvMapContext.Provider value={cubeRenderTarget.texture}>
 
