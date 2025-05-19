@@ -58,7 +58,7 @@ export default function Model(props) {
         position={[0, -15.057, -163.964]}
         scale={[11.624, 1.341, 4.007]}
       />
-      <mesh position={[0, -7.057, -197.964]}>
+      <mesh position={[0, -7.057, -180.964]}>
         <boxGeometry args={[20, 0.25, 480.0]}></boxGeometry>
         <meshPhysicalMaterial
           transmission={1}

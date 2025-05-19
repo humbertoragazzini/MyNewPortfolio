@@ -79,9 +79,9 @@ export default function Experience() {
               <ProjectRight positionZ={-40} />
               <ProjectLeft positionZ={-145} />
               <ProjectRight positionZ={-245} />
-              <OrbitControls></OrbitControls>
-              {/* <BackgroundRTF></BackgroundRTF> */}
-              {/* <Camera scroll={scroll}></Camera> */}
+              {/* <OrbitControls></OrbitControls> */}
+              <BackgroundRTF></BackgroundRTF>
+              <Camera scroll={scroll}></Camera>
               <MainScene scale={1} />
               <Lights targetRef={targetRef}></Lights>
             </Canvas>
