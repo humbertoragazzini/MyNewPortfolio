@@ -54,7 +54,7 @@ export default function Model(props) {
         castShadow
         receiveShadow
         geometry={nodes.Floor.geometry}
-        material={materials["Material.003"]}
+        material={textureMaterialFloor}
         position={[0, -15.057, -163.964]}
         scale={[11.624, 1.341, 4.007]}
       />

@@ -52,20 +52,18 @@ export default function Experience() {
       >
         <div style={{ height: "2000vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
-            <Canvas
-              shadows
-              // gl={{ physicallyCorrectLights: true }}
-            >
+            <Canvas shadows gl={{ physicallyCorrectLights: true }}>
               <IframedLeft
                 positionZ={-25}
                 url={"https://www.primalports.com/"}
               ></IframedLeft>
               <ProjectRight positionZ={-25} />
-              {/* <Environment resolution={2048} background frames={Infinity}>
+              <Environment resolution={2048} background frames={Infinity}>
                 <MovingMap scroll={scroll}>
+                  <ambientLight intensity={2}></ambientLight>
                   <BackgroundRTF></BackgroundRTF>
                 </MovingMap>
-              </Environment> */}
+              </Environment>
 
               <ProjectRight positionZ={-90} />
               <IframedLeft
@@ -78,32 +76,10 @@ export default function Experience() {
                 url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
               />
               <ProjectLeft positionZ={-185} />
-              {/* <mesh
-                ref={targetRef}
-                position={[0, 0, 50]}
-                castShadow
-                receiveShadow
-              >
-                <boxGeometry args={[5, 5, 5]}></boxGeometry>
-                <meshStandardMaterial color={"white"}></meshStandardMaterial>
-              </mesh> */}
-              {/* <mesh
-                rotation={[-Math.PI / 2, 0, 0]}
-                position={[0, -6, 50]}
-                receiveShadow
-              >
-                <planeGeometry args={[15, 15]}></planeGeometry>
-                <meshStandardMaterial
-                  color={"white"}
-                  side={THREE.DoubleSide}
-                ></meshStandardMaterial>
-              </mesh> */}
-
               {/* <OrbitControls></OrbitControls> */}
-              {/* <Background></Background> */}
               <BackgroundRTF></BackgroundRTF>
               <Camera scroll={scroll}></Camera>
-              <MainScene />
+              {/* <MainScene /> */}
               <Lights targetRef={targetRef}></Lights>
             </Canvas>
           </motion.div>

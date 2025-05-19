@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import { text } from "framer-motion/m";
+import MainScene from "../MainScene";
 
 export function BackgroundRTF(props) {
   const { nodes, materials } = useGLTF("./blender/multibaking1.glb");
@@ -63,7 +64,8 @@ export function BackgroundRTF(props) {
 
   return (
     <group {...props} dispose={null}>
-      <ambientLight intensity={0.75}></ambientLight>
+      <ambientLight intensity={0}></ambientLight>
+      <MainScene />
       <group {...props} dispose={null}>
         <group position={[-2.887, 2.765, 2.643]}>
           <pointLight
