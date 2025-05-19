@@ -63,7 +63,7 @@ export function BackgroundRTF(props) {
 
   return (
     <group {...props} dispose={null}>
-      <ambientLight intensity={1}></ambientLight>
+      <ambientLight intensity={0.75}></ambientLight>
       <group {...props} dispose={null}>
         <group position={[-2.887, 2.765, 2.643]}>
           <pointLight

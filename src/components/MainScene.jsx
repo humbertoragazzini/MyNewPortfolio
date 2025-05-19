@@ -50,12 +50,14 @@ export default function Model(props) {
 
   return (
     <group {...props} dispose={null} position={[0, -10, 0]}>
-      <pointLight
-        position={[0, 15.708, 0]}
-        intensity={50}
-        distance={60}
-        decay={2}
-      ></pointLight>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Floor.geometry}
+        material={materials["Material.003"]}
+        position={[0, -15.057, -163.964]}
+        scale={[11.624, 1.341, 4.007]}
+      />
       <mesh
         castShadow
         receiveShadow
@@ -109,12 +111,6 @@ export default function Model(props) {
         position={[-201.395, -146.695, -131.685]}
         rotation={[0, 0, -0.513]}
         scale={[0.242, 0.691, 10.586]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube.geometry}
-        material={textureMaterialFloor}
       />
       <mesh
         castShadow
