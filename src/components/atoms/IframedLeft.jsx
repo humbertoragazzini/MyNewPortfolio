@@ -2,6 +2,7 @@ import { Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import Video3D from "./Video3D";
 
 export default function IframedLeft({ positionZ, url }) {
   const htmlRef = useRef();
@@ -46,33 +47,7 @@ export default function IframedLeft({ positionZ, url }) {
           opacity={0}
           transparent
         ></meshStandardMaterial>
-        {show && (
-          <Html
-            ref={htmlRef}
-            portal={geoRef.current}
-            position={[0, 0, 1]}
-            occlude="blending"
-            transform
-          >
-            <div
-              className="flex items-center justify-center bg-black pointer-events-none"
-              ref={mainContainerRef}
-            >
-              <video
-                className="w-full h-auto"
-                loop
-                autoPlay
-                muted
-                playsInline
-                width="640"
-                height="360"
-              >
-                <source src="videos/Testing_Video_h_264.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </Html>
-        )}
+        <Video3D scale={2}></Video3D>
       </mesh>
       <mesh position={[0, -12, 0]}>
         <boxGeometry args={[30, 2, 2]}></boxGeometry>
