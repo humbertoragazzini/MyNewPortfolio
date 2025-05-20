@@ -54,51 +54,64 @@ export default function ProjectLeft({ positionZ }) {
             occlude="blending"
             transform
           >
-            <div className="bg-black" ref={mainContainerRef}>
-              <div className="grid w-full h-full grid-cols-3 text-white">
-                <div className="col-span-1 p-4">
-                  <div className="overflow-hidden rounded-full">
-                    <img src="/public/img/primalport_img.png"></img>
+            <div className="relative" ref={mainContainerRef}>
+              <div
+                className="absolute top-0 left-0 z-0 w-[125%] -translate-x-[12.5%] -translate-y-[5%] h-auto aspect-video blur-3xl"
+                style={{
+                  backgroundImage: "url(./img/primalport_img.png)",
+                  backgroundSize: "cover",
+                }}
+              ></div>
+              <div className="relative z-10 grid w-full h-full grid-cols-3 text-white">
+                <div className="col-span-3 p-13">
+                  <h2 className="text-6xl mb-9">Primalport Website</h2>
+                  <p className="text-3xl mb-9">
+                    Esta es la pagina principal de un projecto en conjunto, la
+                    empresa se dedica a la importacion y esportacion de bienes.
+                  </p>
+                  <p className="text-3xl mb-9">
+                    En este project se combino Nextjs y React three fiber en
+                    conjunto con framer para darle vida a las animaciones.
+                  </p>
+                  <div className="flex">
+                    <div className="">
+                      <p className="mb-4 text-2xl font-bold">
+                        Tecnologias usadas:
+                      </p>
+                    </div>
+                    <div className="pl-6">
+                      <ul className="text-2xl">
+                        <li className="mb-3">
+                          <p>NextJS</p>
+                        </li>
+                        <li className="mb-3">
+                          <p>Tailwind</p>
+                        </li>
+                        <li className="mb-3">
+                          <p>React three fiber</p>
+                        </li>
+                        <li className="mb-3">
+                          <p>Framer</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="pl-6">
+                      <ul className="text-2xl">
+                        <li className="mb-3">
+                          <p>Threejs</p>
+                        </li>
+                        <li className="mb-3">
+                          <p>Blender</p>
+                        </li>
+                        <li className="mb-3">
+                          <p>React</p>
+                        </li>
+                        <li className="mb-3">
+                          <p>Vite</p>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-                <div className="col-span-2 p-4">
-                  <h2 className="mb-5 text-6xl">Title of the project</h2>
-                  <p className="mb-5 text-3xl">
-                    The phrase "Lorem ipsum" originates from a scrambled passage
-                    of Latin text from Cicero's philosophical work De finibus
-                    bonorum et malorum ("On the Ends of Good and Evil"), written
-                    in 45 BC. Specifically, it is derived from sections 1.10.32
-                    and 1.10.33 of the text. The original line, "Neque porro
-                    quisquam est qui dolorem ipsum quia dolor sit amet,
-                    consectetur, adipisci velit..." translates to "There is no
-                    one who loves pain itself, who seeks after it and wants to
-                    have it, simply because it is pain" .
-                  </p>
-                  <p className="mb-4 text-3xl">
-                    <strong>Technologies used:</strong>
-                  </p>
-                  <ul className="text-3xl">
-                    <li className="mb-3">
-                      <strong>NextJS:</strong>Explanation what this technologie
-                      is doing
-                    </li>
-                    <li className="mb-3">
-                      <strong>Tailwind:</strong>Explanation what this
-                      technologie is doing
-                    </li>
-                    <li className="mb-3">
-                      <strong>Vite:</strong>Explanation what this technologie is
-                      doing
-                    </li>
-                    <li className="mb-3">
-                      <strong>Threejs:</strong>Explanation what this technologie
-                      is doing
-                    </li>
-                    <li className="mb-3">
-                      <strong>Blender:</strong>Explanation what this technologie
-                      is doing
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>
