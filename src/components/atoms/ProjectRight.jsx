@@ -54,42 +54,64 @@ export default function ProjectRight({ positionZ }) {
             occlude="blending"
             transform
           >
-            <div className="" ref={mainContainerRef}>
-              <div className="absolute"></div>
-              <div className="grid w-full h-full grid-cols-3 text-white">
+            <div className="relative" ref={mainContainerRef}>
+              <div
+                className="absolute top-0 left-0 z-0 w-[125%] -translate-x-[12.5%] -translate-y-[5%] h-auto aspect-video blur-3xl"
+                style={{
+                  backgroundImage: "url(./img/primalport_img.png)",
+                  backgroundSize: "cover",
+                }}
+              ></div>
+              <div className="relative z-10 grid w-full h-full grid-cols-3 text-white">
                 <div className="col-span-3 p-13">
-                  <h2 className="mb-5 text-6xl">Primalport Website</h2>
-                  <p className="mb-5 text-3xl">
+                  <h2 className="text-6xl mb-9">Primalport Website</h2>
+                  <p className="text-3xl mb-9">
                     Esta es la pagina principal de un projecto en conjunto, la
                     empresa se dedica a la importacion y esportacion de bienes.
                   </p>
-                  <p className="mb-4 text-3xl">
-                    <strong>Tecnologias usadas:</strong>
+                  <p className="text-3xl mb-9">
+                    En este project se combino Nextjs y React three fiber en
+                    conjunto con framer para darle vida a las animaciones.
                   </p>
-                  <ul className="text-xl">
-                    <li className="mb-3">
-                      <strong>NextJS:</strong> Se utilizo NextJS para todo los
-                      que es el Back-end y el Front-end, ahora la pagina esta
-                      momentaniamente esta siendo alojada en gitpages como
-                      pagina estatica, pero en un futuro va a funcionar en un
-                      servidor de vercel con contenido SGR.
-                    </li>
-                    <li className="mb-3">
-                      <strong>Tailwind:</strong> Todo el estilo fue echo con
-                      TailwindCSS lo que permite un aprovechamiento de la hoja
-                      de estilo sin repeticion de clases
-                    </li>
-                    <li className="mb-3">
-                      <strong>Threejs:</strong> Todas las animations en 3d
-                      (background) se realizaron con Threejs, mas precisamente
-                      RTF, lo que permite animaciones fluidas y que son
-                      ejecutadas a nivel GPU
-                    </li>
-                    <li className="mb-3">
-                      <strong>Framer:</strong> Parte de las animationes
-                      (manipulacion de contenido html) se realizaron con framer
-                    </li>
-                  </ul>
+                  <div className="flex">
+                    <div className="">
+                      <p className="mb-4 text-2xl font-bold">
+                        Tecnologias usadas:
+                      </p>
+                    </div>
+                    <div className="pl-6">
+                      <ul className="text-2xl">
+                        <li className="mb-3">
+                          <p>NextJS</p>
+                        </li>
+                        <li className="mb-3">
+                          <p>Tailwind</p>
+                        </li>
+                        <li className="mb-3">
+                          <p>React three fiber</p>
+                        </li>
+                        <li className="mb-3">
+                          <p>Framer</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="pl-6">
+                      <ul className="text-2xl">
+                        <li className="mb-3">
+                          <p>Threejs</p>
+                        </li>
+                        <li className="mb-3">
+                          <p>Blender</p>
+                        </li>
+                        <li className="mb-3">
+                          <p>React</p>
+                        </li>
+                        <li className="mb-3">
+                          <p>Vite</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
