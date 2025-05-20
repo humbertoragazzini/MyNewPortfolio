@@ -31,6 +31,32 @@ export default function Lights({ targetRef }) {
         shadow-camera-far={50}
       /> */}
       <ambientLight intensity={1}></ambientLight>
+      <group position={[-2.887, 2.765, 2.643]}>
+        <pointLight
+          position={[0, 15.708, -1250]}
+          intensity={500}
+          distance={100} // Increase to cover a wider area
+          decay={1} // Keep default or adjust lower to make it fall off slower
+        />
+        <pointLight
+          position={[0, 15.708, -1050]}
+          intensity={500}
+          distance={100} // Increase to cover a wider area
+          decay={1} // Keep default or adjust lower to make it fall off slower
+        />
+        <pointLight
+          position={[0, 15.708, -750]}
+          intensity={500}
+          distance={100} // Increase to cover a wider area
+          decay={1} // Keep default or adjust lower to make it fall off slower
+        />
+        <pointLight
+          position={[0, 15.708, -500]}
+          intensity={500}
+          distance={100} // Increase to cover a wider area
+          decay={1} // Keep default or adjust lower to make it fall off slower
+        />
+      </group>
     </group>
   );
 }

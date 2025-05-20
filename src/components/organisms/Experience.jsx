@@ -19,7 +19,6 @@ import * as THREE from "three";
 import Lights from "../atoms/Lights";
 import { Background } from "../atoms/Background";
 import { RGBELoader } from "three/examples/jsm/Addons.js";
-import { BackgroundRTF } from "../atoms/BackgroundRTF";
 import MovingMap from "../atoms/MovingMap";
 import { useInputMethod } from "../atoms/CheckInput";
 import Video3D from "../atoms/Video3D";
@@ -51,7 +50,7 @@ export default function Experience() {
           setScroll(scrollProgress);
         }}
       >
-        <div style={{ height: "2000vh" }}>
+        <div style={{ height: "1500vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas shadows gl={{ physicallyCorrectLights: true }}>
               {/* <Environment
@@ -62,7 +61,6 @@ export default function Experience() {
               >
                 <MovingMap scroll={scroll}>
                   <ambientLight intensity={1}></ambientLight>
-                  <BackgroundRTF></BackgroundRTF>
                 </MovingMap>
               </Environment> */}
               <IframedLeft
@@ -81,8 +79,6 @@ export default function Experience() {
               <ProjectLeft positionZ={-145} />
               <ProjectRight positionZ={-245} />
               {/* <OrbitControls></OrbitControls> */}
-              <Video3D></Video3D>
-              <BackgroundRTF></BackgroundRTF>
               <Camera scroll={scroll}></Camera>
               <MainScene scale={1} />
               <Lights targetRef={targetRef}></Lights>

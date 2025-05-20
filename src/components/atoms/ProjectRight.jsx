@@ -54,49 +54,40 @@ export default function ProjectRight({ positionZ }) {
             occlude="blending"
             transform
           >
-            <div className="bg-black" ref={mainContainerRef}>
+            <div className="" ref={mainContainerRef}>
+              <div className="absolute"></div>
               <div className="grid w-full h-full grid-cols-3 text-white">
-                <div className="col-span-1 p-4">
-                  <div className="overflow-hidden rounded-full">
-                    <img src="/public/img/primalport_img.png"></img>
-                  </div>
-                </div>
-                <div className="col-span-2 p-4">
-                  <h2 className="mb-5 text-6xl">Title of the project</h2>
+                <div className="col-span-3 p-13">
+                  <h2 className="mb-5 text-6xl">Primalport Website</h2>
                   <p className="mb-5 text-3xl">
-                    The phrase "Lorem ipsum" originates from a scrambled passage
-                    of Latin text from Cicero's philosophical work De finibus
-                    bonorum et malorum ("On the Ends of Good and Evil"), written
-                    in 45 BC. Specifically, it is derived from sections 1.10.32
-                    and 1.10.33 of the text. The original line, "Neque porro
-                    quisquam est qui dolorem ipsum quia dolor sit amet,
-                    consectetur, adipisci velit..." translates to "There is no
-                    one who loves pain itself, who seeks after it and wants to
-                    have it, simply because it is pain" .
+                    Esta es la pagina principal de un projecto en conjunto, la
+                    empresa se dedica a la importacion y esportacion de bienes.
                   </p>
                   <p className="mb-4 text-3xl">
-                    <strong>Technologies used:</strong>
+                    <strong>Tecnologias usadas:</strong>
                   </p>
-                  <ul className="text-3xl">
+                  <ul className="text-xl">
                     <li className="mb-3">
-                      <strong>NextJS:</strong>Explanation what this technologie
-                      is doing
+                      <strong>NextJS:</strong> Se utilizo NextJS para todo los
+                      que es el Back-end y el Front-end, ahora la pagina esta
+                      momentaniamente esta siendo alojada en gitpages como
+                      pagina estatica, pero en un futuro va a funcionar en un
+                      servidor de vercel con contenido SGR.
                     </li>
                     <li className="mb-3">
-                      <strong>Tailwind:</strong>Explanation what this
-                      technologie is doing
+                      <strong>Tailwind:</strong> Todo el estilo fue echo con
+                      TailwindCSS lo que permite un aprovechamiento de la hoja
+                      de estilo sin repeticion de clases
                     </li>
                     <li className="mb-3">
-                      <strong>Vite:</strong>Explanation what this technologie is
-                      doing
+                      <strong>Threejs:</strong> Todas las animations en 3d
+                      (background) se realizaron con Threejs, mas precisamente
+                      RTF, lo que permite animaciones fluidas y que son
+                      ejecutadas a nivel GPU
                     </li>
                     <li className="mb-3">
-                      <strong>Threejs:</strong>Explanation what this technologie
-                      is doing
-                    </li>
-                    <li className="mb-3">
-                      <strong>Blender:</strong>Explanation what this technologie
-                      is doing
+                      <strong>Framer:</strong> Parte de las animationes
+                      (manipulacion de contenido html) se realizaron con framer
                     </li>
                   </ul>
                 </div>
