@@ -22,6 +22,7 @@ import { RGBELoader } from "three/examples/jsm/Addons.js";
 import MovingMap from "../atoms/MovingMap";
 import { useInputMethod } from "../atoms/CheckInput";
 import Video3D from "../atoms/Video3D";
+import Final from "../atoms/Final";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -78,6 +79,7 @@ export default function Experience() {
               <ProjectRight positionZ={-40} />
               <ProjectLeft positionZ={-145} />
               <ProjectRight positionZ={-245} />
+              <Final></Final>
               {/* <OrbitControls></OrbitControls> */}
               <Camera scroll={scroll}></Camera>
               <MainScene scale={1} />
