@@ -64,7 +64,7 @@ export default function ProjectRight({ positionZ }) {
               ></div>
               <div className="relative z-10 grid w-full h-full grid-cols-3 text-white">
                 <div className="col-span-3 p-13">
-                  <h2 className="text-6xl mb-9">Primalport Website</h2>
+                  <h2 className="text-6xl mb-9">Primalport - Website</h2>
                   <p className="text-3xl mb-9">
                     Esta es la pagina principal de un projecto en conjunto, la
                     empresa se dedica a la importacion y esportacion de bienes.

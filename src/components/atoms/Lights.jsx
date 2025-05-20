@@ -1,4 +1,5 @@
 import { useHelper } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
@@ -13,6 +14,10 @@ export default function Lights({ targetRef }) {
       lightRef.current.target = targetRef.current;
     }
   }, []);
+
+  useFrame(({ camera }) => {
+    console.log(camera.position)
+  })
 
   return (
     <group>
