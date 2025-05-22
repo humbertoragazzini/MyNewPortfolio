@@ -55,7 +55,7 @@ export default function Experience() {
         <div style={{ height: "1500vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas shadows gl={{ physicallyCorrectLights: true }}>
-              <Environment
+              {/* <Environment
                 resolution={2048}
                 background
                 frames={1}
@@ -65,7 +65,9 @@ export default function Experience() {
                   <ambientLight intensity={1}></ambientLight>
                   <EnviromentScene></EnviromentScene>
                 </MovingMap>
-              </Environment>
+              </Environment> */}
+
+              <EnviromentScene scale={15}></EnviromentScene>
               <IframedLeft
                 positionZ={-40}
                 url={"https://www.primalports.com/"}

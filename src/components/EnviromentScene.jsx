@@ -49,7 +49,7 @@ export default function EnviromentScene(props) {
   });
 
   return (
-    <group {...props} dispose={null} position={[0, -10, 0]} scale={props.scale}>
+    <group {...props} dispose={null} position={[0, -10, -1250]} scale={props.scale}>
       <mesh
         castShadow
         receiveShadow
