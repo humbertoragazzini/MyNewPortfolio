@@ -23,6 +23,7 @@ import MovingMap from "../atoms/MovingMap";
 import { useInputMethod } from "../atoms/CheckInput";
 import Video3D from "../atoms/Video3D";
 import Final from "../atoms/Final";
+import EnviromentScene from "../EnviromentScene";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -54,7 +55,7 @@ export default function Experience() {
         <div style={{ height: "1500vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas shadows gl={{ physicallyCorrectLights: true }}>
-              {/* <Environment
+              <Environment
                 resolution={2048}
                 background
                 frames={1}
@@ -62,8 +63,9 @@ export default function Experience() {
               >
                 <MovingMap scroll={scroll}>
                   <ambientLight intensity={1}></ambientLight>
+                  <EnviromentScene></EnviromentScene>
                 </MovingMap>
-              </Environment> */}
+              </Environment>
               <IframedLeft
                 positionZ={-40}
                 url={"https://www.primalports.com/"}
