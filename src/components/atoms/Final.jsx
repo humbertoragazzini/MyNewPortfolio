@@ -6,7 +6,9 @@ export default function Final() {
             <div className="w-screen h-screen bg-transparent text-white">
                 <div className="grid grid-cols-2 p-14">
                     <div className="col-span-1">
-                        <img className="rounded-full" src="https://placehold.co/600x600"></img>
+                        <div className="rounded-full w-full max-w-[600px] aspect-square overflow-hidden">
+                            <img className="w-[105%]" src="./img/profile-photo.png"></img>
+                        </div>
                     </div>
                     <div className="col-span-1">
                         <ul>
