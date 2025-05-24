@@ -67,7 +67,7 @@ export default function Experience() {
                 </MovingMap>
               </Environment> */}
 
-              <EnviromentScene scale={15}></EnviromentScene>
+              {/* <EnviromentScene scale={15}></EnviromentScene> */}
               <IframedLeft
                 positionZ={-40}
                 url={"https://www.primalports.com/"}

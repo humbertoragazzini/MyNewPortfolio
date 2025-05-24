@@ -3,7 +3,7 @@ import { Html } from "@react-three/drei";
 export default function Final() {
     return (
         <Html occlude={"blending"} transform position={[0, 0, -1450]}>
-            <div className="w-screen h-screen bg-white text-black">
+            <div className="w-screen h-screen bg-transparent text-white">
                 <div className="grid grid-cols-2 p-14">
                     <div className="col-span-1">
                         <img className="rounded-full" src="https://placehold.co/600x600"></img>
