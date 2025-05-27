@@ -1,5 +1,5 @@
 export default function OverlayMenu(){
 	return(
-		<div className="h-screen w-screen bg-[rgba(200,50,100,0.5)]"></div>
+		<div className="fixed z-[999999] h-screen w-screen bg-[rgba(200,50,180,0.65)]"></div>
 	)
 }

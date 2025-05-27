@@ -24,6 +24,7 @@ import { useInputMethod } from "../atoms/CheckInput";
 import Video3D from "../atoms/Video3D";
 import Final from "../atoms/Final";
 import EnviromentScene from "../EnviromentScene";
+import OverlayMenu from "../molecules/OverlayMenu.jsx"
 
 export default function Experience() {
   const scrollContainerRef = useRef();
