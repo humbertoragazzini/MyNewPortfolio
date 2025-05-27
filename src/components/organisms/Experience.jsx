@@ -40,6 +40,7 @@ export default function Experience() {
   return (
     <div className="w-full h-screen overflow-hidden bg-black">
       {/* Scrollable container */}
+      <OverlayMenu></OverlayMenu>
       <div
         ref={scrollContainerRef}
         className="relative z-[9999] w-screen h-screen overflow-y-scroll"
