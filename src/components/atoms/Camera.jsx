@@ -10,8 +10,6 @@ import {
 } from "react";
 import * as THREE from "three";
 
-// const EnvMapContext = createContext();
-// export const useEnvMap = () => useContext(EnvMapContext);
 
 export default function Camera({ scroll, children }) {
   const { camera, gl, scene } = useThree();
@@ -19,19 +17,6 @@ export default function Camera({ scroll, children }) {
   const lerpSpeed = 0.05;
   const [horizontal, setHorizontal] = useState(0);
   const [vertical, setVertical] = useState(0);
-
-  // CubeCamera render target
-  // const cubeRenderTarget = useMemo(
-  //   () =>
-  //     new THREE.WebGLCubeRenderTarget(4096, {
-  //       format: THREE.RGBFormat,
-  //       generateMipmaps: true,
-  //       minFilter: THREE.LinearMipmapLinearFilter,
-  //     }),
-  //   []
-  // );
-
-  const cubeCameraRef = useRef();
 
   useEffect(() => {
     const move = (e) => {
@@ -69,18 +54,9 @@ export default function Camera({ scroll, children }) {
       lerpSpeed
     );
     camera.updateProjectionMatrix();
-
-    // // update cube camera from current camera position
-    // if (cubeCameraRef.current) {
-    //   cubeCameraRef.current.position.copy(camera.position);
-    //   cubeCameraRef.current.update(gl, scene);
-    // }
   });
 
-  return <PerspectiveCamera makeDefault far={25000} />;
+  return
+  <PerspectiveCamera makeDefault far={25000} />
 }
-// <EnvMapContext.Provider value={cubeRenderTarget.texture}>
 
-//   {/* <cubeCamera ref={cubeCameraRef} args={[0.1, 1000, cubeRenderTarget]} /> */}
-//   {/* {children} */}
-// // </EnvMapContext.Provider>
