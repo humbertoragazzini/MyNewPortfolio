@@ -7,7 +7,10 @@ function App() {
 
   return (
     <main className="w-screen h-screen overflow-hidden">
-      <Experience></Experience>
+
+      <AppProvider>
+        <Experience></Experience>
+      </AppProvider>
     </main>
   );
 }
