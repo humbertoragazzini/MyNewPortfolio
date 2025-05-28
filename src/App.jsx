@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Experience from "./components/organisms/Experience";
+import { AppProvider } from "./context/AppContext";
 
 function App() {
   const [Scroll, setScroll] = useState(0);

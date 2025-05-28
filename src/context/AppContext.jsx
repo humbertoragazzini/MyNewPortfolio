@@ -19,7 +19,6 @@ export const AppProvider = ({ children }) => {
         language,
         setLanguage,
         toggleLanguage,
-        // Add more global state items here as needed
       }}
     >
       {children}

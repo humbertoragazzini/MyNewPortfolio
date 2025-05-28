@@ -7,7 +7,7 @@ export default function Paragraph({ text, className }) {
 
     useEffect(() => {
         if (language == "en") {
-            setContent(text[en])
+            setContent(text[language])
         }
     }, [language])
 

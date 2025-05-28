@@ -1,18 +1,17 @@
-import { useEffect } from "react"
+import { useContext, useEffect, useState } from "react"
+import { AppContext } from "../../../context/AppContext";
 
-export default function Paragraph({ text, onClick, className }) {
+export default function Button({ text, onClick, className }) {
     const [content, setContent] = useState(null);
     const { language } =
         useContext(AppContext);
 
     useEffect(() => {
-        if (language == "en") {
-            setContent(text[en])
-        }
+        setContent(text[language])
     }, [language])
 
     return (
-        <button className={`${className}`} onClick={() => { onClick }}>
+        <button className={`${className}`} onClick={(e) => { onClick() }}>
             {content && content}
         </button>
     )
