@@ -12,7 +12,7 @@ import Lights from "../atoms/scene/Lights.jsx";
 import { RGBELoader } from "three/examples/jsm/Addons.js";
 import { useInputMethod } from "../../hooks/CheckInput.jsx";
 import Final from "../atoms/scene/Final.jsx";
-import OverlayMenu from "../molecules/OverlayMenu.jsx"
+import OverlayMenu from "../molecules/menu/OverlayMenu.jsx"
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -29,7 +29,6 @@ export default function Experience() {
   return (
     <div className="w-full h-screen overflow-hidden bg-black">
       {/* Scrollable container */}
-      <OverlayMenu></OverlayMenu>
       <div
         ref={scrollContainerRef}
         className="relative z-[9900] w-screen h-screen overflow-y-scroll"
