@@ -1,29 +1,17 @@
 import { Canvas, useLoader } from "@react-three/fiber";
-import {
-  Environment,
-  EnvironmentMap,
-  Html,
-  MeshReflectorMaterial,
-  OrbitControls,
-  PerspectiveCamera,
-} from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
 import { useScroll, motion } from "framer-motion";
-import MainScene from "../MainScene";
-import ProjectRight from "../atoms/ProjectRight";
-import Camera from "../atoms/Camera";
-import ProjectLeft from "../atoms/ProjectLeft";
-import IframedLeft from "../atoms/IframedLeft";
-import IframedRight from "../atoms/IframedRight";
+import MainScene from "./MainScene.jsx";
+import ProjectRight from "../atoms/scene/ProjectRight.jsx";
+import Camera from "../atoms/scene/Camera.jsx";
+import ProjectLeft from "../atoms/scene/ProjectLeft.jsx";
+import IframedLeft from "../atoms/scene/IframedLeft";
+import IframedRight from "../atoms/scene/IframedRight";
 import * as THREE from "three";
-import Lights from "../atoms/Lights";
-import { Background } from "../atoms/Background";
+import Lights from "../atoms/scene/Lights.jsx";
 import { RGBELoader } from "three/examples/jsm/Addons.js";
-import MovingMap from "../atoms/MovingMap";
-import { useInputMethod } from "../atoms/CheckInput";
-import Video3D from "../atoms/Video3D";
-import Final from "../atoms/Final";
-import EnviromentScene from "../EnviromentScene";
+import { useInputMethod } from "../../hooks/CheckInput.jsx";
+import Final from "../atoms/scene/Final.jsx";
 import OverlayMenu from "../molecules/OverlayMenu.jsx"
 
 export default function Experience() {
@@ -57,19 +45,6 @@ export default function Experience() {
         <div style={{ height: "1500vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas shadows gl={{ physicallyCorrectLights: true }}>
-              {/* <Environment
-                resolution={2048}
-                background
-                frames={1}
-                intensity={5}
-              >
-                <MovingMap scroll={scroll}>
-                  <ambientLight intensity={1}></ambientLight>
-                  <EnviromentScene></EnviromentScene>
-                </MovingMap>
-              </Environment> */}
-
-              {/* <EnviromentScene scale={15}></EnviromentScene> */}
               <IframedLeft
                 positionZ={-40}
                 url={"https://www.primalports.com/"}
