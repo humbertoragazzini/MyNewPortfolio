@@ -32,7 +32,7 @@ export default function Experience() {
       <OverlayMenu></OverlayMenu>
       <div
         ref={scrollContainerRef}
-        className="relative z-[9999] w-screen h-screen overflow-y-scroll"
+        className="relative z-[9900] w-screen h-screen overflow-y-scroll"
         onScroll={(e) => {
           const target = e.currentTarget;
           const scrollTop = target.scrollTop;
