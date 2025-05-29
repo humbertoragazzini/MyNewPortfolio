@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useContext, useEffect, useMemo, useRef } from "react";
 import { MeshReflectorMaterial, useGLTF, useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import {
@@ -8,9 +8,13 @@ import {
 } from "three";
 // import { useEnvMap } from "./atoms/Camera";
 import * as THREE from "three";
+import gsap from "gsap";
+import { AppContext } from "../../context/AppContext";
 
 export default function Model(props) {
   const { nodes, materials } = useGLTF("./blender/main-scene.glb");
+  const { isMenuOpen } = useContext(AppContext);
+  const planeMaterial = useRef();
   // const envMap = useEnvMap();
   const texture = useTexture("./blender/WALL1.jpg");
   const texture2 = useTexture("./blender/WALL2.jpg");
@@ -47,6 +51,24 @@ export default function Model(props) {
   const textureMaterialFloor = new THREE.MeshStandardMaterial({
     map: floor,
   });
+
+  useEffect(() => {
+    planeMaterial.current = new THREE.MeshBasicMaterial({ color: "white" });
+  }, [])
+
+  useEffect(() => {
+    if (!planeMaterial.current) return;
+
+    const targetColor = isMenuOpen ? "#000000" : "#ffffff";
+
+    gsap.to(planeMaterial.current.color, {
+      r: parseInt(targetColor.slice(1, 3), 16) / 255,
+      g: parseInt(targetColor.slice(3, 5), 16) / 255,
+      b: parseInt(targetColor.slice(5, 7), 16) / 255,
+      duration: 1.5,
+      delay: 0.5 // Adjust as needed
+    });
+  }, [isMenuOpen]);
 
   return (
     <group {...props} dispose={null} position={[0, -10, 0]} scale={props.scale}>
@@ -112,16 +134,17 @@ export default function Model(props) {
         castShadow
         receiveShadow
         geometry={nodes.Plane.geometry}
-        material={materials["Material.002"]}
+        material={planeMaterial.current}
         position={[212.414, -146.695, -131.685]}
         rotation={[0, 0, 0.823]}
         scale={[0.242, 0.691, 10.586]}
       />
+
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Plane001.geometry}
-        material={materials["Material.002"]}
+        material={planeMaterial.current}
         position={[-201.395, -146.695, -131.685]}
         rotation={[0, 0, -0.513]}
         scale={[0.242, 0.691, 10.586]}

@@ -12,7 +12,7 @@ export default function OverlayMenu() {
           toggleMenu();
           console.log("click menu");
         }}
-        className={`fixed w-[50px] h-[50px] z-[9999] bg-white text-black rounded-xl m-3 right-[20px] duration-500 ease-initial cursor-pointer ${
+        className={`fixed w-[50px] h-[50px] z-[9999] bg-white text-black rounded-xl m-3 right-[0px] duration-500 ease-initial cursor-pointer ${
           isMenuOpen ? "-translate-y-[calc(100%+50px)]" : "translate-y-0"
         }`}
       >
