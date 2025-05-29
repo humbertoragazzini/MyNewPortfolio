@@ -3,6 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { useContext, useEffect, useRef } from "react";
 import * as THREE from "three";
 import { AppContext } from "../../../context/AppContext";
+import gsap from "gsap";
 
 export default function Lights({ targetRef }) {
   const lightRef = useRef();
@@ -39,9 +40,17 @@ export default function Lights({ targetRef }) {
 
   useEffect(() => {
     if (isMenuOpen) {
-      gsap.to(ambientRef.current, { intensity: 0.15 });
+      gsap.to(ambientRef.current, {
+        intensity: 0.15,
+        duration: 1.5,
+        delay: 0.5,
+      });
     } else {
-      gsap.to(ambientRef.current, { intensity: 1.0 });
+      gsap.to(ambientRef.current, {
+        intensity: 1.0,
+        duration: 1.5,
+        delay: 0.5,
+      });
     }
   }, [isMenuOpen]);
 
