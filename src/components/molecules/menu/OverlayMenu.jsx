@@ -3,53 +3,67 @@ import { AppContext } from "../../../context/AppContext";
 import MenuButton from "./MenuButton";
 
 export default function OverlayMenu() {
-  const { toggleLanguage, isMenuOpen } = useContext(AppContext);
+  const { toggleLanguage, isMenuOpen, toggleMenu } = useContext(AppContext);
 
   return (
-    <div
-      className={`fixed ${
-        isMenuOpen ? "transform-y-0" : "transform-y-[120vh]"
-      } z-[9999] h-screen w-screen bg-[rgba(200,50,180,0.65)] flex justify-center items-center overflow-hidden`}
-    >
-      <div className="flex flex-col items-center justify-center">
-        <MenuButton
-          onClick={() => {
-            setIsMenuOpen(false);
-          }}
-          text={{
-            en: "START",
-            es: "COMENZAR",
-          }}
-        ></MenuButton>
-        <MenuButton
-          onClick={() => {
-            console.log("click menu");
-          }}
-          text={{
-            en: "SETTINGS",
-            es: "CONFIGURACION",
-          }}
-        ></MenuButton>
-        <MenuButton
-          onClick={() => {
-            console.log("working");
-            toggleLanguage();
-          }}
-          text={{
-            en: "LANGUAGE",
-            es: "IDIOMA",
-          }}
-        ></MenuButton>
-        <MenuButton
-          onClick={() => {
-            console.log("click menu");
-          }}
-          text={{
-            en: "GITHUB",
-            es: "GITHUB",
-          }}
-        ></MenuButton>
+    <>
+      <button
+        onClick={() => {
+          toggleMenu();
+          console.log("click menu");
+        }}
+        className={`fixed w-[50px] h-[50px] z-[9999] bg-white text-black rounded-xl m-3 right-[20px] duration-500 ease-initial cursor-pointer ${
+          isMenuOpen ? "-translate-y-[calc(100%+50px)]" : "translate-y-0"
+        }`}
+      >
+        Menu
+      </button>
+      <div
+        className={`fixed ${
+          isMenuOpen ? "translate-y-0" : "translate-y-[120vh]"
+        } z-[9999] transition-all duration-500 ease-initial trans h-screen w-screen bg-[rgba(200,50,180,0.65)] flex justify-center items-center overflow-hidden`}
+      >
+        <div className="flex flex-col items-center justify-center">
+          <MenuButton
+            onClick={() => {
+              toggleMenu();
+              console.log("click menu");
+            }}
+            text={{
+              en: "START",
+              es: "COMENZAR",
+            }}
+          ></MenuButton>
+          <MenuButton
+            onClick={() => {
+              console.log("click menu");
+            }}
+            text={{
+              en: "SETTINGS",
+              es: "CONFIGURACION",
+            }}
+          ></MenuButton>
+          <MenuButton
+            onClick={() => {
+              console.log("working");
+              toggleLanguage();
+            }}
+            text={{
+              en: "LANGUAGE",
+              es: "IDIOMA",
+            }}
+          ></MenuButton>
+          <MenuButton
+            onClick={() => {
+              console.log("click menu");
+            }}
+            text={{
+              en: "GITHUB",
+              es: "GITHUB",
+            }}
+          ></MenuButton>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
