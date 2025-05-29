@@ -8,7 +8,7 @@ export default function OverlayMenu() {
 		useContext(AppContext);
 
 	return (
-		<div className="fixed z-[9999] h-screen w-screen bg-[rgba(200,50,180,0.65)] flex justify-center items-center">
+		<div className="fixed z-[9999] h-screen w-screen bg-[rgba(200,50,180,0.65)] flex justify-center items-center overflow-hidden">
 
 			<div className="flex flex-col items-center justify-center">
 				<MenuButton onClick={() => { console.log("click menu") }} text={{
