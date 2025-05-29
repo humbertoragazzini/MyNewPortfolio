@@ -21,7 +21,7 @@ export default function OverlayMenu() {
       <div
         className={`fixed ${
           isMenuOpen ? "translate-y-0" : "translate-y-[120vh]"
-        } z-[9999] transition-all duration-500 ease-initial trans h-screen w-screen bg-[rgba(200,50,180,0.65)] flex justify-center items-center overflow-hidden`}
+        } z-[9999] backdrop-blur-md transition-all duration-500 ease-initial trans h-screen w-screen bg-[rgba(200,50,180,0.65)] flex justify-center items-center overflow-hidden`}
       >
         <div className="flex flex-col items-center justify-center">
           <MenuButton

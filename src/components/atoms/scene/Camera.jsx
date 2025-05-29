@@ -10,7 +10,6 @@ import {
 } from "react";
 import * as THREE from "three";
 
-
 export default function Camera({ scroll, children }) {
   const { camera, gl, scene } = useThree();
   const targetZ = 75 - 1 * 1492 * scroll;
@@ -56,7 +55,6 @@ export default function Camera({ scroll, children }) {
     camera.updateProjectionMatrix();
   });
 
-  return
-  <PerspectiveCamera makeDefault far={25000} />
+  return;
+  <PerspectiveCamera makeDefault far={25000} />;
 }
-
