@@ -98,7 +98,7 @@ export default function Model(props) {
         castShadow
         receiveShadow
         geometry={nodes.Torus.geometry}
-        material={materials.Rings}
+        material={planeMaterial.current}
         position={[0, 15.708, 0]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={35.277}
@@ -107,7 +107,7 @@ export default function Model(props) {
         castShadow
         receiveShadow
         geometry={nodes.Torus001.geometry}
-        material={materials.Rings}
+        material={planeMaterial.current}
         position={[0, 15.708, -100.005]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={35.277}
@@ -116,7 +116,7 @@ export default function Model(props) {
         castShadow
         receiveShadow
         geometry={nodes.Torus002.geometry}
-        material={materials.Rings}
+        material={planeMaterial.current}
         position={[0, 15.708, -200]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={35.277}
@@ -125,7 +125,7 @@ export default function Model(props) {
         castShadow
         receiveShadow
         geometry={nodes.Torus003.geometry}
-        material={materials.Rings}
+        material={planeMaterial.current}
         position={[0, 15.708, -300]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={35.277}
@@ -199,7 +199,7 @@ export default function Model(props) {
         castShadow
         receiveShadow
         geometry={nodes.Cube3363.geometry}
-        material={materials.CubeLight}
+        material={planeMaterial.current}
         position={[209.984, 187.755, -360.711]}
         rotation={[-Math.PI / 2, 0, Math.PI / 2]}
       />

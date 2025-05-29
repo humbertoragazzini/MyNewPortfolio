@@ -41,7 +41,7 @@ export default function Lights({ targetRef }) {
   useEffect(() => {
     if (isMenuOpen) {
       gsap.to(ambientRef.current, {
-        intensity: 0.15,
+        intensity: 0.0,
         duration: 1.5,
         delay: 0.5,
       });
