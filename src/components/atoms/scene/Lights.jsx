@@ -1,7 +1,8 @@
 import { useHelper } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import * as THREE from "three";
+import { AppContext } from "../../../context/AppContext";
 
 export default function Lights({ targetRef }) {
   const lightRef = useRef();
@@ -9,7 +10,9 @@ export default function Lights({ targetRef }) {
   const lightRef3 = useRef();
   const lightRef2 = useRef();
   const lightRef1 = useRef();
+  const ambientRef = useRef();
   useHelper(lightRef, THREE.DirectionalLightHelper, "red");
+  const { isMenuOpen } = useContext(AppContext);
   // const targetRef = useRef();
 
   useEffect(() => {
@@ -32,11 +35,19 @@ export default function Lights({ targetRef }) {
     if (camera.position.z < -650) {
       lightRef4.current.intensity = 500.0;
     }
-  })
+  });
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      gsap.to(ambientRef.current, { intensity: 0.15 });
+    } else {
+      gsap.to(ambientRef.current, { intensity: 1.0 });
+    }
+  }, [isMenuOpen]);
 
   return (
     <group>
-      <ambientLight intensity={1}></ambientLight>
+      <ambientLight ref={ambientRef} intensity={0.25}></ambientLight>
       <group position={[-2.887, 2.765, 2.643]}>
         <pointLight
           position={[0, 15.708, -1250]}

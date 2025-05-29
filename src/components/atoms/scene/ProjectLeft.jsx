@@ -64,22 +64,24 @@ export default function ProjectLeft({ positionZ }) {
               ></div>
               <div className="relative z-10 grid w-full h-full grid-cols-3 text-white">
                 <div className="col-span-3 p-13">
-                  <h2 className="text-6xl mb-9">Primalport Website</h2>
-                  <p className="text-3xl mb-9">
+                  <h2 className="text-6xl mb-9 orbitron font-[600]">
+                    Primalport Website
+                  </h2>
+                  <p className="text-3xl mb-9 orbitron font-[400]">
                     Esta es la pagina principal de un projecto en conjunto, la
                     empresa se dedica a la importacion y esportacion de bienes.
                   </p>
-                  <p className="text-3xl mb-9">
+                  <p className="text-3xl mb-9 orbitron font-[400]">
                     En este project se combino Nextjs y React three fiber en
                     conjunto con framer para darle vida a las animaciones.
                   </p>
                   <div className="flex">
                     <div className="">
-                      <p className="mb-4 text-2xl font-bold">
+                      <p className="mb-4 text-2xl  orbitron font-[600]">
                         Tecnologias usadas:
                       </p>
                     </div>
-                    <div className="pl-6">
+                    <div className="pl-6 orbitron font-[400]">
                       <ul className="text-2xl">
                         <li className="mb-3">
                           <p>NextJS</p>
@@ -95,7 +97,7 @@ export default function ProjectLeft({ positionZ }) {
                         </li>
                       </ul>
                     </div>
-                    <div className="pl-6">
+                    <div className="pl-6 orbitron font-[400]">
                       <ul className="text-2xl">
                         <li className="mb-3">
                           <p>Threejs</p>
