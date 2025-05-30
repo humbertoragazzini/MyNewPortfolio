@@ -42,15 +42,16 @@ export default function Experience() {
           const scrollHeight = target.scrollHeight;
           const clientHeight = target.clientHeight;
           const scrollProgress = scrollTop / (scrollHeight - clientHeight);
-          // setScroll(scrollProgress);
           scrollRef.current = scrollProgress;
         }}
       >
         <div style={{ height: "1500vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas shadows gl={{ physicallyCorrectLights: true }}>
-              <Environment resolution={2048} background>
-                <EnviromentScene scale={0.91} />
+              <Environment frames={Infinity} resolution={4096}>
+                <MovingMap scroll={scrollRef}>
+                  <EnviromentScene scale={1.0} />
+                </MovingMap>
               </Environment>
               <IframedLeft
                 positionZ={-40}
@@ -70,7 +71,7 @@ export default function Experience() {
               <Final></Final>
               {/* <OrbitControls></OrbitControls> */}
               <Camera scroll={scrollRef}></Camera>
-              {/* <MainScene scale={1} /> */}
+              <MainScene scale={1} />
               <Lights targetRef={targetRef}></Lights>
             </Canvas>
           </motion.div>

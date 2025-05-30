@@ -11,14 +11,11 @@ import {
 import * as THREE from "three";
 
 export default function Camera({ scroll, children }) {
-  // const { camera, gl, scene } = useThree();
   const cameraRef = useRef();
   const lerpSpeed = 0.05;
-  // const [horizontal, setHorizontal] = useState(0);
-  // const [vertical, setVertical] = useState(0);
   const horizontal = useRef(0);
   const vertical = useRef(0);
-  console.log("update");
+  console.log("Update Camera");
   useEffect(() => {
     const move = (e) => {
       horizontal.current =

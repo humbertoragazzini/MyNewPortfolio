@@ -12,8 +12,8 @@ import gsap from "gsap";
 import { AppContext } from "../../context/AppContext";
 
 export default function EnviromentScene(props) {
-  console.log("mounted");
   const { nodes, materials } = useGLTF("./blender/main-scene.glb");
+  const { isMenuOpen } = useContext(AppContext);
   const planeMaterial = useRef();
   // const envMap = useEnvMap();
   const texture = useTexture("./blender/WALL1.jpg");
@@ -52,8 +52,27 @@ export default function EnviromentScene(props) {
     map: floor,
   });
 
+  useEffect(() => {
+    planeMaterial.current = new THREE.MeshBasicMaterial({ color: "white" });
+  }, []);
+
+  useEffect(() => {
+    if (!planeMaterial.current) return;
+
+    const targetColor = isMenuOpen ? "#000000" : "#ffffff";
+
+    gsap.to(planeMaterial.current.color, {
+      r: parseInt(targetColor.slice(1, 3), 16) / 255,
+      g: parseInt(targetColor.slice(3, 5), 16) / 255,
+      b: parseInt(targetColor.slice(5, 7), 16) / 255,
+      duration: 1.5,
+      delay: 0.5, // Adjust as needed
+    });
+  }, [isMenuOpen]);
+
   return (
     <group {...props} dispose={null} position={[0, -10, 0]} scale={props.scale}>
+      <ambientLight></ambientLight>
       <mesh
         castShadow
         receiveShadow
@@ -149,13 +168,13 @@ export default function EnviromentScene(props) {
         position={[248.121, 210.655, -360.735]}
         rotation={[0, -1.571, 0]}
       />
-      <mesh
+      {/* <mesh
         castShadow
         receiveShadow
         geometry={nodes.WALL5.geometry}
         material={textureMaterial5}
         position={[252.941, 210, 107.045]}
-      />
+      /> */}
       <mesh
         castShadow
         receiveShadow
