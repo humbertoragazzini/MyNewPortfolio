@@ -15,10 +15,12 @@ import Final from "../atoms/scene/Final.jsx";
 import OverlayMenu from "../molecules/menu/OverlayMenu.jsx";
 import { Environment } from "@react-three/drei";
 import EnviromentScene from "./EnviromentScene.jsx";
+import MovingMap from "../atoms/scene/MovingMap.jsx";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
   const [scroll, setScroll] = useState(0);
+  const scrollRef = useRef(0);
   const targetRef = useRef();
   const texture = useLoader(RGBELoader, "./environ/env-2k-v1.hdr");
   texture.mapping = THREE.EquirectangularReflectionMapping;
@@ -40,15 +42,15 @@ export default function Experience() {
           const scrollHeight = target.scrollHeight;
           const clientHeight = target.clientHeight;
           const scrollProgress = scrollTop / (scrollHeight - clientHeight);
-          setScroll(scrollProgress);
+          // setScroll(scrollProgress);
+          scrollRef.current = scrollProgress;
         }}
       >
         <div style={{ height: "1500vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas shadows gl={{ physicallyCorrectLights: true }}>
-              <Environment background>
-                <Lights targetRef={targetRef}></Lights>
-                <EnviromentScene scale={0.55} />
+              <Environment resolution={2048} background>
+                <EnviromentScene scale={0.91} />
               </Environment>
               <IframedLeft
                 positionZ={-40}
@@ -67,8 +69,8 @@ export default function Experience() {
               <ProjectRight positionZ={-245} />
               <Final></Final>
               {/* <OrbitControls></OrbitControls> */}
-              <Camera scroll={scroll}></Camera>
-              <MainScene scale={1} />
+              <Camera scroll={scrollRef}></Camera>
+              {/* <MainScene scale={1} /> */}
               <Lights targetRef={targetRef}></Lights>
             </Canvas>
           </motion.div>
