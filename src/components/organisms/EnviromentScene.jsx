@@ -11,7 +11,7 @@ import * as THREE from "three";
 import gsap from "gsap";
 import { AppContext } from "../../context/AppContext";
 
-export default function Model(props) {
+export default function EnviromentScene(props) {
   const { nodes, materials } = useGLTF("./blender/main-scene.glb");
   const { isMenuOpen } = useContext(AppContext);
   const planeMaterial = useRef();
@@ -80,20 +80,6 @@ export default function Model(props) {
         position={[0, -15.057, -163.964]}
         scale={[11.624, 1.341, 4.007]}
       />
-      <mesh position={[0, -7.057, -180.964]}>
-        <boxGeometry args={[20, 0.25, 480.0]}></boxGeometry>
-        <meshPhysicalMaterial
-          transmission={1}
-          roughness={0}
-          thickness={0.5}
-          ior={1.5}
-          reflectivity={1}
-          clearcoat={1}
-          clearcoatRoughness={0}
-          metalness={0}
-          color="#ffffff"
-        />
-      </mesh>
       <mesh
         castShadow
         receiveShadow

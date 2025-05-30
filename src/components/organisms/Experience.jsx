@@ -12,7 +12,9 @@ import Lights from "../atoms/scene/Lights.jsx";
 import { RGBELoader } from "three/examples/jsm/Addons.js";
 import { useInputMethod } from "../../hooks/CheckInput.jsx";
 import Final from "../atoms/scene/Final.jsx";
-import OverlayMenu from "../molecules/menu/OverlayMenu.jsx"
+import OverlayMenu from "../molecules/menu/OverlayMenu.jsx";
+import { Environment } from "@react-three/drei";
+import EnviromentScene from "./EnviromentScene.jsx";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -44,6 +46,10 @@ export default function Experience() {
         <div style={{ height: "1500vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas shadows gl={{ physicallyCorrectLights: true }}>
+              <Environment background>
+                <Lights targetRef={targetRef}></Lights>
+                <EnviromentScene scale={0.55} />
+              </Environment>
               <IframedLeft
                 positionZ={-40}
                 url={"https://www.primalports.com/"}
