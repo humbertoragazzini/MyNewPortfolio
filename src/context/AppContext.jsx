@@ -1,19 +1,19 @@
 import React, { createContext, useState } from "react";
-import {RGBA_ASTC_4x4_Format} from "three";
+import { RGBA_ASTC_4x4_Format } from "three";
 
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [language, setLanguage] = useState("en");
-  const [reflections,setReflections] = useState();
-  const [reflectionQuality, setReflectionQuality] = useState(512);
+  const [reflections, setReflections] = useState(false);
+  const [reflectionQuality, setReflectionQuality] = useState(256);
   // Example of toggling values
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const toggleLanguage = () =>
     setLanguage((prev) => (prev === "en" ? "es" : "en"));
-  const toggleReflections = ()=>setReflections((prev)=>!prev)
-  const changeReflectionQuality = (quality)=>{setReflectionQuality(quality)}
+  const toggleReflections = () => setReflections((prev) => !prev)
+  const changeReflectionQuality = (quality) => { setReflectionQuality(quality) }
 
   return (
     <AppContext.Provider
