@@ -23,6 +23,7 @@ export const AppProvider = ({ children }) => {
         language,
         setLanguage,
         toggleLanguage,
+        reflections,
         toggleReflections,
         changeReflectionQuality
       }}

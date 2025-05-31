@@ -28,6 +28,7 @@ export default function Experience() {
   const inputMethod = useInputMethod();
   const { toggleReflections, changeReflectionQuality, reflections,
     reflectionQuality } = useContext(AppContext);
+
   useEffect(() => {
     console.log(inputMethod);
   }, []);

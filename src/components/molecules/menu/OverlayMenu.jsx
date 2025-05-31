@@ -4,7 +4,7 @@ import MenuButton from "./MenuButton";
 import { motion } from "framer-motion";
 
 export default function OverlayMenu() {
-  const { toggleLanguage, isMenuOpen, toggleMenu } = useContext(AppContext);
+  const { toggleLanguage, isMenuOpen, toggleMenu, toggleReflections, reflections } = useContext(AppContext);
   const [menu, setMenu] = useState("main");
 
   return (
@@ -79,14 +79,18 @@ export default function OverlayMenu() {
           >
             <MenuButton
               onClick={() => {
-                toggleMenu();
-                console.log("click menu");
+                toggleReflections();
+                console.log(reflections)
               }}
-              text={{
-                en: "REFLECTION: ON",
-                es: "REFLEJOS: ACTIVADAS",
-              }}
-            ></MenuButton>
+              text={(reflections ? {
+                en: `REFLECTION: ON`,
+                es: `REFLEJOS: ACTIVADO`,
+              } : {
+                en: `REFLECTION: OFF`,
+                es: `REFLEJOS: DESACTIVADO`,
+              })}
+            >
+            </MenuButton>
             <MenuButton
               onClick={() => {
                 setMenu("settings");
