@@ -82,15 +82,25 @@ export default function OverlayMenu() {
                 toggleReflections();
                 console.log(reflections)
               }}
-              text={(reflections ? {
-                en: `REFLECTION: ON`,
-                es: `REFLEJOS: ACTIVADO`,
-              } : {
-                en: `REFLECTION: OFF`,
-                es: `REFLEJOS: DESACTIVADO`,
-              })}
+              text={{
+                en: `REFLECTION:`,
+                es: `REFLEJOS:`,
+              }}
             >
             </MenuButton>
+            <div className="flex justify-center p-3 lg:p-5 lg:m-3 text-3xl md:text-4xl xl:text-6xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
+              {""}
+              <motion.div className="mx-3" animate={{
+                opacity: reflections ? 1 : 0.25
+              }}>
+                ON
+              </motion.div>
+              <motion.div className="mx-3" animate={{
+                opacity: !reflections ? 1 : 0.25
+              }}>
+                OFF
+              </motion.div>
+            </div>
             <MenuButton
               onClick={() => {
                 setMenu("settings");
