@@ -1,11 +1,16 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../../context/AppContext";
 import MenuButton from "./MenuButton";
 import { motion } from "framer-motion";
 
 export default function OverlayMenu() {
-  const { toggleLanguage, isMenuOpen, toggleMenu, toggleReflections, reflections } = useContext(AppContext);
+  const { toggleLanguage, isMenuOpen, toggleMenu, toggleReflections, reflections, changeReflectionQuality } = useContext(AppContext);
   const [menu, setMenu] = useState("main");
+  const [reflectionSize, setReflectionSize] = useState(256);
+
+  useEffect(() => {
+    changeReflectionQuality(reflectionSize)
+  }, [reflectionSize])
 
   return (
     <>
@@ -80,7 +85,6 @@ export default function OverlayMenu() {
             <MenuButton
               onClick={() => {
                 toggleReflections();
-                console.log(reflections)
               }}
               text={{
                 en: `REFLECTION:`,
@@ -110,6 +114,29 @@ export default function OverlayMenu() {
                 es: "CALIDAD DE LOS REFLEJOS",
               }}
             ></MenuButton>
+            <div className="flex justify-center p-3 lg:p-5 lg:m-3 text-3xl md:text-4xl xl:text-6xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
+              {""}
+              <motion.div className="mx-3" onClick={() => { setReflectionSize(256) }} animate={{
+                opacity: reflectionSize == 256 ? 1 : 0.25
+              }}>
+                LOW
+              </motion.div>
+              <motion.div className="mx-3" onClick={() => { setReflectionSize(512) }} animate={{
+                opacity: reflectionSize == 512 ? 1 : 0.25
+              }}>
+                MEDIUM
+              </motion.div>
+              <motion.div className="mx-3" onClick={() => { setReflectionSize(1024) }} animate={{
+                opacity: reflectionSize == 1024 ? 1 : 0.25
+              }}>
+                HIGH
+              </motion.div>
+              <motion.div className="mx-3" onClick={() => { setReflectionSize(2048) }} animate={{
+                opacity: reflectionSize == 2048 ? 1 : 0.25
+              }}>
+                ULTRA
+              </motion.div>
+            </div>
             <MenuButton
               onClick={() => {
                 console.log("working");
