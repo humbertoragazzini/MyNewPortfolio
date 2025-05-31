@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AppContext } from "../../../context/AppContext";
 import MenuButton from "./MenuButton";
+import { motion } from "framer-motion";
 
 export default function OverlayMenu() {
   const { toggleLanguage, isMenuOpen, toggleMenu } = useContext(AppContext);
+  const [menu, setMenu] = useState("main");
 
   return (
     <>
@@ -24,7 +26,12 @@ export default function OverlayMenu() {
           } z-[9999] backdrop-blur-md transition-all duration-500 ease-initial trans h-screen w-screen flex justify-center items-center overflow-hidden`}
       >
         <div className="flex flex-col items-center justify-center">
-          <motion.div>
+          <motion.div
+            animate={{
+              x: menu == "main" ? 0 : "110vw"
+            }}
+            className={"absolute flex flex-col"}
+          >
             <MenuButton
               onClick={() => {
                 toggleMenu();
@@ -35,35 +42,80 @@ export default function OverlayMenu() {
                 es: "COMENZAR",
               }}
             ></MenuButton>
+            <MenuButton
+              onClick={() => {
+                setMenu("settings");
+              }}
+              text={{
+                en: "SETTINGS",
+                es: "CONFIGURACION",
+              }}
+            ></MenuButton>
+            <MenuButton
+              onClick={() => {
+                console.log("working");
+                toggleLanguage();
+              }}
+              text={{
+                en: "LANGUAGE",
+                es: "IDIOMA",
+              }}
+            ></MenuButton>
+            <MenuButton
+              onClick={() => {
+                console.log("click menu");
+              }}
+              text={{
+                en: "GITHUB",
+                es: "GITHUB",
+              }}
+            ></MenuButton>
           </motion.div>
-          <MenuButton
-            onClick={() => {
-              console.log("click menu");
+          <motion.div
+            animate={{
+              x: menu == "settings" ? 0 : "110vw"
             }}
-            text={{
-              en: "SETTINGS",
-              es: "CONFIGURACION",
-            }}
-          ></MenuButton>
-          <MenuButton
-            onClick={() => {
-              console.log("working");
-              toggleLanguage();
-            }}
-            text={{
-              en: "LANGUAGE",
-              es: "IDIOMA",
-            }}
-          ></MenuButton>
-          <MenuButton
-            onClick={() => {
-              console.log("click menu");
-            }}
-            text={{
-              en: "GITHUB",
-              es: "GITHUB",
-            }}
-          ></MenuButton>
+            className={"absolute flex flex-col"}
+          >
+            <MenuButton
+              onClick={() => {
+                toggleMenu();
+                console.log("click menu");
+              }}
+              text={{
+                en: "REFLECTION: ON",
+                es: "REFLEJOS: ACTIVADAS",
+              }}
+            ></MenuButton>
+            <MenuButton
+              onClick={() => {
+                setMenu("settings");
+              }}
+              text={{
+                en: "REFLECTION QUALITY",
+                es: "CALIDAD DE LOS REFLEJOS",
+              }}
+            ></MenuButton>
+            <MenuButton
+              onClick={() => {
+                console.log("working");
+                toggleLanguage();
+              }}
+              text={{
+                en: "RESOLUTION",
+                es: "RESOLUCION",
+              }}
+            ></MenuButton>
+            <MenuButton
+              onClick={() => {
+                setMenu("main")
+              }}
+              text={{
+                en: "BACK",
+                es: "ATRAS",
+              }}
+            ></MenuButton>
+          </motion.div>
         </div>
       </div>
     </>
