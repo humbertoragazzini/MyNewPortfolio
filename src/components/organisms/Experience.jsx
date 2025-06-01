@@ -27,7 +27,7 @@ export default function Experience() {
   const texture = useLoader(RGBELoader, "./environ/env-2k-v1.hdr");
   texture.mapping = THREE.EquirectangularReflectionMapping;
   const inputMethod = useInputMethod();
-  const { toggleReflections, changeReflectionQuality, reflections,
+  const { toggleReflections, changeReflectionQuality, reflections, dpr,
     reflectionQuality } = useContext(AppContext);
 
   useEffect(() => {
@@ -51,7 +51,7 @@ export default function Experience() {
       >
         <div style={{ height: "1500vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
-            <Canvas shadows gl={{ physicallyCorrectLights: true }}>
+            <Canvas shadows dpr={dpr} gl={{ physicallyCorrectLights: true }}>
               {
                 reflections && (<Environment frames={Infinity} resolution={reflectionQuality}>
                   <MovingMap scroll={scrollRef}>

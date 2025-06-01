@@ -17,18 +17,18 @@ export const AppProvider = ({ children }) => {
   const changeReflectionQuality = (quality) => { setReflectionQuality(quality) }
   const changeDpr = (value) => {
     switch (value) {
-      case low: {
-        const newDpr = [0.35, 0.7]
+      case "low": {
+        const newDpr = [0.25, 0.35]
         setDpr(newDpr);
         break;
       }
-      case medium: {
+      case "medium": {
+        const newDpr = [0.5, 0.75]
+        setDpr(newDpr);
+        break;
+      }
+      case "high": {
         const newDpr = [1, 2]
-        setDpr(newDpr);
-        break;
-      }
-      case high: {
-        const newDpr = [2, 4]
         setDpr(newDpr);
         break;
       }
