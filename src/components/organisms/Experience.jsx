@@ -1,5 +1,5 @@
 import { Canvas, useLoader } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useScroll, motion } from "framer-motion";
 import MainScene from "./MainScene.jsx";
 import ProjectRight from "../atoms/scene/ProjectRight.jsx";
@@ -16,6 +16,8 @@ import OverlayMenu from "../molecules/menu/OverlayMenu.jsx";
 import { Environment } from "@react-three/drei";
 import EnviromentScene from "./EnviromentScene.jsx";
 import MovingMap from "../atoms/scene/MovingMap.jsx";
+import { AppContext } from "../../context/AppContext.jsx";
+import CheckSize from "../atoms/scene/CheckSize.jsx";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -25,6 +27,8 @@ export default function Experience() {
   const texture = useLoader(RGBELoader, "./environ/env-2k-v1.hdr");
   texture.mapping = THREE.EquirectangularReflectionMapping;
   const inputMethod = useInputMethod();
+  const { toggleReflections, changeReflectionQuality, reflections, dpr,
+    reflectionQuality } = useContext(AppContext);
 
   useEffect(() => {
     console.log(inputMethod);
@@ -47,12 +51,15 @@ export default function Experience() {
       >
         <div style={{ height: "1500vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
-            <Canvas shadows gl={{ physicallyCorrectLights: true }}>
-              <Environment frames={Infinity} resolution={4096}>
-                <MovingMap scroll={scrollRef}>
-                  <EnviromentScene scale={1.0} />
-                </MovingMap>
-              </Environment>
+            <Canvas shadows dpr={dpr} gl={{ physicallyCorrectLights: true }}>
+              {
+                reflections && (<Environment frames={Infinity} resolution={reflectionQuality}>
+                  <MovingMap scroll={scrollRef}>
+                    <EnviromentScene scale={1.0} />
+                  </MovingMap>
+                </Environment>)
+              }
+
               <IframedLeft
                 positionZ={-40}
                 url={"https://www.primalports.com/"}
@@ -73,6 +80,7 @@ export default function Experience() {
               <Camera scroll={scrollRef}></Camera>
               <MainScene scale={1} />
               <Lights targetRef={targetRef}></Lights>
+              <CheckSize></CheckSize>
             </Canvas>
           </motion.div>
         </div>

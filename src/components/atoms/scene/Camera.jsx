@@ -15,6 +15,7 @@ export default function Camera({ scroll, children }) {
   const lerpSpeed = 0.05;
   const horizontal = useRef(0);
   const vertical = useRef(0);
+
   console.log("Update Camera");
   useEffect(() => {
     const move = (e) => {
