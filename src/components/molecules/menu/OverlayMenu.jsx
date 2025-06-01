@@ -55,15 +55,21 @@ export default function OverlayMenu() {
               es: "IDIOMA",
             }}
           ></MenuButton>
-          <MenuButton
-            onClick={() => {
-              console.log("click menu");
-            }}
-            text={{
-              en: "GITHUB",
-              es: "GITHUB",
-            }}
-          ></MenuButton>
+          <a
+            href="https://github.com/humbertoragazzini"
+            className=""
+            target="_blank"
+          >
+            <MenuButton
+              onClick={() => {
+                console.log("click menu");
+              }}
+              text={{
+                en: "GITHUB",
+                es: "GITHUB",
+              }}
+            ></MenuButton>
+          </a>
         </div>
       </div>
     </>
