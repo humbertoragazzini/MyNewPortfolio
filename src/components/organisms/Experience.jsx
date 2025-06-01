@@ -17,6 +17,7 @@ import { Environment } from "@react-three/drei";
 import EnviromentScene from "./EnviromentScene.jsx";
 import MovingMap from "../atoms/scene/MovingMap.jsx";
 import { AppContext } from "../../context/AppContext.jsx";
+import CheckSize from "../atoms/scene/CheckSize.jsx";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -79,6 +80,7 @@ export default function Experience() {
               <Camera scroll={scrollRef}></Camera>
               <MainScene scale={1} />
               <Lights targetRef={targetRef}></Lights>
+              <CheckSize></CheckSize>
             </Canvas>
           </motion.div>
         </div>

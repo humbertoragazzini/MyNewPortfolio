@@ -1,10 +1,16 @@
 import { useThree } from '@react-three/fiber';
+import { useEffect } from 'react';
 
-function CheckSize() {
-    const { size } = useThree();
+export default function CheckSize() {
+    const { gl, size } = useThree();
 
-    console.log('Canvas width:', size.width);
-    console.log('Canvas height:', size.height);
+    useEffect(() => {
+        const dpr = gl.getPixelRatio();
+        const actualWidth = size.width * dpr;
+        const actualHeight = size.height * dpr;
+
+        console.log('Actual resolution:', actualWidth, 'x', actualHeight);
+    }, [gl, size]);
 
     return null;
 }
