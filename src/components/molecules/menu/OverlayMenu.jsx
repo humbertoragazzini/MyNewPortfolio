@@ -4,7 +4,8 @@ import MenuButton from "./MenuButton";
 import { motion } from "framer-motion";
 
 export default function OverlayMenu() {
-  const { toggleLanguage, isMenuOpen, toggleMenu, toggleReflections, reflections, changeReflectionQuality } = useContext(AppContext);
+  const { toggleLanguage, isMenuOpen, toggleMenu, toggleReflections, reflections, changeReflectionQuality, dpr,
+    changeDpr } = useContext(AppContext);
   const [menu, setMenu] = useState("main");
   const [reflectionSize, setReflectionSize] = useState(256);
 
@@ -147,6 +148,25 @@ export default function OverlayMenu() {
                 es: "RESOLUCION",
               }}
             ></MenuButton>
+
+            <div className="flex justify-center p-3 lg:p-5 lg:m-3 text-3xl md:text-4xl xl:text-6xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
+              {""}
+              <motion.div className="mx-3" onClick={() => { changeDpr("low") }} animate={{
+                opacity: dpr[0] == 0.35 ? 1 : 0.25
+              }}>
+                LOW
+              </motion.div>
+              <motion.div className="mx-3" onClick={() => { changeDpr("medium") }} animate={{
+                opacity: dpr[0] == 1 ? 1 : 0.25
+              }}>
+                MEDIUM
+              </motion.div>
+              <motion.div className="mx-3" onClick={() => { changeDpr("high") }} animate={{
+                opacity: dpr[1] == 4 ? 1 : 0.25
+              }}>
+                HIGH
+              </motion.div>
+            </div>
             <MenuButton
               onClick={() => {
                 setMenu("main")

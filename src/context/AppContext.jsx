@@ -48,7 +48,9 @@ export const AppProvider = ({ children }) => {
         reflections,
         toggleReflections,
         reflectionQuality,
-        changeReflectionQuality
+        changeReflectionQuality,
+        dpr,
+        changeDpr
       }}
     >
       {children}
