@@ -18,6 +18,7 @@ import EnviromentScene from "./EnviromentScene.jsx";
 import MovingMap from "../atoms/scene/MovingMap.jsx";
 import { AppContext } from "../../context/AppContext.jsx";
 import CheckSize from "../atoms/scene/CheckSize.jsx";
+import CubeMap from "../atoms/scene/CubeMap.jsx";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -78,6 +79,7 @@ export default function Experience() {
               <Final></Final>
               {/* <OrbitControls></OrbitControls> */}
               <Camera scroll={scrollRef}></Camera>
+              <CubeMap></CubeMap>
               <MainScene scale={1} />
               <Lights targetRef={targetRef}></Lights>
               <CheckSize></CheckSize>
