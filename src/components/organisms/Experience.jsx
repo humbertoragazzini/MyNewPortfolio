@@ -13,7 +13,7 @@ import { RGBELoader } from "three/examples/jsm/Addons.js";
 import { useInputMethod } from "../../hooks/CheckInput.jsx";
 import Final from "../atoms/scene/Final.jsx";
 import OverlayMenu from "../molecules/menu/OverlayMenu.jsx";
-import { Environment } from "@react-three/drei";
+import { CubeCamera, Environment, OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import EnviromentScene from "./EnviromentScene.jsx";
 import MovingMap from "../atoms/scene/MovingMap.jsx";
 import { AppContext } from "../../context/AppContext.jsx";
@@ -52,14 +52,14 @@ export default function Experience() {
       >
         <div style={{ height: "1500vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
-            <Canvas shadows dpr={dpr} gl={{ physicallyCorrectLights: true }}>
-              {
+            <Canvas shadows dpr={dpr}>
+              {/* {
                 reflections && (<Environment frames={Infinity} resolution={reflectionQuality}>
                   <MovingMap scroll={scrollRef}>
                     <EnviromentScene scale={1.0} />
                   </MovingMap>
                 </Environment>)
-              }
+              } */}
 
               <IframedLeft
                 positionZ={-40}
@@ -78,22 +78,84 @@ export default function Experience() {
               <ProjectRight positionZ={-245} />
               <Final></Final>
               {/* <OrbitControls></OrbitControls> */}
+              {/* <PerspectiveCamera></PerspectiveCamera> */}
               <Camera scroll={scrollRef}></Camera>
-              <CubeMap position={[0, 1, 0]} resolution={256} frames={Infinity}>
-                {(envMap) => (
+
+              <CubeMap scroll={scrollRef}>
+                {(texture) => <mesh>
                   <>
-                    <mesh position={[0, 1, 0]}>
-                      <sphereGeometry args={[1, 32, 32]} />
-                      <meshStandardMaterial envMap={envMap} metalness={1} roughness={0} />
+                    <mesh position={[0, -20, 45]}>
+                      <boxGeometry args={[30, 1, 35]} />
+                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
                     </mesh>
 
-                    {/* Another reflective mesh */}
-                    <mesh position={[2, 1, 0]}>
-                      <sphereGeometry args={[1, 32, 32]} />
-                      <meshStandardMaterial envMap={envMap} metalness={1} roughness={0} />
+                    <mesh position={[0, -20, 5]}>
+                      <boxGeometry args={[30, 1, 35]} />
+                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
+                    </mesh>
+
+                    <mesh position={[0, -20, -35]}>
+                      <boxGeometry args={[30, 1, 35]} />
+                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
+                    </mesh>
+
+                    <mesh position={[0, -20, -75]}>
+                      <boxGeometry args={[30, 1, 35]} />
+                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
+                    </mesh>
+
+                    <mesh position={[0, -20, -115]}>
+                      <boxGeometry args={[30, 1, 35]} />
+                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
+                    </mesh>
+
+                    <mesh position={[0, -20, -155]}>
+                      <boxGeometry args={[30, 1, 35]} />
+                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
+                    </mesh>
+
+                    <mesh position={[0, -20, -195]}>
+                      <boxGeometry args={[30, 1, 35]} />
+                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
+                    </mesh>
+
+                    <mesh position={[0, -20, -235]}>
+                      <boxGeometry args={[30, 1, 35]} />
+                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
+                    </mesh>
+
+                    <mesh position={[0, -20, -275]}>
+                      <boxGeometry args={[30, 1, 35]} />
+                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
+                    </mesh>
+
+                    <mesh position={[0, -20, -315]}>
+                      <boxGeometry args={[30, 1, 35]} />
+                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
+                    </mesh>
+
+                    <mesh position={[0, -20, -355]}>
+                      <boxGeometry args={[30, 1, 35]} />
+                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
+                    </mesh>
+
+                    <mesh position={[0, -20, -395]}>
+                      <boxGeometry args={[30, 1, 35]} />
+                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
+                    </mesh>
+
+                    <mesh position={[0, -20, -435]}>
+                      <boxGeometry args={[30, 1, 35]} />
+                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
+                    </mesh>
+
+                    <mesh position={[0, -20, -475]}>
+                      <boxGeometry args={[30, 1, 35]} />
+                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
                     </mesh>
                   </>
-                )}
+
+                </mesh>}
               </CubeMap>
               <MainScene scale={1} />
               <Lights targetRef={targetRef}></Lights>
