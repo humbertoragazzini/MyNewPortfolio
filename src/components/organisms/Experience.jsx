@@ -79,7 +79,22 @@ export default function Experience() {
               <Final></Final>
               {/* <OrbitControls></OrbitControls> */}
               <Camera scroll={scrollRef}></Camera>
-              <CubeMap></CubeMap>
+              <CubeMap position={[0, 1, 0]} resolution={256} frames={Infinity}>
+                {(envMap) => (
+                  <>
+                    <mesh position={[0, 1, 0]}>
+                      <sphereGeometry args={[1, 32, 32]} />
+                      <meshStandardMaterial envMap={envMap} metalness={1} roughness={0} />
+                    </mesh>
+
+                    {/* Another reflective mesh */}
+                    <mesh position={[2, 1, 0]}>
+                      <sphereGeometry args={[1, 32, 32]} />
+                      <meshStandardMaterial envMap={envMap} metalness={1} roughness={0} />
+                    </mesh>
+                  </>
+                )}
+              </CubeMap>
               <MainScene scale={1} />
               <Lights targetRef={targetRef}></Lights>
               <CheckSize></CheckSize>
