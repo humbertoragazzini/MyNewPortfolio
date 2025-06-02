@@ -85,76 +85,56 @@ export default function Experience() {
                 {(texture) => <mesh>
                   <>
                     <mesh position={[0, -20, 45]}>
-                      <boxGeometry args={[30, 1, 35]} />
+                      <boxGeometry args={[30, 2, 30]} />
                       <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
                     </mesh>
 
                     <mesh position={[0, -20, 5]}>
-                      <boxGeometry args={[30, 1, 35]} />
+                      <boxGeometry args={[30, 2, 30]} />
                       <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
                     </mesh>
 
                     <mesh position={[0, -20, -35]}>
-                      <boxGeometry args={[30, 1, 35]} />
+                      <boxGeometry args={[30, 2, 30]} />
                       <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
                     </mesh>
 
                     <mesh position={[0, -20, -75]}>
-                      <boxGeometry args={[30, 1, 35]} />
+                      <boxGeometry args={[30, 2, 30]} />
                       <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
                     </mesh>
 
                     <mesh position={[0, -20, -115]}>
-                      <boxGeometry args={[30, 1, 35]} />
+                      <boxGeometry args={[30, 2, 30]} />
                       <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
                     </mesh>
 
                     <mesh position={[0, -20, -155]}>
-                      <boxGeometry args={[30, 1, 35]} />
+                      <boxGeometry args={[30, 2, 30]} />
                       <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
                     </mesh>
 
                     <mesh position={[0, -20, -195]}>
-                      <boxGeometry args={[30, 1, 35]} />
+                      <boxGeometry args={[30, 2, 30]} />
                       <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
                     </mesh>
 
                     <mesh position={[0, -20, -235]}>
-                      <boxGeometry args={[30, 1, 35]} />
+                      <boxGeometry args={[30, 2, 30]} />
                       <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
                     </mesh>
 
                     <mesh position={[0, -20, -275]}>
-                      <boxGeometry args={[30, 1, 35]} />
+                      <boxGeometry args={[30, 2, 30]} />
                       <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
                     </mesh>
 
                     <mesh position={[0, -20, -315]}>
-                      <boxGeometry args={[30, 1, 35]} />
+                      <boxGeometry args={[30, 2, 30]} />
                       <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
                     </mesh>
 
-                    <mesh position={[0, -20, -355]}>
-                      <boxGeometry args={[30, 1, 35]} />
-                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
-                    </mesh>
-
-                    <mesh position={[0, -20, -395]}>
-                      <boxGeometry args={[30, 1, 35]} />
-                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
-                    </mesh>
-
-                    <mesh position={[0, -20, -435]}>
-                      <boxGeometry args={[30, 1, 35]} />
-                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
-                    </mesh>
-
-                    <mesh position={[0, -20, -475]}>
-                      <boxGeometry args={[30, 1, 35]} />
-                      <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
-                    </mesh>
                   </>
-
                 </mesh>}
               </CubeMap>
               <MainScene scale={1} />
