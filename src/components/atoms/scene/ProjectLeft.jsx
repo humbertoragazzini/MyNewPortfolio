@@ -3,6 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { useContext, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { AppContext } from "../../../context/AppContext";
+import gsap from "gsap";
 
 export default function ProjectLeft({ positionZ }) {
   const htmlRef = useRef();
@@ -35,6 +36,15 @@ export default function ProjectLeft({ positionZ }) {
     console.log(geometry);
   }, [isMenuOpen]);
 
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      gsap.to(meshRef.current.position, { y: -140, duration: 2 })
+    } else {
+      gsap.to(meshRef.current.position, { y: 0, duration: 2, delay: Math.random() * 2 })
+    }
+  }, [isMenuOpen]);
+
   return (
     <mesh
       ref={meshRef}
@@ -58,13 +68,13 @@ export default function ProjectLeft({ positionZ }) {
           >
             <div className="relative" ref={mainContainerRef}>
               <div
-                className={`absolute top-0 left-0 z-0 w-[125%] -translate-x-[12.5%] -translate-y-[5%] h-auto aspect-video blur-3xl ${!isMenuOpen ? "opacity-100" : "opacity-0"}`}
+                className={`absolute top-0 left-0 z-0 w-[125%] -translate-x-[12.5%] -translate-y-[5%] h-auto aspect-video blur-3xl `}
                 style={{
                   backgroundImage: "url(./img/primalport_img.png)",
                   backgroundSize: "cover",
                 }}
               ></div>
-              <div className={`relative z-10 grid w-full h-full grid-cols-3 text-white ${!isMenuOpen ? "opacity-100" : "opacity-0"}`}>
+              <div className={`relative z-10 grid w-full h-full grid-cols-3 text-white`}>
                 <div className="col-span-3 p-13">
                   <h2 className="text-6xl mb-9 orbitron font-[600]">
                     Primalport Website

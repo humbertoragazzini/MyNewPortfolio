@@ -15,7 +15,7 @@ export default function Video3D({ scale }) {
 
 function VideoMaterial({ url }) {
   const texture = useVideoTexture(url);
-  return <meshStandardMaterial map={texture} toneMapped={false} opacity={1.0} />;
+  return <meshBasicMaterial map={texture} toneMapped={false} opacity={1.0} />;
 }
 
 // function FallbackMaterial({ url }) {

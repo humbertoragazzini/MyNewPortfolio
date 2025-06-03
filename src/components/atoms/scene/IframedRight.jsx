@@ -4,6 +4,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import Video3D from "./Video3D";
 import { AppContext } from "../../../context/AppContext";
+import gsap from "gsap";
 
 export default function IframedRight({ positionZ, url }) {
   const htmlRef = useRef();
@@ -33,8 +34,12 @@ export default function IframedRight({ positionZ, url }) {
   }, []);
 
   useEffect(() => {
-    console.log(geometry);
-  }, [geometry]);
+    if (isMenuOpen) {
+      gsap.to(meshRef.current.position, { y: -120, duration: 2 })
+    } else {
+      gsap.to(meshRef.current.position, { y: 0, duration: 2, delay: Math.random() * 2 })
+    }
+  }, [isMenuOpen]);
 
   return (
 
@@ -42,24 +47,20 @@ export default function IframedRight({ positionZ, url }) {
       ref={meshRef}
       position={[30, 0, positionZ]}
       rotation={[0, -Math.PI / 4, 0]}
-    >    {
-        !isMenuOpen && <>
-
-          <mesh ref={geoRef} position={[0, 0, 0]}>
-            <planeGeometry args={[30, 20, 2]}></planeGeometry>
-            <meshStandardMaterial
-              color={"white"}
-              opacity={0}
-              transparent
-            ></meshStandardMaterial>
-            <Video3D scale={2}></Video3D>
-          </mesh>
-          <mesh position={[0, -12, 0]}>
-            <boxGeometry args={[30, 2, 2]}></boxGeometry>
-            <meshBasicMaterial color={"white"}></meshBasicMaterial>
-          </mesh>
-        </>
-      }
+    >
+      <mesh ref={geoRef} position={[0, 0, 0]}>
+        <planeGeometry args={[30, 20, 2]}></planeGeometry>
+        <meshStandardMaterial
+          color={"white"}
+          opacity={0}
+          transparent
+        ></meshStandardMaterial>
+        <Video3D scale={2}></Video3D>
+      </mesh>
+      <mesh position={[0, -12, 0]}>
+        <boxGeometry args={[30, 2, 2]}></boxGeometry>
+        <meshBasicMaterial color={"white"}></meshBasicMaterial>
+      </mesh>
     </mesh>
   );
 }
