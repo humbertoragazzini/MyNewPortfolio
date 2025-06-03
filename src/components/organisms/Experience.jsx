@@ -60,7 +60,7 @@ export default function Experience() {
                   </MovingMap>
                 </Environment>)
               } */}
-              {/* 
+
               <IframedLeft
                 positionZ={-40}
                 url={"https://www.primalports.com/"}
@@ -72,11 +72,11 @@ export default function Experience() {
               <IframedLeft
                 positionZ={-245}
                 url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
-              /> */}
-              {/* <ProjectRight positionZ={-40} />
+              />
+              <ProjectRight positionZ={-40} />
               <ProjectLeft positionZ={-145} />
               <ProjectRight positionZ={-245} />
-              <Final></Final> */}
+              <Final></Final>
               {/* <OrbitControls></OrbitControls> */}
               {/* <PerspectiveCamera></PerspectiveCamera> */}
               <Camera scroll={scrollRef}></Camera>
