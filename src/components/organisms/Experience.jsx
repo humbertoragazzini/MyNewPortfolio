@@ -19,6 +19,7 @@ import MovingMap from "../atoms/scene/MovingMap.jsx";
 import { AppContext } from "../../context/AppContext.jsx";
 import CheckSize from "../atoms/scene/CheckSize.jsx";
 import CubeMap from "../atoms/scene/CubeMap.jsx";
+import { BloomEffect } from "../atoms/scene/BloomEffect.jsx";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -52,7 +53,7 @@ export default function Experience() {
       >
         <div style={{ height: "1500vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
-            <Canvas shadows dpr={dpr}>
+            <Canvas shadows dpr={dpr} gl={{ preserveDrawingBuffer: false, antialias: true }}>
               {/* {
                 reflections && (<Environment frames={Infinity} resolution={reflectionQuality}>
                   <MovingMap scroll={scrollRef}>
@@ -61,6 +62,14 @@ export default function Experience() {
                 </Environment>)
               } */}
 
+              {/* <EffectComposer>
+                <Bloom
+                  intensity={1.5} // how strong the glow is
+                  luminanceThreshold={0.3} // minimum brightness to bloom
+                  luminanceSmoothing={0.9} // smooth edges
+                  blendFunction={BlendFunction.ADD} // blending mode
+                />
+              </EffectComposer> */}
               <IframedLeft
                 positionZ={-40}
                 url={"https://www.primalports.com/"}
@@ -140,6 +149,7 @@ export default function Experience() {
               <MainScene scale={1} />
               <Lights targetRef={targetRef}></Lights>
               <CheckSize></CheckSize>
+              <BloomEffect></BloomEffect>
             </Canvas>
           </motion.div>
         </div>
