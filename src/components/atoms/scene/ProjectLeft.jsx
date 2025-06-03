@@ -124,7 +124,7 @@ export default function ProjectLeft({ positionZ }) {
       </mesh>
       <mesh position={[0, -12, 0]}>
         <boxGeometry args={[30, 2, 2]}></boxGeometry>
-        <meshBasicMaterial color={"white"}></meshBasicMaterial>
+        <meshStandardMaterial color={[2.5, 2.5, 2.5]}></meshStandardMaterial>
       </mesh>
     </mesh>
   );

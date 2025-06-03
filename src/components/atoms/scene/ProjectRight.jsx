@@ -57,13 +57,13 @@ export default function ProjectRight({ positionZ }) {
           >
             <div className="relative" ref={mainContainerRef}>
               <div
-                className="absolute top-0 left-0 z-0 w-[125%] -translate-x-[12.5%] -translate-y-[5%] h-auto aspect-video blur-3xl"
+                className={`absolute top-0 left-0 z-0 w-[125%] -translate-x-[12.5%] -translate-y-[5%] h-auto aspect-video blur-3xl ${!isMenuOpen ? "opacity-100" : "opacity-0"}`}
                 style={{
                   backgroundImage: "url(./img/primalport_img.png)",
                   backgroundSize: "cover",
                 }}
               ></div>
-              <div className="relative z-10 grid w-full h-full grid-cols-3 text-white">
+              <div className={`relative z-10 grid w-full h-full grid-cols-3 text-white ${!isMenuOpen ? "opacity-100" : "opacity-0"}`}>
                 <div className="col-span-3 p-13">
                   <h2 className="text-6xl mb-9 orbitron font-[600]">
                     Primalport - Website
@@ -123,7 +123,7 @@ export default function ProjectRight({ positionZ }) {
       </mesh>
       <mesh position={[0, -12, 0]}>
         <boxGeometry args={[30, 2, 2]}></boxGeometry>
-        <meshBasicMaterial color={"white"}></meshBasicMaterial>
+        <meshStandardMaterial color={[2.5, 2.5, 2.5]}></meshStandardMaterial>
       </mesh>
     </mesh>
   );
