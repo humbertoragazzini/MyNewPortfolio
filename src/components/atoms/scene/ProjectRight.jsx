@@ -1,7 +1,8 @@
 import { Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import { AppContext } from "../../../context/AppContext";
 
 export default function ProjectRight({ positionZ }) {
   const htmlRef = useRef();
@@ -10,6 +11,7 @@ export default function ProjectRight({ positionZ }) {
   const mainContainerRef = useRef();
   const [geometry, setGeometry] = useState();
   const [show, setShow] = useState(false);
+  const { isMenuOpen } = useContext(AppContext);
 
   useFrame(() => {
     if (geoRef.current && mainContainerRef.current && htmlRef.current) {
@@ -31,15 +33,14 @@ export default function ProjectRight({ positionZ }) {
 
   useEffect(() => {
     console.log(geometry);
-  }, [geometry]);
+  }, [isMenuOpen]);
 
   return (
     <mesh
       ref={meshRef}
       position={[30, 0, positionZ]}
       rotation={[0, -Math.PI / 4, 0]}
-    >
-      <mesh ref={geoRef} position={[0, 0, 0]}>
+    ><mesh ref={geoRef} position={[0, 0, 0]}>
         <planeGeometry args={[30, 20, 2]}></planeGeometry>
         <meshStandardMaterial
           color={"white"}

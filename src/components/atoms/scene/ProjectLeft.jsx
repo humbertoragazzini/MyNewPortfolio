@@ -1,7 +1,8 @@
 import { Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import { AppContext } from "../../../context/AppContext";
 
 export default function ProjectLeft({ positionZ }) {
   const htmlRef = useRef();
@@ -10,6 +11,7 @@ export default function ProjectLeft({ positionZ }) {
   const mainContainerRef = useRef();
   const [geometry, setGeometry] = useState();
   const [show, setShow] = useState(false);
+  const { isMenuOpen } = useContext(AppContext);
 
   useFrame(() => {
     if (geoRef.current && mainContainerRef.current && htmlRef.current) {
@@ -31,7 +33,7 @@ export default function ProjectLeft({ positionZ }) {
 
   useEffect(() => {
     console.log(geometry);
-  }, [geometry]);
+  }, [isMenuOpen]);
 
   return (
     <mesh
@@ -56,13 +58,13 @@ export default function ProjectLeft({ positionZ }) {
           >
             <div className="relative" ref={mainContainerRef}>
               <div
-                className="absolute top-0 left-0 z-0 w-[125%] -translate-x-[12.5%] -translate-y-[5%] h-auto aspect-video blur-3xl"
+                className={`absolute top-0 left-0 z-0 w-[125%] -translate-x-[12.5%] -translate-y-[5%] h-auto aspect-video blur-3xl ${!isMenuOpen ? "opacity-100" : "opacity-0"}`}
                 style={{
                   backgroundImage: "url(./img/primalport_img.png)",
                   backgroundSize: "cover",
                 }}
               ></div>
-              <div className="relative z-10 grid w-full h-full grid-cols-3 text-white">
+              <div className={`relative z-10 grid w-full h-full grid-cols-3 text-white ${!isMenuOpen ? "opacity-100" : "opacity-0"}`}>
                 <div className="col-span-3 p-13">
                   <h2 className="text-6xl mb-9 orbitron font-[600]">
                     Primalport Website
