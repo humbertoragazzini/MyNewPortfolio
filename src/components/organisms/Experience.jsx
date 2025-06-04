@@ -54,13 +54,13 @@ export default function Experience() {
         <div style={{ height: "1500vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas shadows dpr={dpr} gl={{ preserveDrawingBuffer: false, antialias: true }}>
-              {/* {
+              {
                 reflections && (<Environment frames={Infinity} resolution={reflectionQuality}>
                   <MovingMap scroll={scrollRef}>
                     <EnviromentScene scale={1.0} />
                   </MovingMap>
                 </Environment>)
-              } */}
+              }
 
               {/* <EffectComposer>
                 <Bloom
@@ -149,7 +149,7 @@ export default function Experience() {
               <MainScene scale={1} />
               <Lights targetRef={targetRef}></Lights>
               <CheckSize></CheckSize>
-              <BloomEffect></BloomEffect>
+              {/* <BloomEffect></BloomEffect> */}
             </Canvas>
           </motion.div>
         </div>

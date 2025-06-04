@@ -20,14 +20,23 @@ export default function CubeMap({
         reflectionQuality,
     } = useContext(AppContext);
 
-    useFrame(() => {
+    useFrame((state) => {
         if (cameraRef.current && scroll.current !== undefined) {
             const targetZ = 75 - 1 * 1492 * scroll.current;
-            cameraRef.current.position.z = THREE.MathUtils.lerp(
-                cameraRef.current.position.z,
+            cameraRef.current.children[0].position.z = THREE.MathUtils.lerp(
+                cameraRef.current.children[0].position.z,
                 targetZ,
                 lerpSpeed
             );
+
+            // Temporarily disable EffectComposer render target
+            const currentRenderTarget = state.gl.getRenderTarget();
+            state.gl.setRenderTarget(null);
+
+            // ✅ Correctly update the cube render target
+            cameraRef.current.children[0].update(state.gl, state.scene);
+
+            state.gl.setRenderTarget(currentRenderTarget);
         }
     });
 
@@ -40,7 +49,7 @@ export default function CubeMap({
                         position={[0, 0, 0]}
                         far={25000}
                         resolution={reflectionQuality}
-                        frames={Infinity}
+                        frames={null}
                     >
                         {(texture) => {
                             if (envMap.current !== texture) {
