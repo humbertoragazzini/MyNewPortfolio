@@ -149,7 +149,6 @@ export default function Experience() {
               <MainScene scale={1} />
               <Lights targetRef={targetRef}></Lights>
               <CheckSize></CheckSize>
-              {/* <BloomEffect></BloomEffect> */}
             </Canvas>
           </motion.div>
         </div>
