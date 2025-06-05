@@ -92,7 +92,9 @@ export default function Experience() {
 
               <CubeMap scroll={scrollRef}>
                 {(texture) => <mesh>
-                  <>
+                  <>{
+                      texture !== undefined && (
+                        <group>
                     <mesh position={[0, -20, 45]}>
                       <boxGeometry args={[30, 2, 30]} />
                       <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
@@ -143,9 +145,14 @@ export default function Experience() {
                       <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture} />
                     </mesh>
 
+
+
+                        </group>
+                      )
+                    }
                   </>
                 </mesh>}
-              </CubeMap>
+              </CubeMap>*/}
               <MainScene scale={1} />
               <Lights targetRef={targetRef}></Lights>
               <CheckSize></CheckSize>

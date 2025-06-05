@@ -16,16 +16,25 @@ export default function CubeMap({
     const lerpSpeed = 0.05;
     const envMap = useRef(null);
     const [envMapTexture, setEnvMapTexture] = useState(null);
-
+    const bloomRef = useRef(null);
     const {
+        isMenuOpen,
         reflections,
         reflectionQuality,
     } = useContext(AppContext);
 
-    useFrame((state) => {
-        const cube = cameraRef.current?.children[0];
-        const mesh = cameraRef.current;
+    useState(() => {
+        if (isMenuOpen) {
+            console.log("menu open");
+        } else {
+            console.log("menu close");
+        }
+    }, [])
 
+    useFrame((state) => {
+        const cube = cameraRef.current?.children[CubeCamera];
+        const mesh = cameraRef.current;
+        console.log(cube)
         if (cube && mesh && scroll.current !== undefined) {
             cube.position.z = THREE.MathUtils.lerp(
                 cube.position.z,
@@ -53,7 +62,7 @@ export default function CubeMap({
 
     return (
         <group>
-            {reflections && (
+            {(reflections && reflectionQuality !== undefined) && (
                 <group>
                     <CubeCamera
                         ref={cameraRef}
