@@ -33,10 +33,6 @@ export default function IframedLeft({ positionZ, url }) {
     }
   }, []);
 
-  useEffect(() => {
-    console.log(geometry);
-  }, [geometry]);
-
 
   useEffect(() => {
     if (isMenuOpen) {

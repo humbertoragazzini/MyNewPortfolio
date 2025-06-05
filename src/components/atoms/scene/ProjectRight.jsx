@@ -32,10 +32,6 @@ export default function ProjectRight({ positionZ }) {
     }
   }, []);
 
-  useEffect(() => {
-    console.log(geometry);
-  }, [isMenuOpen]);
-
 
 
   useEffect(() => {

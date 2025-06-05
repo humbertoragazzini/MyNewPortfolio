@@ -16,7 +16,6 @@ export default function Camera({ scroll, children }) {
   const horizontal = useRef(0);
   const vertical = useRef(0);
 
-  console.log("Update Camera");
   useEffect(() => {
     const move = (e) => {
       horizontal.current =

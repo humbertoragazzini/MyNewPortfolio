@@ -21,13 +21,14 @@ export default function Effects({
         isMenuOpen,
         reflections,
         reflectionQuality,
+        postProcessing,
     } = useContext(AppContext);
 
     useState(() => {
         if (isMenuOpen) {
-            console.log("menu open");
+            // console.log("menu open");
         } else {
-            console.log("menu close");
+            // console.log("menu close");
         }
     }, [])
 
@@ -39,7 +40,6 @@ export default function Effects({
             )
             const cube = cameraRef.current.children[cubeIndex];
             if (cubeIndex !== undefined && scroll.current !== undefined) {
-                console.log("check")
                 cube.position.z = THREE.MathUtils.lerp(
                     cube.position.z,
                     75 - 1 * 1492 * scroll.current,
@@ -61,7 +61,7 @@ export default function Effects({
                 state.gl.autoClear = currentAutoClear;
             }
         }
-    }, 1);
+    }, 0);
 
 
 
@@ -84,15 +84,17 @@ export default function Effects({
             )}
 
             {!reflections && children()}
+            {
+                postProcessing && <EffectComposer>
+                    <Bloom
+                        intensity={1}
+                        luminanceThreshold={0.4}
+                        luminanceSmoothing={0.9}
+                        blendFunction={BlendFunction.SCREEN}
+                    />
+                </EffectComposer>
+            }
 
-            <EffectComposer>
-                <Bloom
-                    intensity={1}
-                    luminanceThreshold={0.4}
-                    luminanceSmoothing={0.9}
-                    blendFunction={BlendFunction.SCREEN}
-                />
-            </EffectComposer>
         </group>
     );
 }

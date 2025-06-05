@@ -18,7 +18,6 @@ export default function Lights({ targetRef }) {
 
   useEffect(() => {
     if (lightRef.current && targetRef.current) {
-      console.log(targetRef);
       lightRef.current.target = targetRef.current;
     }
   }, []);
