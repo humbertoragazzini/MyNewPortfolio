@@ -32,30 +32,34 @@ export default function Effects({
     }, [])
 
     useFrame((state) => {
-        const cubeIndex = cameraRef.current.children.findIndex(
-             (obj) => obj?.constructor?.name === 'CubeCamera'
-        )
-        const cube = cameraRef.current.children[cubeIndex];
-        if (cubeIndex && scroll.current !== undefined) {
-            cube.position.z = THREE.MathUtils.lerp(
-                cube.position.z,
-                75 - 1 * 1492 * scroll.current,
-                lerpSpeed
-            );
 
-            // save current renderer state
-            const currentRenderTarget = state.gl.getRenderTarget();
-            const currentAutoClear = state.gl.autoClear;
+        if (cameraRef.current !== undefined) {
+            const cubeIndex = cameraRef.current.children.findIndex(
+                (obj) => obj?.constructor?.name === 'CubeCamera'
+            )
+            const cube = cameraRef.current.children[cubeIndex];
+            if (cubeIndex !== undefined && scroll.current !== undefined) {
+                console.log("check")
+                cube.position.z = THREE.MathUtils.lerp(
+                    cube.position.z,
+                    75 - 1 * 1492 * scroll.current,
+                    lerpSpeed
+                );
 
-            state.gl.setRenderTarget(null); // render to screen (not composer target)
-            state.gl.autoClear = true;      // make sure framebuffer is cleared
+                // save current renderer state
+                const currentRenderTarget = state.gl.getRenderTarget();
+                const currentAutoClear = state.gl.autoClear;
 
-            // this is the critical fix: render only the scene to update the cubemap
-            cube.update(state.gl, state.scene);
+                state.gl.setRenderTarget(null); // render to screen (not composer target)
+                state.gl.autoClear = true;      // make sure framebuffer is cleared
 
-            // restore
-            state.gl.setRenderTarget(currentRenderTarget);
-            state.gl.autoClear = currentAutoClear;
+                // this is the critical fix: render only the scene to update the cubemap
+                cube.update(state.gl, state.scene);
+
+                // restore
+                state.gl.setRenderTarget(currentRenderTarget);
+                state.gl.autoClear = currentAutoClear;
+            }
         }
     }, 1);
 
@@ -78,6 +82,7 @@ export default function Effects({
                     </CubeCamera>
                 </group>
             )}
+
             {!reflections && children()}
 
             <EffectComposer>
