@@ -10,7 +10,6 @@ import {
 import * as THREE from "three";
 import gsap from "gsap";
 import { AppContext } from "../../context/AppContext";
-import CubeMap from "../atoms/scene/CubeMap";
 
 export default function Model(props) {
   const { nodes, materials } = useGLTF("./blender/main-scene.glb");

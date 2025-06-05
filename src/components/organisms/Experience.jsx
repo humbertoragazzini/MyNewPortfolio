@@ -18,7 +18,7 @@ import EnviromentScene from "./EnviromentScene.jsx";
 import MovingMap from "../atoms/scene/MovingMap.jsx";
 import { AppContext } from "../../context/AppContext.jsx";
 import CheckSize from "../atoms/scene/CheckSize.jsx";
-import CubeMap from "../atoms/scene/CubeMap.jsx";
+import Effects from "../atoms/scene/Effects.jsx";
 import { BloomEffect } from "../atoms/scene/BloomEffect.jsx";
 
 export default function Experience() {
@@ -54,22 +54,11 @@ export default function Experience() {
         <div style={{ height: "1500vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas shadows dpr={dpr} gl={{ preserveDrawingBuffer: false, antialias: true }}>
-              {
-                reflections && (<Environment frames={Infinity} resolution={reflectionQuality}>
-                  <MovingMap scroll={scrollRef}>
-                    <EnviromentScene scale={1.0} />
-                  </MovingMap>
-                </Environment>)
-              }
 
-              {/* <EffectComposer>
-                <Bloom
-                  intensity={1.5} // how strong the glow is
-                  luminanceThreshold={0.3} // minimum brightness to bloom
-                  luminanceSmoothing={0.9} // smooth edges
-                  blendFunction={BlendFunction.ADD} // blending mode
-                />
-              </EffectComposer> */}
+
+
+
+
               <IframedLeft
                 positionZ={-40}
                 url={"https://www.primalports.com/"}
@@ -90,7 +79,7 @@ export default function Experience() {
               {/* <PerspectiveCamera></PerspectiveCamera> */}
               <Camera scroll={scrollRef}></Camera>
 
-              <CubeMap scroll={scrollRef}>
+              <Effects scroll={scrollRef}>
                 {(texture) => <mesh>
                   <>{
                       texture !== undefined && (
@@ -152,7 +141,7 @@ export default function Experience() {
                     }
                   </>
                 </mesh>}
-              </CubeMap>*/}
+              </Effects>
               <MainScene scale={1} />
               <Lights targetRef={targetRef}></Lights>
               <CheckSize></CheckSize>

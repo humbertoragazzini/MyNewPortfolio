@@ -3,7 +3,6 @@ import { useRef } from "react";
 import * as THREE from "three";
 
 export default function MovingMap({ scroll, children }) {
-  console.log("Update MovingMap");
   const meshRef = useRef();
   const lerpSpeed = 0.05;
   useFrame(() => {
