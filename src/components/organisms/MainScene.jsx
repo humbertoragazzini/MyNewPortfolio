@@ -14,7 +14,7 @@ import { AppContext } from "../../context/AppContext";
 export default function Model(props) {
   const { nodes, materials } = useGLTF("./blender/main-scene.glb");
   const { isMenuOpen } = useContext(AppContext);
-  const planeMaterial = useRef();
+  const planeMaterial = useRef(new THREE.MeshBasicMaterial({ color: "white" }));
   // const envMap = useEnvMap();
   const texture = useTexture("./blender/WALL1.jpg");
   const texture2 = useTexture("./blender/WALL2.jpg");
@@ -51,10 +51,6 @@ export default function Model(props) {
   const textureMaterialFloor = new THREE.MeshStandardMaterial({
     map: floor,
   });
-
-  useEffect(() => {
-    planeMaterial.current = new THREE.MeshBasicMaterial({ color: "white" });
-  }, []);
 
   useEffect(() => {
     if (!planeMaterial.current) return;

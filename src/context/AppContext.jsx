@@ -4,10 +4,10 @@ import { RGBA_ASTC_4x4_Format } from "three";
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [language, setLanguage] = useState("en");
-  const [reflections, setReflections] = useState(false);
-  const [postProcessing, setPostProcessing] = useState(false);
+  const [reflections, setReflections] = useState(true);
+  const [postProcessing, setPostProcessing] = useState(true);
   const [reflectionQuality, setReflectionQuality] = useState(256);
   const [dpr, setDpr] = useState([1, 2])
   // Example of toggling values

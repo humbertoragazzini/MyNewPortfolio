@@ -31,6 +31,8 @@ export default function Experience() {
   const inputMethod = useInputMethod();
   const { toggleReflections, changeReflectionQuality, reflections, dpr,
     reflectionQuality } = useContext(AppContext);
+  const materialFloor = useRef(new THREE.MeshStandardMaterial({ color: "black" }))
+  const geometryFloor = useRef(new THREE.BoxGeometry(30, 2, 30));
 
   useEffect(() => {
     console.log(inputMethod);
@@ -75,58 +77,187 @@ export default function Experience() {
               <Camera scroll={scrollRef}></Camera>
               <Effects scroll={scrollRef}>
                 {(texture) => {
-
                   return (<mesh>
                     <group>
-                      <mesh position={[0, -20, 45]}>
-                        <boxGeometry args={[30, 2, 30]} />
+                      <mesh geometry={geometryFloor.current} position={[0, -20, 45]}>
+                        <meshStandardMaterial roughness={0} metalness={1.0} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, 5]}>
+                        <meshStandardMaterial roughness={0} metalness={1.0} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -35]}>
+                        <meshStandardMaterial roughness={0} metalness={1.0} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -75]}>
+                        <meshStandardMaterial roughness={0} metalness={1.0} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -115]}>
+                        <meshStandardMaterial roughness={0} metalness={1.0} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh position={[100, 0, -115]}>
+                        <sphereGeometry args={[20, 22, 30]} />
+                        <meshStandardMaterial roughness={0} metalness={1.0} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -155]}>
+                        <meshStandardMaterial roughness={0} metalness={1.0} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -195]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -235]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -275]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -315]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -355]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -395]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -435]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -475]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -515]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -555]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -595]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -635]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -675]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -715]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -755]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -795]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -835]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -875]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -915]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -955]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -995]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1035]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1075]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1115]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1155]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1195]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1235]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1275]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1315]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1355]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1395]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1435]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1475]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1515]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1555]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1595]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1635]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1675]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1715]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1755]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1795]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1835]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1875]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1915]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1955]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -1995]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -2035]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -2075]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -2115]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -2155]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -2195]}>
+                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
+                      </mesh>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, -2235]}>
                         <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
                       </mesh>
 
-                      <mesh position={[0, -20, 5]}>
-                        <boxGeometry args={[30, 2, 30]} />
-                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
-                      </mesh>
-
-                      <mesh position={[0, -20, -35]}>
-                        <boxGeometry args={[30, 2, 30]} />
-                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
-                      </mesh>
-
-                      <mesh position={[0, -20, -75]}>
-                        <boxGeometry args={[30, 2, 30]} />
-                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
-                      </mesh>
-
-                      <mesh position={[0, -20, -115]}>
-                        <boxGeometry args={[30, 2, 30]} />
-                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
-                      </mesh>
-
-                      <mesh position={[0, -20, -155]}>
-                        <boxGeometry args={[30, 2, 30]} />
-                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
-                      </mesh>
-
-                      <mesh position={[0, -20, -195]}>
-                        <boxGeometry args={[30, 2, 30]} />
-                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
-                      </mesh>
-
-                      <mesh position={[0, -20, -235]}>
-                        <boxGeometry args={[30, 2, 30]} />
-                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
-                      </mesh>
-
-                      <mesh position={[0, -20, -275]}>
-                        <boxGeometry args={[30, 2, 30]} />
-                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
-                      </mesh>
-
-                      <mesh position={[0, -20, -315]}>
-                        <boxGeometry args={[30, 2, 30]} />
-                        <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
-                      </mesh>
                     </group>
                   </mesh>)
                 }}

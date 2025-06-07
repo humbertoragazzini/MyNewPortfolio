@@ -37,8 +37,8 @@ export default function OverlayMenu() {
       </button>
       <div
         className={`fixed ${isMenuOpen
-            ? "translate-y-0 bg-[rgba(120,0,110,0.40)] "
-            : "translate-y-[120vh] bg-[rgba(200,50,180,0.45)] "
+          ? "translate-y-0 bg-[rgba(120,0,110,0.40)] "
+          : "translate-y-[120vh] bg-[rgba(200,50,180,0.45)] "
           } z-[9999] backdrop-blur-md transition-all duration-500 ease-initial trans h-screen w-screen flex justify-center items-center overflow-hidden`}
       >
         <div className="flex flex-col items-center justify-center">
@@ -57,6 +57,7 @@ export default function OverlayMenu() {
                 en: "START",
                 es: "COMENZAR",
               }}
+              className="m-3 text-3xl md:m-4 xl:m-5 md:text-4xl xl:text-6xl"
             ></MenuButton>
             <MenuButton
               onClick={() => {
@@ -66,6 +67,7 @@ export default function OverlayMenu() {
                 en: "SETTINGS",
                 es: "CONFIGURACION",
               }}
+              className="m-3 text-3xl md:m-4 xl:m-5 md:text-4xl xl:text-6xl"
             ></MenuButton>
             <MenuButton
               onClick={() => {
@@ -76,6 +78,7 @@ export default function OverlayMenu() {
                 en: "LANGUAGE",
                 es: "IDIOMA",
               }}
+              className="m-3 text-3xl md:m-4 xl:m-5 md:text-4xl xl:text-6xl"
             ></MenuButton>
             <a
               className="flex justify-center mx-auto w-fit"
@@ -90,6 +93,7 @@ export default function OverlayMenu() {
                   en: "GITHUB",
                   es: "GITHUB",
                 }}
+                className="m-3 text-3xl md:m-4 xl:m-5 md:text-4xl xl:text-6xl"
               ></MenuButton>
             </a>
           </motion.div>
@@ -107,9 +111,9 @@ export default function OverlayMenu() {
                 en: `REFLECTION:`,
                 es: `REFLEJOS:`,
               }}
+              className="text-lg md:text-xl lg:text-2xl xl:text-3xl"
             ></MenuButton>
-            <div className="flex justify-center p-3 lg:p-5 lg:m-3 text-3xl md:text-4xl xl:text-6xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
-              {""}
+            <div className="flex justify-center p-2 mb-5 text-xl md:text-2xl xl:text-3xl orbitron font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
                 className="mx-3"
                 animate={{
@@ -126,7 +130,8 @@ export default function OverlayMenu() {
               >
                 OFF
               </motion.div>
-            </div>            <MenuButton
+            </div>
+            <MenuButton
               onClick={() => {
                 togglePostProcessing();
               }}
@@ -134,9 +139,9 @@ export default function OverlayMenu() {
                 en: `Postprocessing:`,
                 es: `Postprocesado:`,
               }}
+              className="text-lg md:text-xl lg:text-2xl xl:text-3xl"
             ></MenuButton>
-            <div className="flex justify-center p-3 lg:p-5 lg:m-3 text-3xl md:text-4xl xl:text-6xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
-              {""}
+            <div className="flex justify-center p-2 mb-5 text-xl md:text-2xl xl:text-3xl orbitron font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
                 className="mx-3"
                 animate={{
@@ -155,16 +160,14 @@ export default function OverlayMenu() {
               </motion.div>
             </div>
             <MenuButton
-              onClick={() => {
-                setMenu("settings");
-              }}
               text={{
                 en: "REFLECTION QUALITY",
                 es: "CALIDAD DE LOS REFLEJOS",
               }}
+              animated={false}
+              className="text-lg md:text-xl lg:text-2xl xl:text-3xl"
             ></MenuButton>
-            <div className="flex justify-center p-3 lg:p-5 lg:m-3 text-3xl md:text-4xl xl:text-6xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
-              {""}
+            <div className="flex justify-center p-2 mb-5 text-xl md:text-2xl xl:text-3xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
                 className="mx-3"
                 onClick={() => {
@@ -211,18 +214,14 @@ export default function OverlayMenu() {
               </motion.div>
             </div>
             <MenuButton
-              onClick={() => {
-                console.log("working");
-                toggleLanguage();
-              }}
               text={{
                 en: "RESOLUTION",
                 es: "RESOLUCION",
               }}
+              animated={false}
+              className="text-lg md:text-xl lg:text-2xl xl:text-3xl"
             ></MenuButton>
-
-            <div className="flex justify-center p-3 lg:p-5 lg:m-3 text-3xl md:text-4xl xl:text-6xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
-              {""}
+            <div className="flex justify-center p-2 mb-5 text-xl md:text-2xl xl:text-3xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
                 className="mx-3"
                 onClick={() => {
@@ -265,6 +264,7 @@ export default function OverlayMenu() {
                 en: "BACK",
                 es: "ATRAS",
               }}
+              className="text-lg md:text-xl lg:text-2xl xl:text-3xl"
             ></MenuButton>
           </motion.div>
         </div>
