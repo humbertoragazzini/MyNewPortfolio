@@ -55,12 +55,12 @@ export default function Model(props) {
   useEffect(() => {
     if (!planeMaterial.current) return;
 
-    const targetColor = isMenuOpen ? "#000000" : "#ffffff";
+    const targetColor = isMenuOpen ? 0 : 2;
 
     gsap.to(planeMaterial.current.color, {
-      r: parseInt(targetColor.slice(1, 3), 16) / 255,
-      g: parseInt(targetColor.slice(3, 5), 16) / 255,
-      b: parseInt(targetColor.slice(5, 7), 16) / 255,
+      r: targetColor,
+      g: targetColor,
+      b: targetColor,
       duration: 1.5,
       delay: 0.5, // Adjust as needed
     });

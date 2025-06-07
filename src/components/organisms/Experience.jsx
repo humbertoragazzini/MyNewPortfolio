@@ -32,7 +32,7 @@ export default function Experience() {
   const { toggleReflections, changeReflectionQuality, reflections, dpr,
     reflectionQuality } = useContext(AppContext);
   const materialFloor = useRef(new THREE.MeshStandardMaterial({ color: "black" }))
-  const geometryFloor = useRef(new THREE.BoxGeometry(30, 2, 30));
+  const geometryFloor = useRef(new THREE.BoxGeometry(20, 1, 30));
 
   useEffect(() => {
     console.log(inputMethod);
