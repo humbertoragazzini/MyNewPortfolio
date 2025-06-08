@@ -94,10 +94,6 @@ export default function Experience() {
                       <mesh geometry={geometryFloor.current} position={[0, -20, -115]}>
                         <meshStandardMaterial roughness={0} metalness={1.0} color="#000022" envMap={texture ?? undefined} />
                       </mesh>
-                      <mesh position={[100, 0, -115]}>
-                        <sphereGeometry args={[20, 22, 30]} />
-                        <meshStandardMaterial roughness={0} metalness={1.0} color="#000022" envMap={texture ?? undefined} />
-                      </mesh>
                       <mesh geometry={geometryFloor.current} position={[0, -20, -155]}>
                         <meshStandardMaterial roughness={0} metalness={1.0} color="#000022" envMap={texture ?? undefined} />
                       </mesh>
