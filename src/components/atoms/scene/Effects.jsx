@@ -66,7 +66,7 @@ export default function Effects({
                         ref={cameraRef}
                         position={[0, 0, 0]}
                         far={25000}
-                        resolution={128}
+                        resolution={reflectionQuality}
                         frames={1}
                     >
                         {(texture) => {
@@ -76,7 +76,7 @@ export default function Effects({
                 </group>
             )}
 
-            {!reflections && children()}
+            {/* {!reflections && children()}
             {
                 postProcessing && <EffectComposer>
                     <Bloom
@@ -86,7 +86,7 @@ export default function Effects({
                         blendFunction={BlendFunction.SCREEN}
                     />
                 </EffectComposer>
-            }
+            } */}
 
         </group>
     );
