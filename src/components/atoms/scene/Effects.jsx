@@ -64,7 +64,7 @@ export default function Effects({
                         ref={cameraRef}
                         position={[0, 0, 0]}
                         far={25000}
-                        resolution={256}
+                        resolution={reflectionQuality}
                         frames={1}
                     >
                         {(texture) => {
