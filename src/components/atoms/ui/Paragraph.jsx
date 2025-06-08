@@ -4,7 +4,7 @@ export default function Paragraph({ text, className, language }) {
     const [content, setContent] = useState(null);
 
     useEffect(() => {
-        if (language == "en") {
+        if (language !== undefined) {
             setContent(text[language])
         }
     }, [language])
