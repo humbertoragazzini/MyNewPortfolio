@@ -60,21 +60,21 @@ export default function Effects({
 
     return (
         <group>
-            {(reflections && reflectionQuality !== undefined) && (
-                <group>
-                    <CubeCamera
-                        ref={cameraRef}
-                        position={[0, 0, 0]}
-                        far={25000}
-                        resolution={reflectionQuality}
-                        frames={1}
-                    >
-                        {(texture) => {
-                            return children(texture)
-                        }}
-                    </CubeCamera>
-                </group>
-            )}
+            {/* {(reflections && reflectionQuality !== undefined) && ( */}
+            <group>
+                <CubeCamera
+                    ref={cameraRef}
+                    position={[0, 0, 0]}
+                    far={25000}
+                    resolution={256}
+                    frames={1}
+                >
+                    {(texture) => {
+                        return children(texture)
+                    }}
+                </CubeCamera>
+            </group>
+            {/* )} */}
 
             {/* {!reflections && children()}
             {
