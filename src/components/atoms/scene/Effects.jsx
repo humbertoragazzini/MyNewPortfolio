@@ -23,13 +23,16 @@ export default function Effects({
         reflectionQuality,
         postProcessing,
     } = useContext(AppContext);
-    console.log("another version 1.5")
+    console.log("another version 2.0")
     useFrame((state) => {
         if (cameraRef.current) {
             const cubeIndex = cameraRef.current.children.findIndex(
                 (obj) => obj?.constructor?.name === 'CubeCamera'
             )
             const cube = cameraRef.current.children[cubeIndex];
+            console.log(cube)
+            console.log(cubeIndex)
+            console.log(cameraRef.current.children)
             if (cube !== undefined && cubeIndex !== undefined && scroll.current !== undefined) {
                 cube.position.z = THREE.MathUtils.lerp(
                     cube.position.z,
