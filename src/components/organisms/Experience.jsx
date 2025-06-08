@@ -29,7 +29,7 @@ export default function Experience() {
   const { toggleReflections, language, changeReflectionQuality, reflections, dpr,
     reflectionQuality } = useContext(AppContext);
   const materialFloor = useRef(new THREE.MeshStandardMaterial({ color: "black" }))
-  const geometryFloor = useRef(new THREE.BoxGeometry(20, 1, 400));
+  const geometryFloor = useRef(new THREE.BoxGeometry(20, 1, 30));
 
   useEffect(() => {
     console.log(inputMethod);
@@ -142,11 +142,7 @@ export default function Experience() {
                 {(texture) => {
                   return (<mesh>
                     <group>
-                      <mesh position={[0, -20, -100]}>
-                        <boxGeometry args={[20, 1, 400]}></boxGeometry>
-                        <meshStandardMaterial roughness={0} metalness={1.0} color="#000022" envMap={texture ?? undefined} />
-                      </mesh>
-                      {/* <mesh geometry={geometryFloor.current} position={[0, -20, 45]}>
+                      <mesh geometry={geometryFloor.current} position={[0, -20, 45]}>
                         <meshStandardMaterial roughness={0} metalness={1.0} color="#000022" envMap={texture ?? undefined} />
                       </mesh>
                       <mesh geometry={geometryFloor.current} position={[0, -20, 5]}>
@@ -319,8 +315,7 @@ export default function Experience() {
                       </mesh>
                       <mesh geometry={geometryFloor.current} position={[0, -20, -2235]}>
                         <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
-                      </mesh> */}
-
+                      </mesh>
                     </group>
                   </mesh>)
                 }}

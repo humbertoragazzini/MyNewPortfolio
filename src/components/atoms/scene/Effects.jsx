@@ -25,7 +25,7 @@ export default function Effects({
     } = useContext(AppContext);
 
     useFrame((state) => {
-        if (cameraRef.current !== undefined) {
+        if (cameraRef.current) {
             const cubeIndex = cameraRef.current.children.findIndex(
                 (obj) => obj?.constructor?.name === 'CubeCamera'
             )
@@ -58,23 +58,23 @@ export default function Effects({
 
     return (
         <group>
-            {/* {(reflections && reflectionQuality !== undefined) && ( */}
-            <group>
-                <CubeCamera
-                    ref={cameraRef}
-                    position={[0, 0, 0]}
-                    far={25000}
-                    resolution={256}
-                    frames={1}
-                >
-                    {(texture) => {
-                        return children(texture)
-                    }}
-                </CubeCamera>
-            </group>
-            {/* )} */}
+            {(reflections && reflectionQuality !== undefined) && (
+                <group>
+                    <CubeCamera
+                        ref={cameraRef}
+                        position={[0, 0, 0]}
+                        far={25000}
+                        resolution={256}
+                        frames={1}
+                    >
+                        {(texture) => {
+                            return children(texture)
+                        }}
+                    </CubeCamera>
+                </group>
+            )}
 
-            {/* {!reflections && children()}
+            {!reflections && children()}
             {
                 postProcessing && <EffectComposer>
                     <Bloom
@@ -84,7 +84,7 @@ export default function Effects({
                         blendFunction={BlendFunction.SCREEN}
                     />
                 </EffectComposer>
-            } */}
+            }
 
         </group>
     );
