@@ -24,14 +24,6 @@ export default function Effects({
         postProcessing,
     } = useContext(AppContext);
 
-    useState(() => {
-        if (isMenuOpen) {
-            // console.log("menu open");
-        } else {
-            // console.log("menu close");
-        }
-    }, [])
-
     useFrame((state) => {
         if (reflections) {
             if (cameraRef.current !== undefined) {
@@ -74,7 +66,7 @@ export default function Effects({
                         ref={cameraRef}
                         position={[0, 0, 0]}
                         far={25000}
-                        resolution={reflectionQuality}
+                        resolution={128}
                         frames={1}
                     >
                         {(texture) => {
