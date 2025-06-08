@@ -12,8 +12,7 @@ export default function Paragraph({ text, className }) {
     }, [language])
 
     return (
-        <p className={`${className}`}>
-            {content && content}
+        <p className={`${className}`} dangerouslySetInnerHTML={{ __html: content }}>
         </p>
     )
 }

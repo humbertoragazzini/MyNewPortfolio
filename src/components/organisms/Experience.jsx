@@ -29,7 +29,7 @@ export default function Experience() {
   const texture = useLoader(RGBELoader, "./environ/env-2k-v1.hdr");
   texture.mapping = THREE.EquirectangularReflectionMapping;
   const inputMethod = useInputMethod();
-  const { toggleReflections, changeReflectionQuality, reflections, dpr,
+  const { toggleReflections, language, changeReflectionQuality, reflections, dpr,
     reflectionQuality } = useContext(AppContext);
   const materialFloor = useRef(new THREE.MeshStandardMaterial({ color: "black" }))
   const geometryFloor = useRef(new THREE.BoxGeometry(20, 1, 30));
@@ -68,7 +68,7 @@ export default function Experience() {
                 positionZ={-245}
                 url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
               />
-              <ProjectRight positionZ={-40} />
+              <ProjectRight positionZ={-40} language={language} />
               <ProjectLeft positionZ={-145} />
               <ProjectRight positionZ={-245} />
               <Final></Final>

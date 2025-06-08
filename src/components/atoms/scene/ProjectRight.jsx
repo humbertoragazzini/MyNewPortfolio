@@ -4,6 +4,8 @@ import { useContext, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { AppContext } from "../../../context/AppContext";
 import gsap from "gsap";
+import Heading from "../ui/Heading";
+import Paragraph from "../ui/Paragraph";
 
 export default function ProjectRight({ positionZ }) {
   const htmlRef = useRef();
@@ -12,7 +14,7 @@ export default function ProjectRight({ positionZ }) {
   const mainContainerRef = useRef();
   const [geometry, setGeometry] = useState();
   const [show, setShow] = useState(false);
-  const { isMenuOpen } = useContext(AppContext);
+  const { isMenuOpen, language } = useContext(AppContext);
 
   useFrame(() => {
     if (geoRef.current && mainContainerRef.current && htmlRef.current) {
@@ -72,22 +74,27 @@ export default function ProjectRight({ positionZ }) {
               ></div>
               <div className={`relative z-10 grid w-full h-full grid-cols-3 text-white`}>
                 <div className="col-span-3 p-13">
-                  <h2 className="text-6xl mb-9 orbitron font-[600]">
-                    Primalport - Website
-                  </h2>
-                  <p className="text-3xl mb-9 orbitron font-[400]">
-                    Esta es la pagina principal de un projecto en conjunto, la
-                    empresa se dedica a la importacion y esportacion de bienes.
-                  </p>
-                  <p className="text-3xl mb-9 orbitron font-[400]">
-                    En este project se combino Nextjs y React three fiber en
-                    conjunto con framer para darle vida a las animaciones.
-                  </p>
+                  <Heading className="text-6xl mb-9 orbitron font-[600]" level={1} language={language} text={{
+                    en: "Primalport - Website",
+                    es: "Primalport - Sitio web"
+                  }}>
+                  </Heading>
+                  <Paragraph
+                    text={{
+                      en: "This is the main page of a collaborative project. The company is dedicated to the import and export of goods. On this website, I applied all my knowledge of Three.js, React Three Fiber, and Next.js. The site is currently hosted on GitHub Pages, but it will be migrated to Vercel in the future, using Prismic as its content management system (CMS).",
+                      es: "Esta es la página principal de un proyecto colaborativo. La empresa se dedica a la importación y exportación de bienes. En este sitio web, puse en práctica todo mi conocimiento en Three.js, React Three Fiber y Next.js. Actualmente, la página está alojada en GitHub Pages, pero en el futuro se migrará a Vercel y utilizará Prismic como sistema de gestión de contenidos (CMS)."
+                    }}
+                    className="text-3xl mb-9 orbitron font-[400]"
+                  ></Paragraph>
                   <div className="flex">
                     <div className="">
-                      <p className="mb-4 text-2xl orbitron font-[600]">
-                        Tecnologias usadas:
-                      </p>
+                      <Paragraph
+                        text={{
+                          en: "Technologies:",
+                          es: "Tecnologias usadas:"
+                        }}
+                        className="mb-4 text-2xl orbitron font-[600]"
+                      ></Paragraph>
                     </div>
                     <div className="pl-6">
                       <ul className="text-2xl orbitron font-[400]">
