@@ -23,11 +23,11 @@ export default function Effects({
         reflectionQuality,
         postProcessing,
     } = useContext(AppContext);
-    console.log("another version 2.0")
+    console.log("another version 2.5")
     useFrame((state) => {
         if (cameraRef.current) {
             const cubeIndex = cameraRef.current.children.findIndex(
-                (obj) => obj?.constructor?.name === 'CubeCamera'
+                (obj) => obj?.constructor?.name === 'CubeCamera' || obj?.constructor?.name === "HR"
             )
             const cube = cameraRef.current.children[cubeIndex];
             console.log(cube)
