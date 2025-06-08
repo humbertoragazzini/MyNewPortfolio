@@ -32,7 +32,7 @@ export default function Effects({
             const cube = cameraRef.current.children[cubeIndex];
             console.log(cube)
             console.log(cubeIndex)
-            console.log(cameraRef.current.children)
+            console.log(cameraRef.current)
             if (cube !== undefined && cubeIndex !== undefined && scroll.current !== undefined) {
                 cube.position.z = THREE.MathUtils.lerp(
                     cube.position.z,
