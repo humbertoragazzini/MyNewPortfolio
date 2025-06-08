@@ -196,7 +196,7 @@ export default function Experience() {
                       <mesh geometry={geometryFloor.current} position={[0, -20, -635]}>
                         <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
                       </mesh>
-                      <mesh geometry={geometryFloor.current} position={[0, -20, -675]}>
+                      {/* <mesh geometry={geometryFloor.current} position={[0, -20, -675]}>
                         <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
                       </mesh>
                       <mesh geometry={geometryFloor.current} position={[0, -20, -715]}>
@@ -315,7 +315,7 @@ export default function Experience() {
                       </mesh>
                       <mesh geometry={geometryFloor.current} position={[0, -20, -2235]}>
                         <meshStandardMaterial roughness={0} metalness={0.5} color="#000022" envMap={texture ?? undefined} />
-                      </mesh>
+                      </mesh> */}
 
                     </group>
                   </mesh>)
