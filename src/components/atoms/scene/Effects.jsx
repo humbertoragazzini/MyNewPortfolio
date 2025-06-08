@@ -23,7 +23,7 @@ export default function Effects({
         reflectionQuality,
         postProcessing,
     } = useContext(AppContext);
-    console.log("another version")
+    console.log("another version 1.5")
     useFrame((state) => {
         if (cameraRef.current) {
             const cubeIndex = cameraRef.current.children.findIndex(
@@ -31,11 +31,11 @@ export default function Effects({
             )
             const cube = cameraRef.current.children[cubeIndex];
             if (cube !== undefined && cubeIndex !== undefined && scroll.current !== undefined) {
-                // cube.position.z = THREE.MathUtils.lerp(
-                //     cube.position.z,
-                //     75 - 1 * 1492 * scroll.current,
-                //     lerpSpeed
-                // );
+                cube.position.z = THREE.MathUtils.lerp(
+                    cube.position.z,
+                    75 - 1 * 1492 * scroll.current,
+                    lerpSpeed
+                );
 
                 // save current renderer state
                 const currentRenderTarget = state.gl.getRenderTarget();
