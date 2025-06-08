@@ -1,9 +1,7 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
-export default function Paragraph({ text, className }) {
+export default function Paragraph({ text, className, language }) {
     const [content, setContent] = useState(null);
-    const { language } =
-        useContext(AppContext);
 
     useEffect(() => {
         if (language == "en") {

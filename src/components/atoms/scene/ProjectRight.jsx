@@ -80,6 +80,7 @@ export default function ProjectRight({ positionZ }) {
                   }}>
                   </Heading>
                   <Paragraph
+                    language={language}
                     text={{
                       en: "This is the main page of a collaborative project. The company is dedicated to the import and export of goods. On this website, I applied all my knowledge of Three.js, React Three Fiber, and Next.js. The site is currently hosted on GitHub Pages, but it will be migrated to Vercel in the future, using Prismic as its content management system (CMS).",
                       es: "Esta es la página principal de un proyecto colaborativo. La empresa se dedica a la importación y exportación de bienes. En este sitio web, puse en práctica todo mi conocimiento en Three.js, React Three Fiber y Next.js. Actualmente, la página está alojada en GitHub Pages, pero en el futuro se migrará a Vercel y utilizará Prismic como sistema de gestión de contenidos (CMS)."
@@ -89,6 +90,7 @@ export default function ProjectRight({ positionZ }) {
                   <div className="flex">
                     <div className="">
                       <Paragraph
+                        language={language}
                         text={{
                           en: "Technologies:",
                           es: "Tecnologias usadas:"
@@ -96,8 +98,8 @@ export default function ProjectRight({ positionZ }) {
                         className="mb-4 text-2xl orbitron font-[600]"
                       ></Paragraph>
                     </div>
-                    <div className="pl-6">
-                      <ul className="text-2xl orbitron font-[400]">
+                    <div className="pl-6 flex">
+                      <ul className="text-2xl orbitron font-[400] mr-12">
                         <li className="mb-3">
                           <p>NextJS</p>
                         </li>
@@ -105,17 +107,15 @@ export default function ProjectRight({ positionZ }) {
                           <p>Tailwind</p>
                         </li>
                         <li className="mb-3">
-                          <p>React three fiber</p>
+                          <p>React Three Fiber</p>
                         </li>
                         <li className="mb-3">
                           <p>Framer</p>
                         </li>
                       </ul>
-                    </div>
-                    <div className="pl-6">
                       <ul className="text-2xl orbitron font-[400]">
                         <li className="mb-3">
-                          <p>Threejs</p>
+                          <p>GSAP</p>
                         </li>
                         <li className="mb-3">
                           <p>Blender</p>
