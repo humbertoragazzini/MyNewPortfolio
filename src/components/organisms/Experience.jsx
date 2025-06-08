@@ -142,7 +142,8 @@ export default function Experience() {
                 {(texture) => {
                   return (<mesh>
                     <group>
-                      <mesh geometry={geometryFloor.current} position={[0, -20, -100]}>
+                      <mesh position={[0, -20, -100]}>
+                        <boxGeometry args={[20, 1, 400]}></boxGeometry>
                         <meshStandardMaterial roughness={0} metalness={1.0} color="#000022" envMap={texture ?? undefined} />
                       </mesh>
                       {/* <mesh geometry={geometryFloor.current} position={[0, -20, 45]}>
