@@ -6,7 +6,7 @@ export const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [language, setLanguage] = useState("en");
-  const [reflections, setReflections] = useState(false);
+  const [reflections, setReflections] = useState(true);
   const [postProcessing, setPostProcessing] = useState(false);
   const [reflectionQuality, setReflectionQuality] = useState(256);
   const [dpr, setDpr] = useState([1, 2])
