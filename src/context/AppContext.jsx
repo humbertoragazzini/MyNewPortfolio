@@ -7,9 +7,9 @@ export const AppProvider = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [language, setLanguage] = useState("en");
   const [reflections, setReflections] = useState(true);
-  const [postProcessing, setPostProcessing] = useState(false);
+  const [postProcessing, setPostProcessing] = useState(true);
   const [reflectionQuality, setReflectionQuality] = useState(256);
-  const [dpr, setDpr] = useState([1, 2])
+  const [dpr, setDpr] = useState([0.25, 0.35])
   // Example of toggling values
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const toggleLanguage = () =>
