@@ -57,10 +57,6 @@ export default function IframedRight({ positionZ, url }) {
         ></meshStandardMaterial>
         <Video3D scale={2}></Video3D>
       </mesh>
-      <mesh position={[0, -12, 0]}>
-        <boxGeometry args={[30, 2, 2]}></boxGeometry>
-        <meshBasicMaterial color={"white"}></meshBasicMaterial>
-      </mesh>
     </mesh>
   );
 }
