@@ -60,7 +60,7 @@ export default function Project({ language, content }) {
                                     ></Paragraph>
                                 </div>
                                 <div className="col-span-9">
-                                    <a target="_blank" className="py-3 px-4 bg-amber-400 text-black rounded-xl m-2 block w-fit cursor-pointer">
+                                    <a href={content.link.url} target="_blank" className="py-3 px-4 bg-amber-400 text-black rounded-xl m-2 block w-fit cursor-pointer">
                                         <p className="font-semibold">El projecto</p>
                                     </a>
                                 </div>
