@@ -20,8 +20,8 @@ export default function ProjectLeft({ positionZ, children }) {
       geometry.computeBoundingBox();
       const size = new THREE.Vector3();
       geometry.boundingBox.getSize(size);
-      mainContainerRef.current.style.width = `${size.x * 38}px`;
-      mainContainerRef.current.style.height = `${size.y * 38}px`;
+      mainContainerRef.current.style.width = `${size.x * 37}px`;
+      mainContainerRef.current.style.height = `${size.y * 36}px`;
     }
   });
 
@@ -49,11 +49,10 @@ export default function ProjectLeft({ positionZ, children }) {
     >
       <mesh ref={geoRef} position={[0, 0, 0]}>
         <planeGeometry args={[30, 20, 2]}></planeGeometry>
-        <meshStandardMaterial
-          color={"white"}
-          opacity={0}
-          transparent
-        ></meshStandardMaterial>
+        <meshBasicMaterial
+          color={[1.5, 1.5, 1.5]}
+          opacity={1}
+        ></meshBasicMaterial>
         {show && (
           <Html
             ref={htmlRef}
@@ -67,10 +66,6 @@ export default function ProjectLeft({ positionZ, children }) {
             </div>
           </Html>
         )}
-      </mesh>
-      <mesh position={[0, -12, 0]}>
-        <boxGeometry args={[30, 2, 2]}></boxGeometry>
-        <meshStandardMaterial color={[2.5, 2.5, 2.5]}></meshStandardMaterial>
       </mesh>
     </mesh>
   );
