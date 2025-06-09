@@ -84,7 +84,14 @@ export default function Experience() {
                     "Blender",
                     "React",
                     "Vite"
-                  ]
+                  ],
+                  link: {
+                    label: {
+                      en: "Link to the project",
+                      es: "Link al projecto"
+                    },
+                    url: "https://www.google.com"
+                  }
                 }}></Project>
               </ProjectRight>
               <ProjectLeft positionZ={-145} language={language}>
@@ -105,7 +112,14 @@ export default function Experience() {
                     "Blender",
                     "React",
                     "Vite"
-                  ]
+                  ],
+                  link: {
+                    label: {
+                      en: "Link to the project",
+                      es: "Link al projecto"
+                    },
+                    url: "https://www.google.com"
+                  }
                 }}></Project></ProjectLeft>
               <ProjectRight positionZ={-245} language={language}>
                 <Project language={language} content={{
@@ -125,7 +139,14 @@ export default function Experience() {
                     "Blender",
                     "React",
                     "Vite"
-                  ]
+                  ],
+                  link: {
+                    label: {
+                      en: "Link to the project",
+                      es: "Link al projecto"
+                    },
+                    url: "https://www.google.com"
+                  }
                 }}></Project>
               </ProjectRight>
               <Final></Final>

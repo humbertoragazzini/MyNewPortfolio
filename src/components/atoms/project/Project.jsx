@@ -24,8 +24,8 @@ export default function Project({ language, content }) {
                             className="text-3xl mb-9 orbitron font-[400]"
                         ></Paragraph>
                     }
-                    <div className="flex">
-                        <div className="py-4">
+                    <div className="grid grid-cols-12">
+                        <div className="col-span-3 py-4">
                             <Paragraph
                                 language={language}
                                 text={{
@@ -35,12 +35,12 @@ export default function Project({ language, content }) {
                                 className="mb-4 text-2xl orbitron font-[600]"
                             ></Paragraph>
                         </div>
-                        <div className="pl-6 flex">
+                        <div className="col-span-9">
                             <div className="text-2xl orbitron font-[400] mr-12 flex flex-wrap">
                                 {
                                     content.technologies.length > 0 && content.technologies.map((tech) => {
                                         return (
-                                            <div className="px-2 py-3 bg-amber-400 text-black rounded-xl m-2">
+                                            <div className="py-3 px-4 bg-amber-400 text-black rounded-xl m-2">
                                                 <p className="font-semibold">{tech}</p>
                                             </div>
                                         )
@@ -49,21 +49,24 @@ export default function Project({ language, content }) {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-5 text-2xl orbitron font-[400] mr-12 flex flex-wrap">
-                        <div className="py-4">
-                            <Paragraph
-                                language={language}
-                                text={{
-                                    en: "Link:",
-                                    es: "Link:"
-                                }}
-                                className="mb-4 text-2xl orbitron font-[600]"
-                            ></Paragraph>
-                        </div>
-                        <a className="px-2 py-3 bg-amber-400 text-black rounded-xl m-2">
-                            <p className="font-semibold">El projecto</p>
-                        </a>
-                    </div>
+                    {
+                        content.link && (
+                            <div className="grid grid-cols-12 mt-5 text-2xl">
+                                <div className="col-span-3 py-4">
+                                    <Paragraph
+                                        language={language}
+                                        text={content.link.label}
+                                        className="mb-4 text-2xl orbitron font-[600]"
+                                    ></Paragraph>
+                                </div>
+                                <div className="col-span-9">
+                                    <a target="_blank" className="py-3 px-4 bg-amber-400 text-black rounded-xl m-2 block w-fit cursor-pointer">
+                                        <p className="font-semibold">El projecto</p>
+                                    </a>
+                                </div>
+                            </div>
+                        )
+                    }
                 </div>
             </div>
         </>
