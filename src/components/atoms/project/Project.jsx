@@ -49,6 +49,21 @@ export default function Project({ language, content }) {
                             </div>
                         </div>
                     </div>
+                    <div className="mt-5 text-2xl orbitron font-[400] mr-12 flex flex-wrap">
+                        <div className="py-4">
+                            <Paragraph
+                                language={language}
+                                text={{
+                                    en: "Link:",
+                                    es: "Link:"
+                                }}
+                                className="mb-4 text-2xl orbitron font-[600]"
+                            ></Paragraph>
+                        </div>
+                        <a className="px-2 py-3 bg-amber-400 text-black rounded-xl m-2">
+                            <p className="font-semibold">El projecto</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </>
