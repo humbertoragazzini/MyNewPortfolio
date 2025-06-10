@@ -56,14 +56,17 @@ export default function Experience() {
             <Canvas shadows dpr={dpr} gl={{ preserveDrawingBuffer: false, antialias: true }}>
               <IframedLeft
                 positionZ={-40}
+                source={"videos/Testing_Video_h_264.mp4"}
                 url={"https://www.primalports.com/"}
               ></IframedLeft>
               <IframedRight
                 positionZ={-145}
+                source={"videos/Testing_Video_h_264.mp4"}
                 url={"https://humbertoragazzini.github.io/TheSuperGame/"}
               ></IframedRight>
               <IframedLeft
                 positionZ={-245}
+                source={"videos/Testing_Video_h_264.mp4"}
                 url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
               />
               <ProjectRight positionZ={-40} language={language}>

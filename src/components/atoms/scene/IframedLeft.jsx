@@ -6,7 +6,7 @@ import Video3D from "./Video3D";
 import { AppContext } from "../../../context/AppContext";
 import gsap from "gsap";
 
-export default function IframedLeft({ positionZ, url }) {
+export default function IframedLeft({ positionZ, source }) {
   const htmlRef = useRef();
   const meshRef = useRef();
   const geoRef = useRef();
@@ -55,7 +55,7 @@ export default function IframedLeft({ positionZ, url }) {
           opacity={0}
           transparent
         ></meshStandardMaterial>
-        <Video3D scale={2}></Video3D>
+        <Video3D scale={2} source={source}></Video3D>
       </mesh>
     </mesh>
   );
