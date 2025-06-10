@@ -25,7 +25,6 @@ export default function Effects({
     } = useContext(AppContext);
     useFrame((state) => {
 
-        console.log(cameraRef.current)
         if (cameraRef.current) {
             const cubeIndex = cameraRef.current.children.findIndex(
                 (obj) => obj?.type === 'CubeCamera' || obj?.constructor?.name === "HR"
