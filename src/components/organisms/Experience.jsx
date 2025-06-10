@@ -5,8 +5,8 @@ import MainScene from "./MainScene.jsx";
 import ProjectRight from "../atoms/scene/ProjectRight.jsx";
 import Camera from "../atoms/scene/Camera.jsx";
 import ProjectLeft from "../atoms/scene/ProjectLeft.jsx";
-import IframedLeft from "../atoms/scene/IframedLeft";
-import IframedRight from "../atoms/scene/IframedRight";
+import VideoLeft from "../atoms/scene/VideoLeft.jsx";
+import VideoRight from "../atoms/scene/VideoRight.jsx";
 import * as THREE from "three";
 import Lights from "../atoms/scene/Lights.jsx";
 import { RGBELoader } from "three/examples/jsm/Addons.js";
@@ -54,17 +54,17 @@ export default function Experience() {
         <div style={{ height: "1500vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas shadows dpr={dpr} gl={{ preserveDrawingBuffer: false, antialias: true }}>
-              <IframedLeft
+              <VideoLeft
                 positionZ={-40}
                 source={"videos/Testing_Video_h_264.mp4"}
                 url={"https://www.primalports.com/"}
-              ></IframedLeft>
-              <IframedRight
+              ></VideoLeft>
+              <VideoRight
                 positionZ={-145}
                 source={"videos/Testing_Video_h_264.mp4"}
                 url={"https://humbertoragazzini.github.io/TheSuperGame/"}
-              ></IframedRight>
-              <IframedLeft
+              ></VideoRight>
+              <VideoLeft
                 positionZ={-245}
                 source={"videos/Testing_Video_h_264.mp4"}
                 url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}

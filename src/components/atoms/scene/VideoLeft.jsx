@@ -6,7 +6,7 @@ import Video3D from "./Video3D";
 import { AppContext } from "../../../context/AppContext";
 import gsap from "gsap";
 
-export default function IframedRight({ positionZ, source }) {
+export default function VideoLeft({ positionZ, source }) {
   const htmlRef = useRef();
   const meshRef = useRef();
   const geoRef = useRef();
@@ -33,6 +33,7 @@ export default function IframedRight({ positionZ, source }) {
     }
   }, []);
 
+
   useEffect(() => {
     if (isMenuOpen) {
       gsap.to(meshRef.current.position, { y: -120, duration: 2 })
@@ -42,11 +43,10 @@ export default function IframedRight({ positionZ, source }) {
   }, [isMenuOpen]);
 
   return (
-
     <mesh
       ref={meshRef}
-      position={[30, 0, positionZ]}
-      rotation={[0, -Math.PI / 4, 0]}
+      position={[-30, 0, positionZ]}
+      rotation={[0, Math.PI / 4, 0]}
     >
       <mesh ref={geoRef} position={[0, 0, 0]}>
         <planeGeometry args={[30, 20, 2]}></planeGeometry>
