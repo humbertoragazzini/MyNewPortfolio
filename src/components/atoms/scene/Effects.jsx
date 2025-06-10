@@ -24,6 +24,8 @@ export default function Effects({
         postProcessing,
     } = useContext(AppContext);
     useFrame((state) => {
+
+        console.log(cameraRef.current)
         if (cameraRef.current) {
             const cubeIndex = cameraRef.current.children.findIndex(
                 (obj) => obj?.constructor?.name === 'CubeCamera' || obj?.constructor?.name === "HR"
