@@ -35,9 +35,9 @@ export default function OverlayMenu() {
         className={`fixed p-4 z-[9999] right-[0px] duration-500 ease-initial cursor-pointer ${isMenuOpen ? "-translate-y-[calc(100%+50px)]" : "translate-y-0"
           }`}
       >
-        <div className="fixed top-0 z-[999] right-0 translate-x-[50%] -translate-y-[50%] w-[500px] h-[200px] rotate-45 bg-red-700">
+        <div className="fixed top-0 z-[999] right-0 translate-x-[50%] cursor-pointer hover:bg-[rgba(125,35,35,0.45)] backdrop-blur-3xl -translate-y-[50%] w-[500px] h-[200px] rotate-45 bg-red-700">
         </div>
-        <LuMenu className="relative z-[1000] w-[50px] h-[50px] stroke-white mix-blend-difference"></LuMenu>
+        <LuMenu className="relative z-[1000] w-[50px] h-[50px] stroke-white pointer-events-none"></LuMenu>
       </button>
       <div
         className={`fixed ${isMenuOpen
