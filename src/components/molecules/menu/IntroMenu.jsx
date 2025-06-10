@@ -35,8 +35,8 @@ export default function IntroMenu() {
           }}
           className={"flex justify-center"}
         >
-          <div className="p-3 md:p-10 lg:p-14 w-full lg:w-3/4 h-fit bg-[rgba(0,0,65,0.75)] rounded-4xl border-4 border-white neon-box">
-            <Heading language={language} className={"text-white text-5xl drop-shadow-[0_0_5px_#fff] leading-16 text-center"} level={1} text={{
+          <div className="m-5 p-5 md:p-10 lg:p-14 w-full lg:w-3/4 h-fit bg-[rgba(0,0,65,0.75)] rounded-4xl border-4 border-white neon-box">
+            <Heading language={language} className={"text-white font-semibold text-2xl md:text-3xl lg:text-5xl drop-shadow-[0_0_5px_#fff] leading-10 lg:leading-16 text-center"} level={1} text={{
               en: "To ensure smooth performance on all devices, the portfolio loads with low graphics settings by default. You can change this anytime in the settings menu.",
               es: "El portoflio fue cargado con las configuraciones de calidad minimas para evitar problemas en la velocidad de ejecucion del programa, puede aumentar la calidad por medio del menu de configuracion"
             }}></Heading>
@@ -51,7 +51,7 @@ export default function IntroMenu() {
             <div onClick={() => {
               setIntro(false)
             }}>
-              <Heading language={language} className={"text-white text-5xl drop-shadow-[0_0_5px_#fff] leading-16 hover:scale-125 m-6 transition-all ease-in-out cursor-pointer text-center"} level={1} text={{
+              <Heading language={language} className={"text-white font-semibold text-3xl lg:text-5xl drop-shadow-[0_0_5px_#fff] leading-10 lg:leading-16 hover:scale-125 m-6 transition-all ease-in-out cursor-pointer text-center"} level={1} text={{
                 en: "Start",
                 es: "Continuar"
               }}></Heading>
