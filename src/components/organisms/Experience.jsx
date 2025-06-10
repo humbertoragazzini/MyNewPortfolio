@@ -1,5 +1,5 @@
 import { Canvas, useLoader } from "@react-three/fiber";
-import { useContext, useEffect, useRef, useState } from "react";
+import { Suspense, useContext, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import MainScene from "./MainScene.jsx";
 import ProjectRight from "../atoms/scene/ProjectRight.jsx";
@@ -24,8 +24,6 @@ export default function Experience() {
   const [scroll, setScroll] = useState(0);
   const scrollRef = useRef(0);
   const targetRef = useRef();
-  const texture = useLoader(RGBELoader, "./environ/env-2k-v1.hdr");
-  texture.mapping = THREE.EquirectangularReflectionMapping;
   const inputMethod = useInputMethod();
   const { toggleReflections, language, changeReflectionQuality, reflections, dpr,
     reflectionQuality } = useContext(AppContext);
@@ -54,105 +52,6 @@ export default function Experience() {
         <div style={{ height: "1500vh" }}>
           <motion.div className="sticky top-0" style={{ height: "100vh" }}>
             <Canvas shadows dpr={dpr} gl={{ preserveDrawingBuffer: false, antialias: true }}>
-              <VideoLeft
-                positionZ={-40}
-                source={"videos/Testing_Video_h_264.mp4"}
-                url={"https://www.primalports.com/"}
-              ></VideoLeft>
-              <VideoRight
-                positionZ={-145}
-                source={"videos/Testing_Video_h_264.mp4"}
-                url={"https://humbertoragazzini.github.io/TheSuperGame/"}
-              ></VideoRight>
-              <VideoLeft
-                positionZ={-245}
-                source={"videos/Testing_Video_h_264.mp4"}
-                url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
-              />
-              <ProjectRight positionZ={-40} language={language}>
-                <Project language={language} content={{
-                  projectName: {
-                    en: "Primalport - Website",
-                    es: "Primalport - Sitio web"
-                  },
-                  description: {
-                    en: "This is the main page of a collaborative project. The company is dedicated to the import and export of goods. On this website, I applied all my knowledge of Three.js, React Three Fiber, and Next.js. The site is currently hosted on GitHub Pages, but it will be migrated to Vercel in the future, using Prismic as its content management system (CMS).",
-                    es: "Esta es la página principal de un proyecto colaborativo. La empresa se dedica a la importación y exportación de bienes. En este sitio web, puse en práctica todo mi conocimiento en Three.js, React Three Fiber y Next.js. Actualmente, la página está alojada en GitHub Pages, pero en el futuro se migrará a Vercel y utilizará Prismic como sistema de gestión de contenidos (CMS)."
-                  },
-                  technologies: [
-                    "Tailwind",
-                    "React Three Fiber",
-                    "Framer",
-                    "GSAP",
-                    "Blender",
-                    "React",
-                    "Vite"
-                  ],
-                  link: {
-                    label: {
-                      en: "Link to the project",
-                      es: "Link al projecto"
-                    },
-                    url: "https://www.google.com"
-                  }
-                }}></Project>
-              </ProjectRight>
-              <ProjectLeft positionZ={-145} language={language}>
-                <Project language={language} content={{
-                  projectName: {
-                    en: "Primalport - Website",
-                    es: "Primalport - Sitio web"
-                  },
-                  description: {
-                    en: "This is the main page of a collaborative project. The company is dedicated to the import and export of goods. On this website, I applied all my knowledge of Three.js, React Three Fiber, and Next.js. The site is currently hosted on GitHub Pages, but it will be migrated to Vercel in the future, using Prismic as its content management system (CMS).",
-                    es: "Esta es la página principal de un proyecto colaborativo. La empresa se dedica a la importación y exportación de bienes. En este sitio web, puse en práctica todo mi conocimiento en Three.js, React Three Fiber y Next.js. Actualmente, la página está alojada en GitHub Pages, pero en el futuro se migrará a Vercel y utilizará Prismic como sistema de gestión de contenidos (CMS)."
-                  },
-                  technologies: [
-                    "Tailwind",
-                    "React Three Fiber",
-                    "Framer",
-                    "GSAP",
-                    "Blender",
-                    "React",
-                    "Vite"
-                  ],
-                  link: {
-                    label: {
-                      en: "Link to the project",
-                      es: "Link al projecto"
-                    },
-                    url: "https://www.google.com"
-                  }
-                }}></Project></ProjectLeft>
-              <ProjectRight positionZ={-245} language={language}>
-                <Project language={language} content={{
-                  projectName: {
-                    en: "Primalport - Website",
-                    es: "Primalport - Sitio web"
-                  },
-                  description: {
-                    en: "This is the main page of a collaborative project. The company is dedicated to the import and export of goods. On this website, I applied all my knowledge of Three.js, React Three Fiber, and Next.js. The site is currently hosted on GitHub Pages, but it will be migrated to Vercel in the future, using Prismic as its content management system (CMS).",
-                    es: "Esta es la página principal de un proyecto colaborativo. La empresa se dedica a la importación y exportación de bienes. En este sitio web, puse en práctica todo mi conocimiento en Three.js, React Three Fiber y Next.js. Actualmente, la página está alojada en GitHub Pages, pero en el futuro se migrará a Vercel y utilizará Prismic como sistema de gestión de contenidos (CMS)."
-                  },
-                  technologies: [
-                    "Tailwind",
-                    "React Three Fiber",
-                    "Framer",
-                    "GSAP",
-                    "Blender",
-                    "React",
-                    "Vite"
-                  ],
-                  link: {
-                    label: {
-                      en: "Link to the project",
-                      es: "Link al projecto"
-                    },
-                    url: "https://www.google.com"
-                  }
-                }}></Project>
-              </ProjectRight>
-              <Final></Final>
               {/* <OrbitControls></OrbitControls> */}
               {/* <PerspectiveCamera></PerspectiveCamera> */}
               <Camera scroll={scrollRef}></Camera>
@@ -338,8 +237,109 @@ export default function Experience() {
                   </mesh>)
                 }}
               </Effects>
-              <MainScene scale={1} />
-              <Lights targetRef={targetRef}></Lights>
+              <Suspense fallback={<mesh position={[0, 0, -50]}><boxGeometry args={[10, 10, 10]}></boxGeometry><meshBasicMaterial color={"white"}></meshBasicMaterial></mesh>}>
+                <MainScene scale={1} />
+                <VideoLeft
+                  positionZ={-40}
+                  source={"videos/Testing_Video_h_264.mp4"}
+                  url={"https://www.primalports.com/"}
+                ></VideoLeft>
+                <VideoRight
+                  positionZ={-145}
+                  source={"videos/Testing_Video_h_264.mp4"}
+                  url={"https://humbertoragazzini.github.io/TheSuperGame/"}
+                ></VideoRight>
+                <VideoLeft
+                  positionZ={-245}
+                  source={"videos/Testing_Video_h_264.mp4"}
+                  url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
+                />
+                <ProjectRight positionZ={-40} language={language}>
+                  <Project language={language} content={{
+                    projectName: {
+                      en: "Primalport - Website",
+                      es: "Primalport - Sitio web"
+                    },
+                    description: {
+                      en: "This is the main page of a collaborative project. The company is dedicated to the import and export of goods. On this website, I applied all my knowledge of Three.js, React Three Fiber, and Next.js. The site is currently hosted on GitHub Pages, but it will be migrated to Vercel in the future, using Prismic as its content management system (CMS).",
+                      es: "Esta es la página principal de un proyecto colaborativo. La empresa se dedica a la importación y exportación de bienes. En este sitio web, puse en práctica todo mi conocimiento en Three.js, React Three Fiber y Next.js. Actualmente, la página está alojada en GitHub Pages, pero en el futuro se migrará a Vercel y utilizará Prismic como sistema de gestión de contenidos (CMS)."
+                    },
+                    technologies: [
+                      "Tailwind",
+                      "React Three Fiber",
+                      "Framer",
+                      "GSAP",
+                      "Blender",
+                      "React",
+                      "Vite"
+                    ],
+                    link: {
+                      label: {
+                        en: "Link to the project",
+                        es: "Link al projecto"
+                      },
+                      url: "https://www.google.com"
+                    }
+                  }}></Project>
+                </ProjectRight>
+                <ProjectLeft positionZ={-145} language={language}>
+                  <Project language={language} content={{
+                    projectName: {
+                      en: "Primalport - Website",
+                      es: "Primalport - Sitio web"
+                    },
+                    description: {
+                      en: "This is the main page of a collaborative project. The company is dedicated to the import and export of goods. On this website, I applied all my knowledge of Three.js, React Three Fiber, and Next.js. The site is currently hosted on GitHub Pages, but it will be migrated to Vercel in the future, using Prismic as its content management system (CMS).",
+                      es: "Esta es la página principal de un proyecto colaborativo. La empresa se dedica a la importación y exportación de bienes. En este sitio web, puse en práctica todo mi conocimiento en Three.js, React Three Fiber y Next.js. Actualmente, la página está alojada en GitHub Pages, pero en el futuro se migrará a Vercel y utilizará Prismic como sistema de gestión de contenidos (CMS)."
+                    },
+                    technologies: [
+                      "Tailwind",
+                      "React Three Fiber",
+                      "Framer",
+                      "GSAP",
+                      "Blender",
+                      "React",
+                      "Vite"
+                    ],
+                    link: {
+                      label: {
+                        en: "Link to the project",
+                        es: "Link al projecto"
+                      },
+                      url: "https://www.google.com"
+                    }
+                  }}></Project></ProjectLeft>
+                <ProjectRight positionZ={-245} language={language}>
+                  <Project language={language} content={{
+                    projectName: {
+                      en: "Primalport - Website",
+                      es: "Primalport - Sitio web"
+                    },
+                    description: {
+                      en: "This is the main page of a collaborative project. The company is dedicated to the import and export of goods. On this website, I applied all my knowledge of Three.js, React Three Fiber, and Next.js. The site is currently hosted on GitHub Pages, but it will be migrated to Vercel in the future, using Prismic as its content management system (CMS).",
+                      es: "Esta es la página principal de un proyecto colaborativo. La empresa se dedica a la importación y exportación de bienes. En este sitio web, puse en práctica todo mi conocimiento en Three.js, React Three Fiber y Next.js. Actualmente, la página está alojada en GitHub Pages, pero en el futuro se migrará a Vercel y utilizará Prismic como sistema de gestión de contenidos (CMS)."
+                    },
+                    technologies: [
+                      "Tailwind",
+                      "React Three Fiber",
+                      "Framer",
+                      "GSAP",
+                      "Blender",
+                      "React",
+                      "Vite"
+                    ],
+                    link: {
+                      label: {
+                        en: "Link to the project",
+                        es: "Link al projecto"
+                      },
+                      url: "https://www.google.com"
+                    }
+                  }}></Project>
+                </ProjectRight>
+                <Final></Final>
+                <Lights targetRef={targetRef}></Lights>
+              </Suspense>
               <CheckSize></CheckSize>
             </Canvas>
           </motion.div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import "./App.css";
 import Experience from "./components/organisms/Experience";
 import { AppProvider } from "./context/AppContext";
@@ -14,7 +14,9 @@ function App() {
       <AppProvider>
         <IntroMenu></IntroMenu>
         <OverlayMenu></OverlayMenu>
+        {/* <Suspense fallback={<div>Cargando</div>}> */}
         <Experience></Experience>
+        {/* </Suspense> */}
       </AppProvider>
     </main>
   );
