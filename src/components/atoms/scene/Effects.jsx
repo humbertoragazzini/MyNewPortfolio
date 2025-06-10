@@ -28,12 +28,9 @@ export default function Effects({
         console.log(cameraRef.current)
         if (cameraRef.current) {
             const cubeIndex = cameraRef.current.children.findIndex(
-                (obj) => obj?.constructor?.name === 'CubeCamera' || obj?.constructor?.name === "HR"
+                (obj) => obj?.type === 'CubeCamera' || obj?.constructor?.name === "HR"
             )
             const cube = cameraRef.current.children[cubeIndex];
-            console.log(cube)
-            console.log(cameraRef.current)
-            console.log(cameraRef.current.children)
             if (cube !== undefined && cubeIndex !== undefined && scroll.current !== undefined) {
                 cube.position.z = THREE.MathUtils.lerp(
                     cube.position.z,
