@@ -40,6 +40,10 @@ export default function IntroMenu() {
               en: "To ensure smooth performance on all devices, the portfolio loads with low graphics settings by default. You can change this anytime in the settings menu.",
               es: "El portoflio fue cargado con las configuraciones de calidad minimas para evitar problemas en la velocidad de ejecucion del programa, puede aumentar la calidad por medio del menu de configuracion"
             }}></Heading>
+            <div>
+              <motion.div><img></img></motion.div>
+              <motion.div><img></img></motion.div>
+            </div>
           </div>
         </motion.div>
       </div>

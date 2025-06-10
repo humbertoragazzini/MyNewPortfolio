@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../../context/AppContext";
 import MenuButton from "./MenuButton";
 import { motion } from "framer-motion";
+import { LuMenu } from "react-icons/lu";
+
 
 export default function OverlayMenu() {
   const {
@@ -33,7 +35,7 @@ export default function OverlayMenu() {
         className={`fixed w-[50px] h-[50px] z-[9999] bg-white text-black rounded-xl m-3 right-[0px] duration-500 ease-initial cursor-pointer ${isMenuOpen ? "-translate-y-[calc(100%+50px)]" : "translate-y-0"
           }`}
       >
-        Menu
+        <LuMenu></LuMenu>
       </button>
       <div
         className={`fixed ${isMenuOpen
