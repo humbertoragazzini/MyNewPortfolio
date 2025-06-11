@@ -15,28 +15,63 @@ export default function Lights({ targetRef }) {
   const ambientRef = useRef();
   useHelper(lightRef, THREE.DirectionalLightHelper, "red");
   const { isMenuOpen } = useContext(AppContext);
-  // const targetRef = useRef();
+  const strRef1 = useRef(0);
+  const strRef2 = useRef(0);
+  const strRef3 = useRef(0);
+  const strRef4 = useRef(0);
+  const strRef5 = useRef(0);
+  const strRef6 = useRef(0);
+  const strRef7 = useRef(0);
+  const strRef8 = useRef(0);
+  const strRef9 = useRef(0);
 
   useEffect(() => {
-    // if (lightRef.current && targetRef.current) {
-    //   lightRef.current.target = targetRef.current;
-    // }
+    gsap.to(strRef1, {
+      current: 1,
+      duration: 1,
+      delay: 0.5,
+    });
+    gsap.to(strRef2, {
+      current: 1,
+      duration: 1,
+      delay: 0.5 * 2,
+    });
+    gsap.to(strRef3, {
+      current: 1,
+      duration: 1,
+      delay: 0.5 * 3,
+    });
+    gsap.to(strRef4, {
+      current: 1,
+      duration: 1,
+      delay: 0.5 * 4,
+    });
+    gsap.to(strRef5, {
+      current: 1,
+      duration: 1,
+      delay: 0.5 * 5,
+    });
+    gsap.to(strRef6, {
+      current: 1,
+      duration: 1,
+      delay: 0.5 * 6,
+    });
+    gsap.to(strRef7, {
+      current: 1,
+      duration: 1,
+      delay: 0.5 * 7,
+    });
+    gsap.to(strRef8, {
+      current: 1,
+      duration: 1,
+      delay: 0.5 * 8,
+    });
+    gsap.to(strRef9, {
+      current: 1,
+      duration: 1,
+      delay: 0.5 * 9,
+    });
   }, []);
-
-  useFrame(({ camera }) => {
-    // if (camera.position.z < -200) {
-    //   lightRef1.current.intensity = 500.0;
-    // }
-    // if (camera.position.z < -350) {
-    //   lightRef2.current.intensity = 500.0;
-    // }
-    // if (camera.position.z < -500) {
-    //   lightRef3.current.intensity = 500.0;
-    // }
-    // if (camera.position.z < -650) {
-    //   lightRef4.current.intensity = 500.0;
-    // }
-  });
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -57,7 +92,15 @@ export default function Lights({ targetRef }) {
   return (
     <group>
       <ambientLight ref={ambientRef} intensity={0.25}></ambientLight>
-      <Stroboscopic position={[0, 0, 0]}></Stroboscopic>
+      <Stroboscopic isOn={strRef1} position={[0, 0, 0]}></Stroboscopic>
+      <Stroboscopic isOn={strRef2} position={[0, 0, 100]}></Stroboscopic>
+      <Stroboscopic isOn={strRef3} position={[0, 0, 200]}></Stroboscopic>
+      <Stroboscopic isOn={strRef4} position={[0, 0, 300]}></Stroboscopic>
+      <Stroboscopic isOn={strRef5} position={[0, 0, 400]}></Stroboscopic>
+      <Stroboscopic isOn={strRef6} position={[0, 0, 500]}></Stroboscopic>
+      <Stroboscopic isOn={strRef7} position={[0, 0, 600]}></Stroboscopic>
+      <Stroboscopic isOn={strRef8} position={[0, 0, 700]}></Stroboscopic>
+      <Stroboscopic isOn={strRef9} position={[0, 0, 800]}></Stroboscopic>
     </group>
   );
 }
