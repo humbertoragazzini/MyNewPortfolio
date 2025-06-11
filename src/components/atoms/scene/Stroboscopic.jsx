@@ -1,7 +1,11 @@
 import { useEffect } from "react"
 
 export default function Stroboscopic({ position, isOn }) {
+    const [turnOnOff, setTurnOnOff] = useState(false);
 
+    useEffect(() => {
+        setTurnOnOff(isOn);
+    }, [isOn])
 
     return (
         <group position={[0 + position[0], 0 + position[1], -420 - position[2]]}>
@@ -14,7 +18,7 @@ export default function Stroboscopic({ position, isOn }) {
                     </mesh>
                     <pointLight
                         position={[0, -2.5, 0]}
-                        intensity={1000}
+                        intensity={turnOnOff ? 1000 : 0}
                         color={"blue"}
                         distance={50} // Increase to cover a wider area
                         decay={1} // Keep default or adjust lower to make it fall off slower
@@ -28,7 +32,7 @@ export default function Stroboscopic({ position, isOn }) {
                     </mesh>
                     <pointLight
                         position={[0, 2.5, 0]}
-                        intensity={1000}
+                        intensity={turnOnOff ? 1000 : 0}
                         color={"blue"}
                         distance={50} // Increase to cover a wider area
                         decay={1} // Keep default or adjust lower to make it fall off slower
@@ -42,7 +46,7 @@ export default function Stroboscopic({ position, isOn }) {
                     </mesh>
                     <pointLight
                         position={[-2.5, 0, 0]}
-                        intensity={1000}
+                        intensity={turnOnOff ? 1000 : 0}
                         color={"blue"}
                         distance={50} // Increase to cover a wider area
                         decay={1} // Keep default or adjust lower to make it fall off slower
@@ -56,7 +60,7 @@ export default function Stroboscopic({ position, isOn }) {
                     </mesh>
                     <pointLight
                         position={[2.5, 0, 0]}
-                        intensity={1000}
+                        intensity={turnOnOff ? 1000 : 0}
                         color={"blue"}
                         distance={50} // Increase to cover a wider area
                         decay={1} // Keep default or adjust lower to make it fall off slower
