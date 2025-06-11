@@ -13,7 +13,7 @@ export default function Stroboscopic({ position, isOn }) {
                     </mesh>
                     <pointLight
                         position={[0, -2.5, 0]}
-                        intensity={isOn.current == 1 ? 1000 : 0}
+                        intensity={1000 * isOn.current}
                         color={"blue"}
                         distance={50} // Increase to cover a wider area
                         decay={1} // Keep default or adjust lower to make it fall off slower
@@ -27,7 +27,7 @@ export default function Stroboscopic({ position, isOn }) {
                     </mesh>
                     <pointLight
                         position={[0, 2.5, 0]}
-                        intensity={isOn.current == 1 ? 1000 : 0}
+                        intensity={1000 * isOn.current}
                         color={"blue"}
                         distance={50} // Increase to cover a wider area
                         decay={1} // Keep default or adjust lower to make it fall off slower
@@ -41,7 +41,7 @@ export default function Stroboscopic({ position, isOn }) {
                     </mesh>
                     <pointLight
                         position={[-2.5, 0, 0]}
-                        intensity={isOn.current == 1 ? 1000 : 0}
+                        intensity={1000 * isOn.current}
                         color={"blue"}
                         distance={50} // Increase to cover a wider area
                         decay={1} // Keep default or adjust lower to make it fall off slower
@@ -55,7 +55,7 @@ export default function Stroboscopic({ position, isOn }) {
                     </mesh>
                     <pointLight
                         position={[2.5, 0, 0]}
-                        intensity={isOn.current == 1 ? 1000 : 0}
+                        intensity={1000 * isOn.current}
                         color={"blue"}
                         distance={50} // Increase to cover a wider area
                         decay={1} // Keep default or adjust lower to make it fall off slower

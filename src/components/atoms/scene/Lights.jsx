@@ -26,51 +26,7 @@ export default function Lights({ targetRef }) {
   const strRef9 = useRef(0);
 
   useEffect(() => {
-    gsap.to(strRef1, {
-      current: 1,
-      duration: 1,
-      delay: 0.5,
-    });
-    gsap.to(strRef2, {
-      current: 1,
-      duration: 1,
-      delay: 0.5 * 2,
-    });
-    gsap.to(strRef3, {
-      current: 1,
-      duration: 1,
-      delay: 0.5 * 3,
-    });
-    gsap.to(strRef4, {
-      current: 1,
-      duration: 1,
-      delay: 0.5 * 4,
-    });
-    gsap.to(strRef5, {
-      current: 1,
-      duration: 1,
-      delay: 0.5 * 5,
-    });
-    gsap.to(strRef6, {
-      current: 1,
-      duration: 1,
-      delay: 0.5 * 6,
-    });
-    gsap.to(strRef7, {
-      current: 1,
-      duration: 1,
-      delay: 0.5 * 7,
-    });
-    gsap.to(strRef8, {
-      current: 1,
-      duration: 1,
-      delay: 0.5 * 8,
-    });
-    gsap.to(strRef9, {
-      current: 1,
-      duration: 1,
-      delay: 0.5 * 9,
-    });
+
   }, []);
 
   useEffect(() => {
@@ -79,6 +35,51 @@ export default function Lights({ targetRef }) {
         intensity: 0.0,
         duration: 1.5,
         delay: 0.5,
+      });
+      gsap.to(strRef1, {
+        current: 1,
+        duration: 1,
+        delay: 0.5,
+      });
+      gsap.to(strRef2, {
+        current: 1,
+        duration: 1,
+        delay: 0.5 * 2,
+      });
+      gsap.to(strRef3, {
+        current: 1,
+        duration: 1,
+        delay: 0.5 * 3,
+      });
+      gsap.to(strRef4, {
+        current: 1,
+        duration: 1,
+        delay: 0.5 * 4,
+      });
+      gsap.to(strRef5, {
+        current: 1,
+        duration: 1,
+        delay: 0.5 * 5,
+      });
+      gsap.to(strRef6, {
+        current: 1,
+        duration: 1,
+        delay: 0.5 * 6,
+      });
+      gsap.to(strRef7, {
+        current: 1,
+        duration: 1,
+        delay: 0.5 * 7,
+      });
+      gsap.to(strRef8, {
+        current: 1,
+        duration: 1,
+        delay: 0.5 * 8,
+      });
+      gsap.to(strRef9, {
+        current: 1,
+        duration: 1,
+        delay: 0.5 * 9,
       });
     } else {
       gsap.to(ambientRef.current, {
