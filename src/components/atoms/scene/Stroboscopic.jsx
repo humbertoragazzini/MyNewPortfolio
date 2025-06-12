@@ -12,9 +12,9 @@ export default function Stroboscopic({ position, isOn, delay }) {
 
     useEffect(() => {
         if (isOn && ligthStrRef1.current !== undefined && ligthStrRef2.current !== undefined && ligthStrRef3.current !== undefined && ligthStrRef4.current !== undefined) {
-            gsap.to(ligthStrRef1.current, { intensity: 1000, delay: delay, duration: 0.25, repeat: -1, yoyo: true })
+            gsap.to(ligthStrRef1.current, { intensity: 1000, delay: delay, duration: 0.075 })
         } else {
-            gsap.to(ligthStrRef1.current, { intensity: 0, delay: delay, duration: 0.25 })
+            gsap.to(ligthStrRef1.current, { intensity: 0, delay: delay, duration: 0.075 })
         }
     }, [isOn])
 

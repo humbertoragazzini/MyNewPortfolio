@@ -12,6 +12,7 @@ export default function Lights({ targetRef }) {
   useHelper(lightRef, THREE.DirectionalLightHelper, "red");
   const { isMenuOpen } = useContext(AppContext);
   const [isOn, setIsOn] = useState(false);
+  const isOnRef = useRef(false)
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -30,6 +31,15 @@ export default function Lights({ targetRef }) {
       setIsOn(true)
     }
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      isOnRef.current = !isOnRef.current;
+      setIsOn(isOnRef.current);
+    }, 2250);
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
 
   return (
     <group>
