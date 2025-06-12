@@ -15,7 +15,7 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF("./blender/main-scene.glb");
   const { isMenuOpen } = useContext(AppContext);
   const planeMaterial = useRef(new THREE.MeshBasicMaterial({ color: "white" }));
-  const tunnelMaterial = useRef(new THREE.MeshStandardMaterial({ color: "black" }))
+  const tunnelMaterial = useRef(new THREE.MeshStandardMaterial({ color: "#121212" }))
   // const envMap = useEnvMap();
   const texture = useTexture("./blender/WALL1.jpg");
   const texture2 = useTexture("./blender/WALL2.jpg");
