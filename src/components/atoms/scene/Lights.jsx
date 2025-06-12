@@ -34,15 +34,15 @@ export default function Lights({ targetRef }) {
   return (
     <group>
       <ambientLight ref={ambientRef} intensity={0.25}></ambientLight>
-      <Stroboscopic isOn={isOn} dealay={0.5} position={[0, 0, 0]}></Stroboscopic>
-      <Stroboscopic isOn={isOn} dealay={2.0} position={[0, 0, 100]}></Stroboscopic>
-      <Stroboscopic isOn={isOn} dealay={3.5} position={[0, 0, 200]}></Stroboscopic>
-      <Stroboscopic isOn={isOn} dealay={4.0} position={[0, 0, 300]}></Stroboscopic>
-      <Stroboscopic isOn={isOn} dealay={5.5} position={[0, 0, 400]}></Stroboscopic>
-      <Stroboscopic isOn={isOn} dealay={6.0} position={[0, 0, 500]}></Stroboscopic>
-      <Stroboscopic isOn={isOn} dealay={7.5} position={[0, 0, 600]}></Stroboscopic>
-      <Stroboscopic isOn={isOn} dealay={8.0} position={[0, 0, 700]}></Stroboscopic>
-      <Stroboscopic isOn={isOn} dealay={9.5} position={[0, 0, 800]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} delay={0.25} position={[0, 0, 0]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} delay={0.5} position={[0, 0, 100]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} delay={0.75} position={[0, 0, 200]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} delay={1} position={[0, 0, 300]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} delay={1.25} position={[0, 0, 400]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} delay={1.5} position={[0, 0, 500]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} delay={1.75} position={[0, 0, 600]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} delay={2} position={[0, 0, 700]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} delay={2.25} position={[0, 0, 800]}></Stroboscopic>
     </group>
   );
 }
