@@ -8,13 +8,10 @@ import Stroboscopic from "./Stroboscopic";
 
 export default function Lights({ targetRef }) {
   const lightRef = useRef();
-  const lightRef4 = useRef();
-  const lightRef3 = useRef();
-  const lightRef2 = useRef();
-  const lightRef1 = useRef();
   const ambientRef = useRef();
   useHelper(lightRef, THREE.DirectionalLightHelper, "red");
   const { isMenuOpen } = useContext(AppContext);
+  const [isOn, setIsOn] = useState(false);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -23,27 +20,29 @@ export default function Lights({ targetRef }) {
         duration: 1.5,
         delay: 0.5,
       });
+      setIsOn(false)
     } else {
       gsap.to(ambientRef.current, {
         intensity: 1.0,
         duration: 1.5,
         delay: 0.5,
       });
+      setIsOn(true)
     }
   }, [isMenuOpen]);
 
   return (
     <group>
       <ambientLight ref={ambientRef} intensity={0.25}></ambientLight>
-      <Stroboscopic position={[0, 0, 0]}></Stroboscopic>
-      <Stroboscopic position={[0, 0, 100]}></Stroboscopic>
-      <Stroboscopic position={[0, 0, 200]}></Stroboscopic>
-      <Stroboscopic position={[0, 0, 300]}></Stroboscopic>
-      <Stroboscopic position={[0, 0, 400]}></Stroboscopic>
-      <Stroboscopic position={[0, 0, 500]}></Stroboscopic>
-      <Stroboscopic position={[0, 0, 600]}></Stroboscopic>
-      <Stroboscopic position={[0, 0, 700]}></Stroboscopic>
-      <Stroboscopic position={[0, 0, 800]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} dealay={0.5} position={[0, 0, 0]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} dealay={1.0} position={[0, 0, 100]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} dealay={1.5} position={[0, 0, 200]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} dealay={2.0} position={[0, 0, 300]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} dealay={2.5} position={[0, 0, 400]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} dealay={3.0} position={[0, 0, 500]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} dealay={3.5} position={[0, 0, 600]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} dealay={4.0} position={[0, 0, 700]}></Stroboscopic>
+      <Stroboscopic isOn={isOn} dealay={4.5} position={[0, 0, 800]}></Stroboscopic>
     </group>
   );
 }
