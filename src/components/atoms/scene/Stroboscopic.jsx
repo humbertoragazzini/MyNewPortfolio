@@ -24,11 +24,11 @@ export default function Stroboscopic({ position, lightValues, delay, index }) {
             // gsap.to(material2.current.color, { b: 10, delay: delay, duration: 0.05 })
             // gsap.to(material3.current.color, { b: 10, delay: delay, duration: 0.05 })
             // gsap.to(material4.current.color, { b: 10, delay: delay, duration: 0.1 })
-            ligthStrRef1.current.intensity = lightValues[index];
+            //ligthStrRef1.current.intensity = lightValues[index];
             ligthStrRef2.current.intensity = lightValues[index];
             ligthStrRef3.current.intensity = lightValues[index];
             ligthStrRef4.current.intensity = lightValues[index];
-            material1.current.color.b = lightValues[index] / 80;
+            //material1.current.color.b = lightValues[index] / 80;
             material2.current.color.b = lightValues[index] / 80;
             material3.current.color.b = lightValues[index] / 80;
             material4.current.color.b = lightValues[index] / 80;
@@ -49,20 +49,6 @@ export default function Stroboscopic({ position, lightValues, delay, index }) {
     return (
         <group position={[0 + position[0], 0 + position[1], -420 - position[2]]}>
             <group>
-                <group
-                    position={[0, 64, 0]}>
-                    <mesh material={material1.current}>
-                        <sphereGeometry args={[3, 20, 20]}></sphereGeometry>
-                    </mesh>
-                    <pointLight
-                        ref={ligthStrRef1}
-                        position={[0, -2.5, 0]}
-                        intensity={0}
-                        color={"blue"}
-                        distance={40} // Increase to cover a wider area
-                        decay={1} // Keep default or adjust lower to make it fall off slower
-                    />
-                </group>
                 <group
                     position={[0, -40, 0]}>
                     <mesh material={material2.current}>
