@@ -5,6 +5,7 @@ import * as THREE from "three";
 import { AppContext } from "../../../context/AppContext";
 import gsap from "gsap";
 import Stroboscopic from "./Stroboscopic";
+import MovingLight from "./MovingLight";
 
 export default function Lights({ targetRef }) {
   const lightRef = useRef();
@@ -60,6 +61,7 @@ export default function Lights({ targetRef }) {
   return (
     <group>
       <ambientLight ref={ambientRef} intensity={0.25}></ambientLight>
+      {/* Stroboscopic */}
       <Stroboscopic lightValues={lightValues} index={0} delay={0.10} position={[0, 0, 0]}></Stroboscopic>
       {/* <Stroboscopic lightValues={lightValues} index={1} delay={0.20} position={[0, 0, 100]}></Stroboscopic> */}
       <Stroboscopic lightValues={lightValues} index={2} delay={0.30} position={[0, 0, 200]}></Stroboscopic>
@@ -69,6 +71,8 @@ export default function Lights({ targetRef }) {
       <Stroboscopic lightValues={lightValues} index={6} delay={0.7} position={[0, 0, 600]}></Stroboscopic>
       {/* <Stroboscopic lightValues={lightValues} index={7} delay={0.8} position={[0, 0, 700]}></Stroboscopic> */}
       <Stroboscopic lightValues={lightValues} index={8} delay={0.9} position={[0, 0, 800]}></Stroboscopic>
+      {/* Moving */}
+      <MovingLight></MovingLight>
     </group>
   );
 }
