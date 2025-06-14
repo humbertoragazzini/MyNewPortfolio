@@ -29,7 +29,7 @@ export default function Camera({ scroll, children }) {
 
   useFrame(() => {
     if (cameraRef.current !== undefined) {
-      const targetZ = 75 - 1 * 1492 * scroll.current;
+      const targetZ = 75 - 1 * 1260 * scroll.current;
       cameraRef.current.position.z = THREE.MathUtils.lerp(
         cameraRef.current.position.z,
         targetZ,
