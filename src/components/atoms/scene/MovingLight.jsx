@@ -5,76 +5,38 @@ export default function MovingLight({ position }) {
     const ligthStrRef1 = useRef();
     const ligthStrRef2 = useRef();
     const ligthStrRef3 = useRef();
-    const ligthStrRef4 = useRef();
-    const intensity = useRef({
-        value: 0,
-    })
     const theGroupRef = useRef();
-    const material1 = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 0) }))
-    const material2 = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 0) }))
-    const material3 = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 0) }))
-    const material4 = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 0) }))
+    const material = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 0) }))
 
-    // useEffect(() => {
-    //     if (lightValues && ligthStrRef2.current !== undefined && ligthStrRef3.current !== undefined && ligthStrRef4.current !== undefined) {
-    //         // gsap.to(ligthStrRef1.current, { intensity: 500, delay: delay, duration: 0.1 })
-    //         // gsap.to(ligthStrRef2.current, { intensity: 500, delay: delay, duration: 0.05 })
-    //         // gsap.to(ligthStrRef3.current, { intensity: 500, delay: delay, duration: 0.05 })
-    //         // gsap.to(ligthStrRef4.current, { intensity: 500, delay: delay, duration: 0.1 })
-    //         // gsap.to(material1.current.color, { b: 10, delay: delay, duration: 0.1 })
-    //         // gsap.to(material2.current.color, { b: 10, delay: delay, duration: 0.05 })
-    //         // gsap.to(material3.current.color, { b: 10, delay: delay, duration: 0.05 })
-    //         // gsap.to(material4.current.color, { b: 10, delay: delay, duration: 0.1 })
-    //         //ligthStrRef1.current.intensity = lightValues[index];
-    //         // ligthStrRef2.current.intensity = lightValues[index];
-    //         // ligthStrRef3.current.intensity = lightValues[index];
-    //         // ligthStrRef4.current.intensity = lightValues[index];
-    //         //material1.current.color.b = lightValues[index] / 80;
-    //         // material2.current.color.b = lightValues[index] / 80;
-    //         // material3.current.color.b = lightValues[index] / 80;
-    //         // material4.current.color.b = lightValues[index] / 80;
-
-
-    //     } else {
-    //         // gsap.to(ligthStrRef1.current, { intensity: 0, delay: delay, duration: 0.05 })
-    //         // gsap.to(ligthStrRef2.current, { intensity: 0, delay: delay, duration: 0.1 })
-    //         // gsap.to(ligthStrRef3.current, { intensity: 0, delay: delay, duration: 0.1 })
-    //         // gsap.to(ligthStrRef4.current, { intensity: 0, delay: delay, duration: 0.05 })
-    //         // gsap.to(material1.current.color, { b: 0, delay: delay, duration: 0.05 })
-    //         // gsap.to(material2.current.color, { b: 0, delay: delay, duration: 0.1 })
-    //         // gsap.to(material3.current.color, { b: 0, delay: delay, duration: 0.1 })
-    //         // gsap.to(material4.current.color, { b: 0, delay: delay, duration: 0.05 })
-    //     }
-    // }, [lightValues])
     useEffect(() => {
         const mytimeline = gsap.timeline({ duration: 1, repeat: -1 });
-        if (ligthStrRef2.current !== undefined && ligthStrRef3.current !== undefined && ligthStrRef4.current !== undefined) {
+        if (ligthStrRef1.current !== undefined && ligthStrRef2.current !== undefined && ligthStrRef3.current !== undefined) {
             mytimeline.to(
                 theGroupRef.current.position, { z: -1100, duration: 2 }, 0
+            ).fromTo(
+                ligthStrRef1.current, { intensity: 0 }, { intensity: 850, duration: 0.75 }, 0
             ).fromTo(
                 ligthStrRef2.current, { intensity: 0 }, { intensity: 850, duration: 0.75 }, 0
             ).fromTo(
                 ligthStrRef3.current, { intensity: 0 }, { intensity: 850, duration: 0.75 }, 0
-            ).fromTo(
-                ligthStrRef4.current, { intensity: 0 }, { intensity: 850, duration: 0.75 }, 0
+            ).to(
+                ligthStrRef1.current, { intensity: 0, duration: 0.25 }, 0.75
             ).to(
                 ligthStrRef2.current, { intensity: 0, duration: 0.25 }, 0.75
             ).to(
                 ligthStrRef3.current, { intensity: 0, duration: 0.25 }, 0.75
-            ).to(
-                ligthStrRef4.current, { intensity: 0, duration: 0.25 }, 0.75
             ).fromTo(
-                material2.current.color, { b: 0 }, { b: 15, duration: 0.75 }, 0
+                material.current.color, { b: 0 }, { b: 15, duration: 0.75 }, 0
             ).fromTo(
-                material2.current.color, { b: 0 }, { b: 15, duration: 0.75 }, 0
+                material.current.color, { b: 0 }, { b: 15, duration: 0.75 }, 0
             ).fromTo(
-                material2.current.color, { b: 0 }, { b: 15, duration: 0.75 }, 0
+                material.current.color, { b: 0 }, { b: 15, duration: 0.75 }, 0
             ).to(
-                material2.current.color, { b: 0, duration: 0.25 }, 0.75
+                material.current.color, { b: 0, duration: 0.25 }, 0.75
             ).to(
-                material2.current.color, { b: 0, duration: 0.25 }, 0.75
+                material.current.color, { b: 0, duration: 0.25 }, 0.75
             ).to(
-                material2.current.color, { b: 0, duration: 0.25 }, 0.75
+                material.current.color, { b: 0, duration: 0.25 }, 0.75
             )
         }
     }, [])
@@ -84,11 +46,11 @@ export default function MovingLight({ position }) {
             <group ref={theGroupRef}>
                 <group
                     position={[0, -40, 0]}>
-                    <mesh material={material2.current}>
+                    <mesh material={material.current}>
                         <sphereGeometry args={[3, 20, 20]}></sphereGeometry>
                     </mesh>
                     <pointLight
-                        ref={ligthStrRef2}
+                        ref={ligthStrRef1}
                         castShadow
                         position={[0, 2.5, 0]}
                         intensity={0}
@@ -99,11 +61,11 @@ export default function MovingLight({ position }) {
                 </group>
                 <group
                     position={[50, 38, 0]}>
-                    <mesh material={material2.current} rotation={[Math.PI / 2, -0.75, 0]} position={[4, 4, 0]}>
+                    <mesh material={material.current} rotation={[Math.PI / 2, -0.75, 0]} position={[4, 4, 0]}>
                         <planeGeometry args={[7, 30]}></planeGeometry>
                     </mesh>
                     <pointLight
-                        ref={ligthStrRef3}
+                        ref={ligthStrRef2}
                         castShadow
                         position={[0, 0, 0]}
                         intensity={0}
@@ -114,11 +76,11 @@ export default function MovingLight({ position }) {
                 </group>
                 <group
                     position={[-50, 38, 0]}>
-                    <mesh material={material2.current} rotation={[Math.PI / 2, 0.75, 0]} position={[-4, 4, 0]}>
+                    <mesh material={material.current} rotation={[Math.PI / 2, 0.75, 0]} position={[-4, 4, 0]}>
                         <planeGeometry args={[7, 30]}></planeGeometry>
                     </mesh>
                     <pointLight
-                        ref={ligthStrRef4}
+                        ref={ligthStrRef3}
                         castShadow
                         position={[0, 0, 0]}
                         intensity={0}

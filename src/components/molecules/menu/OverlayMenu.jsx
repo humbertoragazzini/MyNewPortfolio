@@ -17,6 +17,8 @@ export default function OverlayMenu() {
     changeDpr,
     postProcessing,
     togglePostProcessing,
+    ilumination,
+    changeIlumination,
   } = useContext(AppContext);
   const [menu, setMenu] = useState("main");
   const [reflectionSize, setReflectionSize] = useState(256);
@@ -217,8 +219,8 @@ export default function OverlayMenu() {
             </div>
             <MenuButton
               text={{
-                en: "REAL TIME ILUMINATION",
-                es: "ILUMINACION EN TIEMPO REAL",
+                en: "ILUMINATION",
+                es: "ILUMINACION",
               }}
               animated={false}
               className="text-lg md:text-xl lg:text-2xl xl:text-3xl"
@@ -226,19 +228,36 @@ export default function OverlayMenu() {
             <div className="flex justify-center flex-wrap mb-5 mx-6 text-xl md:text-2xl xl:text-3xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
                 className="mx-3"
+                onClick={() => {
+                  changeIlumination("low");
+                }}
                 animate={{
-                  opacity: postProcessing ? 1 : 0.25,
+                  opacity: ilumination == "low" ? 1 : 0.25,
                 }}
               >
-                ON
+                LOW
               </motion.div>
               <motion.div
                 className="mx-3"
+                onClick={() => {
+                  changeIlumination("medium");
+                }}
                 animate={{
-                  opacity: !postProcessing ? 1 : 0.25,
+                  opacity: ilumination == "medium" ? 1 : 0.25,
                 }}
               >
-                OFF
+                MEDIUM
+              </motion.div>
+              <motion.div
+                className="mx-3"
+                onClick={() => {
+                  changeIlumination("high");
+                }}
+                animate={{
+                  opacity: ilumination == "high" ? 1 : 0.25,
+                }}
+              >
+                HIGH
               </motion.div>
             </div>
             <MenuButton

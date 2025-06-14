@@ -2,47 +2,24 @@ import gsap from "gsap";
 import { useEffect, useRef, useState } from "react"
 import * as THREE from "three"
 export default function Stroboscopic({ position, lightValues, delay, index }) {
-    const ligthStrRef1 = useRef();
     const ligthStrRef2 = useRef();
     const ligthStrRef3 = useRef();
     const ligthStrRef4 = useRef();
     const intensity = useRef({
         value: 0,
     })
-    const material1 = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 10) }))
     const material2 = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 10) }))
     const material3 = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 10) }))
     const material4 = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 10) }))
 
     useEffect(() => {
         if (lightValues && ligthStrRef2.current !== undefined && ligthStrRef3.current !== undefined && ligthStrRef4.current !== undefined) {
-            // gsap.to(ligthStrRef1.current, { intensity: 500, delay: delay, duration: 0.1 })
-            // gsap.to(ligthStrRef2.current, { intensity: 500, delay: delay, duration: 0.05 })
-            // gsap.to(ligthStrRef3.current, { intensity: 500, delay: delay, duration: 0.05 })
-            // gsap.to(ligthStrRef4.current, { intensity: 500, delay: delay, duration: 0.1 })
-            // gsap.to(material1.current.color, { b: 10, delay: delay, duration: 0.1 })
-            // gsap.to(material2.current.color, { b: 10, delay: delay, duration: 0.05 })
-            // gsap.to(material3.current.color, { b: 10, delay: delay, duration: 0.05 })
-            // gsap.to(material4.current.color, { b: 10, delay: delay, duration: 0.1 })
-            //ligthStrRef1.current.intensity = lightValues[index];
             ligthStrRef2.current.intensity = lightValues[index];
             ligthStrRef3.current.intensity = lightValues[index];
             ligthStrRef4.current.intensity = lightValues[index];
-            //material1.current.color.b = lightValues[index] / 80;
             material2.current.color.b = lightValues[index] / 80;
             material3.current.color.b = lightValues[index] / 80;
             material4.current.color.b = lightValues[index] / 80;
-
-
-        } else {
-            // gsap.to(ligthStrRef1.current, { intensity: 0, delay: delay, duration: 0.05 })
-            // gsap.to(ligthStrRef2.current, { intensity: 0, delay: delay, duration: 0.1 })
-            // gsap.to(ligthStrRef3.current, { intensity: 0, delay: delay, duration: 0.1 })
-            // gsap.to(ligthStrRef4.current, { intensity: 0, delay: delay, duration: 0.05 })
-            // gsap.to(material1.current.color, { b: 0, delay: delay, duration: 0.05 })
-            // gsap.to(material2.current.color, { b: 0, delay: delay, duration: 0.1 })
-            // gsap.to(material3.current.color, { b: 0, delay: delay, duration: 0.1 })
-            // gsap.to(material4.current.color, { b: 0, delay: delay, duration: 0.05 })
         }
     }, [lightValues])
 

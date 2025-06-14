@@ -9,6 +9,7 @@ export const AppProvider = ({ children }) => {
   const [reflections, setReflections] = useState(true);
   const [postProcessing, setPostProcessing] = useState(true);
   const [reflectionQuality, setReflectionQuality] = useState(256);
+  const [ilumination, setIlumination] = useState("low");
   const [dpr, setDpr] = useState([0.5, 0.75])
   // Example of toggling values
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
@@ -44,6 +45,9 @@ export const AppProvider = ({ children }) => {
         break;
     }
   }
+  const changeIlumination = (value) => {
+    setIlumination(value);
+  }
   return (
     <AppContext.Provider
       value={{
@@ -59,7 +63,9 @@ export const AppProvider = ({ children }) => {
         dpr,
         changeDpr,
         postProcessing,
-        togglePostProcessing
+        togglePostProcessing,
+        ilumination,
+        changeIlumination,
       }}
     >
       {children}
