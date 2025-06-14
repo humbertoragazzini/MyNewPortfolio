@@ -15,7 +15,7 @@ export default function Stroboscopic({ position, lightValues, delay, index }) {
     const material4 = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 10) }))
 
     useEffect(() => {
-        if (lightValues && ligthStrRef1.current !== undefined && ligthStrRef2.current !== undefined && ligthStrRef3.current !== undefined && ligthStrRef4.current !== undefined) {
+        if (lightValues && ligthStrRef2.current !== undefined && ligthStrRef3.current !== undefined && ligthStrRef4.current !== undefined) {
             // gsap.to(ligthStrRef1.current, { intensity: 500, delay: delay, duration: 0.1 })
             // gsap.to(ligthStrRef2.current, { intensity: 500, delay: delay, duration: 0.05 })
             // gsap.to(ligthStrRef3.current, { intensity: 500, delay: delay, duration: 0.05 })
