@@ -72,7 +72,7 @@ export default function Lights({ targetRef }) {
       {/* <Stroboscopic lightValues={lightValues} index={7} delay={0.8} position={[0, 0, 700]}></Stroboscopic> */}
       {/* <Stroboscopic lightValues={lightValues} index={8} delay={0.9} position={[0, 0, 800]}></Stroboscopic> */}
       {/* Moving */}
-      <MovingLight position={[0, 0, 0]}></MovingLight>
+      <MovingLight position={[0, 0, -20]}></MovingLight>
     </group>
   );
 }

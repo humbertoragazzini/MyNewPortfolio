@@ -10,10 +10,10 @@ export default function MovingLight({ position }) {
         value: 0,
     })
     const theGroupRef = useRef();
-    const material1 = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 10) }))
-    const material2 = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 10) }))
-    const material3 = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 10) }))
-    const material4 = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 10) }))
+    const material1 = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 0) }))
+    const material2 = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 0) }))
+    const material3 = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 0) }))
+    const material4 = useRef(new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0, 0) }))
 
     // useEffect(() => {
     //     if (lightValues && ligthStrRef2.current !== undefined && ligthStrRef3.current !== undefined && ligthStrRef4.current !== undefined) {
@@ -47,10 +47,34 @@ export default function MovingLight({ position }) {
     //     }
     // }, [lightValues])
     useEffect(() => {
-        const mytimeline = gsap.timeline();
+        const mytimeline = gsap.timeline({ duration: 1, repeat: -1 });
         if (ligthStrRef2.current !== undefined && ligthStrRef3.current !== undefined && ligthStrRef4.current !== undefined) {
             mytimeline.to(
-                theGroupRef.current.position, { z: -420, repeat: -1, duration: 2 }
+                theGroupRef.current.position, { z: -1100, duration: 2 }, 0
+            ).fromTo(
+                ligthStrRef2.current, { intensity: 0 }, { intensity: 850, duration: 0.75 }, 0
+            ).fromTo(
+                ligthStrRef3.current, { intensity: 0 }, { intensity: 850, duration: 0.75 }, 0
+            ).fromTo(
+                ligthStrRef4.current, { intensity: 0 }, { intensity: 850, duration: 0.75 }, 0
+            ).to(
+                ligthStrRef2.current, { intensity: 0, duration: 0.25 }, 0.75
+            ).to(
+                ligthStrRef3.current, { intensity: 0, duration: 0.25 }, 0.75
+            ).to(
+                ligthStrRef4.current, { intensity: 0, duration: 0.25 }, 0.75
+            ).fromTo(
+                material2.current.color, { b: 0 }, { b: 15, duration: 0.75 }, 0
+            ).fromTo(
+                material2.current.color, { b: 0 }, { b: 15, duration: 0.75 }, 0
+            ).fromTo(
+                material2.current.color, { b: 0 }, { b: 15, duration: 0.75 }, 0
+            ).to(
+                material2.current.color, { b: 0, duration: 0.25 }, 0.75
+            ).to(
+                material2.current.color, { b: 0, duration: 0.25 }, 0.75
+            ).to(
+                material2.current.color, { b: 0, duration: 0.25 }, 0.75
             )
         }
     }, [])
@@ -67,39 +91,39 @@ export default function MovingLight({ position }) {
                         ref={ligthStrRef2}
                         castShadow
                         position={[0, 2.5, 0]}
-                        intensity={1}
+                        intensity={0}
                         color={"blue"}
-                        distance={40} // Increase to cover a wider area
+                        distance={100} // Increase to cover a wider area
                         decay={1} // Keep default or adjust lower to make it fall off slower
                     />
                 </group>
                 <group
                     position={[50, 38, 0]}>
-                    <mesh material={material3.current} rotation={[Math.PI / 2, -0.75, 0]} position={[4, 4, 0]}>
+                    <mesh material={material2.current} rotation={[Math.PI / 2, -0.75, 0]} position={[4, 4, 0]}>
                         <planeGeometry args={[7, 30]}></planeGeometry>
                     </mesh>
                     <pointLight
                         ref={ligthStrRef3}
                         castShadow
                         position={[0, 0, 0]}
-                        intensity={1}
+                        intensity={0}
                         color={"blue"}
-                        distance={50} // Increase to cover a wider area
+                        distance={100} // Increase to cover a wider area
                         decay={1} // Keep default or adjust lower to make it fall off slower
                     />
                 </group>
                 <group
                     position={[-50, 38, 0]}>
-                    <mesh material={material3.current} rotation={[Math.PI / 2, 0.75, 0]} position={[-4, 4, 0]}>
+                    <mesh material={material2.current} rotation={[Math.PI / 2, 0.75, 0]} position={[-4, 4, 0]}>
                         <planeGeometry args={[7, 30]}></planeGeometry>
                     </mesh>
                     <pointLight
                         ref={ligthStrRef4}
                         castShadow
                         position={[0, 0, 0]}
-                        intensity={1}
+                        intensity={0}
                         color={"blue"}
-                        distance={50} // Increase to cover a wider area
+                        distance={100} // Increase to cover a wider area
                         decay={1} // Keep default or adjust lower to make it fall off slower
                     />
                 </group>
