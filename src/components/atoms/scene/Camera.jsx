@@ -56,7 +56,30 @@ export default function Camera({ scroll, children }) {
         cameraRef.current.updateProjectionMatrix();
       }
     } else {
-
+      if (cameraRef.current !== undefined) {
+        const targetZ = -12.5;
+        cameraRef.current.position.z = THREE.MathUtils.lerp(
+          cameraRef.current.position.z,
+          targetZ,
+          lerpSpeed
+        );
+        // cameraRef.current.rotation.y = THREE.MathUtils.lerp(
+        //   cameraRef.current.rotation.y,
+        //   horizontal.current,
+        //   lerpSpeed
+        // );
+        // cameraRef.current.rotation.x = THREE.MathUtils.lerp(
+        //   cameraRef.current.rotation.x,
+        //   vertical.current,
+        //   lerpSpeed
+        // );
+        // cameraRef.current.rotation.z = THREE.MathUtils.lerp(
+        //   cameraRef.current.rotation.z,
+        //   horizontal.current * 0.01 + vertical.current * 0.01,
+        //   lerpSpeed
+        // );
+        cameraRef.current.updateProjectionMatrix();
+      }
     }
 
 
