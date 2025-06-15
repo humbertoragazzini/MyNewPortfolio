@@ -53,9 +53,11 @@ export default function Camera({ scroll, children }) {
           horizontal.current * 0.01 + vertical.current * 0.01,
           lerpSpeed
         );
+        console.log(`rotation:x${cameraRef.current.rotation.x},rotation:y${cameraRef.current.rotation.y},rotation:z${cameraRef.current.rotation.z}`)
         cameraRef.current.updateProjectionMatrix();
       }
     } else {
+      // 0.010624999999999983,rotation:y-0.49947916666666553,rotation:z-0.0048
       if (cameraRef.current !== undefined) {
         const targetZ = -12.5;
         cameraRef.current.position.z = THREE.MathUtils.lerp(
@@ -63,21 +65,21 @@ export default function Camera({ scroll, children }) {
           targetZ,
           lerpSpeed
         );
-        // cameraRef.current.rotation.y = THREE.MathUtils.lerp(
-        //   cameraRef.current.rotation.y,
-        //   horizontal.current,
-        //   lerpSpeed
-        // );
-        // cameraRef.current.rotation.x = THREE.MathUtils.lerp(
-        //   cameraRef.current.rotation.x,
-        //   vertical.current,
-        //   lerpSpeed
-        // );
-        // cameraRef.current.rotation.z = THREE.MathUtils.lerp(
-        //   cameraRef.current.rotation.z,
-        //   horizontal.current * 0.01 + vertical.current * 0.01,
-        //   lerpSpeed
-        // );
+        cameraRef.current.rotation.y = THREE.MathUtils.lerp(
+          cameraRef.current.rotation.y,
+          -0.7994,
+          lerpSpeed
+        );
+        cameraRef.current.rotation.x = THREE.MathUtils.lerp(
+          cameraRef.current.rotation.x,
+          0.01062,
+          lerpSpeed
+        );
+        cameraRef.current.rotation.z = THREE.MathUtils.lerp(
+          cameraRef.current.rotation.z,
+          horizontal.current * 0.01 + vertical.current * 0.01,
+          lerpSpeed
+        );
         cameraRef.current.updateProjectionMatrix();
       }
     }
