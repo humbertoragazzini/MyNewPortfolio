@@ -14,7 +14,7 @@ export default function ProjectRight({ positionZ, children }) {
   const mainContainerRef = useRef();
   const [geometry, setGeometry] = useState();
   const [show, setShow] = useState(false);
-  const { isMenuOpen, language } = useContext(AppContext);
+  const { isMenuOpen, language, changeSelectedProject } = useContext(AppContext);
 
   useFrame(() => {
     if (geoRef.current && mainContainerRef.current && htmlRef.current) {
@@ -63,7 +63,7 @@ export default function ProjectRight({ positionZ, children }) {
             occlude="blending"
             transform
           >
-            <div className="relative" ref={mainContainerRef}>
+            <div className="relative" ref={mainContainerRef} onClick={() => { changeSelectedProject("first") }}>
               {
                 children
               }

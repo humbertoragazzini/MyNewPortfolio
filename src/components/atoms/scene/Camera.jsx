@@ -9,12 +9,14 @@ import {
   useState,
 } from "react";
 import * as THREE from "three";
+import { AppContext } from "../../../context/AppContext";
 
 export default function Camera({ scroll, children }) {
   const cameraRef = useRef();
   const lerpSpeed = 0.05;
   const horizontal = useRef(0);
   const vertical = useRef(0);
+  const { selectedProject } = useContext(AppContext);
 
   useEffect(() => {
     const move = (e) => {
@@ -28,30 +30,36 @@ export default function Camera({ scroll, children }) {
   }, []);
 
   useFrame(() => {
-    if (cameraRef.current !== undefined) {
-      const targetZ = 75 - 1 * 1260 * scroll.current;
-      cameraRef.current.position.z = THREE.MathUtils.lerp(
-        cameraRef.current.position.z,
-        targetZ,
-        lerpSpeed
-      );
-      cameraRef.current.rotation.y = THREE.MathUtils.lerp(
-        cameraRef.current.rotation.y,
-        horizontal.current,
-        lerpSpeed
-      );
-      cameraRef.current.rotation.x = THREE.MathUtils.lerp(
-        cameraRef.current.rotation.x,
-        vertical.current,
-        lerpSpeed
-      );
-      cameraRef.current.rotation.z = THREE.MathUtils.lerp(
-        cameraRef.current.rotation.z,
-        horizontal.current * 0.01 + vertical.current * 0.01,
-        lerpSpeed
-      );
-      cameraRef.current.updateProjectionMatrix();
+    if (selectedProject == null) {
+      if (cameraRef.current !== undefined) {
+        const targetZ = 75 - 1 * 1260 * scroll.current;
+        cameraRef.current.position.z = THREE.MathUtils.lerp(
+          cameraRef.current.position.z,
+          targetZ,
+          lerpSpeed
+        );
+        cameraRef.current.rotation.y = THREE.MathUtils.lerp(
+          cameraRef.current.rotation.y,
+          horizontal.current,
+          lerpSpeed
+        );
+        cameraRef.current.rotation.x = THREE.MathUtils.lerp(
+          cameraRef.current.rotation.x,
+          vertical.current,
+          lerpSpeed
+        );
+        cameraRef.current.rotation.z = THREE.MathUtils.lerp(
+          cameraRef.current.rotation.z,
+          horizontal.current * 0.01 + vertical.current * 0.01,
+          lerpSpeed
+        );
+        cameraRef.current.updateProjectionMatrix();
+      }
+    } else {
+
     }
+
+
   });
 
   return <PerspectiveCamera ref={cameraRef} makeDefault far={25000} />;

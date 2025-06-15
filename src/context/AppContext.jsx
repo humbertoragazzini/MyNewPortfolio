@@ -11,6 +11,7 @@ export const AppProvider = ({ children }) => {
   const [reflectionQuality, setReflectionQuality] = useState(256);
   const [ilumination, setIlumination] = useState("low");
   const [dpr, setDpr] = useState([0.5, 0.75])
+  const [selectedProject, setSelectedProject] = useState(null)
   // Example of toggling values
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const toggleLanguage = (lang) => {
@@ -48,6 +49,19 @@ export const AppProvider = ({ children }) => {
   const changeIlumination = (value) => {
     setIlumination(value);
   }
+  const changeSelectedProject = (value) => {
+    switch (value) {
+      case "first":
+        setSelectedProject("first")
+        break;
+      case "second":
+        setSelectedProject("second")
+        break;
+      default:
+        setSelectedProject(null)
+        break;
+    }
+  }
   return (
     <AppContext.Provider
       value={{
@@ -66,6 +80,8 @@ export const AppProvider = ({ children }) => {
         togglePostProcessing,
         ilumination,
         changeIlumination,
+        selectedProject,
+        changeSelectedProject,
       }}
     >
       {children}
