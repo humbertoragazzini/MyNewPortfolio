@@ -8,9 +8,6 @@ export default function Project({ language, content }) {
 
     return (
         <>
-            <div
-                className={`absolute top-0 left-0 z-0 w-[125%] -translate-x-[12.5%] -translate-y-[5%] h-auto aspect-video animated-gradient`}
-            ></div>
             <div className={`relative z-10 grid w-full h-full grid-cols-3 text-white`}>
                 <div className="col-span-3 p-13">
                     {
