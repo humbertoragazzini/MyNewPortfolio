@@ -63,10 +63,12 @@ export default function ProjectRight({ positionZ, children }) {
             occlude="blending"
             transform
           >
-            <div className="relative" ref={mainContainerRef} onClick={() => { changeSelectedProject("first") }}>
-              {
-                children
-              }
+            <div className="relative" ref={mainContainerRef}>
+              <button onClick={() => { changeSelectedProject("first") }} className="bg-amber-500 text-black p-5 text-xl">CHECK PROJECT</button>
+              <div>
+
+              </div>
+              <button onClick={() => { changeSelectedProject(null) }} className="bg-amber-500 text-black p-5 text-xl">BACK TO FREE VIEW</button>
             </div>
           </Html>
         )}
