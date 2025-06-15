@@ -11,6 +11,81 @@ import {
 import * as THREE from "three";
 import { AppContext } from "../../../context/AppContext";
 
+const positionsArray = {
+  firstLeft: {
+    position: {
+      x: 0,
+      y: 0,
+      z: -12.5
+    },
+    rotation: {
+      x: 0,
+      y: 0,
+      z: -12.5
+    }
+  },
+  firstRight: {
+    position: {
+      x: 0,
+      y: 0,
+      z: 0
+    },
+    rotation: {
+      x: 0.01062,
+      y: -0.7994,
+      z: -0.0048
+    }
+  },
+  secondLeft: {
+    position: {
+      x: 0,
+      y: 0,
+      z: 0
+    },
+    rotation: {
+      x: 0,
+      y: 0,
+      z: 0
+    }
+  },
+  secondRight: {
+    position: {
+      x: 0,
+      y: 0,
+      z: 0
+    },
+    rotation: {
+      x: 0,
+      y: 0,
+      z: 0
+    }
+  },
+  thirdLeft: {
+    position: {
+      x: 0,
+      y: 0,
+      z: 0
+    },
+    rotation: {
+      x: 0,
+      y: 0,
+      z: 0
+    }
+  },
+  thirdRight: {
+    position: {
+      x: 0,
+      y: 0,
+      z: 0
+    },
+    rotation: {
+      x: 0,
+      y: 0,
+      z: 0
+    }
+  },
+}
+
 export default function Camera({ scroll, children }) {
   const cameraRef = useRef();
   const lerpSpeed = 0.05;
@@ -59,25 +134,24 @@ export default function Camera({ scroll, children }) {
     } else {
       // 0.010624999999999983,rotation:y-0.49947916666666553,rotation:z-0.0048
       if (cameraRef.current !== undefined) {
-        const targetZ = -12.5;
         cameraRef.current.position.z = THREE.MathUtils.lerp(
           cameraRef.current.position.z,
-          targetZ,
-          lerpSpeed
-        );
-        cameraRef.current.rotation.y = THREE.MathUtils.lerp(
-          cameraRef.current.rotation.y,
-          -0.7994,
+          positionsArray[selectedProject].position.z,
           lerpSpeed
         );
         cameraRef.current.rotation.x = THREE.MathUtils.lerp(
           cameraRef.current.rotation.x,
-          0.01062,
+          positionsArray[selectedProject].rotation.x,
+          lerpSpeed
+        );
+        cameraRef.current.rotation.y = THREE.MathUtils.lerp(
+          cameraRef.current.rotation.y,
+          positionsArray[selectedProject].rotation.y,
           lerpSpeed
         );
         cameraRef.current.rotation.z = THREE.MathUtils.lerp(
           cameraRef.current.rotation.z,
-          horizontal.current * 0.01 + vertical.current * 0.01,
+          positionsArray[selectedProject].rotation.z,
           lerpSpeed
         );
         cameraRef.current.updateProjectionMatrix();
