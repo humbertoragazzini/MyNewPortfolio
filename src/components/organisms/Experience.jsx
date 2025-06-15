@@ -254,7 +254,7 @@ export default function Experience() {
                   source={"videos/Testing_Video_h_264.mp4"}
                   url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
                 />
-                <ProjectRight positionZ={-40} language={language}>
+                <ProjectRight positionZ={-40} language={language} projectId={"firstRight"}>
                   <Project language={language} content={{
                     projectName: {
                       en: "Primalport - Website",

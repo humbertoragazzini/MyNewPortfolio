@@ -50,16 +50,10 @@ export const AppProvider = ({ children }) => {
     setIlumination(value);
   }
   const changeSelectedProject = (value) => {
-    switch (value) {
-      case "first":
-        setSelectedProject("first")
-        break;
-      case "second":
-        setSelectedProject("second")
-        break;
-      default:
-        setSelectedProject(null)
-        break;
+    if (value) {
+      setSelectedProject(value)
+    } else {
+      setSelectedProject(null)
     }
   }
   return (

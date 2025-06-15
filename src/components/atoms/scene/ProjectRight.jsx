@@ -7,7 +7,7 @@ import gsap from "gsap";
 import Heading from "../ui/Heading";
 import Paragraph from "../ui/Paragraph";
 
-export default function ProjectRight({ positionZ, children }) {
+export default function ProjectRight({ positionZ, projectId, children }) {
   const htmlRef = useRef();
   const meshRef = useRef();
   const geoRef = useRef();
@@ -64,11 +64,9 @@ export default function ProjectRight({ positionZ, children }) {
             transform
           >
             <div className="relative" ref={mainContainerRef}>
-              <button onClick={() => { changeSelectedProject("first") }} className="bg-amber-500 text-black p-5 text-xl">CHECK PROJECT</button>
-              <div>
-
+              <div onClick={() => { changeSelectedProject(projectId) }}>
+                {children}
               </div>
-              <button onClick={() => { changeSelectedProject(null) }} className="bg-amber-500 text-black p-5 text-xl">BACK TO FREE VIEW</button>
             </div>
           </Html>
         )}
