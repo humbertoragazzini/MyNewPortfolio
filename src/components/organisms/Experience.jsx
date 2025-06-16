@@ -254,6 +254,34 @@ export default function Experience() {
                   source={"videos/Testing_Video_h_264.mp4"}
                   url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
                 /> */}
+                <ProjectLeft positionZ={-40} language={language} projectId={"firstLeft"}>
+                  <Project language={language} content={{
+                    projectName: {
+                      en: "Primalport - Website",
+                      es: "Primalport - Sitio web"
+                    },
+                    description: {
+                      en: "This is the main page of a collaborative project. The company is dedicated to the import and export of goods. On this website, I applied all my knowledge of Three.js, React Three Fiber, and Next.js. The site is currently hosted on GitHub Pages, but it will be migrated to Vercel in the future, using Prismic as its content management system (CMS).",
+                      es: "Esta es la página principal de un proyecto colaborativo. La empresa se dedica a la importación y exportación de bienes. En este sitio web, puse en práctica todo mi conocimiento en Three.js, React Three Fiber y Next.js. Actualmente, la página está alojada en GitHub Pages, pero en el futuro se migrará a Vercel y utilizará Prismic como sistema de gestión de contenidos (CMS)."
+                    },
+                    technologies: [
+                      "Tailwind",
+                      "React Three Fiber",
+                      "Framer",
+                      "GSAP",
+                      "Blender",
+                      "React",
+                      "Vite"
+                    ],
+                    link: {
+                      label: {
+                        en: "Link to the project",
+                        es: "Link al projecto"
+                      },
+                      url: "https://www.google.com"
+                    }
+                  }}></Project>
+                </ProjectLeft>
                 <ProjectRight positionZ={-40} language={language} projectId={"firstRight"}>
                   <Project language={language} content={{
                     projectName: {
@@ -308,7 +336,64 @@ export default function Experience() {
                       },
                       url: "https://www.google.com"
                     }
-                  }}></Project></ProjectLeft>
+                  }}></Project>
+                </ProjectLeft>
+                <ProjectRight positionZ={-145} language={language} projectId={"secondRight"}>
+                  <Project language={language} content={{
+                    projectName: {
+                      en: "Primalport - Website",
+                      es: "Primalport - Sitio web"
+                    },
+                    description: {
+                      en: "This is the main page of a collaborative project. The company is dedicated to the import and export of goods. On this website, I applied all my knowledge of Three.js, React Three Fiber, and Next.js. The site is currently hosted on GitHub Pages, but it will be migrated to Vercel in the future, using Prismic as its content management system (CMS).",
+                      es: "Esta es la página principal de un proyecto colaborativo. La empresa se dedica a la importación y exportación de bienes. En este sitio web, puse en práctica todo mi conocimiento en Three.js, React Three Fiber y Next.js. Actualmente, la página está alojada en GitHub Pages, pero en el futuro se migrará a Vercel y utilizará Prismic como sistema de gestión de contenidos (CMS)."
+                    },
+                    technologies: [
+                      "Tailwind",
+                      "React Three Fiber",
+                      "Framer",
+                      "GSAP",
+                      "Blender",
+                      "React",
+                      "Vite"
+                    ],
+                    link: {
+                      label: {
+                        en: "Link to the project",
+                        es: "Link al projecto"
+                      },
+                      url: "https://www.google.com"
+                    }
+                  }}></Project>
+                </ProjectRight>
+                <ProjectLeft positionZ={-245} language={language} projectId={"thirdLeft"}>
+                  <Project language={language} content={{
+                    projectName: {
+                      en: "Primalport - Website",
+                      es: "Primalport - Sitio web"
+                    },
+                    description: {
+                      en: "This is the main page of a collaborative project. The company is dedicated to the import and export of goods. On this website, I applied all my knowledge of Three.js, React Three Fiber, and Next.js. The site is currently hosted on GitHub Pages, but it will be migrated to Vercel in the future, using Prismic as its content management system (CMS).",
+                      es: "Esta es la página principal de un proyecto colaborativo. La empresa se dedica a la importación y exportación de bienes. En este sitio web, puse en práctica todo mi conocimiento en Three.js, React Three Fiber y Next.js. Actualmente, la página está alojada en GitHub Pages, pero en el futuro se migrará a Vercel y utilizará Prismic como sistema de gestión de contenidos (CMS)."
+                    },
+                    technologies: [
+                      "Tailwind",
+                      "React Three Fiber",
+                      "Framer",
+                      "GSAP",
+                      "Blender",
+                      "React",
+                      "Vite"
+                    ],
+                    link: {
+                      label: {
+                        en: "Link to the project",
+                        es: "Link al projecto"
+                      },
+                      url: "https://www.google.com"
+                    }
+                  }}></Project>
+                </ProjectLeft>
                 <ProjectRight positionZ={-245} language={language} projectId={"thirdRight"}>
                   <Project language={language} content={{
                     projectName: {
