@@ -1,4 +1,4 @@
-import { PerspectiveCamera } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { useThree, useFrame } from "@react-three/fiber";
 import {
   createContext,
@@ -161,5 +161,8 @@ export default function Camera({ scroll, children }) {
 
   });
 
-  return <PerspectiveCamera ref={cameraRef} makeDefault far={25000} />;
+  return <>
+    {/* <OrbitControls></OrbitControls> */}
+    <PerspectiveCamera ref={cameraRef} makeDefault far={25000} />
+  </>;
 }
