@@ -5,14 +5,14 @@ import * as THREE from "three";
 import { AppContext } from "../../../context/AppContext";
 import gsap from "gsap";
 
-export default function ProjectLeft({ positionZ, children }) {
+export default function ProjectLeft({ positionZ, projectId, children }) {
   const htmlRef = useRef();
   const meshRef = useRef();
   const geoRef = useRef();
   const mainContainerRef = useRef();
   const [geometry, setGeometry] = useState();
   const [show, setShow] = useState(false);
-  const { isMenuOpen } = useContext(AppContext);
+  const { isMenuOpen, language, selectedProject, changeSelectedProject } = useContext(AppContext);
 
   useFrame(() => {
     if (geoRef.current && mainContainerRef.current && htmlRef.current) {
@@ -61,8 +61,13 @@ export default function ProjectLeft({ positionZ, children }) {
             occlude="blending"
             transform
           >
-            <div className="relative" ref={mainContainerRef}>
-              {children}
+            <div className="relative animated-gradient" ref={mainContainerRef}>
+              <button onClick={() => { console.log("change to free view"); changeSelectedProject(null) }} className="absolute z-10 cursor-pointer top-0 right-0 p-5 bg-amber-400 text-black text-xl">
+                Back to free view
+              </button>
+              <div onClick={() => { selectedProject ? null : changeSelectedProject(projectId) }} className="relative z-0">
+                {children}
+              </div>
             </div>
           </Html>
         )}

@@ -282,7 +282,7 @@ export default function Experience() {
                     }
                   }}></Project>
                 </ProjectRight>
-                <ProjectLeft positionZ={-145} language={language}>
+                <ProjectLeft positionZ={-145} language={language} projectId={"secondLeft"}>
                   <Project language={language} content={{
                     projectName: {
                       en: "Primalport - Website",
