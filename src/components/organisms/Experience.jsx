@@ -239,7 +239,7 @@ export default function Experience() {
               </Effects>
               <Suspense fallback={<mesh position={[0, 0, -50]}><boxGeometry args={[10, 10, 10]}></boxGeometry><meshBasicMaterial color={"white"}></meshBasicMaterial></mesh>}>
                 <MainScene scale={1} />
-                <VideoLeft
+                {/* <VideoLeft
                   positionZ={-40}
                   source={"videos/Testing_Video_h_264.mp4"}
                   url={"https://www.primalports.com/"}
@@ -253,7 +253,7 @@ export default function Experience() {
                   positionZ={-245}
                   source={"videos/Testing_Video_h_264.mp4"}
                   url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
-                />
+                /> */}
                 <ProjectRight positionZ={-40} language={language} projectId={"firstRight"}>
                   <Project language={language} content={{
                     projectName: {
@@ -309,7 +309,7 @@ export default function Experience() {
                       url: "https://www.google.com"
                     }
                   }}></Project></ProjectLeft>
-                <ProjectRight positionZ={-245} language={language}>
+                <ProjectRight positionZ={-245} language={language} projectId={"thirdRight"}>
                   <Project language={language} content={{
                     projectName: {
                       en: "Primalport - Website",

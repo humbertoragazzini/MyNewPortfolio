@@ -76,12 +76,12 @@ const positionsArray = {
     position: {
       x: 0,
       y: 0,
-      z: 0
+      z: -215.5
     },
     rotation: {
-      x: 0,
-      y: 0,
-      z: 0
+      x: 0.01062,
+      y: -0.77,
+      z: -0.005
     }
   },
 }
