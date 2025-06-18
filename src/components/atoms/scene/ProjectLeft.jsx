@@ -12,7 +12,8 @@ export default function ProjectLeft({ positionZ, projectId, children }) {
   const mainContainerRef = useRef();
   const [geometry, setGeometry] = useState();
   const [show, setShow] = useState(false);
-  const { isMenuOpen, language, selectedProject, changeSelectedProject } = useContext(AppContext);
+  const { isMenuOpen, language, selectedProject, changeSelectedProject } =
+    useContext(AppContext);
 
   useFrame(() => {
     if (geoRef.current && mainContainerRef.current && htmlRef.current) {
@@ -32,12 +33,15 @@ export default function ProjectLeft({ positionZ, projectId, children }) {
     }
   }, []);
 
-
   useEffect(() => {
     if (isMenuOpen) {
-      gsap.to(meshRef.current.position, { y: -140, duration: 2 })
+      gsap.to(meshRef.current.position, { y: -140, duration: 2 });
     } else {
-      gsap.to(meshRef.current.position, { y: 0, duration: 2, delay: Math.random() * 2 })
+      gsap.to(meshRef.current.position, {
+        y: 0,
+        duration: 2,
+        delay: Math.random() * 2,
+      });
     }
   }, [isMenuOpen]);
 
@@ -61,11 +65,31 @@ export default function ProjectLeft({ positionZ, projectId, children }) {
             occlude="blending"
             transform
           >
-            <div className="relative animated-gradient" ref={mainContainerRef}>
-              <button onClick={() => { console.log("change to free view"); changeSelectedProject(null) }} className="absolute z-10 cursor-pointer top-0 right-0 p-5 bg-amber-400 text-black text-xl">
+            <div
+              className={`relative animated-gradient ${
+                selectedProject
+                  ? selectedProject == projectId
+                    ? ""
+                    : "blur-md"
+                  : ""
+              }`}
+              ref={mainContainerRef}
+            >
+              <button
+                onClick={() => {
+                  console.log("change to free view");
+                  changeSelectedProject(null);
+                }}
+                className="absolute top-0 right-0 z-10 p-5 text-xl text-black cursor-pointer bg-amber-400"
+              >
                 Back to free view
               </button>
-              <div onClick={() => { selectedProject ? null : changeSelectedProject(projectId) }} className="relative z-0">
+              <div
+                onClick={() => {
+                  selectedProject ? null : changeSelectedProject(projectId);
+                }}
+                className="relative z-0"
+              >
                 {children}
               </div>
             </div>

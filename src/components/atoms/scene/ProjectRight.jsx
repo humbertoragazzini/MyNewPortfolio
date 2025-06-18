@@ -68,7 +68,13 @@ export default function ProjectRight({ positionZ, projectId, children }) {
             transform
           >
             <div
-              className={`relative animated-gradient blur-md`}
+              className={`relative animated-gradient ${
+                selectedProject
+                  ? selectedProject == projectId
+                    ? ""
+                    : "blur-md"
+                  : ""
+              }`}
               ref={mainContainerRef}
             >
               <button
