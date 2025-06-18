@@ -16,75 +16,75 @@ const positionsArray = {
     position: {
       x: 0,
       y: 0,
-      z: -10.5
+      z: -10.5,
     },
     rotation: {
       x: -0.01062,
       y: 0.77,
-      z: 0.005
-    }
+      z: 0.005,
+    },
   },
   firstRight: {
     position: {
       x: 0,
       y: 0,
-      z: -10.5
+      z: -10.5,
     },
     rotation: {
       x: 0.01062,
       y: -0.77,
-      z: -0.005
-    }
+      z: -0.005,
+    },
   },
   secondLeft: {
     position: {
       x: 0,
       y: 0,
-      z: -115.5
+      z: -115.5,
     },
     rotation: {
       x: -0.01062,
       y: 0.77,
-      z: 0.005
-    }
+      z: 0.005,
+    },
   },
   secondRight: {
     position: {
       x: 0,
       y: 0,
-      z: -115.5
+      z: -115.5,
     },
     rotation: {
       x: 0.01062,
       y: -0.77,
-      z: -0.005
-    }
+      z: -0.005,
+    },
   },
   thirdLeft: {
     position: {
       x: 0,
       y: 0,
-      z: -215.5
+      z: -215.5,
     },
     rotation: {
       x: -0.01062,
       y: 0.77,
-      z: 0.005
-    }
+      z: 0.005,
+    },
   },
   thirdRight: {
     position: {
       x: 0,
       y: 0,
-      z: -215.5
+      z: -215.5,
     },
     rotation: {
       x: 0.01062,
       y: -0.77,
-      z: -0.005
-    }
+      z: -0.005,
+    },
   },
-}
+};
 
 export default function Camera({ scroll, children }) {
   const cameraRef = useRef();
@@ -128,11 +128,9 @@ export default function Camera({ scroll, children }) {
           horizontal.current * 0.01 + vertical.current * 0.01,
           lerpSpeed
         );
-        console.log(`rotation:x${cameraRef.current.rotation.x},rotation:y${cameraRef.current.rotation.y},rotation:z${cameraRef.current.rotation.z}`)
         cameraRef.current.updateProjectionMatrix();
       }
     } else {
-      // 0.010624999999999983,rotation:y-0.49947916666666553,rotation:z-0.0048
       if (cameraRef.current !== undefined) {
         cameraRef.current.position.z = THREE.MathUtils.lerp(
           cameraRef.current.position.z,
@@ -157,12 +155,12 @@ export default function Camera({ scroll, children }) {
         cameraRef.current.updateProjectionMatrix();
       }
     }
-
-
   });
 
-  return <>
-    {/* <OrbitControls></OrbitControls> */}
-    <PerspectiveCamera ref={cameraRef} makeDefault far={25000} />
-  </>;
+  return (
+    <>
+      {/* <OrbitControls></OrbitControls> */}
+      <PerspectiveCamera ref={cameraRef} makeDefault far={25000} />
+    </>
+  );
 }
