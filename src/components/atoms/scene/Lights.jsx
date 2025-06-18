@@ -13,8 +13,8 @@ export default function Lights({ targetRef }) {
   useHelper(lightRef, THREE.DirectionalLightHelper, "red");
   const { isMenuOpen, ilumination } = useContext(AppContext);
   const [isOn, setIsOn] = useState(false);
-  const isOnRef = useRef(false)
-  const [lightValues, setLightValues] = useState()
+  const isOnRef = useRef(false);
+  const [lightValues, setLightValues] = useState();
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -23,14 +23,14 @@ export default function Lights({ targetRef }) {
         duration: 1.5,
         delay: 0.5,
       });
-      setIsOn(false)
+      setIsOn(false);
     } else {
       gsap.to(ambientRef.current, {
         intensity: 1.0,
         duration: 1.5,
         delay: 0.5,
       });
-      setIsOn(true)
+      setIsOn(true);
     }
   }, [isMenuOpen]);
 
@@ -40,13 +40,21 @@ export default function Lights({ targetRef }) {
     const tl = gsap.timeline({ repeat: -1 });
 
     values.forEach((val, i) => {
-      const delay = i * 0.30;
-      tl.to(val, { intensity: 1500, duration: 0.35, ease: "power2.inOut" }, delay);
-      tl.to(val, { intensity: 0, duration: 0.35, ease: "power2.inOut" }, delay + 1);
+      const delay = i * 0.3;
+      tl.to(
+        val,
+        { intensity: 1500, duration: 0.35, ease: "power2.inOut" },
+        delay
+      );
+      tl.to(
+        val,
+        { intensity: 0, duration: 0.35, ease: "power2.inOut" },
+        delay + 1
+      );
     });
 
     const update = () => {
-      setLightValues(values.map(v => Math.round(v.intensity)));
+      setLightValues(values.map((v) => Math.round(v.intensity)));
     };
 
     gsap.ticker.add(update);
@@ -62,23 +70,48 @@ export default function Lights({ targetRef }) {
     <group>
       <ambientLight ref={ambientRef} intensity={0.25}></ambientLight>
       {/* Stroboscopic */}
-      {
-        ilumination == "high" && <>
-          <Stroboscopic lightValues={lightValues} index={0} delay={0.10} position={[0, 0, 0]}></Stroboscopic>
-          <Stroboscopic lightValues={lightValues} index={1} delay={0.20} position={[0, 0, 100]}></Stroboscopic>
-          <Stroboscopic lightValues={lightValues} index={2} delay={0.30} position={[0, 0, 200]}></Stroboscopic>
-          <Stroboscopic lightValues={lightValues} index={3} delay={0.4} position={[0, 0, 300]}></Stroboscopic>
-          <Stroboscopic lightValues={lightValues} index={4} delay={0.5} position={[0, 0, 400]}></Stroboscopic>
-          <Stroboscopic lightValues={lightValues} index={5} delay={0.6} position={[0, 0, 500]}></Stroboscopic>
-          <Stroboscopic lightValues={lightValues} index={6} delay={0.7} position={[0, 0, 600]}></Stroboscopic>
-          <Stroboscopic lightValues={lightValues} index={7} delay={0.8} position={[0, 0, 700]}></Stroboscopic>
-          <Stroboscopic lightValues={lightValues} index={8} delay={0.9} position={[0, 0, 800]}></Stroboscopic>
+      {ilumination == "high" && (
+        <>
+          <Stroboscopic
+            lightValues={lightValues}
+            index={0}
+            delay={0.1}
+            position={[0, 0, 0]}
+          ></Stroboscopic>
+          {/* <Stroboscopic lightValues={lightValues} index={1} delay={0.20} position={[0, 0, 100]}></Stroboscopic> */}
+          <Stroboscopic
+            lightValues={lightValues}
+            index={2}
+            delay={0.3}
+            position={[0, 0, 200]}
+          ></Stroboscopic>
+          {/* <Stroboscopic lightValues={lightValues} index={3} delay={0.4} position={[0, 0, 300]}></Stroboscopic> */}
+          <Stroboscopic
+            lightValues={lightValues}
+            index={4}
+            delay={0.5}
+            position={[0, 0, 400]}
+          ></Stroboscopic>
+          {/* <Stroboscopic lightValues={lightValues} index={5} delay={0.6} position={[0, 0, 500]}></Stroboscopic> */}
+          <Stroboscopic
+            lightValues={lightValues}
+            index={6}
+            delay={0.7}
+            position={[0, 0, 600]}
+          ></Stroboscopic>
+          {/* <Stroboscopic lightValues={lightValues} index={7} delay={0.8} position={[0, 0, 700]}></Stroboscopic> */}
+          <Stroboscopic
+            lightValues={lightValues}
+            index={8}
+            delay={0.9}
+            position={[0, 0, 800]}
+          ></Stroboscopic>
         </>
-      }
+      )}
       {/* Moving */}
-      {
-        ilumination == "medium" && <MovingLight position={[0, 0, -20]}></MovingLight>
-      }
+      {ilumination == "medium" && (
+        <MovingLight position={[0, 0, -20]}></MovingLight>
+      )}
     </group>
   );
 }
