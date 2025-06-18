@@ -14,7 +14,8 @@ export default function ProjectRight({ positionZ, projectId, children }) {
   const mainContainerRef = useRef();
   const [geometry, setGeometry] = useState();
   const [show, setShow] = useState(false);
-  const { isMenuOpen, language, selectedProject, changeSelectedProject } = useContext(AppContext);
+  const { isMenuOpen, language, selectedProject, changeSelectedProject } =
+    useContext(AppContext);
 
   useFrame(() => {
     if (geoRef.current && mainContainerRef.current && htmlRef.current) {
@@ -34,13 +35,15 @@ export default function ProjectRight({ positionZ, projectId, children }) {
     }
   }, []);
 
-
-
   useEffect(() => {
     if (isMenuOpen) {
-      gsap.to(meshRef.current.position, { y: -140, duration: 2 })
+      gsap.to(meshRef.current.position, { y: -140, duration: 2 });
     } else {
-      gsap.to(meshRef.current.position, { y: 0, duration: 2, delay: Math.random() * 2 })
+      gsap.to(meshRef.current.position, {
+        y: 0,
+        duration: 2,
+        delay: Math.random() * 2,
+      });
     }
   }, [isMenuOpen]);
 
@@ -49,7 +52,8 @@ export default function ProjectRight({ positionZ, projectId, children }) {
       ref={meshRef}
       position={[30, 0, positionZ]}
       rotation={[0, -Math.PI / 4, 0]}
-    ><mesh ref={geoRef} position={[0, 0, 0]}>
+    >
+      <mesh ref={geoRef} position={[0, 0, 0]}>
         <planeGeometry args={[30, 20, 2]}></planeGeometry>
         <meshBasicMaterial
           color={[1.5, 1.5, 1.5]}
@@ -63,11 +67,25 @@ export default function ProjectRight({ positionZ, projectId, children }) {
             occlude="blending"
             transform
           >
-            <div className="relative animated-gradient" ref={mainContainerRef}>
-              <button onClick={() => { console.log("change to free view"); changeSelectedProject(null) }} className="absolute z-10 cursor-pointer top-0 right-0 p-5 bg-amber-400 text-black text-xl">
+            <div
+              className={`relative animated-gradient blur-md`}
+              ref={mainContainerRef}
+            >
+              <button
+                onClick={() => {
+                  console.log("change to free view");
+                  changeSelectedProject(null);
+                }}
+                className="absolute top-0 right-0 z-10 p-5 text-xl text-black cursor-pointer bg-amber-400"
+              >
                 Back to free view
               </button>
-              <div onClick={() => { selectedProject ? null : changeSelectedProject(projectId) }} className="relative z-0">
+              <div
+                onClick={() => {
+                  selectedProject ? null : changeSelectedProject(projectId);
+                }}
+                className="relative z-0"
+              >
                 {children}
               </div>
             </div>
