@@ -66,7 +66,7 @@ export default function ProjectLeft({ positionZ, projectId, children }) {
             transform
           >
             <div
-              className={`relative animated-gradient ${
+              className={`relative bg-black ${
                 selectedProject
                   ? selectedProject == projectId
                     ? ""

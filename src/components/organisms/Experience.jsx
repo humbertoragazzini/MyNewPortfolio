@@ -19,6 +19,7 @@ import Paragraph from "../atoms/ui/Paragraph.jsx";
 import Heading from "../atoms/ui/Heading";
 import Project from "../atoms/project/Project.jsx";
 import { TestingFloor } from "../atoms/scene/testingFloor.jsx";
+import { Joystick } from "react-joystick-component";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -44,8 +45,25 @@ export default function Experience() {
     console.log(inputMethod);
   }, []);
 
+  function handleMove(e) {
+    if (scrollRef.current <= 1 && scrollRef.current > 0) {
+      scrollRef.current += e.y * 0.01;
+    }
+  }
+  function handleStop(e) {}
+
   return (
     <div className="w-full h-screen overflow-hidden bg-black">
+      <div className="fixed bottom-0 z-50 flex justify-center w-screen p-5">
+        <Joystick
+          size={100}
+          sticky={false}
+          baseColor="red"
+          stickColor="blue"
+          move={handleMove}
+          stop={handleStop}
+        ></Joystick>
+      </div>
       {/* Scrollable container */}
       <div
         ref={scrollContainerRef}
