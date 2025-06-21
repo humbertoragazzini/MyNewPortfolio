@@ -56,13 +56,16 @@ export default function Experience() {
     }, 150);
   }, []);
 
-  function handleMove(e) {
+  function handleMoveLeftStick(e) {
     joystickSpeed.current = e.y * 0.01;
     joystickHorizontalSpeed.current = e.x;
   }
-  function handleStop(e) {
+  function handleStopLeftStick(e) {
     joystickSpeed.current = 0;
   }
+
+  function handleMoveRightStick(e) {}
+  function handleStopRightStick(e) {}
 
   return (
     <div className="w-full h-screen overflow-hidden bg-black">
@@ -72,16 +75,16 @@ export default function Experience() {
           sticky={false}
           baseColor="red"
           stickColor="blue"
-          move={handleMove}
-          stop={handleStop}
+          move={handleMoveLeftStick}
+          stop={handleStopLeftStick}
         ></Joystick>
         <Joystick
           size={100}
           sticky={false}
           baseColor="red"
           stickColor="blue"
-          move={handleMove}
-          stop={handleStop}
+          move={handleMoveRightStick}
+          stop={handleStopRightStick}
         ></Joystick>
       </div>
       {/* Scrollable container */}
