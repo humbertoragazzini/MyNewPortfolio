@@ -4,7 +4,6 @@ import MenuButton from "./MenuButton";
 import { motion } from "framer-motion";
 import { LuMenu } from "react-icons/lu";
 
-
 export default function OverlayMenu() {
   const {
     toggleLanguage,
@@ -34,16 +33,18 @@ export default function OverlayMenu() {
           toggleMenu();
           console.log("click menu");
         }}
-        className={`fixed p-4 z-[9999] bg-[rgba(66.6,0.179,58.318,0.4)] backdrop-blur-md m-2 rounded-2xl right-[0px] duration-500 ease-initial cursor-pointer ${isMenuOpen ? "-translate-y-[calc(100%+50px)]" : "translate-y-0"
-          }`}
+        className={`fixed p-4 z-[9999] bg-[rgba(66.6,0.179,58.318,0.4)] backdrop-blur-md m-2 rounded-2xl right-[0px] duration-500 ease-initial cursor-pointer ${
+          isMenuOpen ? "-translate-y-[calc(100%+50px)]" : "translate-y-0"
+        }`}
       >
         <LuMenu className="relative z-[1000] w-[35px] h-[35px] stroke-white pointer-events-none"></LuMenu>
       </button>
       <div
-        className={`fixed ${isMenuOpen
-          ? "translate-y-0 bg-[rgba(120,0,110,0.40)] "
-          : "translate-y-[120vh] bg-[rgba(200,50,180,0.45)] "
-          } z-[9999] backdrop-blur-md transition-all duration-500 ease-initial trans h-screen w-screen flex justify-center items-center overflow-hidden`}
+        className={`fixed ${
+          isMenuOpen
+            ? "translate-y-0 bg-[rgba(120,0,110,0.40)] "
+            : "translate-y-[120vh] bg-[rgba(200,50,180,0.45)] "
+        } z-[9999] backdrop-blur-md transition-all duration-500 ease-initial trans h-screen w-screen flex justify-center items-center overflow-hidden`}
       >
         <div className="flex flex-col items-center justify-center">
           <motion.div
@@ -229,35 +230,24 @@ export default function OverlayMenu() {
               <motion.div
                 className="mx-3"
                 onClick={() => {
-                  changeIlumination("low");
+                  changeIlumination(true);
                 }}
                 animate={{
-                  opacity: ilumination == "low" ? 1 : 0.25,
+                  opacity: ilumination ? 1 : 0.25,
                 }}
               >
-                LOW
+                ON
               </motion.div>
               <motion.div
                 className="mx-3"
                 onClick={() => {
-                  changeIlumination("medium");
+                  changeIlumination(false);
                 }}
                 animate={{
-                  opacity: ilumination == "medium" ? 1 : 0.25,
+                  opacity: !ilumination ? 1 : 0.25,
                 }}
               >
-                MEDIUM
-              </motion.div>
-              <motion.div
-                className="mx-3"
-                onClick={() => {
-                  changeIlumination("high");
-                }}
-                animate={{
-                  opacity: ilumination == "high" ? 1 : 0.25,
-                }}
-              >
-                HIGH
+                OFF
               </motion.div>
             </div>
             <MenuButton

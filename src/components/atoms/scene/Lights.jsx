@@ -70,9 +70,7 @@ export default function Lights({ targetRef }) {
     <group>
       <ambientLight ref={ambientRef} intensity={1}></ambientLight>
       {/* Moving */}
-      {ilumination == "medium" && (
-        <MovingLight position={[0, 0, -20]}></MovingLight>
-      )}
+      {ilumination && <MovingLight position={[0, 0, -20]}></MovingLight>}
     </group>
   );
 }
