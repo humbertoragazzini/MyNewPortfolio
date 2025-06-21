@@ -28,6 +28,7 @@ export default function Experience() {
   const targetRef = useRef();
   const joystickSpeed = useRef();
   const joystickHorizontalSpeed = useRef(null);
+  const joystickVerticalSpeed = useRef(null);
   const inputMethod = useInputMethod();
   const {
     toggleReflections,
@@ -46,8 +47,8 @@ export default function Experience() {
   useEffect(() => {
     const joystickSpeedInterval = setInterval(() => {
       if (scrollRef.current >= 0 && scrollRef.current < 1) {
-        if (joystickSpeed.current !== undefined) {
-          scrollRef.current += joystickSpeed.current;
+        if (joystickVerticalSpeed.current !== null) {
+          scrollRef.current += joystickVerticalSpeed.current.y;
         }
       }
       if (scrollRef.current < 0) {
@@ -57,15 +58,40 @@ export default function Experience() {
   }, []);
 
   function handleMoveLeftStick(e) {
-    joystickSpeed.current = e.y * 0.01;
-    joystickHorizontalSpeed.current = e.x;
+    const newValues = {
+      y: e.y * 0.01,
+      x: e.x * 10,
+    };
+    joystickVerticalSpeed.current = newValues;
   }
   function handleStopLeftStick(e) {
-    joystickSpeed.current = 0;
+    const newValues = {
+      y: 0,
+      x: joystickVerticalSpeed.current.x ?? 0,
+    };
+    joystickVerticalSpeed.current = newValues;
   }
 
-  function handleMoveRightStick(e) {}
-  function handleStopRightStick(e) {}
+  function handleMoveRightStick(e) {
+    const newValues = {
+      y: e.y,
+      x: e.x,
+    };
+    joystickHorizontalSpeed.current = newValues;
+  }
+  function handleStopRightStick(e) {
+    const newValues = {
+      y:
+        joystickHorizontalSpeed.current !== null
+          ? joystickHorizontalSpeed.current.y
+          : 0,
+      x:
+        joystickHorizontalSpeed.current !== null
+          ? joystickHorizontalSpeed.current.x
+          : 0,
+    };
+    joystickHorizontalSpeed.current = newValues;
+  }
 
   return (
     <div className="w-full h-screen overflow-hidden bg-black">
@@ -113,7 +139,8 @@ export default function Experience() {
               {/* <PerspectiveCamera></PerspectiveCamera> */}
               <Camera
                 scroll={scrollRef}
-                joystick={joystickHorizontalSpeed}
+                joystickLeft={joystickVerticalSpeed}
+                joystickRight={joystickHorizontalSpeed}
               ></Camera>
               {/* <TestingFloor></TestingFloor> */}
               <Effects scroll={scrollRef}>

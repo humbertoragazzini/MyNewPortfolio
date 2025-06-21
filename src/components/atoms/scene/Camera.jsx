@@ -86,51 +86,68 @@ const positionsArray = {
   },
 };
 
-export default function Camera({ scroll, joystick, children }) {
+export default function Camera({
+  scroll,
+  joystickLeft,
+  joystickRight,
+  children,
+}) {
   const cameraRef = useRef();
   const lerpSpeed = 0.05;
-  const horizontal = useRef(0);
+  const horizontal = useRef({ x: 0, y: 0 });
+  const lateralDisplacement = useRef(0);
   const vertical = useRef(0);
   const { selectedProject } = useContext(AppContext);
 
   useEffect(() => {
-    const move = (e) => {
-      if (joystick.current == null) {
-        horizontal.current =
-          (-(e.clientX - window.outerWidth / 2) / window.outerWidth) * 1;
-        vertical.current =
-          (-(e.clientY - window.outerHeight / 2) / window.outerHeight) * 0.25;
-      }
-    };
-    window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
+    // const move = (e) => {
+    //   if (joystickRight.current == null) {
+    //     horizontal.current =
+    //       (-(e.clientX - window.outerWidth / 2) / window.outerWidth) * 1;
+    //     vertical.current =
+    //       (-(e.clientY - window.outerHeight / 2) / window.outerHeight) * 0.25;
+    //   }
+    // };
+    // window.addEventListener("mousemove", move);
+    // return () => window.removeEventListener("mousemove", move);
   }, []);
 
   useFrame(() => {
     if (selectedProject == null) {
       if (cameraRef.current !== undefined) {
         const targetZ = 75 - 1 * 1260 * scroll.current;
-        joystick.current !== null
-          ? (horizontal.current = -joystick.current)
+        joystickRight.current !== null
+          ? (horizontal.current.x = -joystickRight.current.x)
+          : null;
+        joystickRight.current !== null
+          ? (horizontal.current.y = joystickRight.current.y)
+          : null;
+        joystickLeft.current !== null
+          ? (lateralDisplacement.current = joystickLeft.current.x)
           : null;
         cameraRef.current.position.z = THREE.MathUtils.lerp(
           cameraRef.current.position.z,
           targetZ,
           lerpSpeed
         );
+        cameraRef.current.position.x = THREE.MathUtils.lerp(
+          cameraRef.current.position.x,
+          lateralDisplacement.current,
+          lerpSpeed
+        );
         cameraRef.current.rotation.y = THREE.MathUtils.lerp(
           cameraRef.current.rotation.y,
-          horizontal.current,
+          horizontal.current.x,
           lerpSpeed
         );
         cameraRef.current.rotation.x = THREE.MathUtils.lerp(
           cameraRef.current.rotation.x,
-          vertical.current,
+          horizontal.current.y,
           lerpSpeed
         );
         cameraRef.current.rotation.z = THREE.MathUtils.lerp(
           cameraRef.current.rotation.z,
-          horizontal.current * 0.01 + vertical.current * 0.01,
+          horizontal.current.x * 0.01 + horizontal.current.y * 0.01,
           lerpSpeed
         );
         cameraRef.current.updateProjectionMatrix();
