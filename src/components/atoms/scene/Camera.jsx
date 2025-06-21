@@ -86,7 +86,7 @@ const positionsArray = {
   },
 };
 
-export default function Camera({ scroll, children }) {
+export default function Camera({ scroll, joystick, children }) {
   const cameraRef = useRef();
   const lerpSpeed = 0.05;
   const horizontal = useRef(0);
@@ -95,10 +95,12 @@ export default function Camera({ scroll, children }) {
 
   useEffect(() => {
     const move = (e) => {
-      horizontal.current =
-        (-(e.clientX - window.outerWidth / 2) / window.outerWidth) * 1;
-      vertical.current =
-        (-(e.clientY - window.outerHeight / 2) / window.outerHeight) * 0.25;
+      if (joystick.current == null) {
+        horizontal.current =
+          (-(e.clientX - window.outerWidth / 2) / window.outerWidth) * 1;
+        vertical.current =
+          (-(e.clientY - window.outerHeight / 2) / window.outerHeight) * 0.25;
+      }
     };
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
@@ -108,6 +110,9 @@ export default function Camera({ scroll, children }) {
     if (selectedProject == null) {
       if (cameraRef.current !== undefined) {
         const targetZ = 75 - 1 * 1260 * scroll.current;
+        joystick.current !== null
+          ? (horizontal.current = -joystick.current)
+          : null;
         cameraRef.current.position.z = THREE.MathUtils.lerp(
           cameraRef.current.position.z,
           targetZ,

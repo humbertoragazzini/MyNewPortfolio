@@ -27,6 +27,7 @@ export default function Experience() {
   const scrollRef = useRef(0);
   const targetRef = useRef();
   const joystickSpeed = useRef();
+  const joystickHorizontalSpeed = useRef(null);
   const inputMethod = useInputMethod();
   const {
     toggleReflections,
@@ -49,11 +50,15 @@ export default function Experience() {
           scrollRef.current += joystickSpeed.current;
         }
       }
+      if (scrollRef.current < 0) {
+        scrollRef.current = 0;
+      }
     }, 150);
   }, []);
 
   function handleMove(e) {
     joystickSpeed.current = e.y * 0.01;
+    joystickHorizontalSpeed.current = e.x;
   }
   function handleStop(e) {
     joystickSpeed.current = 0;
@@ -95,7 +100,10 @@ export default function Experience() {
             >
               {/* <OrbitControls></OrbitControls> */}
               {/* <PerspectiveCamera></PerspectiveCamera> */}
-              <Camera scroll={scrollRef}></Camera>
+              <Camera
+                scroll={scrollRef}
+                joystick={joystickHorizontalSpeed}
+              ></Camera>
               {/* <TestingFloor></TestingFloor> */}
               <Effects scroll={scrollRef}>
                 {(texture) => {
