@@ -18,6 +18,7 @@ import Effects from "../atoms/scene/Effects.jsx";
 import Paragraph from "../atoms/ui/Paragraph.jsx";
 import Heading from "../atoms/ui/Heading";
 import Project from "../atoms/project/Project.jsx";
+import { TestingFloor } from "../atoms/scene/testingFloor.jsx";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -70,6 +71,7 @@ export default function Experience() {
               {/* <OrbitControls></OrbitControls> */}
               {/* <PerspectiveCamera></PerspectiveCamera> */}
               <Camera scroll={scrollRef}></Camera>
+              {/* <TestingFloor></TestingFloor> */}
               <Effects scroll={scrollRef}>
                 {(texture) => {
                   return (

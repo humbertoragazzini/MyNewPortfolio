@@ -164,13 +164,13 @@ export default function Model(props) {
         position={[248.121, 210.655, -360.735]}
         rotation={[0, -1.571, 0]}
       />
-      <mesh
+      {/* <mesh
         castShadow
         receiveShadow
         geometry={nodes.WALL5.geometry}
         material={textureMaterial5}
         position={[252.941, 210, 107.045]}
-      />
+      /> */}
       <mesh
         castShadow
         receiveShadow
