@@ -9,35 +9,37 @@ export const AppProvider = ({ children }) => {
   const [reflections, setReflections] = useState(false);
   const [postProcessing, setPostProcessing] = useState(false);
   const [reflectionQuality, setReflectionQuality] = useState(256);
-  const [ilumination, setIlumination] = useState("low");
-  const [dpr, setDpr] = useState([0.5, 0.75])
-  const [selectedProject, setSelectedProject] = useState(null)
+  const [ilumination, setIlumination] = useState(true);
+  const [dpr, setDpr] = useState([0.5, 0.75]);
+  const [selectedProject, setSelectedProject] = useState(null);
   // Example of toggling values
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const toggleLanguage = (lang) => {
     if (lang) {
-      setLanguage(lang)
+      setLanguage(lang);
     } else {
-      setLanguage((prev) => (prev === "en" ? "es" : "en"))
+      setLanguage((prev) => (prev === "en" ? "es" : "en"));
     }
-  }
-  const toggleReflections = () => setReflections((prev) => !prev)
-  const togglePostProcessing = () => setPostProcessing((prev) => !prev)
-  const changeReflectionQuality = (quality) => { setReflectionQuality(quality) }
+  };
+  const toggleReflections = () => setReflections((prev) => !prev);
+  const togglePostProcessing = () => setPostProcessing((prev) => !prev);
+  const changeReflectionQuality = (quality) => {
+    setReflectionQuality(quality);
+  };
   const changeDpr = (value) => {
     switch (value) {
       case "low": {
-        const newDpr = [0.25, 0.35]
+        const newDpr = [0.25, 0.35];
         setDpr(newDpr);
         break;
       }
       case "medium": {
-        const newDpr = [0.5, 0.75]
+        const newDpr = [0.5, 0.75];
         setDpr(newDpr);
         break;
       }
       case "high": {
-        const newDpr = [1, 2]
+        const newDpr = [1, 2];
         setDpr(newDpr);
         break;
       }
@@ -45,17 +47,17 @@ export const AppProvider = ({ children }) => {
       default:
         break;
     }
-  }
+  };
   const changeIlumination = (value) => {
     setIlumination(value);
-  }
+  };
   const changeSelectedProject = (value) => {
     if (value) {
-      setSelectedProject(value)
+      setSelectedProject(value);
     } else {
-      setSelectedProject(null)
+      setSelectedProject(null);
     }
-  }
+  };
   return (
     <AppContext.Provider
       value={{
