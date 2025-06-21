@@ -26,6 +26,7 @@ export default function Experience() {
   const [scroll, setScroll] = useState(0);
   const scrollRef = useRef(0);
   const targetRef = useRef();
+  const joystickSpeed = useRef();
   const inputMethod = useInputMethod();
   const {
     toggleReflections,
@@ -42,15 +43,21 @@ export default function Experience() {
   const geometryFloor = useRef(new THREE.BoxGeometry(20, 1, 30));
 
   useEffect(() => {
-    console.log(inputMethod);
+    const joystickSpeedInterval = setInterval(() => {
+      if (scrollRef.current >= 0 && scrollRef.current < 1) {
+        if (joystickSpeed.current !== undefined) {
+          scrollRef.current += joystickSpeed.current;
+        }
+      }
+    }, 150);
   }, []);
 
   function handleMove(e) {
-    if (scrollRef.current <= 1 && scrollRef.current > 0) {
-      scrollRef.current += e.y * 0.01;
-    }
+    joystickSpeed.current = e.y * 0.01;
   }
-  function handleStop(e) {}
+  function handleStop(e) {
+    joystickSpeed.current = 0;
+  }
 
   return (
     <div className="w-full h-screen overflow-hidden bg-black">
