@@ -1,4 +1,29 @@
 import { useLayoutEffect } from "react";
+import { motion } from "framer-motion";
+import SystemItem from "./SystemItem";
+
+const messages = [
+  { text: "Initializing core systems...", delay: 0 },
+  { text: "Power plant online.", delay: 1 },
+  { text: "Main reactor stabilized.", delay: 2 },
+  { text: "Life support systems nominal.", delay: 3 },
+  { text: "Navigation systems calibrated.", delay: 4 },
+  { text: "Starboard thrusters responsive.", delay: 5 },
+  { text: "Portside stabilizers aligned.", delay: 6 },
+  { text: "Communication array activated.", delay: 7 },
+  { text: "Sensor grid fully operational.", delay: 8 },
+  { text: "Artificial gravity engaged.", delay: 9 },
+  { text: "Thermal regulators optimal.", delay: 10 },
+  { text: "Flight control interface ready.", delay: 11 },
+  { text: "Shields at 100% capacity.", delay: 12 },
+  { text: "Weapon systems on standby.", delay: 13 },
+  { text: "Cargo bay secured.", delay: 14 },
+  { text: "Cryo-pods status: green.", delay: 15 },
+  { text: "Environmental seal confirmed.", delay: 16 },
+  { text: "Data uplink to command center successful.", delay: 17 },
+  { text: "Captain’s interface online.", delay: 18 },
+  { text: "All systems green. Ready for departure.", delay: 19 },
+];
 
 export default function LoadingSystems() {
   useLayoutEffect(() => {}, []);
@@ -6,105 +31,11 @@ export default function LoadingSystems() {
   return (
     <div className="h-[200px] m-2 bg-[rgba(0,0,0,0.55)] rounded-2xl orbitron fixed w-[280px] top-0 left-0 z-[9999] p-3 text-[rgba(255,255,255,1)] overflow-hidden">
       <div>
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Initializing core systems...</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Power plant online.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Main reactor stabilized.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Life support systems nominal.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Navigation systems calibrated.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Starboard thrusters responsive.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Portside stabilizers aligned.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Communication array activated.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Sensor grid fully operational.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Artificial gravity engaged.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Thermal regulators optimal.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Flight control interface ready.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Shields at 100% capacity.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Weapon systems on standby.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Cargo bay secured.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Cryo-pods status: green.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Environmental seal confirmed.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Data uplink to command center successful.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-amber-800 border-amber-400 opacity-40"></span>
-          <p>Captain’s interface online.</p>
-        </div>
-
-        <div className="flex items-center justify-start my-1 font-semibold text-green-500">
-          <span className="inline-block mr-2 w-4 h-4 border-[1px] bg-green-700 border-green-400 opacity-80 animate-pulse"></span>
-          <p>All systems green. Ready for departure.</p>
-        </div>
+        {messages.map((item, index) => {
+          return (
+            <SystemItem key={index + "-systemitem"} item={item}></SystemItem>
+          );
+        })}
       </div>
     </div>
   );
