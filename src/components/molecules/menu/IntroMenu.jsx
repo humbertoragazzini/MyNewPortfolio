@@ -48,7 +48,7 @@ export default function IntroMenu() {
           }}
           className={"flex justify-center"}
         >
-          <div className="m-5 p-5 md:p-10 lg:p-14 w-full lg:w-3/4 h-fit bg-[rgba(0,0,65,0.75)] rounded-4xl border-4 border-white neon-box">
+          <div className="m-5 p-5 md:p-10 lg:p-14 w-full lg:w-3/4 h-fit bg-[rgba(0,0,65,0.75)] rounded-4xl border-4 border-white neon-box text-lg md:text-xl lg:text-2xl lg:leading-10 xl:leading-16">
             <Heading
               language={language}
               className={
@@ -62,7 +62,7 @@ export default function IntroMenu() {
             ></Heading>
             <div className="flex flex-row mx-auto w-fit">
               <motion.div
-                className="transition-all ease-in-out cursor-pointer hover:scale-125 "
+                className="[&_svg]:w-16 m-1 transition-all ease-in-out cursor-pointer hover:scale-125 "
                 onClick={(e) => {
                   toggleLanguage("es");
                 }}
@@ -111,7 +111,7 @@ export default function IntroMenu() {
                 </svg>
               </motion.div>
               <motion.div
-                className="transition-all ease-in-out cursor-pointer hover:scale-125 "
+                className="[&_svg]:w-16 m-1 transition-all ease-in-out cursor-pointer hover:scale-125 "
                 onClick={(e) => {
                   toggleLanguage("en");
                 }}
