@@ -28,17 +28,24 @@ export default function OverlayMenu() {
 
   return (
     <>
-      <button
-        onClick={() => {
-          toggleMenu();
-          console.log("click menu");
-        }}
-        className={`fixed p-4 z-[9999] bg-[rgba(66.6,0.179,58.318,0.4)] backdrop-blur-md m-2 rounded-2xl right-[0px] duration-500 ease-initial cursor-pointer ${
-          isMenuOpen ? "-translate-y-[calc(100%+50px)]" : "translate-y-0"
-        }`}
-      >
-        <LuMenu className="relative z-[1000] w-[35px] h-[35px] stroke-white pointer-events-none"></LuMenu>
-      </button>
+      <div className="fixed w-[280px] bottom-0 right-0 z-[9999] p-4 bg-[rgba(66.6,0.179,58.318,0.4)] flex justify-end items-end">
+        <div className="w-[280px] flex items-end justify-end flex-col">
+          <div className="life h-[25px] bg-amber-500 w-4/5 mb-1"></div>
+          <div className="shield h-[15px] bg-blue-800 w-3/4 mb-1"></div>
+          <div className="mb-1 bullet"></div>
+        </div>
+        <button
+          onClick={() => {
+            toggleMenu();
+            console.log("click menu");
+          }}
+          className={`m-2 rounded-2xl right-[0px] duration-500 ease-initial cursor-pointer ${
+            isMenuOpen ? "-translate-y-[calc(100%+50px)]" : "translate-y-0"
+          }`}
+        >
+          <LuMenu className="relative z-[1000] w-[35px] h-[35px] stroke-white pointer-events-none"></LuMenu>
+        </button>
+      </div>
       <div
         className={`fixed ${
           isMenuOpen
