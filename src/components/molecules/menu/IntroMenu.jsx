@@ -39,7 +39,7 @@ export default function IntroMenu() {
     <section
       className={`${
         intro ? "translate-y-0" : "translate-y-[120vh]"
-      } orbitron fixed top-0 left-0 bg-[rgba(0,0,65,0.75)] z-[10000] backdrop-blur-md transition-all duration-500 ease-initial trans h-screen w-screen flex justify-center items-center overflow-hidden`}
+      } orbitron fixed top-0 left-0 bg-[rgba(0,0,65,0.75)] z-[10000] backdrop-blur-md transition-all duration-500 ease-initial trans h-[100dvh] w-screen flex justify-center items-center overflow-hidden`}
     >
       <div className="flex flex-col items-center justify-center">
         <motion.div
@@ -208,7 +208,7 @@ export default function IntroMenu() {
                 <Heading
                   language={language}
                   className={
-                    "text-white font-semibold text-3xl lg:text-5xl drop-shadow-[0_0_5px_#fff] leading-10 lg:leading-16 hover:scale-125 m-6 transition-all ease-in-out cursor-pointer text-center"
+                    "text-white font-semibold drop-shadow-[0_0_5px_#fff] hover:scale-125 transition-all ease-in-out cursor-pointer text-center"
                   }
                   level={1}
                   text={{
@@ -218,7 +218,7 @@ export default function IntroMenu() {
                 ></Heading>
                 <h2
                   className={
-                    "text-white font-semibold text-3xl lg:text-5xl drop-shadow-[0_0_5px_#fff] leading-10 lg:leading-16 hover:scale-125 m-6 transition-all ease-in-out cursor-pointer text-center"
+                    "text-white font-semibold drop-shadow-[0_0_5px_#fff] hover:scale-125 transition-all ease-in-out cursor-pointer text-center"
                   }
                 >
                   {count}

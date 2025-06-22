@@ -94,7 +94,7 @@ export default function Experience() {
   }
 
   return (
-    <div className="w-full h-screen overflow-hidden bg-black">
+    <div className="w-full h-[100dvh] overflow-hidden bg-black">
       <div className="fixed bottom-0 z-50 flex justify-center w-screen p-5 [&>[data-testid]]:!bg-[rgba(0,0,0,0.5)] [&>[data-testid]]:!backdrop-blur [&>[data-testid]]:!border-2 [&>[data-testid]]:m-4 [&>[data-testid]]:!border-[rgba(125,125,125,0.5)] [&_button]:!bg-[rgba(255,255,255,0.5)]">
         <Joystick
           size={100}
@@ -116,7 +116,7 @@ export default function Experience() {
       {/* Scrollable container */}
       <div
         ref={scrollContainerRef}
-        className={`scroller elative z-[9900] w-screen h-screen ${
+        className={`scroller elative z-[9900] w-screen h-[100dvh] ${
           selectedProject ? "overflow-y-hidden" : "overflow-y-scroll"
         }`}
         onScroll={(e) => {
