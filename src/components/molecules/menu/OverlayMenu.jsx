@@ -4,7 +4,8 @@ import MenuButton from "./MenuButton";
 import { motion } from "framer-motion";
 import { LuMenu } from "react-icons/lu";
 import LoadingSystems from "../../atoms/ui/LoadingSystems";
-import LiquidGlassEffect from "../../atoms/ui/LiquidGlass";
+import LiquidGlassEffect from "../../atoms/ui/LiquidGlassDev";
+import LiquidGlassDisplay from "../../atoms/ui/LiquidGlassDisplay";
 
 export default function OverlayMenu() {
   const {
@@ -317,6 +318,7 @@ export default function OverlayMenu() {
       </div>
       <LoadingSystems></LoadingSystems>
       <LiquidGlassEffect></LiquidGlassEffect>
+      <LiquidGlassDisplay></LiquidGlassDisplay>
     </>
   );
 }
