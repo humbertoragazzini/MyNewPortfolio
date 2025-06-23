@@ -318,7 +318,7 @@ export default function OverlayMenu() {
       </div>
       <LoadingSystems></LoadingSystems>
       {/* <LiquidGlassEffect></LiquidGlassEffect> */}
-      <LiquidGlassDisplay width={500} height={500}></LiquidGlassDisplay>
+      <LiquidGlassDisplay width={1000} height={500}></LiquidGlassDisplay>
     </>
   );
 }

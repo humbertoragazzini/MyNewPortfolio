@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
+export default function LiquidGlassDisplay({ width, height }) {
   const previewRef = useRef(null);
   const effectSvgRef = useRef(null);
   const thing9Ref = useRef(null);
@@ -32,30 +32,22 @@ export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
     setHref(
       thing9Ref.current,
       `<svg width='${w}' height='${h}' viewBox='0 0 ${w} ${h}' xmlns='http://www.w3.org/2000/svg'>
-        <rect x='${w / 4}' y='${h / 4}' width='${w / 2}' height='${
-        h / 2
-      }' rx='${r}' fill='#0001'/>
-        <rect x='${w / 4}' y='${h / 4}' width='${w / 2}' height='${
-        h / 2
-      }' rx='${r}' fill='#FFF' style='filter:blur(5px)'/>
+        <rect x='${0}' y='${0}' width='${w}' height='${h}' rx='${r}' fill='#0001'/>
+        <rect x='${0}' y='${0}' width='${w}' height='${h}' rx='${r}' fill='#FFF' style='filter:blur(5px)'/>
       </svg>`
     );
 
     setHref(
       thing0Ref.current,
       `<svg width='${w}' height='${h}' viewBox='0 0 ${w} ${h}' xmlns='http://www.w3.org/2000/svg'>
-        <rect x='${w / 4}' y='${h / 4}' width='${w / 2}' height='${
-        h / 2
-      }' rx='${r}' fill='#FFF1' style='filter:blur(15px)'/>
+        <rect x='${0}' y='${0}' width='${w}' height='${h}' rx='${r}' fill='#FFF1' style='filter:blur(15px)'/>
       </svg>`
     );
 
     setHref(
       thing1Ref.current,
       `<svg width='${w}' height='${h}' viewBox='0 0 ${w} ${h}' xmlns='http://www.w3.org/2000/svg'>
-        <rect x='${w / 4}' y='${h / 4}' width='${w / 2}' height='${
-        h / 2
-      }' rx='${r}' fill='#000'/>
+        <rect x='${0}' y='${0}' width='${w}' height='${h}' rx='${r}' fill='#000'/>
       </svg>`
     );
 
@@ -73,23 +65,15 @@ export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
           </linearGradient>
         </defs>
         <rect x='0' y='0' width='${w}' height='${h}' rx='${r}' fill='#7F7F7F'/>
-        <rect x='${w / 4}' y='${h / 4}' width='${w / 2}' height='${
-        h / 2
-      }' rx='${r}' fill='#000'/>
-        <rect x='${w / 4}' y='${h / 4}' width='${w / 2}' height='${
-        h / 2
-      }' rx='${r}' fill='url(#gradient1)' style='mix-blend-mode: screen'/>
-        <rect x='${w / 4}' y='${h / 4}' width='${w / 2}' height='${
-        h / 2
-      }' rx='${r}' fill='url(#gradient2)' style='mix-blend-mode: screen'/>
-        <rect x='${w / 4}' y='${h / 4}' width='${w / 2}' height='${
-        h / 2
-      }' rx='${r}' fill='#7F7F7FBB' style='filter:blur(5px)'/>
+        <rect x='${0}' y='${0}' width='${w}' height='${h}' rx='${r}' fill='#000'/>
+        <rect x='${0}' y='${0}' width='${w}' height='${h}' rx='${r}' fill='url(#gradient1)' style='mix-blend-mode: screen'/>
+        <rect x='${0}' y='${0}' width='${w}' height='${h}' rx='${r}' fill='url(#gradient2)' style='mix-blend-mode: screen'/>
+        <rect x='${0}' y='${0}' width='${w}' height='${h}' rx='${r}' fill='#7F7F7FBB' style='filter:blur(5px)'/>
       </svg>`
     );
 
-    preview.style.width = `${w + 50}px`;
-    preview.style.height = `${h + 50}px`;
+    preview.style.width = `${w + 80}px`;
+    preview.style.height = `${h + 80}px`;
 
     preblurRef.current?.setAttribute("stdDeviation", "0.7");
     postblurRef.current?.setAttribute("stdDeviation", "0.0");
@@ -100,7 +84,7 @@ export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
 
   return (
     <>
-      <div style={{ position: "absolute", top: -999, left: -999 }}>
+      <div style={{ position: "absolute", top: 0, left: 0 }}>
         <svg
           ref={effectSvgRef}
           width={width}
@@ -108,9 +92,15 @@ export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
           viewBox={`0 0 ${width} ${height}`}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <filter id="displacementFilter4">
+          <filter
+            id="displacementFilter4"
+            x="0%"
+            y="0%"
+            width="100%"
+            height="100%"
+            filterUnits="objectBoundingBox"
+          >
             <feImage
-              id="thing9"
               ref={thing9Ref}
               x="0%"
               y="0%"
@@ -119,7 +109,6 @@ export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
               result="thing9"
             />
             <feImage
-              id="thing0"
               ref={thing0Ref}
               x="0%"
               y="0%"
@@ -128,7 +117,6 @@ export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
               result="thing0"
             />
             <feImage
-              id="thing1"
               ref={thing1Ref}
               x="0%"
               y="0%"
@@ -137,7 +125,6 @@ export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
               result="thing1"
             />
             <feImage
-              id="thing2"
               ref={thing2Ref}
               x="0%"
               y="0%"
@@ -146,13 +133,11 @@ export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
               result="thing2"
             />
             <feGaussianBlur
-              id="preblur"
               ref={preblurRef}
               in="SourceGraphic"
               result="preblur"
             />
             <feDisplacementMap
-              id="dispR"
               ref={dispRRef}
               in2="thing2"
               in="preblur"
@@ -166,7 +151,6 @@ export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
               result="disp1"
             />
             <feDisplacementMap
-              id="dispG"
               ref={dispGRef}
               in2="thing2"
               in="preblur"
@@ -180,7 +164,6 @@ export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
               result="disp2"
             />
             <feDisplacementMap
-              id="dispB"
               ref={dispBRef}
               in2="thing2"
               in="preblur"
@@ -195,7 +178,7 @@ export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
             />
             <feBlend in2="disp2" mode="screen" />
             <feBlend in2="disp1" mode="screen" />
-            <feGaussianBlur id="postblur" ref={postblurRef} />
+            <feGaussianBlur ref={postblurRef} />
             <feBlend in2="thing0" mode="screen" />
             <feBlend in2="thing9" mode="multiply" />
             <feComposite in2="thing1" operator="in" />
@@ -203,15 +186,15 @@ export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
           </filter>
         </svg>
       </div>
-
       <div
         ref={previewRef}
-        className="absolute z-[9999]"
+        className="absolute top-0 right-0 border-2 border-amber-300"
         style={{
-          width: width + 50,
-          height: height + 50,
+          position: "",
+          zIndex: 9999,
+          width: width,
+          height: height,
           backdropFilter: "url(#displacementFilter4)",
-          // pointerEvents: "none",
         }}
       />
     </>
