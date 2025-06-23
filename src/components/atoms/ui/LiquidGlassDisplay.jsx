@@ -89,7 +89,7 @@ export default function LiquidGlassDisplay({ width, height }) {
           ref={effectSvgRef}
           width={width}
           height={height}
-          viewBox={`0 0 ${width} ${height}`}
+          viewBox={`0 0 ${width + 56} ${height + 56}`}
           xmlns="http://www.w3.org/2000/svg"
         >
           <filter
@@ -182,7 +182,7 @@ export default function LiquidGlassDisplay({ width, height }) {
             <feBlend in2="thing0" mode="screen" />
             <feBlend in2="thing9" mode="multiply" />
             <feComposite in2="thing1" operator="in" />
-            <feOffset dx="43" dy="43" />
+            <feOffset dx="10" dy="10" />
           </filter>
         </svg>
       </div>
