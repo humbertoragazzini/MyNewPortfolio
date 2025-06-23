@@ -19,63 +19,49 @@ export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
     const r = 25;
 
     const preview = previewRef.current;
-    const svg = effectSvgRef.current;
-    const thing9 = thing9Ref.current;
-    const thing0 = thing0Ref.current;
-    const thing1 = thing1Ref.current;
-    const thing2 = thing2Ref.current;
-    const preblur = preblurRef.current;
-    const postblur = postblurRef.current;
-    const dispR = dispRRef.current;
-    const dispG = dispGRef.current;
-    const dispB = dispBRef.current;
 
-    if (!svg || !preview) return;
+    const setHref = (el, svg) => {
+      if (!el) return;
+      el.setAttributeNS(
+        "http://www.w3.org/1999/xlink",
+        "xlink:href",
+        `data:image/svg+xml,${encodeURIComponent(svg)}`
+      );
+    };
 
-    svg.setAttribute("width", `${w}`);
-    svg.setAttribute("height", `${h}`);
-    svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
-
-    preview.style.width = `${w + 50}px`;
-    preview.style.height = `${h + 50}px`;
-
-    thing9?.setAttributeNS(
-      "http://www.w3.org/1999/xlink",
-      "xlink:href",
-      `data:image/svg+xml,%3Csvg width='${w}' height='${h}' viewBox='0 0 ${w} ${h}' xmlns='http://www.w3.org/2000/svg'%3E
+    setHref(
+      thing9Ref.current,
+      `<svg width='${w}' height='${h}' viewBox='0 0 ${w} ${h}' xmlns='http://www.w3.org/2000/svg'>
         <rect x='${w / 4}' y='${h / 4}' width='${w / 2}' height='${
         h / 2
-      }' rx='${r}' fill='rgb(0 0 0 / 17%)'/>
+      }' rx='${r}' fill='#0001'/>
         <rect x='${w / 4}' y='${h / 4}' width='${w / 2}' height='${
         h / 2
       }' rx='${r}' fill='#FFF' style='filter:blur(5px)'/>
-      %3C/svg%3E`
+      </svg>`
     );
 
-    thing0?.setAttributeNS(
-      "http://www.w3.org/1999/xlink",
-      "xlink:href",
-      `data:image/svg+xml,%3Csvg width='${w}' height='${h}' viewBox='0 0 ${w} ${h}' xmlns='http://www.w3.org/2000/svg'%3E
+    setHref(
+      thing0Ref.current,
+      `<svg width='${w}' height='${h}' viewBox='0 0 ${w} ${h}' xmlns='http://www.w3.org/2000/svg'>
         <rect x='${w / 4}' y='${h / 4}' width='${w / 2}' height='${
         h / 2
-      }' rx='${r}' fill='rgb(255 255 255 / 17%)' style='filter:blur(15px)'/>
-      %3C/svg%3E`
+      }' rx='${r}' fill='#FFF1' style='filter:blur(15px)'/>
+      </svg>`
     );
 
-    thing1?.setAttributeNS(
-      "http://www.w3.org/1999/xlink",
-      "xlink:href",
-      `data:image/svg+xml,%3Csvg width='${w}' height='${h}' viewBox='0 0 ${w} ${h}' xmlns='http://www.w3.org/2000/svg'%3E
+    setHref(
+      thing1Ref.current,
+      `<svg width='${w}' height='${h}' viewBox='0 0 ${w} ${h}' xmlns='http://www.w3.org/2000/svg'>
         <rect x='${w / 4}' y='${h / 4}' width='${w / 2}' height='${
         h / 2
       }' rx='${r}' fill='#000'/>
-      %3C/svg%3E`
+      </svg>`
     );
 
-    thing2?.setAttributeNS(
-      "http://www.w3.org/1999/xlink",
-      "xlink:href",
-      `data:image/svg+xml,%3Csvg width='${w}' height='${h}' viewBox='0 0 ${w} ${h}' xmlns='http://www.w3.org/2000/svg'%3E
+    setHref(
+      thing2Ref.current,
+      `<svg width='${w}' height='${h}' viewBox='0 0 ${w} ${h}' xmlns='http://www.w3.org/2000/svg'>
         <defs>
           <linearGradient id='gradient1' x1='0%' y1='0%' x2='100%' y2='0%'>
             <stop offset='0%' stop-color='#000'/>
@@ -92,21 +78,24 @@ export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
       }' rx='${r}' fill='#000'/>
         <rect x='${w / 4}' y='${h / 4}' width='${w / 2}' height='${
         h / 2
-      }' rx='${r}' fill='url(%23gradient1)' style='mix-blend-mode: screen'/>
+      }' rx='${r}' fill='url(#gradient1)' style='mix-blend-mode: screen'/>
         <rect x='${w / 4}' y='${h / 4}' width='${w / 2}' height='${
         h / 2
-      }' rx='${r}' fill='url(%23gradient2)' style='mix-blend-mode: screen'/>
+      }' rx='${r}' fill='url(#gradient2)' style='mix-blend-mode: screen'/>
         <rect x='${w / 4}' y='${h / 4}' width='${w / 2}' height='${
         h / 2
-      }' rx='${r}' fill='rgb(127 127 127 / 74%)' style='filter:blur(5px)'/>
-      %3C/svg%3E`
+      }' rx='${r}' fill='#7F7F7FBB' style='filter:blur(5px)'/>
+      </svg>`
     );
 
-    preblur?.setAttribute("stdDeviation", `${0.7}`);
-    postblur?.setAttribute("stdDeviation", `0.0`);
-    dispR?.setAttribute("scale", `-148`);
-    dispG?.setAttribute("scale", `-150`);
-    dispB?.setAttribute("scale", `-152`);
+    preview.style.width = `${w + 50}px`;
+    preview.style.height = `${h + 50}px`;
+
+    preblurRef.current?.setAttribute("stdDeviation", "0.7");
+    postblurRef.current?.setAttribute("stdDeviation", "0.0");
+    dispRRef.current?.setAttribute("scale", "-148");
+    dispGRef.current?.setAttribute("scale", "-150");
+    dispBRef.current?.setAttribute("scale", "-152");
   }, [width, height]);
 
   return (
@@ -161,7 +150,6 @@ export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
               ref={preblurRef}
               in="SourceGraphic"
               result="preblur"
-              stdDeviation="0.7"
             />
             <feDisplacementMap
               id="dispR"
@@ -207,11 +195,7 @@ export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
             />
             <feBlend in2="disp2" mode="screen" />
             <feBlend in2="disp1" mode="screen" />
-            <feGaussianBlur
-              id="postblur"
-              ref={postblurRef}
-              stdDeviation="0.0"
-            />
+            <feGaussianBlur id="postblur" ref={postblurRef} />
             <feBlend in2="thing0" mode="screen" />
             <feBlend in2="thing9" mode="multiply" />
             <feComposite in2="thing1" operator="in" />
@@ -222,10 +206,10 @@ export default function LiquidGlassDisplay({ width = 200, height = 200 }) {
 
       <div
         ref={previewRef}
-        className="absolute top-0 right-0 z-[9999] border-2 border-black"
+        className="absolute z-[9999]"
         style={{
-          width: width + 0,
-          height: height + 0,
+          width: width + 50,
+          height: height + 50,
           backdropFilter: "url(#displacementFilter4)",
           // pointerEvents: "none",
         }}
