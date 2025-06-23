@@ -20,6 +20,8 @@ import Heading from "../atoms/ui/Heading";
 import Project from "../atoms/project/Project.jsx";
 import { TestingFloor } from "../atoms/scene/testingFloor.jsx";
 import { Joystick } from "react-joystick-component";
+import LoadingSystems from "../atoms/ui/LoadingSystems.jsx";
+import { Html } from "@react-three/drei";
 
 export default function Experience() {
   const scrollContainerRef = useRef();

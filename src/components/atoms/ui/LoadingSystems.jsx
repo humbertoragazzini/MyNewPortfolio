@@ -30,13 +30,23 @@ export default function LoadingSystems() {
 
   return (
     <div className="h-[200px] m-2 bg-[rgba(0,0,0,0.55)] rounded-2xl orbitron fixed w-[280px] top-0 left-0 z-[9999] p-3 text-[rgba(255,255,255,1)] overflow-hidden">
-      <div>
+      <motion.div
+        initial={{
+          y: "20%",
+        }}
+        animate={{
+          y: "-50%",
+        }}
+        transition={{
+          duration: 25,
+        }}
+      >
         {messages.map((item, index) => {
           return (
             <SystemItem key={index + "-systemitem"} item={item}></SystemItem>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 }

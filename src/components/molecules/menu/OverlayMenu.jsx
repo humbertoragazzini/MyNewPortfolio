@@ -29,7 +29,6 @@ export default function OverlayMenu() {
 
   return (
     <>
-      <LoadingSystems></LoadingSystems>
       <div className="fixed w-[280px] bottom-0 right-0 z-[9999] p-4 bg-[rgba(66.6,0.179,58.318,0.4)] flex justify-end items-end">
         <div className="w-[280px] flex items-end justify-end flex-col">
           <div className="life h-[25px] bg-amber-500 w-4/5 mb-1"></div>
@@ -315,6 +314,7 @@ export default function OverlayMenu() {
           </motion.div>
         </div>
       </div>
+      <LoadingSystems></LoadingSystems>
     </>
   );
 }
