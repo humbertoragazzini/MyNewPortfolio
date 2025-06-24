@@ -51,25 +51,27 @@ export default function LoadingSystems() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative m-2 bg-[rgba(0,0,0,0.55)] rounded-2xl orbitron w-full h-full z-[9999] text-[rgba(255,255,255,1)] overflow-hidden">
-      <LiquidGlassDisplay width={width} height={height}></LiquidGlassDisplay>
-      <motion.div
-        initial={{
-          y: "20%",
-        }}
-        animate={{
-          y: "-50%",
-        }}
-        transition={{
-          duration: 25,
-        }}
-      >
-        {messages.map((item, index) => {
-          return (
-            <SystemItem key={index + "-systemitem"} item={item}></SystemItem>
-          );
-        })}
-      </motion.div>
+    <div ref={containerRef} className="relative w-full h-full mt-2 pl-[86px] pr-[86px] pt-[15px] pb-[15px]">
+      <LiquidGlassDisplay width={width} height={height} className={""}></LiquidGlassDisplay>
+      <div className="rounded-4xl orbitron w-full h-full z-[9999] text-[rgba(255,255,255,1)] overflow-hidden">
+        <motion.div
+          initial={{
+            y: "20%",
+          }}
+          animate={{
+            y: "-50%",
+          }}
+          transition={{
+            duration: 25,
+          }}
+        >
+          {messages.map((item, index) => {
+            return (
+              <SystemItem key={index + "-systemitem"} item={item}></SystemItem>
+            );
+          })}
+        </motion.div>
+      </div>
     </div>
   );
 }

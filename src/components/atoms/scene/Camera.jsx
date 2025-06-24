@@ -94,22 +94,22 @@ export default function Camera({
 }) {
   const cameraRef = useRef();
   const lerpSpeed = 0.05;
-  const horizontal = useRef({ x: 0, y: 0 });
+  const horizontal = useRef({ x: 0, y: 0, z: 0 });
   const lateralDisplacement = useRef(0);
   const vertical = useRef(0);
   const { selectedProject } = useContext(AppContext);
 
   useEffect(() => {
-    // const move = (e) => {
-    //   if (joystickRight.current == null) {
-    //     horizontal.current =
-    //       (-(e.clientX - window.outerWidth / 2) / window.outerWidth) * 1;
-    //     vertical.current =
-    //       (-(e.clientY - window.outerHeight / 2) / window.outerHeight) * 0.25;
-    //   }
-    // };
-    // window.addEventListener("mousemove", move);
-    // return () => window.removeEventListener("mousemove", move);
+    const move = (e) => {
+      if (joystickRight.current == null) {
+        horizontal.current.y =
+          (-(e.clientX - window.outerWidth / 2) / window.outerWidth) * 1;
+        vertical.current.x =
+          (-(e.clientY - window.outerHeight / 2) / window.outerHeight) * 0.25;
+      }
+    };
+    window.addEventListener("mousemove", move);
+    return () => window.removeEventListener("mousemove", move);
   }, []);
 
   useFrame(() => {

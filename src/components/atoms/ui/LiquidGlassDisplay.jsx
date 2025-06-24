@@ -72,8 +72,8 @@ export default function LiquidGlassDisplay({ width, height, className, children 
       </svg>`
     );
 
-    preview.style.width = `${w + 80}px`;
-    preview.style.height = `${h + 80}px`;
+    preview.style.width = `${w}px`;
+    preview.style.height = `${h}px`;
 
     preblurRef.current?.setAttribute("stdDeviation", "0.7");
     postblurRef.current?.setAttribute("stdDeviation", "0.0");
@@ -89,7 +89,7 @@ export default function LiquidGlassDisplay({ width, height, className, children 
           ref={effectSvgRef}
           width={width}
           height={height}
-          viewBox={`0 0 ${width + 56} ${height + 56}`}
+          viewBox={`0 0 ${width - 10} ${height - 20}`}
           xmlns="http://www.w3.org/2000/svg"
         >
           <filter
@@ -182,13 +182,13 @@ export default function LiquidGlassDisplay({ width, height, className, children 
             <feBlend in2="thing0" mode="screen" />
             <feBlend in2="thing9" mode="multiply" />
             <feComposite in2="thing1" operator="in" />
-            <feOffset dx="10" dy="10" />
+            <feOffset dx="5" dy="10" />
           </filter>
         </svg>
       </div>
       <div
         ref={previewRef}
-        className="absolute top-0 left-0 border-2 border-amber-300"
+        className={`absolute top-0 left-0 ${className}`}
         style={{
           position: "",
           zIndex: 9999,
