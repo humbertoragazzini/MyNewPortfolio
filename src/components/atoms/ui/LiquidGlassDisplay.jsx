@@ -83,7 +83,7 @@ export default function LiquidGlassDisplay({ width, height, className, children 
   }, [width, height]);
 
   return (
-    <div className={`relative z-[9999] ${className}`}>
+    <>
       <div style={{ position: "absolute", top: 0, left: 0 }}>
         <svg
           ref={effectSvgRef}
@@ -186,10 +186,6 @@ export default function LiquidGlassDisplay({ width, height, className, children 
           </filter>
         </svg>
       </div>
-
-      <div className="absolute top-0 left-0 p-2 w-full h-full">
-        {children}
-      </div>
       <div
         ref={previewRef}
         className="absolute top-0 left-0 border-2 border-amber-300"
@@ -201,6 +197,6 @@ export default function LiquidGlassDisplay({ width, height, className, children 
           backdropFilter: "url(#displacementFilter4)",
         }}
       />
-    </div>
+    </>
   );
 }

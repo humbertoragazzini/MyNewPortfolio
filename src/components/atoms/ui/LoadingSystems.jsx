@@ -1,6 +1,7 @@
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import SystemItem from "./SystemItem";
+import LiquidGlassDisplay from "./LiquidGlassDisplay";
 
 const messages = [
   { text: "Initializing core systems...", delay: 0 },
@@ -26,10 +27,32 @@ const messages = [
 ];
 
 export default function LoadingSystems() {
-  useLayoutEffect(() => { }, []);
+  const [height, setHeight] = useState(0);
+  const [width, setWidth] = useState(0);
+  const containerRef = useRef();
+
+  useLayoutEffect(() => {
+    const checkSize = () => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        console.log(rect.width)
+        console.log(rect.height)
+        setWidth(rect.width);
+        setHeight(rect.height);
+      }
+    };
+
+    window.addEventListener('resize', checkSize);
+    checkSize(); // Call initially
+
+    return () => {
+      window.removeEventListener('resize', checkSize);
+    };
+  }, []);
 
   return (
-    <div className="relative m-2 bg-[rgba(0,0,0,0.55)] rounded-2xl orbitron w-full h-full z-[9999] p-3 text-[rgba(255,255,255,1)] overflow-hidden">
+    <div ref={containerRef} className="relative m-2 bg-[rgba(0,0,0,0.55)] rounded-2xl orbitron w-full h-full z-[9999] text-[rgba(255,255,255,1)] overflow-hidden">
+      <LiquidGlassDisplay width={width} height={height}></LiquidGlassDisplay>
       <motion.div
         initial={{
           y: "20%",
