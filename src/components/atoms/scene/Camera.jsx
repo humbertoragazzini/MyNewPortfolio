@@ -104,7 +104,7 @@ export default function Camera({
       if (joystickRight.current == null) {
         horizontal.current.y =
           (-(e.clientX - window.outerWidth / 2) / window.outerWidth) * 1;
-        vertical.current.x =
+        horizontal.current.x =
           (-(e.clientY - window.outerHeight / 2) / window.outerHeight) * 0.25;
       }
     };
