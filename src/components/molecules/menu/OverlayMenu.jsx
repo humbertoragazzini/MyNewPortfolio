@@ -315,9 +315,10 @@ export default function OverlayMenu() {
         </div>
       </div>
       {/* <LiquidGlassEffect></LiquidGlassEffect> */}
-      <div className="fixed top-0 left-0 z-[9999] w-[400px] h-[200px]">
+      {/* TODO make the monitors to show the interface of the ship this maybe will be done on blender */}
+      {/* <div className="fixed top-0 left-0 z-[9999] w-[400px] h-[200px]">
         <LoadingSystems></LoadingSystems>
-      </div>
+      </div> */}
     </>
   );
 }

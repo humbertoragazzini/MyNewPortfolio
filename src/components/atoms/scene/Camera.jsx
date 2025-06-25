@@ -102,9 +102,9 @@ export default function Camera({
   useEffect(() => {
     const move = (e) => {
       if (joystickRight.current == null) {
-        horizontal.current.y =
-          (-(e.clientX - window.outerWidth / 2) / window.outerWidth) * 1;
         horizontal.current.x =
+          (-(e.clientX - window.outerWidth / 2) / window.outerWidth) * 1;
+        horizontal.current.y =
           (-(e.clientY - window.outerHeight / 2) / window.outerHeight) * 0.25;
       }
     };
