@@ -1080,9 +1080,43 @@ export default function Experience() {
                 {
                   projects.map((project) => {
                     return (
-                      {
-                        project.
-                      }
+                      <>
+                        {
+                          project.orientation == "left" &&
+                          <ProjectLeft
+                            positionZ={project.positionZ}
+                            language={language}
+                            projectId={project.projectId}
+                          >
+                            <Project
+                              language={language}
+                              content={{
+                                projectName: project.projectName,
+                                description: project.description,
+                                technologies: project.technologies,
+                                link: project.links
+                              }}
+                            ></Project>
+                          </ProjectLeft>
+                        }
+                        {
+                          project.orientation == "right" && <ProjectRight
+                            positionZ={project.positionZ}
+                            language={language}
+                            projectId={project.projectId}
+                          >
+                            <Project
+                              language={language}
+                              content={{
+                                projectName: project.projectName,
+                                description: project.description,
+                                technologies: project.technologies,
+                                link: project.links
+                              }}
+                            ></Project>
+                          </ProjectRight>
+                        }
+                      </>
                     )
                   })
                 }
