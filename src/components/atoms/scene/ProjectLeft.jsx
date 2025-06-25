@@ -52,7 +52,7 @@ export default function ProjectLeft({ positionZ, projectId, children }) {
       rotation={[0, Math.PI / 4, 0]}
     >
       <mesh ref={geoRef} position={[0, 0, 0]}>
-        <planeGeometry args={[30, 20, 2]}></planeGeometry>
+        <planeGeometry args={[35, 25, 2]}></planeGeometry>
         <meshBasicMaterial
           color={[1.5, 1.5, 1.5]}
           opacity={1}
@@ -66,13 +66,12 @@ export default function ProjectLeft({ positionZ, projectId, children }) {
             transform
           >
             <div
-              className={`relative bg-black ${
-                selectedProject
+              className={`relative bg-black ${selectedProject
                   ? selectedProject == projectId
                     ? ""
                     : "blur-md"
                   : ""
-              }`}
+                }`}
               ref={mainContainerRef}
             >
               <button
