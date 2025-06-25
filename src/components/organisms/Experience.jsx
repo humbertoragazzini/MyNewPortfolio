@@ -1077,12 +1077,12 @@ export default function Experience() {
                   source={"videos/Testing_Video_h_264.mp4"}
                   url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
                 /> */}
-                {
-                  projects.map((project) => {
-                    return (
-                      <>
-                        {
-                          project.orientation == "left" &&
+                <>
+                  {
+                    projects.map((project) => {
+
+                      if (project.orientation == "left") {
+                        return (
                           <ProjectLeft
                             positionZ={project.positionZ}
                             language={language}
@@ -1094,13 +1094,14 @@ export default function Experience() {
                                 projectName: project.projectName,
                                 description: project.description,
                                 technologies: project.technologies,
-                                link: project.links
+                                links: project.links
                               }}
                             ></Project>
-                          </ProjectLeft>
-                        }
-                        {
-                          project.orientation == "right" && <ProjectRight
+                          </ProjectLeft>)
+                      }
+                      if (project.orientation == "right") {
+                        return (
+                          <ProjectRight
                             positionZ={project.positionZ}
                             language={language}
                             projectId={project.projectId}
@@ -1111,15 +1112,15 @@ export default function Experience() {
                                 projectName: project.projectName,
                                 description: project.description,
                                 technologies: project.technologies,
-                                link: project.links
+                                links: project.links
                               }}
                             ></Project>
                           </ProjectRight>
-                        }
-                      </>
-                    )
-                  })
-                }
+                        )
+                      }
+                    })
+                  }
+                </>
                 <Final></Final>
                 <Lights targetRef={targetRef}></Lights>
                 <CheckSize></CheckSize>

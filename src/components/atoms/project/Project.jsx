@@ -59,7 +59,11 @@ export default function Project({ language, content }) {
                                     </div>
                                     <div className="col-span-9">
                                         <a href={link.url} target="_blank" className="py-3 px-4 bg-amber-400 text-black rounded-xl m-2 block w-fit cursor-pointer">
-                                            <p className="font-semibold">{link.label}</p>
+                                            <Paragraph
+                                                language={language}
+                                                text={link.label}
+                                                className="font-semibold"
+                                            ></Paragraph>
                                         </a>
                                     </div>
                                 </div>
