@@ -43,16 +43,24 @@ const projects = [
     ],
     links: [
       {
-        label: {
+        title: {
           en: "Link to the project",
           es: "Link al projecto",
+        },
+        label: {
+          en: "Click to visit my first project",
+          es: "Clieckea aqui para visitar mi primer projecto",
         },
         url: "https://humbertoragazzini.github.io/ms-1-front-end/",
       },
       {
-        label: {
+        title: {
           en: "Link to the Github repository",
           es: "Link al repositorio de Github",
+        },
+        label: {
+          en: "Github Repository",
+          es: "Repositorio de Github",
         },
         url: "https://humbertoragazzini.github.io/ms-1-front-end/",
       }
@@ -60,7 +68,7 @@ const projects = [
   },
   {
     positionZ: -40,
-    projectId: "firstLeft",
+    projectId: "firstRight",
     projectName: {
       en: "My first project as a web developer",
       es: "Mi primer project como desarrollador web",
@@ -77,24 +85,32 @@ const projects = [
     ],
     links: [
       {
-        label: {
+        title: {
           en: "Link to the project",
           es: "Link al projecto",
+        },
+        label: {
+          en: "Click to visit my first project",
+          es: "Clieckea aqui para visitar mi primer projecto",
         },
         url: "https://humbertoragazzini.github.io/ms-1-front-end/",
       },
       {
-        label: {
+        title: {
           en: "Link to the Github repository",
           es: "Link al repositorio de Github",
+        },
+        label: {
+          en: "Github Repository",
+          es: "Repositorio de Github",
         },
         url: "https://humbertoragazzini.github.io/ms-1-front-end/",
       }
     ],
   },
   {
-    positionZ: -40,
-    projectId: "firstLeft",
+    positionZ: -145,
+    projectId: "secondLeft",
     projectName: {
       en: "My first project as a web developer",
       es: "Mi primer project como desarrollador web",
@@ -111,24 +127,32 @@ const projects = [
     ],
     links: [
       {
-        label: {
+        title: {
           en: "Link to the project",
           es: "Link al projecto",
+        },
+        label: {
+          en: "Click to visit my first project",
+          es: "Clieckea aqui para visitar mi primer projecto",
         },
         url: "https://humbertoragazzini.github.io/ms-1-front-end/",
       },
       {
-        label: {
+        title: {
           en: "Link to the Github repository",
           es: "Link al repositorio de Github",
+        },
+        label: {
+          en: "Github Repository",
+          es: "Repositorio de Github",
         },
         url: "https://humbertoragazzini.github.io/ms-1-front-end/",
       }
     ],
   },
   {
-    positionZ: -40,
-    projectId: "firstLeft",
+    positionZ: -145,
+    projectId: "secondRight",
     projectName: {
       en: "My first project as a web developer",
       es: "Mi primer project como desarrollador web",
@@ -145,24 +169,32 @@ const projects = [
     ],
     links: [
       {
-        label: {
+        title: {
           en: "Link to the project",
           es: "Link al projecto",
+        },
+        label: {
+          en: "Click to visit my first project",
+          es: "Clieckea aqui para visitar mi primer projecto",
         },
         url: "https://humbertoragazzini.github.io/ms-1-front-end/",
       },
       {
-        label: {
+        title: {
           en: "Link to the Github repository",
           es: "Link al repositorio de Github",
+        },
+        label: {
+          en: "Github Repository",
+          es: "Repositorio de Github",
         },
         url: "https://humbertoragazzini.github.io/ms-1-front-end/",
       }
     ],
   },
   {
-    positionZ: -40,
-    projectId: "firstLeft",
+    positionZ: -245,
+    projectId: "thirdLeft",
     projectName: {
       en: "My first project as a web developer",
       es: "Mi primer project como desarrollador web",
@@ -179,24 +211,32 @@ const projects = [
     ],
     links: [
       {
-        label: {
+        title: {
           en: "Link to the project",
           es: "Link al projecto",
+        },
+        label: {
+          en: "Click to visit my first project",
+          es: "Clieckea aqui para visitar mi primer projecto",
         },
         url: "https://humbertoragazzini.github.io/ms-1-front-end/",
       },
       {
-        label: {
+        title: {
           en: "Link to the Github repository",
           es: "Link al repositorio de Github",
+        },
+        label: {
+          en: "Github Repository",
+          es: "Repositorio de Github",
         },
         url: "https://humbertoragazzini.github.io/ms-1-front-end/",
       }
     ],
   },
   {
-    positionZ: -40,
-    projectId: "firstLeft",
+    positionZ: -245,
+    projectId: "thirdRight",
     projectName: {
       en: "My first project as a web developer",
       es: "Mi primer project como desarrollador web",
@@ -213,21 +253,29 @@ const projects = [
     ],
     links: [
       {
-        label: {
+        title: {
           en: "Link to the project",
           es: "Link al projecto",
+        },
+        label: {
+          en: "Click to visit my first project",
+          es: "Clieckea aqui para visitar mi primer projecto",
         },
         url: "https://humbertoragazzini.github.io/ms-1-front-end/",
       },
       {
-        label: {
+        title: {
           en: "Link to the Github repository",
           es: "Link al repositorio de Github",
+        },
+        label: {
+          en: "Github Repository",
+          es: "Repositorio de Github",
         },
         url: "https://humbertoragazzini.github.io/ms-1-front-end/",
       }
     ],
-  }
+  },
 ]
 
 export default function Experience() {

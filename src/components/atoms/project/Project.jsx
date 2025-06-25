@@ -47,22 +47,24 @@ export default function Project({ language, content }) {
                         </div>
                     </div>
                     {
-                        content.link && (
-                            <div className="grid grid-cols-12 mt-5 text-2xl">
-                                <div className="col-span-3 py-4">
-                                    <Paragraph
-                                        language={language}
-                                        text={content.link.label}
-                                        className="mb-4 text-2xl orbitron font-[600]"
-                                    ></Paragraph>
+                        content.links.map((link) => {
+                            return (
+                                <div className="grid grid-cols-12 mt-5 text-2xl">
+                                    <div className="col-span-3 py-4">
+                                        <Paragraph
+                                            language={language}
+                                            text={link.title}
+                                            className="mb-4 text-2xl orbitron font-[600]"
+                                        ></Paragraph>
+                                    </div>
+                                    <div className="col-span-9">
+                                        <a href={link.url} target="_blank" className="py-3 px-4 bg-amber-400 text-black rounded-xl m-2 block w-fit cursor-pointer">
+                                            <p className="font-semibold">{link.label}</p>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div className="col-span-9">
-                                    <a href={content.link.url} target="_blank" className="py-3 px-4 bg-amber-400 text-black rounded-xl m-2 block w-fit cursor-pointer">
-                                        <p className="font-semibold">El projecto</p>
-                                    </a>
-                                </div>
-                            </div>
-                        )
+                            )
+                        })
                     }
                 </div>
             </div>
