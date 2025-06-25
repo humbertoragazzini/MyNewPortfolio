@@ -23,6 +23,213 @@ import { Joystick } from "react-joystick-component";
 import LoadingSystems from "../atoms/ui/LoadingSystems.jsx";
 import { Html } from "@react-three/drei";
 
+const projects = [
+  {
+    positionZ: -40,
+    projectId: "firstLeft",
+    projectName: {
+      en: "My first project as a web developer",
+      es: "Mi primer project como desarrollador web",
+    },
+    description: {
+      en: "This was the first project I created in HTML, with CSS and a bit of JavaScript. This project was the beginning of what is now my career. It’s impressive to look at this project and know that everything started here. This project holds great sentimental value because I can come back to it and see how my knowledge has grown over time and with a lot of effort.",
+      es: "Este fue el primer projecto que realize en HTML, con CSS y un poco the Javascript, este projecto fue el comienzo de lo que hoy es mi carrera, es impresionante ver este projecto y saber que todo empezo aqui, este projecto tiene ese gran valor sentimental de poder volver a el y ver como mi conocimiento crecio con tiempo y mucho esfuerzo.",
+    },
+    technologies: [
+      "Bootstrap",
+      "HTML5",
+      "CSS",
+      "Javascript",
+    ],
+    links: [
+      {
+        label: {
+          en: "Link to the project",
+          es: "Link al projecto",
+        },
+        url: "https://humbertoragazzini.github.io/ms-1-front-end/",
+      },
+      {
+        label: {
+          en: "Link to the Github repository",
+          es: "Link al repositorio de Github",
+        },
+        url: "https://humbertoragazzini.github.io/ms-1-front-end/",
+      }
+    ],
+  },
+  {
+    positionZ: -40,
+    projectId: "firstLeft",
+    projectName: {
+      en: "My first project as a web developer",
+      es: "Mi primer project como desarrollador web",
+    },
+    description: {
+      en: "This was the first project I created in HTML, with CSS and a bit of JavaScript. This project was the beginning of what is now my career. It’s impressive to look at this project and know that everything started here. This project holds great sentimental value because I can come back to it and see how my knowledge has grown over time and with a lot of effort.",
+      es: "Este fue el primer projecto que realize en HTML, con CSS y un poco the Javascript, este projecto fue el comienzo de lo que hoy es mi carrera, es impresionante ver este projecto y saber que todo empezo aqui, este projecto tiene ese gran valor sentimental de poder volver a el y ver como mi conocimiento crecio con tiempo y mucho esfuerzo.",
+    },
+    technologies: [
+      "Bootstrap",
+      "HTML5",
+      "CSS",
+      "Javascript",
+    ],
+    links: [
+      {
+        label: {
+          en: "Link to the project",
+          es: "Link al projecto",
+        },
+        url: "https://humbertoragazzini.github.io/ms-1-front-end/",
+      },
+      {
+        label: {
+          en: "Link to the Github repository",
+          es: "Link al repositorio de Github",
+        },
+        url: "https://humbertoragazzini.github.io/ms-1-front-end/",
+      }
+    ],
+  },
+  {
+    positionZ: -40,
+    projectId: "firstLeft",
+    projectName: {
+      en: "My first project as a web developer",
+      es: "Mi primer project como desarrollador web",
+    },
+    description: {
+      en: "This was the first project I created in HTML, with CSS and a bit of JavaScript. This project was the beginning of what is now my career. It’s impressive to look at this project and know that everything started here. This project holds great sentimental value because I can come back to it and see how my knowledge has grown over time and with a lot of effort.",
+      es: "Este fue el primer projecto que realize en HTML, con CSS y un poco the Javascript, este projecto fue el comienzo de lo que hoy es mi carrera, es impresionante ver este projecto y saber que todo empezo aqui, este projecto tiene ese gran valor sentimental de poder volver a el y ver como mi conocimiento crecio con tiempo y mucho esfuerzo.",
+    },
+    technologies: [
+      "Bootstrap",
+      "HTML5",
+      "CSS",
+      "Javascript",
+    ],
+    links: [
+      {
+        label: {
+          en: "Link to the project",
+          es: "Link al projecto",
+        },
+        url: "https://humbertoragazzini.github.io/ms-1-front-end/",
+      },
+      {
+        label: {
+          en: "Link to the Github repository",
+          es: "Link al repositorio de Github",
+        },
+        url: "https://humbertoragazzini.github.io/ms-1-front-end/",
+      }
+    ],
+  },
+  {
+    positionZ: -40,
+    projectId: "firstLeft",
+    projectName: {
+      en: "My first project as a web developer",
+      es: "Mi primer project como desarrollador web",
+    },
+    description: {
+      en: "This was the first project I created in HTML, with CSS and a bit of JavaScript. This project was the beginning of what is now my career. It’s impressive to look at this project and know that everything started here. This project holds great sentimental value because I can come back to it and see how my knowledge has grown over time and with a lot of effort.",
+      es: "Este fue el primer projecto que realize en HTML, con CSS y un poco the Javascript, este projecto fue el comienzo de lo que hoy es mi carrera, es impresionante ver este projecto y saber que todo empezo aqui, este projecto tiene ese gran valor sentimental de poder volver a el y ver como mi conocimiento crecio con tiempo y mucho esfuerzo.",
+    },
+    technologies: [
+      "Bootstrap",
+      "HTML5",
+      "CSS",
+      "Javascript",
+    ],
+    links: [
+      {
+        label: {
+          en: "Link to the project",
+          es: "Link al projecto",
+        },
+        url: "https://humbertoragazzini.github.io/ms-1-front-end/",
+      },
+      {
+        label: {
+          en: "Link to the Github repository",
+          es: "Link al repositorio de Github",
+        },
+        url: "https://humbertoragazzini.github.io/ms-1-front-end/",
+      }
+    ],
+  },
+  {
+    positionZ: -40,
+    projectId: "firstLeft",
+    projectName: {
+      en: "My first project as a web developer",
+      es: "Mi primer project como desarrollador web",
+    },
+    description: {
+      en: "This was the first project I created in HTML, with CSS and a bit of JavaScript. This project was the beginning of what is now my career. It’s impressive to look at this project and know that everything started here. This project holds great sentimental value because I can come back to it and see how my knowledge has grown over time and with a lot of effort.",
+      es: "Este fue el primer projecto que realize en HTML, con CSS y un poco the Javascript, este projecto fue el comienzo de lo que hoy es mi carrera, es impresionante ver este projecto y saber que todo empezo aqui, este projecto tiene ese gran valor sentimental de poder volver a el y ver como mi conocimiento crecio con tiempo y mucho esfuerzo.",
+    },
+    technologies: [
+      "Bootstrap",
+      "HTML5",
+      "CSS",
+      "Javascript",
+    ],
+    links: [
+      {
+        label: {
+          en: "Link to the project",
+          es: "Link al projecto",
+        },
+        url: "https://humbertoragazzini.github.io/ms-1-front-end/",
+      },
+      {
+        label: {
+          en: "Link to the Github repository",
+          es: "Link al repositorio de Github",
+        },
+        url: "https://humbertoragazzini.github.io/ms-1-front-end/",
+      }
+    ],
+  },
+  {
+    positionZ: -40,
+    projectId: "firstLeft",
+    projectName: {
+      en: "My first project as a web developer",
+      es: "Mi primer project como desarrollador web",
+    },
+    description: {
+      en: "This was the first project I created in HTML, with CSS and a bit of JavaScript. This project was the beginning of what is now my career. It’s impressive to look at this project and know that everything started here. This project holds great sentimental value because I can come back to it and see how my knowledge has grown over time and with a lot of effort.",
+      es: "Este fue el primer projecto que realize en HTML, con CSS y un poco the Javascript, este projecto fue el comienzo de lo que hoy es mi carrera, es impresionante ver este projecto y saber que todo empezo aqui, este projecto tiene ese gran valor sentimental de poder volver a el y ver como mi conocimiento crecio con tiempo y mucho esfuerzo.",
+    },
+    technologies: [
+      "Bootstrap",
+      "HTML5",
+      "CSS",
+      "Javascript",
+    ],
+    links: [
+      {
+        label: {
+          en: "Link to the project",
+          es: "Link al projecto",
+        },
+        url: "https://humbertoragazzini.github.io/ms-1-front-end/",
+      },
+      {
+        label: {
+          en: "Link to the Github repository",
+          es: "Link al repositorio de Github",
+        },
+        url: "https://humbertoragazzini.github.io/ms-1-front-end/",
+      }
+    ],
+  }
+]
+
 export default function Experience() {
   const scrollContainerRef = useRef();
   const [scroll, setScroll] = useState(0);
@@ -97,7 +304,7 @@ export default function Experience() {
 
   return (
     <div className="w-full h-[100dvh] overflow-hidden bg-black">
-      <div className="fixed bottom-0 z-50 flex justify-center w-screen p-5 [&>[data-testid]]:!bg-[rgba(0,0,0,0.5)] [&>[data-testid]]:!backdrop-blur [&>[data-testid]]:!border-2 [&>[data-testid]]:m-4 [&>[data-testid]]:!border-[rgba(125,125,125,0.5)] [&_button]:!bg-[rgba(255,255,255,0.5)]">
+      <div className="fixed bottom-0 z-50 flex lg:hidden justify-center w-screen p-5 [&>[data-testid]]:!bg-[rgba(0,0,0,0.5)] [&>[data-testid]]:!backdrop-blur [&>[data-testid]]:!border-2 [&>[data-testid]]:m-4 [&>[data-testid]]:!border-[rgba(125,125,125,0.5)] [&_button]:!bg-[rgba(255,255,255,0.5)]">
         <Joystick
           size={100}
           sticky={false}

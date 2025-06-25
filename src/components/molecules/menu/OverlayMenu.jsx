@@ -31,12 +31,12 @@ export default function OverlayMenu() {
 
   return (
     <>
-      <div className="fixed w-[280px] bottom-0 right-0 z-[9999] p-4 bg-[rgba(66.6,0.179,58.318,0.4)] flex justify-end items-end">
-        <div className="w-[280px] flex items-end justify-end flex-col">
+      <div className="fixed bottom-0 right-0 z-[9999] p-4 bg-[rgba(66.6,0.179,58.318,0.4)] flex justify-end items-end">
+        {/* <div className="w-[280px] flex items-end justify-end flex-col">
           <div className="life h-[25px] bg-amber-500 w-4/5 mb-1"></div>
           <div className="shield h-[15px] bg-blue-800 w-3/4 mb-1"></div>
           <div className="mb-1 bullet"></div>
-        </div>
+        </div> */}
         <button
           onClick={() => {
             toggleMenu();
