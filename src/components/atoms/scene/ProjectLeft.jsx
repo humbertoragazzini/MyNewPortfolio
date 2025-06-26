@@ -67,22 +67,13 @@ export default function ProjectLeft({ positionZ, projectId, children }) {
           >
             <div
               className={`relative bg-black ${selectedProject
-                  ? selectedProject == projectId
-                    ? ""
-                    : "blur-md"
-                  : ""
+                ? selectedProject == projectId
+                  ? ""
+                  : "blur-md"
+                : ""
                 }`}
               ref={mainContainerRef}
             >
-              <button
-                onClick={() => {
-                  console.log("change to free view");
-                  changeSelectedProject(null);
-                }}
-                className="absolute top-0 right-0 z-10 p-5 text-xl text-black cursor-pointer bg-amber-400"
-              >
-                Back to free view
-              </button>
               <div
                 onClick={() => {
                   selectedProject ? null : changeSelectedProject(projectId);
