@@ -301,6 +301,7 @@ export default function Experience() {
     dpr,
     reflectionQuality,
     selectedProject,
+    changeSelectedProject,
   } = useContext(AppContext);
   const materialFloor = useRef(
     new THREE.MeshStandardMaterial({ color: "black" })
@@ -1096,6 +1097,7 @@ export default function Experience() {
                                 technologies: project.technologies,
                                 links: project.links
                               }}
+                              changeSelectedProject={changeSelectedProject}
                             ></Project>
                           </ProjectLeft>)
                       }
@@ -1114,6 +1116,7 @@ export default function Experience() {
                                 technologies: project.technologies,
                                 links: project.links
                               }}
+                              changeSelectedProject={changeSelectedProject}
                             ></Project>
                           </ProjectRight>
                         )

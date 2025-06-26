@@ -1,10 +1,9 @@
 import { useContext } from "react";
 import Heading from "../ui/Heading";
 import Paragraph from "../ui/Paragraph";
-import { AppContext } from "../../../context/AppContext";
 
 
-export default function Project({ language, content }) {
+export default function Project({ language, content, changeSelectedProject }) {
 
     return (
         <>
@@ -70,6 +69,35 @@ export default function Project({ language, content }) {
                             )
                         })
                     }
+                    <div className="grid grid-cols-12 mt-5 text-2xl">
+                        <div className="col-span-3 py-4">
+                            <Paragraph
+                                language={language}
+                                text={{
+                                    en: "Do you want to go back?:"
+                                }}
+                                className="mb-4 text-2xl orbitron font-[600]"
+                            ></Paragraph>
+                        </div>
+                        <div className="col-span-9">
+                            <button
+                                onClick={() => {
+                                    console.log("change to free view");
+                                    changeSelectedProject(null);
+                                }}
+                                className="py-3 px-4 bg-amber-400 text-black rounded-xl m-2 block w-fit cursor-pointer">
+                                <Paragraph
+                                    language={language}
+                                    text={{
+                                        en: "Click here to go back to free view",
+                                        es: "Clickea aqui para volver a vista libre"
+                                    }}
+                                    className="text-2xl orbitron font-[600]"
+                                ></Paragraph>
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </>
