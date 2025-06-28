@@ -234,18 +234,21 @@ const projects = [
     projectId: "thirdRight",
     orientation: "right",
     projectName: {
-      en: "My first project as a web developer",
-      es: "Mi primer project como desarrollador web",
+      en: "An example of WebGL + HTML",
+      es: "Un ejemplo the WebGL + HTML",
     },
     description: {
-      en: "This was the first project I created in HTML, with CSS and a bit of JavaScript. This project was the beginning of what is now my career. It’s impressive to look at this project and know that everything started here. This project holds great sentimental value because I can come back to it and see how my knowledge has grown over time and with a lot of effort.",
-      es: "Este fue el primer projecto que realize en HTML, con CSS y un poco the Javascript, este projecto fue el comienzo de lo que hoy es mi carrera, es impresionante ver este projecto y saber que todo empezo aqui, este projecto tiene ese gran valor sentimental de poder volver a el y ver como mi conocimiento crecio con tiempo y mucho esfuerzo.",
+      en: "This is an example of what can be achieved with WebGL combined with HTML. It's a 3D world that shifts position as you scroll. It also includes hotspots that can be clicked to open modals — a highly interactive way to display information across different parts of the globe.",
+      es: "Esto es un ejemplo de lo que se puede lograr con WebGL combinado con HTML. Se trata de un mundo 3D que cambia de posición al hacer scroll. Además, cuenta con hotspots que pueden ser clicados para abrir modales, ofreciendo una forma muy interactiva de mostrar información en diferentes partes del globo.",
     },
     technologies: [
       "Bootstrap",
       "HTML5",
       "CSS",
-      "Javascript",
+      "TS",
+      "GSAP",
+      "RTF",
+      "TailwindCSS"
     ],
     links: [
       {
@@ -254,21 +257,10 @@ const projects = [
           es: "Link al projecto",
         },
         label: {
-          en: "Click to visit my first project",
-          es: "Clieckea aqui para visitar mi primer projecto",
+          en: "Click to visit interaactive world",
+          es: "Clieckea aqui para visitar el mundo interactivo",
         },
-        url: "https://humbertoragazzini.github.io/ms-1-front-end/",
-      },
-      {
-        title: {
-          en: "Link to the Github repository",
-          es: "Link al repositorio de Github",
-        },
-        label: {
-          en: "Github Repository",
-          es: "Repositorio de Github",
-        },
-        url: "https://humbertoragazzini.github.io/ms-1-front-end/",
+        url: "https://humbertoragazzini.github.io/3DWorldWithScroll/",
       }
     ],
   },
