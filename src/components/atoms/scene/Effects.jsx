@@ -81,17 +81,23 @@ export default function Effects({ scroll, resolution, frames, children }) {
       {!reflections && children()}
       {postProcessing && (
         <EffectComposer normalPass>
-          <Bloom
+          {/* <Bloom
             intensity={1}
             luminanceThreshold={0.4}
             luminanceSmoothing={0.9}
             blendFunction={BlendFunction.SCREEN}
-          />
+          /> */}
+          {/* <DepthOfField
+            focusDistance={selectedProject ? 51.7 : 0.0}
+            focalLength={selectedProject ? 0.03 : 0.0}
+            bokehScale={selectedProject ? 2.5 : 0}
+            height={selectedProject ? 1080 : 0}
+          /> */}
           <DepthOfField
-            focusDistance={selectedProject ? 0.2 : 0.0}
-            focalLength={selectedProject ? 0.02 : 0.0}
-            bokehScale={selectedProject ? 2 : 0}
-            height={selectedProject ? 480 : 0}
+            worldFocusDistance={50.7}  // object’s Z or camera-to-object distance
+            worldFocusRange={200.0}      // controls how wide the in-focus band is
+            bokehScale={2.5}
+            resolutionScale={1.0}
           />
         </EffectComposer>
       )}
