@@ -68,7 +68,7 @@ export default function ProjectLeft({ positionZ, projectId, children }) {
             transform
           >
             <div
-              className={`relative bg-black ${selectedProject
+              className={`relative bg-gradient-to-br from-purple-600 to-lime-900 ${selectedProject
                 ? selectedProject == projectId
                   ? ""
                   : "blur-md"
