@@ -197,7 +197,12 @@ const projects = [
       "Bootstrap",
       "HTML5",
       "CSS",
-      "Javascript",
+      "TS",
+      "GSAP",
+      "Framer",
+      "RTF",
+      "Blender",
+      "TailwindCSS"
     ],
     links: [
       {
@@ -206,10 +211,10 @@ const projects = [
           es: "Link al projecto",
         },
         label: {
-          en: "Click to visit my first project",
-          es: "Clieckea aqui para visitar mi primer projecto",
+          en: "Click to visit the super game",
+          es: "Clieckea aqui para visitar el super juego",
         },
-        url: "https://humbertoragazzini.github.io/ms-1-front-end/",
+        url: "https://humbertoragazzini.github.io/TheSuperGame/",
       },
       {
         title: {
@@ -220,7 +225,7 @@ const projects = [
           en: "Github Repository",
           es: "Repositorio de Github",
         },
-        url: "https://humbertoragazzini.github.io/ms-1-front-end/",
+        url: "https://github.com/humbertoragazzini/TheSuperGame?tab=readme-ov-file",
       }
     ],
   },
