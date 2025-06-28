@@ -112,77 +112,77 @@ export default function Camera({
     return () => window.removeEventListener("mousemove", move);
   }, []);
 
-  // useFrame(() => {
-  //   if (selectedProject == null) {
-  //     if (cameraRef.current !== undefined) {
-  //       const targetZ = 75 - 1 * 1260 * scroll.current;
-  //       joystickRight.current !== null
-  //         ? (horizontal.current.x = -joystickRight.current.x)
-  //         : null;
-  //       joystickRight.current !== null
-  //         ? (horizontal.current.y = joystickRight.current.y)
-  //         : null;
-  //       joystickLeft.current !== null
-  //         ? (lateralDisplacement.current = joystickLeft.current.x)
-  //         : null;
-  //       cameraRef.current.position.z = THREE.MathUtils.lerp(
-  //         cameraRef.current.position.z,
-  //         targetZ,
-  //         lerpSpeed
-  //       );
-  //       cameraRef.current.position.x = THREE.MathUtils.lerp(
-  //         cameraRef.current.position.x,
-  //         lateralDisplacement.current,
-  //         lerpSpeed
-  //       );
-  //       cameraRef.current.rotation.y = THREE.MathUtils.lerp(
-  //         cameraRef.current.rotation.y,
-  //         horizontal.current.x,
-  //         lerpSpeed
-  //       );
-  //       cameraRef.current.rotation.x = THREE.MathUtils.lerp(
-  //         cameraRef.current.rotation.x,
-  //         horizontal.current.y,
-  //         lerpSpeed
-  //       );
-  //       cameraRef.current.rotation.z = THREE.MathUtils.lerp(
-  //         cameraRef.current.rotation.z,
-  //         horizontal.current.x * 0.01 + horizontal.current.y * 0.01,
-  //         lerpSpeed
-  //       );
-  //       cameraRef.current.updateProjectionMatrix();
-  //     }
-  //   } else {
-  //     if (cameraRef.current !== undefined) {
-  //       cameraRef.current.position.z = THREE.MathUtils.lerp(
-  //         cameraRef.current.position.z,
-  //         positionsArray[selectedProject].position.z,
-  //         lerpSpeed
-  //       );
-  //       cameraRef.current.rotation.x = THREE.MathUtils.lerp(
-  //         cameraRef.current.rotation.x,
-  //         positionsArray[selectedProject].rotation.x,
-  //         lerpSpeed
-  //       );
-  //       cameraRef.current.rotation.y = THREE.MathUtils.lerp(
-  //         cameraRef.current.rotation.y,
-  //         positionsArray[selectedProject].rotation.y,
-  //         lerpSpeed
-  //       );
-  //       cameraRef.current.rotation.z = THREE.MathUtils.lerp(
-  //         cameraRef.current.rotation.z,
-  //         positionsArray[selectedProject].rotation.z,
-  //         lerpSpeed
-  //       );
-  //       cameraRef.current.updateProjectionMatrix();
-  //     }
-  //   }
-  // });
+  useFrame(() => {
+    if (selectedProject == null) {
+      if (cameraRef.current !== undefined) {
+        const targetZ = 75 - 1 * 1260 * scroll.current;
+        joystickRight.current !== null
+          ? (horizontal.current.x = -joystickRight.current.x)
+          : null;
+        joystickRight.current !== null
+          ? (horizontal.current.y = joystickRight.current.y)
+          : null;
+        joystickLeft.current !== null
+          ? (lateralDisplacement.current = joystickLeft.current.x)
+          : null;
+        cameraRef.current.position.z = THREE.MathUtils.lerp(
+          cameraRef.current.position.z,
+          targetZ,
+          lerpSpeed
+        );
+        cameraRef.current.position.x = THREE.MathUtils.lerp(
+          cameraRef.current.position.x,
+          lateralDisplacement.current,
+          lerpSpeed
+        );
+        cameraRef.current.rotation.y = THREE.MathUtils.lerp(
+          cameraRef.current.rotation.y,
+          horizontal.current.x,
+          lerpSpeed
+        );
+        cameraRef.current.rotation.x = THREE.MathUtils.lerp(
+          cameraRef.current.rotation.x,
+          horizontal.current.y,
+          lerpSpeed
+        );
+        cameraRef.current.rotation.z = THREE.MathUtils.lerp(
+          cameraRef.current.rotation.z,
+          horizontal.current.x * 0.01 + horizontal.current.y * 0.01,
+          lerpSpeed
+        );
+        cameraRef.current.updateProjectionMatrix();
+      }
+    } else {
+      if (cameraRef.current !== undefined) {
+        cameraRef.current.position.z = THREE.MathUtils.lerp(
+          cameraRef.current.position.z,
+          positionsArray[selectedProject].position.z,
+          lerpSpeed
+        );
+        cameraRef.current.rotation.x = THREE.MathUtils.lerp(
+          cameraRef.current.rotation.x,
+          positionsArray[selectedProject].rotation.x,
+          lerpSpeed
+        );
+        cameraRef.current.rotation.y = THREE.MathUtils.lerp(
+          cameraRef.current.rotation.y,
+          positionsArray[selectedProject].rotation.y,
+          lerpSpeed
+        );
+        cameraRef.current.rotation.z = THREE.MathUtils.lerp(
+          cameraRef.current.rotation.z,
+          positionsArray[selectedProject].rotation.z,
+          lerpSpeed
+        );
+        cameraRef.current.updateProjectionMatrix();
+      }
+    }
+  });
 
   return (
     <>
-      <OrbitControls></OrbitControls>
-      {/* <PerspectiveCamera ref={cameraRef} makeDefault far={25000} /> */}
+      {/* <OrbitControls></OrbitControls> */}
+      <PerspectiveCamera ref={cameraRef} makeDefault far={25000} />
     </>
   );
 }

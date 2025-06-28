@@ -1055,12 +1055,12 @@ export default function Experience() {
                   source={"videos/Testing_Video_h_264.mp4"}
                   url={"https://humbertoragazzini.github.io/TheSuperGame/"}
                 ></VideoRight>*/}
-                <VideoLeft
+                {/* <VideoLeft
                   positionZ={-51.7}
                   source={"videos/Testing_Video_h_264.mp4"}
                   url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
-                />
-                {/* <>
+                /> */}
+                <>
                   {
                     projects.map((project) => {
                       if (project.orientation == "left") {
@@ -1104,7 +1104,7 @@ export default function Experience() {
                       }
                     })
                   }
-                </> */}
+                </>
                 <Final></Final>
                 <Lights targetRef={targetRef}></Lights>
                 <CheckSize></CheckSize>
