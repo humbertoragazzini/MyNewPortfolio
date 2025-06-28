@@ -86,6 +86,10 @@ export default function ProjectLeft({ positionZ, projectId, children }) {
           </Html>
         )}
       </mesh>
+      <mesh position={[15, -8, 1]}>
+        <boxGeometry args={[10, 10, 2]}></boxGeometry>
+        <meshBasicMaterial color={"white"}></meshBasicMaterial>
+      </mesh>
     </mesh>
   );
 }

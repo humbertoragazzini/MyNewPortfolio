@@ -21,7 +21,7 @@ export default function Project({ language, content, changeSelectedProject }) {
                         ></Paragraph>
                     }
                     <div className="grid grid-cols-12">
-                        <div className="col-span-3 py-4">
+                        <div className="col-span-6">
                             <Paragraph
                                 language={language}
                                 text={{
@@ -30,8 +30,6 @@ export default function Project({ language, content, changeSelectedProject }) {
                                 }}
                                 className="mb-4 text-2xl orbitron font-[600]"
                             ></Paragraph>
-                        </div>
-                        <div className="col-span-9">
                             <div className="text-2xl orbitron font-[400] mr-12 flex flex-wrap">
                                 {
                                     content.technologies.length > 0 && content.technologies.map((tech) => {
@@ -49,14 +47,7 @@ export default function Project({ language, content, changeSelectedProject }) {
                         content.links.map((link) => {
                             return (
                                 <div className="grid grid-cols-12 mt-5 text-2xl">
-                                    <div className="col-span-3 py-4">
-                                        <Paragraph
-                                            language={language}
-                                            text={link.title}
-                                            className="mb-4 text-2xl orbitron font-[600]"
-                                        ></Paragraph>
-                                    </div>
-                                    <div className="col-span-9">
+                                    <div className="col-span-6">
                                         <a href={link.url} target="_blank" className="py-3 px-4 bg-amber-400 text-black rounded-xl m-2 block w-fit cursor-pointer">
                                             <Paragraph
                                                 language={language}
@@ -70,16 +61,7 @@ export default function Project({ language, content, changeSelectedProject }) {
                         })
                     }
                     <div className="grid grid-cols-12 mt-5 text-2xl">
-                        <div className="col-span-3 py-4">
-                            <Paragraph
-                                language={language}
-                                text={{
-                                    en: "Do you want to go back?:"
-                                }}
-                                className="mb-4 text-2xl orbitron font-[600]"
-                            ></Paragraph>
-                        </div>
-                        <div className="col-span-9">
+                        <div className="col-span-6">
                             <button
                                 onClick={() => {
                                     console.log("change to free view");
