@@ -68,12 +68,13 @@ export default function ProjectRight({ positionZ, projectId, children }) {
             transform
           >
             <div
-              className={`relative bg-black ${selectedProject
-                ? selectedProject == projectId
-                  ? ""
-                  : "blur-md"
-                : ""
-                }`}
+              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${
+                selectedProject
+                  ? selectedProject == projectId
+                    ? ""
+                    : "blur-md"
+                  : ""
+              }`}
               ref={mainContainerRef}
             >
               <div
