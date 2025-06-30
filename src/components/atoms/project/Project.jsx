@@ -46,17 +46,19 @@ export default function Project({ language, content, changeSelectedProject }) {
               </div>
             </div>
             <div className="relative col-span-6">
-              <div>
-                {content.images.map((image, i) => {
-                  return (
-                    <img
-                      className="absolute rounded-2xl left-[] hover:z-40 hover:scale-[1.15] transition-all duration-500"
-                      style={{ top: `${i * 100 - 25}px` }}
-                      src={image}
-                    ></img>
-                  );
-                })}
-              </div>
+              <video
+                className="absolute -translate-x-5 translate-y-16 shadow-2xl rounded-3xl"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source
+                  src="./videos/Testing_Video_h_264.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
           {content.links.map((link) => {
