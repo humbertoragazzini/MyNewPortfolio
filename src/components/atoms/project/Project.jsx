@@ -47,16 +47,13 @@ export default function Project({ language, content, changeSelectedProject }) {
             </div>
             <div className="relative col-span-6">
               <video
-                className="absolute -translate-x-5 translate-y-16 shadow-2xl rounded-3xl"
+                className="absolute w-full -translate-x-5 translate-y-16 shadow-2xl rounded-3xl"
                 autoPlay
                 muted
                 loop
                 playsInline
               >
-                <source
-                  src="./videos/Testing_Video_h_264.mp4"
-                  type="video/mp4"
-                />
+                <source src="./videos/primalport.mkv" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
