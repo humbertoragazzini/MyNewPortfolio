@@ -7,7 +7,12 @@ import gsap from "gsap";
 import Heading from "../ui/Heading";
 import Paragraph from "../ui/Paragraph";
 
-export default function ProjectRight({ positionZ, projectId, children }) {
+export default function ProjectRight({
+  positionZ,
+  projectId,
+  children,
+  images,
+}) {
   const htmlRef = useRef();
   const meshRef = useRef();
   const geoRef = useRef();

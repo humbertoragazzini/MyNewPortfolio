@@ -4,8 +4,19 @@ import { useContext, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { AppContext } from "../../../context/AppContext";
 import gsap from "gsap";
+import { MeshReflectorMaterial, useGLTF, useTexture } from "@react-three/drei";
 
-export default function ProjectLeft({ positionZ, projectId, children }) {
+export default function ProjectLeft({
+  positionZ,
+  projectId,
+  children,
+  images,
+}) {
+  const imagePosition = [
+    { x: 11, y: -7, z: 1 },
+    { x: 4, y: -4, z: 4 },
+    { x: 9, y: -1.5, z: 6 },
+  ];
   const htmlRef = useRef();
   const meshRef = useRef();
   const geoRef = useRef();
@@ -16,7 +27,19 @@ export default function ProjectLeft({ positionZ, projectId, children }) {
   const { isMenuOpen, language, selectedProject, changeSelectedProject } =
     useContext(AppContext);
   const { camera } = useThree();
-
+  const texture = useTexture(images[0]);
+  const texture2 = useTexture(images[1]);
+  const texture3 = useTexture(images[2]);
+  const textureMaterial = [];
+  textureMaterial[0] = new THREE.MeshBasicMaterial({
+    map: texture,
+  });
+  textureMaterial[1] = new THREE.MeshBasicMaterial({
+    map: texture2,
+  });
+  textureMaterial[2] = new THREE.MeshBasicMaterial({
+    map: texture3,
+  });
   useFrame(() => {
     if (geoRef.current && mainContainerRef.current && htmlRef.current) {
       const geometry = geoRef.current.geometry;
@@ -89,10 +112,23 @@ export default function ProjectLeft({ positionZ, projectId, children }) {
           </Html>
         )}
       </mesh>
-      <mesh ref={imageRef} position={[7, -3, 1]}>
-        <boxGeometry args={[14, 10, 2]}></boxGeometry>
-        <meshStandardMaterial color={"white"}></meshStandardMaterial>
-      </mesh>
+      {images.length > 0 &&
+        images.map((url, i) => {
+          return (
+            <mesh
+              ref={imageRef}
+              position={[
+                imagePosition[i].x,
+                imagePosition[i].y,
+                imagePosition[i].z,
+              ]}
+              material={textureMaterial[i]}
+            >
+              <boxGeometry args={[9, 5, 1]}></boxGeometry>
+              {/* <meshStandardMaterial color={"white"}></meshStandardMaterial> */}
+            </mesh>
+          );
+        })}
     </mesh>
   );
 }

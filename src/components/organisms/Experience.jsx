@@ -36,12 +36,7 @@ const projects = [
       en: "This was the first project I created in HTML, with CSS and a bit of JavaScript. This project was the beginning of what is now my career. It’s impressive to look at this project and know that everything started here. This project holds great sentimental value because I can come back to it and see how my knowledge has grown over time and with a lot of effort.",
       es: "Este fue el primer projecto que realize en HTML, con CSS y un poco the Javascript, este projecto fue el comienzo de lo que hoy es mi carrera, es impresionante ver este projecto y saber que todo empezo aqui, este projecto tiene ese gran valor sentimental de poder volver a el y ver como mi conocimiento crecio con tiempo y mucho esfuerzo.",
     },
-    technologies: [
-      "Bootstrap",
-      "HTML5",
-      "CSS",
-      "Javascript",
-    ],
+    technologies: ["Bootstrap", "HTML5", "CSS", "Javascript"],
     links: [
       {
         title: {
@@ -64,7 +59,12 @@ const projects = [
           es: "Repositorio de Github",
         },
         url: "https://humbertoragazzini.github.io/ms-1-front-end/",
-      }
+      },
+    ],
+    images: [
+      "./img/first_project_1.png",
+      "./img/first_project_2.png",
+      "./img/first_project_3.png",
     ],
   },
   {
@@ -79,12 +79,7 @@ const projects = [
       en: "In this second project, I dove deeper into JavaScript. I created a small memory game where you need to repeat the same sequence of jewels to complete a bracelet. This game marked the beginning of my JavaScript journey and sparked my desire to learn more.",
       es: "En este segundo proyecto profundicé en JavaScript. Creé un pequeño juego de memoria en el que debes repetir la misma secuencia de joyas para completar una pulsera. Este juego marcó el comienzo de mi camino con JavaScript y despertó mis ganas de aprender más.",
     },
-    technologies: [
-      "Bootstrap",
-      "HTML5",
-      "CSS",
-      "Javascript",
-    ],
+    technologies: ["Bootstrap", "HTML5", "CSS", "Javascript"],
     links: [
       {
         title: {
@@ -107,7 +102,12 @@ const projects = [
           es: "Repositorio de Github",
         },
         url: "https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2",
-      }
+      },
+    ],
+    images: [
+      "./img/first_project_1.png",
+      "./img/first_project_2.png",
+      "./img/first_project_3.png",
     ],
   },
   {
@@ -131,17 +131,24 @@ const projects = [
       "MongoDB",
       "Flask",
     ],
-    links: [{
-      title: {
-        en: "Link to the Github repository",
-        es: "Link al repositorio de Github",
+    links: [
+      {
+        title: {
+          en: "Link to the Github repository",
+          es: "Link al repositorio de Github",
+        },
+        label: {
+          en: "Github Repository",
+          es: "Repositorio de Github",
+        },
+        url: "https://github.com/humbertoragazzini/splendid-the-pizza-cooking-book",
       },
-      label: {
-        en: "Github Repository",
-        es: "Repositorio de Github",
-      },
-      url: "https://github.com/humbertoragazzini/splendid-the-pizza-cooking-book",
-    }],
+    ],
+    images: [
+      "./img/first_project_1.png",
+      "./img/first_project_2.png",
+      "./img/first_project_3.png",
+    ],
   },
   {
     positionZ: -145,
@@ -165,7 +172,7 @@ const projects = [
       "Framer",
       "RTF",
       "Blender",
-      "TailwindCSS"
+      "TailwindCSS",
     ],
     links: [
       {
@@ -178,7 +185,12 @@ const projects = [
           es: "Clickea aqui para visitar PrimalPort",
         },
         url: "https://www.primalports.com/",
-      }
+      },
+    ],
+    images: [
+      "./img/first_project_1.png",
+      "./img/first_project_2.png",
+      "./img/first_project_3.png",
     ],
   },
   {
@@ -202,7 +214,7 @@ const projects = [
       "Framer",
       "RTF",
       "Blender",
-      "TailwindCSS"
+      "TailwindCSS",
     ],
     links: [
       {
@@ -226,7 +238,12 @@ const projects = [
           es: "Repositorio de Github",
         },
         url: "https://github.com/humbertoragazzini/TheSuperGame?tab=readme-ov-file",
-      }
+      },
+    ],
+    images: [
+      "./img/first_project_1.png",
+      "./img/first_project_2.png",
+      "./img/first_project_3.png",
     ],
   },
   {
@@ -248,7 +265,7 @@ const projects = [
       "TS",
       "GSAP",
       "RTF",
-      "TailwindCSS"
+      "TailwindCSS",
     ],
     links: [
       {
@@ -261,10 +278,15 @@ const projects = [
           es: "Clieckea aqui para visitar el mundo interactivo",
         },
         url: "https://humbertoragazzini.github.io/3DWorldWithScroll/",
-      }
+      },
+    ],
+    images: [
+      "./img/first_project_1.png",
+      "./img/first_project_2.png",
+      "./img/first_project_3.png",
     ],
   },
-]
+];
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -362,8 +384,9 @@ export default function Experience() {
       {/* Scrollable container */}
       <div
         ref={scrollContainerRef}
-        className={`scroller elative z-[9900] w-screen h-[100dvh] ${selectedProject ? "overflow-y-hidden" : "overflow-y-scroll"
-          }`}
+        className={`scroller elative z-[9900] w-screen h-[100dvh] ${
+          selectedProject ? "overflow-y-hidden" : "overflow-y-scroll"
+        }`}
         onScroll={(e) => {
           const target = e.currentTarget;
           const scrollTop = target.scrollTop;
@@ -1061,49 +1084,50 @@ export default function Experience() {
                   url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
                 /> */}
                 <>
-                  {
-                    projects.map((project) => {
-                      if (project.orientation == "left") {
-                        return (
-                          <ProjectLeft
-                            positionZ={project.positionZ}
+                  {projects.map((project) => {
+                    if (project.orientation == "left") {
+                      return (
+                        <ProjectLeft
+                          positionZ={project.positionZ}
+                          language={language}
+                          projectId={project.projectId}
+                          images={project.images}
+                        >
+                          <Project
                             language={language}
-                            projectId={project.projectId}
-                          >
-                            <Project
-                              language={language}
-                              content={{
-                                projectName: project.projectName,
-                                description: project.description,
-                                technologies: project.technologies,
-                                links: project.links
-                              }}
-                              changeSelectedProject={changeSelectedProject}
-                            ></Project>
-                          </ProjectLeft>)
-                      }
-                      if (project.orientation == "right") {
-                        return (
-                          <ProjectRight
-                            positionZ={project.positionZ}
+                            content={{
+                              projectName: project.projectName,
+                              description: project.description,
+                              technologies: project.technologies,
+                              links: project.links,
+                            }}
+                            changeSelectedProject={changeSelectedProject}
+                          ></Project>
+                        </ProjectLeft>
+                      );
+                    }
+                    if (project.orientation == "right") {
+                      return (
+                        <ProjectRight
+                          positionZ={project.positionZ}
+                          language={language}
+                          projectId={project.projectId}
+                          images={project.images}
+                        >
+                          <Project
                             language={language}
-                            projectId={project.projectId}
-                          >
-                            <Project
-                              language={language}
-                              content={{
-                                projectName: project.projectName,
-                                description: project.description,
-                                technologies: project.technologies,
-                                links: project.links
-                              }}
-                              changeSelectedProject={changeSelectedProject}
-                            ></Project>
-                          </ProjectRight>
-                        )
-                      }
-                    })
-                  }
+                            content={{
+                              projectName: project.projectName,
+                              description: project.description,
+                              technologies: project.technologies,
+                              links: project.links,
+                            }}
+                            changeSelectedProject={changeSelectedProject}
+                          ></Project>
+                        </ProjectRight>
+                      );
+                    }
+                  })}
                 </>
                 <Final></Final>
                 <Lights targetRef={targetRef}></Lights>
