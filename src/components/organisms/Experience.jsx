@@ -22,6 +22,12 @@ import { TestingFloor } from "../atoms/scene/testingFloor.jsx";
 import { Joystick } from "react-joystick-component";
 import LoadingSystems from "../atoms/ui/LoadingSystems.jsx";
 import { Html } from "@react-three/drei";
+import {
+  ACESFilmicToneMapping,
+  LinearToneMapping,
+  NoToneMapping,
+  ReinhardToneMapping,
+} from "three";
 
 const projects = [
   {
@@ -401,7 +407,11 @@ export default function Experience() {
             <Canvas
               shadows
               dpr={dpr}
-              gl={{ preserveDrawingBuffer: false, antialias: true }}
+              gl={{
+                preserveDrawingBuffer: false,
+                antialias: true,
+                toneMapping: LinearToneMapping,
+              }}
             >
               {/* <OrbitControls></OrbitControls> */}
               {/* <PerspectiveCamera></PerspectiveCamera> */}
@@ -1100,6 +1110,7 @@ export default function Experience() {
                               description: project.description,
                               technologies: project.technologies,
                               links: project.links,
+                              images: project.images,
                             }}
                             changeSelectedProject={changeSelectedProject}
                           ></Project>
@@ -1121,6 +1132,7 @@ export default function Experience() {
                               description: project.description,
                               technologies: project.technologies,
                               links: project.links,
+                              images: project.images,
                             }}
                             changeSelectedProject={changeSelectedProject}
                           ></Project>

@@ -112,23 +112,26 @@ export default function ProjectLeft({
           </Html>
         )}
       </mesh>
-      {images.length > 0 &&
-        images.map((url, i) => {
-          return (
-            <mesh
-              ref={imageRef}
-              position={[
-                imagePosition[i].x,
-                imagePosition[i].y,
-                imagePosition[i].z,
-              ]}
-              material={textureMaterial[i]}
-            >
-              <boxGeometry args={[9, 5, 1]}></boxGeometry>
-              {/* <meshStandardMaterial color={"white"}></meshStandardMaterial> */}
-            </mesh>
-          );
-        })}
     </mesh>
   );
 }
+
+// {
+//   images.length > 0 &&
+//     images.map((url, i) => {
+//       return (
+//         <mesh
+//           ref={imageRef}
+//           position={[
+//             imagePosition[i].x,
+//             imagePosition[i].y,
+//             imagePosition[i].z,
+//           ]}
+//           material={textureMaterial[i]}
+//         >
+//           <boxGeometry args={[9, 5, 2]}></boxGeometry>
+//           {/* <meshStandardMaterial color={"white"}></meshStandardMaterial> */}
+//         </mesh>
+//       );
+//     });
+// }

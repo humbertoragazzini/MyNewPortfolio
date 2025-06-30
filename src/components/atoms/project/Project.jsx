@@ -45,11 +45,24 @@ export default function Project({ language, content, changeSelectedProject }) {
                   })}
               </div>
             </div>
+            <div className="relative col-span-6">
+              <div>
+                {content.images.map((image, i) => {
+                  return (
+                    <img
+                      className="absolute rounded-2xl left-[]"
+                      style={{ left: `${i * 25}px`, top: `${i * 100}px` }}
+                      src={image}
+                    ></img>
+                  );
+                })}
+              </div>
+            </div>
           </div>
           {content.links.map((link) => {
             return (
-              <div className="grid grid-cols-12 mt-5 text-2xl">
-                <div className="col-span-6">
+              <div className="grid grid-cols-6 mt-5 text-2xl">
+                <div className="col-span-12">
                   <a
                     href={link.url}
                     target="_blank"
@@ -65,7 +78,7 @@ export default function Project({ language, content, changeSelectedProject }) {
               </div>
             );
           })}
-          <div className="grid grid-cols-12 mt-5 text-2xl">
+          <div className="grid grid-cols-6 mt-5 text-2xl">
             <div className="col-span-6">
               <button
                 onClick={() => {
