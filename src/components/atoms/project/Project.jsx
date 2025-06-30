@@ -50,8 +50,8 @@ export default function Project({ language, content, changeSelectedProject }) {
                 {content.images.map((image, i) => {
                   return (
                     <img
-                      className="absolute rounded-2xl left-[]"
-                      style={{ left: `${i * 25}px`, top: `${i * 100}px` }}
+                      className="absolute rounded-2xl left-[] hover:z-40 hover:scale-[1.15] transition-all duration-500"
+                      style={{ top: `${i * 100 - 25}px` }}
                       src={image}
                     ></img>
                   );

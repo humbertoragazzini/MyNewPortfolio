@@ -1,4 +1,4 @@
-import { Html } from "@react-three/drei";
+import { Html, useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useContext, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
@@ -22,7 +22,24 @@ export default function ProjectRight({
   const [show, setShow] = useState(false);
   const { isMenuOpen, language, selectedProject, changeSelectedProject } =
     useContext(AppContext);
-
+  const imagePosition = [
+    { x: 11, y: -27, z: 1 },
+    { x: 35, y: -4, z: 4 },
+    { x: 9, y: 25, z: 6 },
+  ];
+  const texture = useTexture(images[0]);
+  const texture2 = useTexture(images[1]);
+  const texture3 = useTexture(images[2]);
+  const textureMaterial = [];
+  textureMaterial[0] = new THREE.MeshBasicMaterial({
+    map: texture,
+  });
+  textureMaterial[1] = new THREE.MeshBasicMaterial({
+    map: texture2,
+  });
+  textureMaterial[2] = new THREE.MeshBasicMaterial({
+    map: texture3,
+  });
   useFrame(() => {
     if (geoRef.current && mainContainerRef.current && htmlRef.current) {
       const geometry = geoRef.current.geometry;
@@ -95,10 +112,26 @@ export default function ProjectRight({
           </Html>
         )}
       </mesh>
-      <mesh ref={imageRef} position={[7, -3, 1]}>
-        <boxGeometry args={[14, 10, 2]}></boxGeometry>
-        <meshStandardMaterial color={"white"}></meshStandardMaterial>
-      </mesh>
     </mesh>
   );
 }
+
+// {
+//   images.length > 0 &&
+//     images.map((url, i) => {
+//       return (
+//         <mesh
+//           ref={imageRef}
+//           position={[
+//             imagePosition[i].x,
+//             imagePosition[i].y,
+//             imagePosition[i].z,
+//           ]}
+//           material={textureMaterial[i]}
+//         >
+//           <boxGeometry args={[32, 18, 10]}></boxGeometry>
+//           {/* <meshStandardMaterial color={"white"}></meshStandardMaterial> */}
+//         </mesh>
+//       );
+//     });
+// }
