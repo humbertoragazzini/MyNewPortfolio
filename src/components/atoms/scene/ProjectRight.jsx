@@ -11,6 +11,7 @@ export default function ProjectRight({ positionZ, projectId, children }) {
   const htmlRef = useRef();
   const meshRef = useRef();
   const geoRef = useRef();
+  const imageRef = useRef();
   const mainContainerRef = useRef();
   const [geometry, setGeometry] = useState();
   const [show, setShow] = useState(false);
@@ -88,6 +89,10 @@ export default function ProjectRight({ positionZ, projectId, children }) {
             </div>
           </Html>
         )}
+      </mesh>
+      <mesh ref={imageRef} position={[7, -3, 1]}>
+        <boxGeometry args={[14, 10, 2]}></boxGeometry>
+        <meshStandardMaterial color={"white"}></meshStandardMaterial>
       </mesh>
     </mesh>
   );

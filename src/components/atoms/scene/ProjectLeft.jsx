@@ -15,7 +15,7 @@ export default function ProjectLeft({ positionZ, projectId, children }) {
   const [show, setShow] = useState(false);
   const { isMenuOpen, language, selectedProject, changeSelectedProject } =
     useContext(AppContext);
-  const { camera } = useThree()
+  const { camera } = useThree();
 
   useFrame(() => {
     if (geoRef.current && mainContainerRef.current && htmlRef.current) {
@@ -68,12 +68,13 @@ export default function ProjectLeft({ positionZ, projectId, children }) {
             transform
           >
             <div
-              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${selectedProject
-                ? selectedProject == projectId
-                  ? ""
-                  : "blur-md"
-                : ""
-                }`}
+              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${
+                selectedProject
+                  ? selectedProject == projectId
+                    ? ""
+                    : "blur-md"
+                  : ""
+              }`}
               ref={mainContainerRef}
             >
               <div
@@ -92,7 +93,6 @@ export default function ProjectLeft({ positionZ, projectId, children }) {
         <boxGeometry args={[14, 10, 2]}></boxGeometry>
         <meshStandardMaterial color={"white"}></meshStandardMaterial>
       </mesh>
-
     </mesh>
   );
 }
