@@ -47,16 +47,29 @@ export default function Project({ language, content, changeSelectedProject }) {
             </div>
             <div className="relative col-span-6">
               {
-                content.video !== null && <video
-                  className="absolute w-full -translate-x-5 translate-y-16 shadow-2xl rounded-3xl"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                >
-                  <source src={content.video} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                // content.video !== null && <video
+                //   className="absolute w-full -translate-x-5 translate-y-16 shadow-2xl rounded-3xl"
+                //   autoPlay
+                //   muted
+                //   loop
+                //   playsInline
+                // >
+                //   <source src={content.video} type="video/mp4" />
+                //   Your browser does not support the video tag.
+                // </video>
+                <div className="absolute w-full -translate-x-5 translate-y-16 shadow-2xl rounded-3xl overflow-hidden">
+                  <iframe
+                    className="w-full"
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/UkveYvrbCSo?autoplay=1&mute=1"
+                    title="YouTube video"
+                    controls={0}
+                    frameborder="0"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen
+                  ></iframe>
+                </div>
               }
               {
                 (content.gif !== "" && content.gif !== null) && <img
