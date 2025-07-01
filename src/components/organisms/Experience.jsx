@@ -67,6 +67,7 @@ const projects = [
         url: "https://humbertoragazzini.github.io/ms-1-front-end/",
       },
     ],
+    embeded: "",
     gif: "",
     video: "./videos/mffe_project_video.mp4",
     images: [
@@ -112,6 +113,7 @@ const projects = [
         url: "https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2",
       },
     ],
+    embeded: "",
     gif: "",
     video: "./videos/msfe_project_video.mp4",
     images: [
@@ -154,6 +156,7 @@ const projects = [
         url: "https://github.com/humbertoragazzini/splendid-the-pizza-cooking-book",
       },
     ],
+    embeded: "",
     gif: "./videos/splendid_video.gif",
     video: null,
     images: [
@@ -199,6 +202,7 @@ const projects = [
         url: "https://www.primalports.com/",
       },
     ],
+    embeded: "",
     gif: "",
     video: "./videos/primalport_video.mp4",
     images: [
@@ -254,6 +258,7 @@ const projects = [
         url: "https://github.com/humbertoragazzini/TheSuperGame?tab=readme-ov-file",
       },
     ],
+    embeded: "",
     gif: "",
     video: "./videos/primalport_video.mp4",
     images: [
@@ -296,6 +301,7 @@ const projects = [
         url: "https://humbertoragazzini.github.io/3DWorldWithScroll/",
       },
     ],
+    embeded: "",
     gif: "",
     video: "./videos/primalport_video.mp4",
     images: [
@@ -1123,7 +1129,8 @@ export default function Experience() {
                               links: project.links,
                               images: project.images,
                               video: project.video,
-                              gif: project.gif
+                              gif: project.gif,
+                              embeded: project.embeded
                             }}
                             changeSelectedProject={changeSelectedProject}
                           ></Project>
@@ -1147,7 +1154,8 @@ export default function Experience() {
                               links: project.links,
                               images: project.images,
                               video: project.video,
-                              gif: project.gif
+                              gif: project.gif,
+                              embeded: project.embeded
                             }}
                             changeSelectedProject={changeSelectedProject}
                           ></Project>
