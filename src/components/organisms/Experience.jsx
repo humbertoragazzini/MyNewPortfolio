@@ -67,6 +67,7 @@ const projects = [
         url: "https://humbertoragazzini.github.io/ms-1-front-end/",
       },
     ],
+    video: "./videos/mffe_project_video.mp4",
     images: [
       "./img/first_project_1.png",
       "./img/first_project_2.png",
@@ -110,6 +111,7 @@ const projects = [
         url: "https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2",
       },
     ],
+    video: "./videos/primalport_video.mp4",
     images: [
       "./img/first_project_1.png",
       "./img/first_project_2.png",
@@ -150,6 +152,7 @@ const projects = [
         url: "https://github.com/humbertoragazzini/splendid-the-pizza-cooking-book",
       },
     ],
+    video: "./videos/primalport_video.mp4",
     images: [
       "./img/first_project_1.png",
       "./img/first_project_2.png",
@@ -193,6 +196,7 @@ const projects = [
         url: "https://www.primalports.com/",
       },
     ],
+    video: "./videos/primalport_video.mp4",
     images: [
       "./img/first_project_1.png",
       "./img/first_project_2.png",
@@ -246,6 +250,7 @@ const projects = [
         url: "https://github.com/humbertoragazzini/TheSuperGame?tab=readme-ov-file",
       },
     ],
+    video: "./videos/primalport_video.mp4",
     images: [
       "./img/first_project_1.png",
       "./img/first_project_2.png",
@@ -286,6 +291,7 @@ const projects = [
         url: "https://humbertoragazzini.github.io/3DWorldWithScroll/",
       },
     ],
+    video: "./videos/primalport_video.mp4",
     images: [
       "./img/first_project_1.png",
       "./img/first_project_2.png",
@@ -390,9 +396,8 @@ export default function Experience() {
       {/* Scrollable container */}
       <div
         ref={scrollContainerRef}
-        className={`scroller elative z-[9900] w-screen h-[100dvh] ${
-          selectedProject ? "overflow-y-hidden" : "overflow-y-scroll"
-        }`}
+        className={`scroller elative z-[9900] w-screen h-[100dvh] ${selectedProject ? "overflow-y-hidden" : "overflow-y-scroll"
+          }`}
         onScroll={(e) => {
           const target = e.currentTarget;
           const scrollTop = target.scrollTop;
@@ -1111,6 +1116,7 @@ export default function Experience() {
                               technologies: project.technologies,
                               links: project.links,
                               images: project.images,
+                              video: project.video
                             }}
                             changeSelectedProject={changeSelectedProject}
                           ></Project>
@@ -1133,6 +1139,7 @@ export default function Experience() {
                               technologies: project.technologies,
                               links: project.links,
                               images: project.images,
+                              video: project.video
                             }}
                             changeSelectedProject={changeSelectedProject}
                           ></Project>
