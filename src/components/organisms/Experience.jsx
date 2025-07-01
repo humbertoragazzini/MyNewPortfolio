@@ -67,6 +67,7 @@ const projects = [
         url: "https://humbertoragazzini.github.io/ms-1-front-end/",
       },
     ],
+    gif: "",
     video: "./videos/mffe_project_video.mp4",
     images: [
       "./img/first_project_1.png",
@@ -111,6 +112,7 @@ const projects = [
         url: "https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2",
       },
     ],
+    gif: "",
     video: "./videos/msfe_project_video.mp4",
     images: [
       "./img/first_project_1.png",
@@ -152,7 +154,8 @@ const projects = [
         url: "https://github.com/humbertoragazzini/splendid-the-pizza-cooking-book",
       },
     ],
-    video: "./videos/primalport_video.mp4",
+    gif: "./videos/splendid_video.gif",
+    video: null,
     images: [
       "./img/first_project_1.png",
       "./img/first_project_2.png",
@@ -196,6 +199,7 @@ const projects = [
         url: "https://www.primalports.com/",
       },
     ],
+    gif: "",
     video: "./videos/primalport_video.mp4",
     images: [
       "./img/first_project_1.png",
@@ -250,6 +254,7 @@ const projects = [
         url: "https://github.com/humbertoragazzini/TheSuperGame?tab=readme-ov-file",
       },
     ],
+    gif: "",
     video: "./videos/primalport_video.mp4",
     images: [
       "./img/first_project_1.png",
@@ -291,6 +296,7 @@ const projects = [
         url: "https://humbertoragazzini.github.io/3DWorldWithScroll/",
       },
     ],
+    gif: "",
     video: "./videos/primalport_video.mp4",
     images: [
       "./img/first_project_1.png",
@@ -1116,7 +1122,8 @@ export default function Experience() {
                               technologies: project.technologies,
                               links: project.links,
                               images: project.images,
-                              video: project.video
+                              video: project.video,
+                              gif: project.gif
                             }}
                             changeSelectedProject={changeSelectedProject}
                           ></Project>
@@ -1139,7 +1146,8 @@ export default function Experience() {
                               technologies: project.technologies,
                               links: project.links,
                               images: project.images,
-                              video: project.video
+                              video: project.video,
+                              gif: project.gif
                             }}
                             changeSelectedProject={changeSelectedProject}
                           ></Project>

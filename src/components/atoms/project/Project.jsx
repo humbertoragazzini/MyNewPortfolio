@@ -46,16 +46,25 @@ export default function Project({ language, content, changeSelectedProject }) {
               </div>
             </div>
             <div className="relative col-span-6">
-              <video
-                className="absolute w-full -translate-x-5 translate-y-16 shadow-2xl rounded-3xl"
-                autoPlay
-                muted
-                loop
-                playsInline
-              >
-                <source src={content.video} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              {
+                content.video !== null && <video
+                  className="absolute w-full -translate-x-5 translate-y-16 shadow-2xl rounded-3xl"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                >
+                  <source src={content.video} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              }
+              {
+                (content.gif !== "" && content.gif !== null) && <img
+                  src={content.gif}
+                  className="absolute w-full -translate-x-5 translate-y-16 shadow-2xl rounded-3xl"
+                  alt="GIF"
+                />
+              }
             </div>
           </div>
           {content.links.map((link) => {
