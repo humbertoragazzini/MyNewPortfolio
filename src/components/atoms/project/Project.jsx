@@ -53,7 +53,7 @@ export default function Project({ language, content, changeSelectedProject }) {
                 loop
                 playsInline
               >
-                <source src="./videos/Testing_Video_h_264.mp4" type="video/mp4" />
+                <source src={content.video} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
