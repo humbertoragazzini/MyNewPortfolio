@@ -156,8 +156,8 @@ const projects = [
         url: "https://github.com/humbertoragazzini/splendid-the-pizza-cooking-book",
       },
     ],
-    embeded: "",
-    gif: "./videos/splendid_video.gif",
+    embeded: "ole2GfpOjuA",
+    gif: "",
     video: null,
     images: [
       "./img/first_project_1.png",
