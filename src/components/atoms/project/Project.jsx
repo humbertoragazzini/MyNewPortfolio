@@ -47,7 +47,7 @@ export default function Project({ language, content, changeSelectedProject }) {
             </div>
             <div className="relative col-span-6">
               {
-                content.video !== null && <video
+                (content.video !== null && content.video !== "") && <video
                   className="absolute w-full -translate-x-5 translate-y-16 shadow-2xl rounded-3xl"
                   autoPlay
                   muted
@@ -59,7 +59,7 @@ export default function Project({ language, content, changeSelectedProject }) {
                 </video>
               }
               {
-                content.video !== null &&
+                content.embeded !== null &&
                 <div className="absolute w-full -translate-x-5 translate-y-16 shadow-2xl rounded-3xl overflow-hidden">
                   <iframe
                     className="w-full"
