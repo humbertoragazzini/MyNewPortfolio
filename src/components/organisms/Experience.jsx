@@ -111,7 +111,7 @@ const projects = [
         url: "https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2",
       },
     ],
-    video: "./videos/primalport_video.mp4",
+    video: "./videos/msfe_project_video.mp4",
     images: [
       "./img/first_project_1.png",
       "./img/first_project_2.png",
