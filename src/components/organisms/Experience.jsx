@@ -70,11 +70,7 @@ const projects = [
     embeded: "7swmapUo9l8",
     gif: "",
     video: "",
-    images: [
-      "./img/first_project_1.png",
-      "./img/first_project_2.png",
-      "./img/first_project_3.png",
-    ],
+    images: [],
   },
   {
     positionZ: -40,
@@ -116,11 +112,7 @@ const projects = [
     embeded: "N-q0a1t_uSQ",
     gif: "",
     video: "",
-    images: [
-      "./img/first_project_1.png",
-      "./img/first_project_2.png",
-      "./img/first_project_3.png",
-    ],
+    images: [],
   },
   {
     positionZ: -145,
@@ -159,11 +151,7 @@ const projects = [
     embeded: "ole2GfpOjuA",
     gif: "",
     video: null,
-    images: [
-      "./img/first_project_1.png",
-      "./img/first_project_2.png",
-      "./img/first_project_3.png",
-    ],
+    images: [],
   },
   {
     positionZ: -145,
@@ -205,11 +193,7 @@ const projects = [
     embeded: "XWvOI_r0wl0",
     gif: "",
     video: "",
-    images: [
-      "./img/first_project_1.png",
-      "./img/first_project_2.png",
-      "./img/first_project_3.png",
-    ],
+    images: [],
   },
   {
     positionZ: -245,
@@ -261,11 +245,7 @@ const projects = [
     embeded: "gPavrQuxkfc",
     gif: "",
     video: "",
-    images: [
-      "./img/first_project_1.png",
-      "./img/first_project_2.png",
-      "./img/first_project_3.png",
-    ],
+    images: [],
   },
   {
     positionZ: -245,
@@ -304,11 +284,7 @@ const projects = [
     embeded: "uO9XDdfYJcY",
     gif: "",
     video: "",
-    images: [
-      "./img/first_project_1.png",
-      "./img/first_project_2.png",
-      "./img/first_project_3.png",
-    ],
+    images: [],
   },
 ];
 

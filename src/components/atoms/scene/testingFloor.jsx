@@ -4,10 +4,11 @@ import * as THREE from "three";
 
 export function TestingFloor(props) {
   const { nodes, materials } = useGLTF("./blender/TESTING_FLOOR.glb");
-  const floor = useTexture("./blender/FLOOR.jpg");
+  // const floor = useTexture("./blender/FLOOR.jpg");
   floor.flipY = false;
   const textureMaterial = new THREE.MeshStandardMaterial({
-    map: floor,
+    // map: floor,
+    color: "black",
     metalness: 0.2,
     roughness: 0,
   });

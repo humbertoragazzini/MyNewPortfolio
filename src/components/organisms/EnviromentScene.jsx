@@ -22,14 +22,14 @@ export default function EnviromentScene(props) {
   const texture4 = useTexture("./blender/WALL4.jpg");
   const texture5 = useTexture("./blender/WALL5.jpg");
   const texture6 = useTexture("./blender/WALL6.jpg");
-  const floor = useTexture("./blender/FLOOR.jpg");
+  // const floor = useTexture("./blender/FLOOR.jpg");
   texture.flipY = false;
   texture2.flipY = false;
   texture3.flipY = false;
   texture4.flipY = false;
   texture5.flipY = false;
   texture6.flipY = false;
-  floor.flipY = false;
+  // floor.flipY = false;
   const textureMaterial = new THREE.MeshStandardMaterial({
     map: texture,
   });
@@ -49,7 +49,8 @@ export default function EnviromentScene(props) {
     map: texture6,
   });
   const textureMaterialFloor = new THREE.MeshStandardMaterial({
-    map: floor,
+    // map: floor,
+    color: "black",
   });
 
   useEffect(() => {
