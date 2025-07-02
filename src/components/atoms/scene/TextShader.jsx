@@ -68,7 +68,8 @@ const fragmentShader = `
   }
 
   void main() {
-    float appearTime = cnoise(vUv) * 20.0; // each vertex appears between 0-3s
+    float noise = cnoise(vUv) * 0.5 + 0.5;
+    float appearTime = noise * 30.0;
     float alpha = smoothstep(0.0, 1.0, uTime - appearTime);
     
 
