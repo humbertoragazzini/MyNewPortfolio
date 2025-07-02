@@ -576,15 +576,18 @@ export default function Experience() {
                           <TextShader
                             scale={15}
                             rotation={[0, 3.14 / 2, 0]}
-                            position={[-50, 0, -435]}
+                            position={[-50, 0, -475]}
                             size={1}
                             text={"Hello Shader"}
                           ></TextShader>
-
+                          <pointLight
+                            intensity={19000}
+                            position={[-0, 25, -475]}
+                          ></pointLight>
                           <TextShader
                             scale={15}
                             rotation={[0, -3.14 / 2, 0]}
-                            position={[50, 0, -435]}
+                            position={[50, 0, -475]}
                             size={1}
                             text={"Hello Shader"}
                           ></TextShader>
