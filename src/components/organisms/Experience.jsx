@@ -28,6 +28,7 @@ import {
   NoToneMapping,
   ReinhardToneMapping,
 } from "three";
+import TextShader from "../atoms/scene/TextShader.jsx";
 
 const projects = [
   {
@@ -384,8 +385,9 @@ export default function Experience() {
       {/* Scrollable container */}
       <div
         ref={scrollContainerRef}
-        className={`scroller elative z-[9900] w-screen h-[100dvh] ${selectedProject ? "overflow-y-hidden" : "overflow-y-scroll"
-          }`}
+        className={`scroller elative z-[9900] w-screen h-[100dvh] ${
+          selectedProject ? "overflow-y-hidden" : "overflow-y-scroll"
+        }`}
         onScroll={(e) => {
           const target = e.currentTarget;
           const scrollTop = target.scrollTop;
@@ -1106,7 +1108,7 @@ export default function Experience() {
                               images: project.images,
                               video: project.video,
                               gif: project.gif,
-                              embeded: project.embeded
+                              embeded: project.embeded,
                             }}
                             changeSelectedProject={changeSelectedProject}
                           ></Project>
@@ -1131,7 +1133,7 @@ export default function Experience() {
                               images: project.images,
                               video: project.video,
                               gif: project.gif,
-                              embeded: project.embeded
+                              embeded: project.embeded,
                             }}
                             changeSelectedProject={changeSelectedProject}
                           ></Project>
@@ -1141,6 +1143,7 @@ export default function Experience() {
                   })}
                 </>
                 <Final></Final>
+                <TextShader text={"Hello Shader"}></TextShader>
                 <Lights targetRef={targetRef}></Lights>
                 <CheckSize></CheckSize>
               </Suspense>

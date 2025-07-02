@@ -46,8 +46,8 @@ export default function Project({ language, content, changeSelectedProject }) {
               </div>
             </div>
             <div className="relative col-span-6">
-              {
-                (content.video !== null && content.video !== "") && <video
+              {content.video !== null && content.video !== "" && (
+                <video
                   className="absolute w-full -translate-x-5 translate-y-16 shadow-2xl rounded-3xl"
                   autoPlay
                   muted
@@ -57,30 +57,28 @@ export default function Project({ language, content, changeSelectedProject }) {
                   <source src={content.video} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-              }
-              {
-                content.embeded !== null &&
-                <div className="absolute w-full -translate-x-5 translate-y-16 shadow-2xl rounded-3xl overflow-hidden">
+              )}
+              {content.embeded !== null && (
+                <div className="absolute w-full overflow-hidden -translate-x-5 translate-y-16 shadow-2xl rounded-3xl">
                   <iframe
                     className="w-full"
                     width="560"
                     height="315"
-                    src={`https://www.youtube.com/embed/${content.embeded}?autoplay=1&mute=1`}
+                    src={`https://www.youtube.com/embed/${content.embeded}?autoplay=1&mute=1&loop=1&playlist=${content.embeded}`}
                     title="YouTube video"
-                    controls={0}
-                    frameborder="0"
+                    frameBorder="0"
                     allow="autoplay; encrypted-media"
-                    allowfullscreen
+                    allowFullScreen
                   ></iframe>
                 </div>
-              }
-              {
-                (content.gif !== "" && content.gif !== null) && <img
+              )}
+              {content.gif !== "" && content.gif !== null && (
+                <img
                   src={content.gif}
                   className="absolute w-full -translate-x-5 translate-y-16 shadow-2xl rounded-3xl"
                   alt="GIF"
                 />
-              }
+              )}
             </div>
           </div>
           {content.links.map((link) => {
