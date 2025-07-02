@@ -1,4 +1,4 @@
-import { Text, Text3D } from "@react-three/drei";
+import { Center, Float, Text, Text3D } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useRef } from "react";
@@ -99,18 +99,18 @@ export default function TextShader({ rotation, position, text, size, scale }) {
   });
 
   return (
-    <Text3D
-      rotation={rotation ? rotation : [0, 0, 0]}
-      position={position}
-      scale={scale}
-      anchorX="center"
-      anchorY="middle"
-      font={OrbitronFont}
-      fontSize={size}
-      depth={1}
-    >
-      {text}
-      <primitive object={shaderMaterial} attach="material" ref={materialRef} />
-    </Text3D>
+    <mesh scale={scale} position={position}>
+      <Center>
+        <Text3D
+          rotation={rotation ? rotation : [0, 0, 0]}
+          font={OrbitronFont}
+          fontSize={1}
+          depth={1}
+        >
+          {text}
+          {/* <primitive object={shaderMaterial} attach="material" ref={materialRef} /> */}
+        </Text3D>
+      </Center>
+    </mesh>
   );
 }

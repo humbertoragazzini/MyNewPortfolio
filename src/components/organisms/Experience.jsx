@@ -584,7 +584,7 @@ export default function Experience() {
                           <TextShader
                             scale={15}
                             rotation={[0, -3.14 / 2, 0]}
-                            position={[50, 0, -565]}
+                            position={[50, 0, -435]}
                             size={1}
                             text={"Hello Shader"}
                           ></TextShader>
