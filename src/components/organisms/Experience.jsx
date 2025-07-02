@@ -1072,7 +1072,7 @@ export default function Experience() {
                     );
                   }}
                 </Effects>
-                {/* <MainScene scale={1} /> */}
+                <MainScene scale={1} />
                 {/* <VideoLeft
                   positionZ={-40}
                   source={"videos/Testing_Video_h_264.mp4"}
