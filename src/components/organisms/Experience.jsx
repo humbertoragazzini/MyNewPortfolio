@@ -572,6 +572,22 @@ export default function Experience() {
                               envMap={texture ?? undefined}
                             />
                           </mesh>
+
+                          <TextShader
+                            scale={15}
+                            rotation={[0, 3.14 / 2, 0]}
+                            position={[-50, 0, -435]}
+                            size={1}
+                            text={"Hello Shader"}
+                          ></TextShader>
+
+                          <TextShader
+                            scale={15}
+                            rotation={[0, -3.14 / 2, 0]}
+                            position={[50, 0, -565]}
+                            size={1}
+                            text={"Hello Shader"}
+                          ></TextShader>
                           <mesh
                             geometry={geometryFloor.current}
                             position={[0, -20, -475]}
@@ -1146,7 +1162,6 @@ export default function Experience() {
                 <Lights targetRef={targetRef}></Lights>
                 <CheckSize></CheckSize>
               </Suspense>
-              <TextShader text={"Hello Shader"}></TextShader>
             </Canvas>
           </motion.div>
         </div>

@@ -79,7 +79,7 @@ const fragmentShader = `
   }
 `;
 
-export default function TextShader({ text }) {
+export default function TextShader({ rotation, position, text, size, scale }) {
   const materialRef = useRef();
 
   useFrame(({ clock }) => {
@@ -100,12 +100,14 @@ export default function TextShader({ text }) {
 
   return (
     <Text3D
-      position={[0, 15, 0]}
-      scale={5}
+      rotation={rotation ? rotation : [0, 0, 0]}
+      position={position}
+      scale={scale}
       anchorX="center"
       anchorY="middle"
       font={OrbitronFont}
-      fontSize={1}
+      fontSize={size}
+      depth={1}
     >
       {text}
       <primitive object={shaderMaterial} attach="material" ref={materialRef} />
