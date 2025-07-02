@@ -1,7 +1,8 @@
-import { Text } from "@react-three/drei";
+import { Text, Text3D } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useRef } from "react";
+import OrbitronFont from "./fonts/Orbitron_Regular.json";
 
 const vertexShader = `
   varying vec2 vUv;
@@ -98,9 +99,16 @@ export default function TextShader({ text }) {
   });
 
   return (
-    <Text position={[0, 15, 0]} scale={5} anchorX="center" anchorY="middle">
+    <Text3D
+      position={[0, 15, 0]}
+      scale={5}
+      anchorX="center"
+      anchorY="middle"
+      font={OrbitronFont}
+      fontSize={1}
+    >
       {text}
       <primitive object={shaderMaterial} attach="material" ref={materialRef} />
-    </Text>
+    </Text3D>
   );
 }

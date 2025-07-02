@@ -1143,10 +1143,10 @@ export default function Experience() {
                   })}
                 </>
                 <Final></Final>
-                <TextShader text={"Hello Shader"}></TextShader>
                 <Lights targetRef={targetRef}></Lights>
                 <CheckSize></CheckSize>
               </Suspense>
+              <TextShader text={"Hello Shader"}></TextShader>
             </Canvas>
           </motion.div>
         </div>
