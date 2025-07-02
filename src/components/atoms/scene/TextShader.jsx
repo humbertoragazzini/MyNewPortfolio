@@ -108,7 +108,11 @@ export default function TextShader({ rotation, position, text, size, scale }) {
           depth={1}
         >
           {text}
-          {/* <primitive object={shaderMaterial} attach="material" ref={materialRef} /> */}
+          <primitive
+            object={shaderMaterial}
+            attach="material"
+            ref={materialRef}
+          />
         </Text3D>
       </Center>
     </mesh>
