@@ -1,7 +1,7 @@
 import { Center, Float, Text, Text3D } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import OrbitronFont from "./fonts/Orbitron_Regular.json";
 
 const vertexShader = `
@@ -70,7 +70,7 @@ const fragmentShader = `
 
   void main() {
     float noise = cnoise(vUv) * 0.5 + 0.5;
-    float appearTime = noise * 30.0;
+    float appearTime = noise * 15.0;
     float alpha = smoothstep(0.0, 1.0, uTime - appearTime);
     float noiseColor = cnoise(vec2(appearTime,alpha));
     
@@ -82,10 +82,18 @@ const fragmentShader = `
 
 export default function CustomShaderMaterial({ turnOn }) {
   const materialRef = useRef();
+  const startTimeRef = useRef(null);
 
   useFrame(({ clock }) => {
-    if (materialRef.current && turnOn) {
-      materialRef.current.uniforms.uTime.value = clock.getElapsedTime();
+    if (turnOn) {
+      if (startTimeRef.current === null) {
+        startTimeRef.current = clock.getElapsedTime(); // record the activation time
+      }
+
+      const elapsed = clock.getElapsedTime() - startTimeRef.current;
+      materialRef.current.uniforms.uTime.value = elapsed;
+    } else {
+      startTimeRef.current = null; // reset when turned off (optional)
     }
   });
 

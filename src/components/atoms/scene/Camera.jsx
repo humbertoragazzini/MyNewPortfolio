@@ -117,7 +117,7 @@ export default function Camera({
     if (selectedProject == null) {
       if (cameraRef.current !== undefined) {
         const targetZ = 75 - 1 * 1260 * scroll.current;
-        if (targetZ == 400) {
+        if (targetZ < -200) {
           console.log("appear");
           setTurnOn(true);
         }

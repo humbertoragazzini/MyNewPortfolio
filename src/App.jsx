@@ -11,7 +11,7 @@ function App() {
   return (
     <main className="w-screen h-[100dvh] overflow-hidden">
       <AppProvider>
-        {/* <IntroMenu></IntroMenu> */}
+        <IntroMenu></IntroMenu>
         <OverlayMenu></OverlayMenu>
         {/* <Suspense fallback={<div>Cargando</div>}> */}
         <Experience></Experience>
