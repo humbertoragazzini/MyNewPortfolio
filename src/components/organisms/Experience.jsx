@@ -574,18 +574,46 @@ export default function Experience() {
                           </mesh>
 
                           <TextShader
-                            scale={15}
-                            rotation={[0, 3.14 / 2, 0]}
-                            position={[-50, 0, -475]}
+                            scale={8}
+                            rotation={[0, 0, 0]}
+                            position={[0, 0, -300]}
                             size={1}
-                            text={"Hello Shader"}
+                            text={"SKILLS"}
                           ></TextShader>
                           <TextShader
-                            scale={15}
-                            rotation={[0, -3.14 / 2, 0]}
-                            position={[50, 0, -475]}
+                            scale={8}
+                            rotation={[0.75, 0, 0]}
+                            position={[0, 50, -600]}
                             size={1}
-                            text={"Hello Shader"}
+                            text={"ReactJS"}
+                          ></TextShader>
+                          <TextShader
+                            scale={8}
+                            rotation={[0.75, 0, 0]}
+                            position={[0, 50, -700]}
+                            size={1}
+                            text={"NextJS"}
+                          ></TextShader>
+                          <TextShader
+                            scale={8}
+                            rotation={[0.75, 0, 0]}
+                            position={[0, 50, -800]}
+                            size={1}
+                            text={"Full-Stack"}
+                          ></TextShader>
+                          <TextShader
+                            scale={8}
+                            rotation={[0.75, 0, 0]}
+                            position={[0, 50, -900]}
+                            size={1}
+                            text={"Shaders"}
+                          ></TextShader>
+                          <TextShader
+                            scale={8}
+                            rotation={[0.75, 0, 0]}
+                            position={[0, 50, -1000]}
+                            size={1}
+                            text={"WebGL"}
                           ></TextShader>
                           <mesh
                             geometry={geometryFloor.current}

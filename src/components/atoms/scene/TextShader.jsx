@@ -73,9 +73,10 @@ const fragmentShader = `
     float noise = cnoise(vUv) * 0.5 + 0.5;
     float appearTime = noise * 30.0;
     float alpha = smoothstep(0.0, 1.0, uTime - appearTime);
+    float noiseColor = cnoise(vec2(appearTime,alpha));
     
 
-    vec3 color = vec3(vUv.x, vUv.y, 1.0); // UV gradient for fun
+    vec3 color = vec3(0.0,0.0,0.0); // UV gradient for fun
     gl_FragColor = vec4(color, alpha);
   }
 `;
@@ -110,6 +111,11 @@ export default function TextShader({ rotation, position, text, size, scale }) {
           depth={1}
         >
           {text}
+          {/* <primitive
+            object={shaderMaterial}
+            attach="material"
+            ref={materialRef}
+          /> */}
         </Text3D>
       </Center>
     </mesh>

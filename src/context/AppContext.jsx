@@ -10,7 +10,7 @@ export const AppProvider = ({ children }) => {
   const [postProcessing, setPostProcessing] = useState(true);
   const [reflectionQuality, setReflectionQuality] = useState(256);
   const [ilumination, setIlumination] = useState(true);
-  const [dpr, setDpr] = useState([0.25, 0.35]);
+  const [dpr, setDpr] = useState([1, 2]);
   const [selectedProject, setSelectedProject] = useState(null);
   // Example of toggling values
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);

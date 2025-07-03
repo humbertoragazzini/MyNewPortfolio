@@ -72,9 +72,10 @@ const fragmentShader = `
     float noise = cnoise(vUv) * 0.5 + 0.5;
     float appearTime = noise * 30.0;
     float alpha = smoothstep(0.0, 1.0, uTime - appearTime);
+    float noiseColor = cnoise(vec2(appearTime,alpha));
     
 
-    vec3 color = vec3(cos(vUv.x/vUv.y),sin(vUv.y/vUv.x), 1.0); // UV gradient for fun
+    vec3 color = vec3(1.0,0.75,1.0); // UV gradient for fun
     gl_FragColor = vec4(color, alpha);
   }
 `;
