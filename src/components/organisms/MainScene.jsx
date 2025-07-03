@@ -194,7 +194,7 @@ export default function Model(props) {
         position={[63, 0, -418.933]}
         rotation={[-Math.PI, 0, 0]}
       >
-        <CustomShaderMaterial></CustomShaderMaterial>
+        <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
       <mesh
         recieveShadow
@@ -203,7 +203,7 @@ export default function Model(props) {
         position={[-63.061, 0, -396.16]}
         rotation={[-Math.PI, 0, 0]}
       >
-        <CustomShaderMaterial></CustomShaderMaterial>
+        <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
       <mesh
         recieveShadow
@@ -211,7 +211,7 @@ export default function Model(props) {
         position={[63, 21, -401.633]}
         rotation={[-Math.PI, 0, 0]}
       >
-        <CustomShaderMaterial></CustomShaderMaterial>
+        <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
       <mesh
         recieveShadow
@@ -219,7 +219,7 @@ export default function Model(props) {
         position={[-63.061, 21, -408.171]}
         rotation={[-Math.PI, 0, 0]}
       >
-        <CustomShaderMaterial></CustomShaderMaterial>
+        <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
       <mesh
         recieveShadow
@@ -227,7 +227,7 @@ export default function Model(props) {
         position={[0, -42, -418.492]}
         rotation={[-Math.PI, 0, 0]}
       >
-        <CustomShaderMaterial></CustomShaderMaterial>
+        <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
       <mesh
         recieveShadow
@@ -235,7 +235,7 @@ export default function Model(props) {
         position={[21, -42, -400.634]}
         rotation={[-Math.PI, 0, 0]}
       >
-        <CustomShaderMaterial></CustomShaderMaterial>
+        <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
       <mesh
         recieveShadow
@@ -243,7 +243,7 @@ export default function Model(props) {
         position={[-21, -42, -422.56]}
         rotation={[-Math.PI, 0, 0]}
       >
-        <CustomShaderMaterial></CustomShaderMaterial>
+        <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
       <mesh
         recieveShadow
@@ -251,7 +251,7 @@ export default function Model(props) {
         position={[42, -21, -403.822]}
         rotation={[-Math.PI, 0, 0]}
       >
-        <CustomShaderMaterial></CustomShaderMaterial>
+        <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
       <mesh
         recieveShadow
@@ -259,7 +259,7 @@ export default function Model(props) {
         position={[-42.061, -21, -395.497]}
         rotation={[-Math.PI, 0, 0]}
       >
-        <CustomShaderMaterial></CustomShaderMaterial>
+        <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
       <mesh
         recieveShadow
@@ -267,7 +267,7 @@ export default function Model(props) {
         position={[0, 84, -400.586]}
         rotation={[-Math.PI, 0, 0]}
       >
-        <CustomShaderMaterial></CustomShaderMaterial>
+        <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
       <mesh
         recieveShadow
@@ -276,7 +276,7 @@ export default function Model(props) {
         position={[21, 84, -411.277]}
         rotation={[-Math.PI, 0, 0]}
       >
-        <CustomShaderMaterial></CustomShaderMaterial>
+        <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
       <mesh
         recieveShadow
@@ -284,7 +284,7 @@ export default function Model(props) {
         position={[-21, 84, -414.72]}
         rotation={[-Math.PI, 0, 0]}
       >
-        <CustomShaderMaterial></CustomShaderMaterial>
+        <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
       <mesh
         recieveShadow
@@ -292,7 +292,7 @@ export default function Model(props) {
         position={[63, 42, -395.69]}
         rotation={[-Math.PI, 0, 0]}
       >
-        <CustomShaderMaterial></CustomShaderMaterial>
+        <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
       <mesh
         recieveShadow
@@ -300,7 +300,7 @@ export default function Model(props) {
         position={[-63.061, 42, -415.9]}
         rotation={[-Math.PI, 0, 0]}
       >
-        <CustomShaderMaterial></CustomShaderMaterial>
+        <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
       <mesh
         recieveShadow
@@ -308,7 +308,7 @@ export default function Model(props) {
         position={[42, 63, -400.424]}
         rotation={[-Math.PI, 0, 0]}
       >
-        <CustomShaderMaterial></CustomShaderMaterial>
+        <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
       <mesh
         recieveShadow
@@ -316,7 +316,7 @@ export default function Model(props) {
         position={[-42.061, 63, -409.944]}
         rotation={[-Math.PI, 0, 0]}
       >
-        <CustomShaderMaterial></CustomShaderMaterial>
+        <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
     </group>
   );

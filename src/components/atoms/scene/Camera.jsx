@@ -91,6 +91,7 @@ export default function Camera({
   joystickLeft,
   joystickRight,
   children,
+  setTurnOn,
 }) {
   const cameraRef = useRef();
   const lerpSpeed = 0.05;
@@ -116,6 +117,10 @@ export default function Camera({
     if (selectedProject == null) {
       if (cameraRef.current !== undefined) {
         const targetZ = 75 - 1 * 1260 * scroll.current;
+        if (targetZ == 400) {
+          console.log("appear");
+          setTurnOn(true);
+        }
         joystickRight.current !== null
           ? (horizontal.current.x = -joystickRight.current.x)
           : null;

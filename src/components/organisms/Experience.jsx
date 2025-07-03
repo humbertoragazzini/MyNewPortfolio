@@ -298,6 +298,7 @@ export default function Experience() {
   const joystickHorizontalSpeed = useRef(null);
   const joystickVerticalSpeed = useRef(null);
   const inputMethod = useInputMethod();
+  const [turnOn, setTurnOn] = useState(false);
   const {
     toggleReflections,
     language,
@@ -414,6 +415,7 @@ export default function Experience() {
                 scroll={scrollRef}
                 joystickLeft={joystickVerticalSpeed}
                 joystickRight={joystickHorizontalSpeed}
+                setTurnOn={setTurnOn}
               ></Camera>
               {/* <TestingFloor></TestingFloor> */}
               <Suspense
@@ -577,6 +579,7 @@ export default function Experience() {
                             scale={8}
                             rotation={[0, 0, 0]}
                             position={[0, 0, -300]}
+                            color={[2, 2, 2]}
                             size={1}
                             text={"SKILLS"}
                           ></TextShader>
@@ -584,6 +587,7 @@ export default function Experience() {
                             scale={8}
                             rotation={[0.75, 0, 0]}
                             position={[0, 50, -600]}
+                            color={"#000000"}
                             size={1}
                             text={"ReactJS"}
                           ></TextShader>
@@ -591,6 +595,7 @@ export default function Experience() {
                             scale={8}
                             rotation={[0.75, 0, 0]}
                             position={[0, 50, -700]}
+                            color={"#000000"}
                             size={1}
                             text={"NextJS"}
                           ></TextShader>
@@ -598,6 +603,7 @@ export default function Experience() {
                             scale={8}
                             rotation={[0.75, 0, 0]}
                             position={[0, 50, -800]}
+                            color={"#000000"}
                             size={1}
                             text={"Full-Stack"}
                           ></TextShader>
@@ -605,6 +611,7 @@ export default function Experience() {
                             scale={8}
                             rotation={[0.75, 0, 0]}
                             position={[0, 50, -900]}
+                            color={"#000000"}
                             size={1}
                             text={"Shaders"}
                           ></TextShader>
@@ -612,6 +619,7 @@ export default function Experience() {
                             scale={8}
                             rotation={[0.75, 0, 0]}
                             position={[0, 50, -1000]}
+                            color={"#000000"}
                             size={1}
                             text={"WebGL"}
                           ></TextShader>
@@ -1115,7 +1123,7 @@ export default function Experience() {
                     );
                   }}
                 </Effects>
-                <MainScene scale={1} />
+                <MainScene scale={1} turnOn={turnOn} />
                 {/* <VideoLeft
                   positionZ={-40}
                   source={"videos/Testing_Video_h_264.mp4"}

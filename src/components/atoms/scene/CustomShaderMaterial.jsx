@@ -80,11 +80,11 @@ const fragmentShader = `
   }
 `;
 
-export default function CustomShaderMaterial() {
+export default function CustomShaderMaterial({ turnOn }) {
   const materialRef = useRef();
 
   useFrame(({ clock }) => {
-    if (materialRef.current) {
+    if (materialRef.current && turnOn) {
       materialRef.current.uniforms.uTime.value = clock.getElapsedTime();
     }
   });

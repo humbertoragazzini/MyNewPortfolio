@@ -26,6 +26,7 @@ const fragmentShader = `
   varying vec2 vUv;
   varying float vDelay;
   uniform float uTime;
+  uniform vec3 uColor;
 
   vec4 permute(vec4 x)
   {
@@ -76,12 +77,19 @@ const fragmentShader = `
     float noiseColor = cnoise(vec2(appearTime,alpha));
     
 
-    vec3 color = vec3(0.0,0.0,0.0); // UV gradient for fun
-    gl_FragColor = vec4(color, alpha);
+    vec3 color = vec3(uColor); // UV gradient for fun
+    gl_FragColor = vec4(color, 1.0);
   }
 `;
 
-export default function TextShader({ rotation, position, text, size, scale }) {
+export default function TextShader({
+  rotation,
+  position,
+  text,
+  size,
+  scale,
+  color,
+}) {
   const materialRef = useRef();
 
   useFrame(({ clock }) => {
@@ -96,6 +104,7 @@ export default function TextShader({ rotation, position, text, size, scale }) {
     transparent: true,
     uniforms: {
       uTime: { value: 0 },
+      uColor: { value: new THREE.Color(color) },
     },
     side: THREE.DoubleSide,
   });
@@ -106,16 +115,15 @@ export default function TextShader({ rotation, position, text, size, scale }) {
         <Text3D
           rotation={rotation ? rotation : [0, 0, 0]}
           font={OrbitronFont}
-          material={new THREE.MeshStandardMaterial({ color: "black" })}
           fontSize={1}
           depth={1}
         >
           {text}
-          {/* <primitive
+          <primitive
             object={shaderMaterial}
             attach="material"
             ref={materialRef}
-          /> */}
+          />
         </Text3D>
       </Center>
     </mesh>
