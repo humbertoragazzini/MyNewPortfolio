@@ -3,7 +3,6 @@ import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useRef } from "react";
 import OrbitronFont from "./fonts/Orbitron_Regular.json";
-import CustomShaderMaterial from "./CustomShaderMaterial";
 
 const vertexShader = `
   varying vec2 vUv;
@@ -75,12 +74,12 @@ const fragmentShader = `
     float alpha = smoothstep(0.0, 1.0, uTime - appearTime);
     
 
-    vec3 color = vec3(vUv.x, vUv.y, 1.0); // UV gradient for fun
+    vec3 color = vec3(cos(vUv.x/vUv.y),sin(vUv.y/vUv.x), 1.0); // UV gradient for fun
     gl_FragColor = vec4(color, alpha);
   }
 `;
 
-export default function TextShader({ rotation, position, text, size, scale }) {
+export default function CustomShaderMaterial() {
   const materialRef = useRef();
 
   useFrame(({ clock }) => {
@@ -100,18 +99,6 @@ export default function TextShader({ rotation, position, text, size, scale }) {
   });
 
   return (
-    <mesh scale={scale} position={position}>
-      <Center>
-        <Text3D
-          rotation={rotation ? rotation : [0, 0, 0]}
-          font={OrbitronFont}
-          material={new THREE.MeshStandardMaterial({ color: "black" })}
-          fontSize={1}
-          depth={1}
-        >
-          {text}
-        </Text3D>
-      </Center>
-    </mesh>
+    <primitive object={shaderMaterial} attach="material" ref={materialRef} />
   );
 }
