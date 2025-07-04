@@ -75,16 +75,18 @@ const fragmentShader = `
 
   void main() {
     float noise = cnoise(vPosition.xz);
+    float noise2 = cnoise(vPosition.xy);
     float appearTime = noise * 15.0;
     float noiseColor = cnoise(vec2(appearTime,vPosition.z*vDelay));
-    float alpha = smoothstep(0.0, 1.0, uTime/10.0 + (vPosition.z / 500.0 * -1.0)); 
+    float alpha = smoothstep(0.0, 1.0, ((uTime +  (vPosition.z/50.0 * -1.0)) * smoothstep(0.0,1.0,(abs(noise))+1.0) * smoothstep(0.0,1.0,(abs(noise2)) +1.0))/3.0  ); 
     
 
-    vec3 color = vec3(vgl_Position.w/300.0,0.25*vgl_Position.w/400.0,vgl_Position.w/300.0); // UV gradient for fun
+    vec3 color = vec3(vgl_Position.w/200.0,0.55*vgl_Position.w/200.0,vgl_Position.w/200.0); // UV gradient for fun
     gl_FragColor = vec4(color, alpha);
   }
 `;
 //+ (vPosition.z / 500.0 * -1.0))
+// uTime/10.0 + (vPosition.z / 500.0 * -1.0)
 export default function CustomShaderMaterial({ turnOn }) {
   const materialRef = useRef();
   const startTimeRef = useRef(null);
