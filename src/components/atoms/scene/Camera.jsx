@@ -118,7 +118,6 @@ export default function Camera({
       if (cameraRef.current !== undefined) {
         const targetZ = 75 - 1 * 1260 * scroll.current;
         if (targetZ < -200) {
-          console.log("appear");
           setTurnOn(true);
         }
         joystickRight.current !== null
