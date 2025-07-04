@@ -7,7 +7,8 @@ import OrbitronFont from "./fonts/Orbitron_Regular.json";
 const vertexShader = `
   varying vec2 vUv;
   varying float vDelay;
-
+  varying vec3 vPosition;
+  varying vec4 vgl_Position;
   // Simple hash function based on UV
   float random(vec2 st) {
     return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
@@ -15,9 +16,11 @@ const vertexShader = `
 
   void main() {
     vUv = uv;
+    vPosition = position;
     vDelay = random(position.xz); // gives each vertex a pseudo-random delay
 
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    vgl_Position = gl_Position;
   }
 `;
 
@@ -25,6 +28,8 @@ const fragmentShader = `
   varying vec2 vUv;
   varying float vDelay;
   uniform float uTime;
+  varying vec3 vPosition;
+  varying vec4 vgl_Position;
 
   vec4 permute(vec4 x)
   {
@@ -71,11 +76,11 @@ const fragmentShader = `
   void main() {
     float noise = cnoise(vUv) * 0.5 + 0.5;
     float appearTime = noise * 15.0;
-    float alpha = smoothstep(0.0, 1.0, uTime - appearTime);
-    float noiseColor = cnoise(vec2(appearTime,alpha));
+    float noiseColor = cnoise(vec2(appearTime,vPosition.z*vDelay));
+    float alpha = smoothstep(0.0, 1.0, (uTime + (vPosition.z/300.0 * (-1.0))));
     
 
-    vec3 color = vec3(1.0,0.75,1.0); // UV gradient for fun
+    vec3 color = vec3(vgl_Position.w/300.0,0.25*vgl_Position.w/400.0,vgl_Position.w/300.0); // UV gradient for fun
     gl_FragColor = vec4(color, alpha);
   }
 `;
