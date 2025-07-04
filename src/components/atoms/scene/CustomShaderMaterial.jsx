@@ -74,11 +74,12 @@ const fragmentShader = `
   }
 
   void main() {
-    float noise = cnoise(vPosition.xz);
-    float noise2 = cnoise(vPosition.xy);
+    float noise = (cnoise(vPosition.xz) + 2.0)/2.0;
+    float noise2 = (cnoise(vPosition.xy) + 2.0)/2.0;
+    float noise3 = (cnoise(vPosition.yz) + 2.0)/2.0;
     float appearTime = noise * 15.0;
     float noiseColor = cnoise(vec2(appearTime,vPosition.z*vDelay));
-    float alpha = smoothstep(0.0, 1.0, ((uTime +  (vPosition.z/50.0 * -1.0)) * smoothstep(0.0,1.0,(abs(noise))+1.0) * smoothstep(0.0,1.0,(abs(noise2)) +1.0))/3.0  ); 
+    float alpha = smoothstep(0.0, 1.0, ((uTime +  (vPosition.z/200.0 * -1.0)) * noise * noise2 * noise3) - 1.0   ); 
     
 
     vec3 color = vec3(vgl_Position.w/200.0,0.55*vgl_Position.w/200.0,vgl_Position.w/200.0); // UV gradient for fun
