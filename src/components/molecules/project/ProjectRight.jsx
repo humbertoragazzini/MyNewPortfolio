@@ -4,8 +4,6 @@ import { useContext, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { AppContext } from "../../../context/AppContext";
 import gsap from "gsap";
-import Heading from "../ui/Heading";
-import Paragraph from "../ui/Paragraph";
 
 export default function ProjectRight({
   positionZ,

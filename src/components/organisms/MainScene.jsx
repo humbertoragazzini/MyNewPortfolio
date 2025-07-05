@@ -12,7 +12,7 @@ import gsap from "gsap";
 import { AppContext } from "../../context/AppContext";
 import CustomShaderMaterial from "../atoms/scene/CustomShaderMaterial";
 
-export default function Model(props) {
+export default function MainScene(props) {
   const { nodes, materials } = useGLTF("./blender/main-scene.glb");
   const { isMenuOpen } = useContext(AppContext);
   const planeMaterial = useRef(new THREE.MeshBasicMaterial({ color: "white" }));

@@ -1,6 +1,5 @@
-import { useContext } from "react";
-import Heading from "../ui/Heading";
-import Paragraph from "../ui/Paragraph";
+import Heading from "../../atoms/ui/Heading";
+import Paragraph from "../../atoms/ui/Paragraph";
 
 export default function Project({ language, content, changeSelectedProject }) {
   return (

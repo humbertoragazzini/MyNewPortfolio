@@ -1,4 +1,4 @@
-import { Suspense, useContext, useRef, useState } from "react";
+import { Suspense, useContext, useEffect, useRef, useState } from "react";
 import { AppContext } from "../../context/AppContext";
 import * as THREE from "three";
 import { Joystick } from "react-joystick-component";
@@ -10,6 +10,9 @@ import ProjectLeft from "../molecules/project/ProjectLeft";
 import Project from "../molecules/project/Project";
 import ProjectRight from "../molecules/project/ProjectRight";
 import Lights from "../atoms/scene/ilumination/Lights";
+import { motion } from "framer-motion";
+import { LinearToneMapping } from "three";
+import MainScene from "./MainScene";
 
 const projects = [
   {
@@ -386,7 +389,6 @@ export default function Experience() {
                 joystickRight={joystickHorizontalSpeed}
                 setTurnOn={setTurnOn}
               ></Camera>
-              {/* <TestingFloor></TestingFloor> */}
               <Suspense
                 fallback={
                   <mesh position={[0, 0, -50]}>

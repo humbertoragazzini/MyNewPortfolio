@@ -1,11 +1,9 @@
 import { useHelper } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
 import { useContext, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
-import { AppContext } from "../../../context/AppContext";
+import { AppContext } from "../../../../context/AppContext";
 import gsap from "gsap";
-import Stroboscopic from "../../molecules/scene/Stroboscopic";
-import MovingLight from "../../molecules/scene/MovingLight";
+import MovingLight from "../../../molecules/scene/ilumination/MovingLight";
 
 export default function Lights({ targetRef }) {
   const lightRef = useRef();

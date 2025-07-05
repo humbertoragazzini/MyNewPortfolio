@@ -2,14 +2,11 @@ import { CubeCamera } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef, useState, useContext } from "react";
 import * as THREE from "three";
-import { AppContext } from "../../../context/AppContext";
+import { AppContext } from "../../../../context/AppContext";
 import {
   EffectComposer,
   Bloom,
   DepthOfField,
-  Noise,
-  Vignette,
-  SSAO,
 } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
 

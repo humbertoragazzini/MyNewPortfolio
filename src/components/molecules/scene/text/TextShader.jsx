@@ -2,8 +2,8 @@ import { Center, Float, Text, Text3D } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useRef } from "react";
-import OrbitronFont from "../../atoms/scene/fonts/Orbitron_Regular.json";
-import CustomShaderMaterial from "../../atoms/scene/shaders/CustomShaderMaterial";
+import OrbitronFont from "../../../atoms/scene/fonts/Orbitron_Regular.json";
+import CustomShaderMaterial from "../../../atoms/scene/shaders/CustomShaderMaterial";
 
 const vertexShader = `
   varying vec2 vUv;

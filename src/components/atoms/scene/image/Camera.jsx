@@ -9,7 +9,7 @@ import {
   useState,
 } from "react";
 import * as THREE from "three";
-import { AppContext } from "../../../context/AppContext";
+import { AppContext } from "../../../../context/AppContext";
 
 const positionsArray = {
   firstLeft: {
