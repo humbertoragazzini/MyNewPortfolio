@@ -1,16 +1,9 @@
 import React, { useContext, useEffect, useMemo, useRef } from "react";
-import { MeshReflectorMaterial, useGLTF, useTexture } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
-import {
-  LinearMipmapLinearFilter,
-  RGBFormat,
-  WebGLCubeRenderTarget,
-} from "three";
-// import { useEnvMap } from "./atoms/Camera";
+import { useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import gsap from "gsap";
 import { AppContext } from "../../context/AppContext";
-import CustomShaderMaterial from "../atoms/scene/CustomShaderMaterial";
+import CustomShaderMaterial from "../atoms/scene/shaders/CustomShaderMaterial";
 
 export default function MainScene(props) {
   const { nodes, materials } = useGLTF("./blender/main-scene.glb");
@@ -70,15 +63,6 @@ export default function MainScene(props) {
 
   return (
     <group {...props} dispose={null} position={[0, -10, 0]} scale={props.scale}>
-      {/* <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Floor.geometry}
-        material={textureMaterialFloor}
-        position={[0, -15.057, -163.964]}
-        scale={[11.624, 1.341, 4.007]}
-      /> */}
-
       <mesh
         castShadow
         receiveShadow

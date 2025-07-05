@@ -6,13 +6,14 @@ import { Canvas } from "@react-three/fiber";
 import Camera from "../atoms/scene/image/Camera";
 import Effects from "../molecules/scene/effects/Effects";
 import TextShader from "../molecules/scene/text/TextShader";
-import ProjectLeft from "../molecules/project/ProjectLeft";
-import Project from "../molecules/project/Project";
-import ProjectRight from "../molecules/project/ProjectRight";
 import Lights from "../atoms/scene/ilumination/Lights";
 import { motion } from "framer-motion";
 import { LinearToneMapping } from "three";
 import MainScene from "./MainScene";
+import Final from "../molecules/scene/screens/Final";
+import CheckSize from "../../helpers/CheckSize";
+import BuildProjects from "./BuildProjects";
+import CustomJoysticks from "../molecules/controls/Joysticks";
 
 const projects = [
   {
@@ -275,88 +276,22 @@ const projects = [
 
 export default function Experience() {
   const scrollContainerRef = useRef();
-  const [scroll, setScroll] = useState(0);
   const scrollRef = useRef(0);
   const targetRef = useRef();
   const joystickHorizontalSpeed = useRef(null);
   const joystickVerticalSpeed = useRef(null);
   const [turnOn, setTurnOn] = useState(false);
-  const { language, dpr, selectedProject, changeSelectedProject } =
+  const { dpr, selectedProject, changeSelectedProject } =
     useContext(AppContext);
-  const materialFloor = useRef(
-    new THREE.MeshStandardMaterial({ color: "black" })
-  );
   const geometryFloor = useRef(new THREE.BoxGeometry(20, 1, 30));
-
-  useEffect(() => {
-    const joystickSpeedInterval = setInterval(() => {
-      if (scrollRef.current >= 0 && scrollRef.current < 1) {
-        if (joystickVerticalSpeed.current !== null) {
-          scrollRef.current += joystickVerticalSpeed.current.y;
-        }
-      }
-      if (scrollRef.current < 0) {
-        scrollRef.current = 0;
-      }
-    }, 150);
-  }, []);
-
-  function handleMoveLeftStick(e) {
-    const newValues = {
-      y: e.y * 0.01,
-      x: e.x * 10,
-    };
-    joystickVerticalSpeed.current = newValues;
-  }
-  function handleStopLeftStick(e) {
-    const newValues = {
-      y: 0,
-      x: joystickVerticalSpeed.current.x ?? 0,
-    };
-    joystickVerticalSpeed.current = newValues;
-  }
-
-  function handleMoveRightStick(e) {
-    const newValues = {
-      y: e.y,
-      x: e.x,
-    };
-    joystickHorizontalSpeed.current = newValues;
-  }
-  function handleStopRightStick(e) {
-    const newValues = {
-      y:
-        joystickHorizontalSpeed.current !== null
-          ? joystickHorizontalSpeed.current.y
-          : 0,
-      x:
-        joystickHorizontalSpeed.current !== null
-          ? joystickHorizontalSpeed.current.x
-          : 0,
-    };
-    joystickHorizontalSpeed.current = newValues;
-  }
 
   return (
     <div className="w-full h-[100dvh] overflow-hidden bg-black">
-      <div className="fixed bottom-0 z-50 flex lg:hidden justify-center w-screen p-5 [&>[data-testid]]:!bg-[rgba(0,0,0,0.5)] [&>[data-testid]]:!backdrop-blur [&>[data-testid]]:!border-2 [&>[data-testid]]:m-4 [&>[data-testid]]:!border-[rgba(125,125,125,0.5)] [&_button]:!bg-[rgba(255,255,255,0.5)]">
-        <Joystick
-          size={100}
-          sticky={false}
-          baseColor="red"
-          stickColor="blue"
-          move={handleMoveLeftStick}
-          stop={handleStopLeftStick}
-        ></Joystick>
-        <Joystick
-          size={100}
-          sticky={false}
-          baseColor="red"
-          stickColor="blue"
-          move={handleMoveRightStick}
-          stop={handleStopRightStick}
-        ></Joystick>
-      </div>
+      <CustomJoysticks
+        joystickHorizontalSpeed={joystickHorizontalSpeed}
+        joystickVerticalSpeed={joystickVerticalSpeed}
+        scrollRef={scrollRef}
+      ></CustomJoysticks>
       {/* Scrollable container */}
       <div
         ref={scrollContainerRef}
@@ -1095,60 +1030,7 @@ export default function Experience() {
                   }}
                 </Effects>
                 <MainScene scale={1} turnOn={turnOn} />
-                <>
-                  {projects.map((project) => {
-                    if (project.orientation == "left") {
-                      return (
-                        <ProjectLeft
-                          positionZ={project.positionZ}
-                          language={language}
-                          projectId={project.projectId}
-                          images={project.images}
-                        >
-                          <Project
-                            language={language}
-                            content={{
-                              projectName: project.projectName,
-                              description: project.description,
-                              technologies: project.technologies,
-                              links: project.links,
-                              images: project.images,
-                              video: project.video,
-                              gif: project.gif,
-                              embeded: project.embeded,
-                            }}
-                            changeSelectedProject={changeSelectedProject}
-                          ></Project>
-                        </ProjectLeft>
-                      );
-                    }
-                    if (project.orientation == "right") {
-                      return (
-                        <ProjectRight
-                          positionZ={project.positionZ}
-                          language={language}
-                          projectId={project.projectId}
-                          images={project.images}
-                        >
-                          <Project
-                            language={language}
-                            content={{
-                              projectName: project.projectName,
-                              description: project.description,
-                              technologies: project.technologies,
-                              links: project.links,
-                              images: project.images,
-                              video: project.video,
-                              gif: project.gif,
-                              embeded: project.embeded,
-                            }}
-                            changeSelectedProject={changeSelectedProject}
-                          ></Project>
-                        </ProjectRight>
-                      );
-                    }
-                  })}
-                </>
+                <BuildProjects projects={projects}></BuildProjects>
                 <Final></Final>
                 <Lights targetRef={targetRef}></Lights>
                 <CheckSize></CheckSize>

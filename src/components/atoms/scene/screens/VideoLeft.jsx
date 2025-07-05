@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { useContext, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import Video3D from "./Video3D";
-import { AppContext } from "../../../context/AppContext";
+import { AppContext } from "../../../../context/AppContext";
 import gsap from "gsap";
 
 export default function VideoLeft({ positionZ, source }) {
@@ -33,12 +33,15 @@ export default function VideoLeft({ positionZ, source }) {
     }
   }, []);
 
-
   useEffect(() => {
     if (isMenuOpen) {
-      gsap.to(meshRef.current.position, { y: -120, duration: 2 })
+      gsap.to(meshRef.current.position, { y: -120, duration: 2 });
     } else {
-      gsap.to(meshRef.current.position, { y: 0, duration: 2, delay: Math.random() * 2 })
+      gsap.to(meshRef.current.position, {
+        y: 0,
+        duration: 2,
+        delay: Math.random() * 2,
+      });
     }
   }, [isMenuOpen]);
 
