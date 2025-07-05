@@ -9,21 +9,18 @@ export default function MainScene(props) {
   const { nodes, materials } = useGLTF("./blender/main-scene.glb");
   const { isMenuOpen } = useContext(AppContext);
   const planeMaterial = useRef(new THREE.MeshBasicMaterial({ color: "white" }));
-  // const envMap = useEnvMap();
   const texture = useTexture("./blender/WALL1.jpg");
   const texture2 = useTexture("./blender/WALL2.jpg");
   const texture3 = useTexture("./blender/WALL3.jpg");
   const texture4 = useTexture("./blender/WALL4.jpg");
   const texture5 = useTexture("./blender/WALL5.jpg");
   const texture6 = useTexture("./blender/WALL6.jpg");
-  // const floor = useTexture("./blender/FLOOR.jpg");
   texture.flipY = false;
   texture2.flipY = false;
   texture3.flipY = false;
   texture4.flipY = false;
   texture5.flipY = false;
   texture6.flipY = false;
-  // floor.flipY = false;
   const textureMaterial = new THREE.MeshStandardMaterial({
     map: texture,
   });

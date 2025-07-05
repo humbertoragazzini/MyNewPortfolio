@@ -485,9 +485,11 @@ export default function Experience() {
                             scale={8}
                             rotation={[0, 0, 0]}
                             position={[0, 0, -300]}
-                            color={[2, 2, 2]}
+                            color={"#ff00ff"}
                             size={1}
                             text={"SKILLS"}
+                            turnOn={turnOn}
+                            isAppearing={false}
                           ></TextShader>
                           <TextShader
                             scale={8}
@@ -496,6 +498,8 @@ export default function Experience() {
                             color={"#000000"}
                             size={1}
                             text={"ReactJS"}
+                            turnOn={turnOn}
+                            isAppearing={true}
                           ></TextShader>
                           <TextShader
                             scale={8}
@@ -504,6 +508,8 @@ export default function Experience() {
                             color={"#000000"}
                             size={1}
                             text={"NextJS"}
+                            turnOn={turnOn}
+                            isAppearing={true}
                           ></TextShader>
                           <TextShader
                             scale={8}
@@ -512,6 +518,8 @@ export default function Experience() {
                             color={"#000000"}
                             size={1}
                             text={"Full-Stack"}
+                            turnOn={turnOn}
+                            isAppearing={true}
                           ></TextShader>
                           <TextShader
                             scale={8}
@@ -520,6 +528,8 @@ export default function Experience() {
                             color={"#000000"}
                             size={1}
                             text={"Shaders"}
+                            turnOn={turnOn}
+                            isAppearing={true}
                           ></TextShader>
                           <TextShader
                             scale={8}
@@ -528,6 +538,8 @@ export default function Experience() {
                             color={"#000000"}
                             size={1}
                             text={"WebGL"}
+                            turnOn={turnOn}
+                            isAppearing={true}
                           ></TextShader>
                           <mesh
                             geometry={geometryFloor.current}

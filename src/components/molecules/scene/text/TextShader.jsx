@@ -27,6 +27,7 @@ const fragmentShader = `
   varying float vDelay;
   uniform float uTime;
   uniform vec3 uColor;
+  uniform float uAppear;
 
   vec4 permute(vec4 x)
   {
@@ -72,13 +73,13 @@ const fragmentShader = `
 
   void main() {
     float noise = cnoise(vUv) * 0.5 + 0.5;
-    float appearTime = noise * 30.0;
+    float appearTime = noise * 5.0;
     float alpha = smoothstep(0.0, 1.0, uTime - appearTime);
     float noiseColor = cnoise(vec2(appearTime,alpha));
     
 
     vec3 color = vec3(uColor); // UV gradient for fun
-    gl_FragColor = vec4(color, 1.0);
+    gl_FragColor = vec4(color, alpha);
   }
 `;
 
@@ -89,12 +90,22 @@ export default function TextShader({
   size,
   scale,
   color,
+  turnOn,
+  isAppearing,
 }) {
   const materialRef = useRef();
+  const startTimeRef = useRef(null);
 
   useFrame(({ clock }) => {
-    if (materialRef.current) {
-      materialRef.current.uniforms.uTime.value = clock.getElapsedTime();
+    if (turnOn) {
+      if (startTimeRef.current === null) {
+        startTimeRef.current = clock.getElapsedTime(); // record the activation time
+      }
+
+      const elapsed = clock.getElapsedTime() - startTimeRef.current;
+      materialRef.current.uniforms.uTime.value = elapsed;
+    } else {
+      startTimeRef.current = null; // reset when turned off (optional)
     }
   });
 
@@ -105,6 +116,7 @@ export default function TextShader({
     uniforms: {
       uTime: { value: 0 },
       uColor: { value: new THREE.Color(color) },
+      uAppear: isAppearing ? 0.0 : 1.0,
     },
     side: THREE.DoubleSide,
   });
