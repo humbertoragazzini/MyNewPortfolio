@@ -484,12 +484,35 @@ export default function Experience() {
                           <TextShader
                             scale={8}
                             rotation={[0, 0, 0]}
-                            position={[0, 0, -300]}
-                            color={"#ff00ff"}
+                            position={[0, 0, -320]}
+                            color={"#f900f9"}
                             size={1}
                             text={"SKILLS"}
                             turnOn={turnOn}
+                            seconds={1}
                             isAppearing={false}
+                          ></TextShader>
+                          <TextShader
+                            scale={8}
+                            rotation={[0.75, 0, 0]}
+                            position={[0, 50, -400]}
+                            color={"#000000"}
+                            size={1}
+                            text={"JS & JQ"}
+                            turnOn={turnOn}
+                            seconds={5}
+                            isAppearing={true}
+                          ></TextShader>
+                          <TextShader
+                            scale={8}
+                            rotation={[0.75, 0, 0]}
+                            position={[0, 50, -500]}
+                            color={"#000000"}
+                            size={1}
+                            text={"Prismic"}
+                            turnOn={turnOn}
+                            seconds={5}
+                            isAppearing={true}
                           ></TextShader>
                           <TextShader
                             scale={8}
@@ -499,6 +522,7 @@ export default function Experience() {
                             size={1}
                             text={"ReactJS"}
                             turnOn={turnOn}
+                            seconds={5}
                             isAppearing={true}
                           ></TextShader>
                           <TextShader
@@ -509,6 +533,7 @@ export default function Experience() {
                             size={1}
                             text={"NextJS"}
                             turnOn={turnOn}
+                            seconds={5}
                             isAppearing={true}
                           ></TextShader>
                           <TextShader
@@ -517,8 +542,9 @@ export default function Experience() {
                             position={[0, 50, -800]}
                             color={"#000000"}
                             size={1}
-                            text={"Full-Stack"}
+                            text={"ThreeJS"}
                             turnOn={turnOn}
+                            seconds={5}
                             isAppearing={true}
                           ></TextShader>
                           <TextShader
@@ -527,8 +553,9 @@ export default function Experience() {
                             position={[0, 50, -900]}
                             color={"#000000"}
                             size={1}
-                            text={"Shaders"}
+                            text={"WebGL"}
                             turnOn={turnOn}
+                            seconds={5}
                             isAppearing={true}
                           ></TextShader>
                           <TextShader
@@ -537,8 +564,20 @@ export default function Experience() {
                             position={[0, 50, -1000]}
                             color={"#000000"}
                             size={1}
-                            text={"WebGL"}
+                            text={"and lot"}
                             turnOn={turnOn}
+                            seconds={5}
+                            isAppearing={true}
+                          ></TextShader>
+                          <TextShader
+                            scale={8}
+                            rotation={[0.75, 0, 0]}
+                            position={[0, 35, -1000]}
+                            color={"#000000"}
+                            size={1}
+                            text={"more...."}
+                            turnOn={turnOn}
+                            seconds={5}
                             isAppearing={true}
                           ></TextShader>
                           <mesh

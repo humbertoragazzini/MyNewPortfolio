@@ -27,7 +27,9 @@ const fragmentShader = `
   varying float vDelay;
   uniform float uTime;
   uniform vec3 uColor;
-  uniform float uAppear;
+  uniform float uApper;
+  uniform float uLower;
+  uniform float uSeconds;
 
   vec4 permute(vec4 x)
   {
@@ -73,8 +75,8 @@ const fragmentShader = `
 
   void main() {
     float noise = cnoise(vUv) * 0.5 + 0.5;
-    float appearTime = noise * 5.0;
-    float alpha = smoothstep(0.0, 1.0, uTime - appearTime);
+    float appearTime = noise * uSeconds;
+    float alpha = smoothstep(uLower, uApper, uTime - appearTime);
     float noiseColor = cnoise(vec2(appearTime,alpha));
     
 
@@ -92,6 +94,7 @@ export default function TextShader({
   color,
   turnOn,
   isAppearing,
+  seconds,
 }) {
   const materialRef = useRef();
   const startTimeRef = useRef(null);
@@ -116,7 +119,9 @@ export default function TextShader({
     uniforms: {
       uTime: { value: 0 },
       uColor: { value: new THREE.Color(color) },
-      uAppear: isAppearing ? 0.0 : 1.0,
+      uApper: isAppearing ? { value: 1.0 } : { value: 0.0 },
+      uLower: isAppearing ? { value: 0.0 } : { value: 1.0 },
+      uSeconds: { value: seconds },
     },
     side: THREE.DoubleSide,
   });
