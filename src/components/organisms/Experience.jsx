@@ -1,34 +1,15 @@
-import { Canvas, useLoader } from "@react-three/fiber";
-import { Suspense, useContext, useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
-import MainScene from "./MainScene.jsx";
-import ProjectRight from "../atoms/scene/ProjectRight.jsx";
-import Camera from "../atoms/scene/Camera.jsx";
-import ProjectLeft from "../atoms/scene/ProjectLeft.jsx";
-import VideoLeft from "../atoms/scene/VideoLeft.jsx";
-import VideoRight from "../atoms/scene/VideoRight.jsx";
+import { Suspense, useContext, useRef, useState } from "react";
+import { AppContext } from "../../context/AppContext";
 import * as THREE from "three";
-import Lights from "../atoms/scene/Lights.jsx";
-import { RGBELoader } from "three/examples/jsm/Addons.js";
-import { useInputMethod } from "../../hooks/CheckInput.jsx";
-import Final from "../atoms/scene/Final.jsx";
-import { AppContext } from "../../context/AppContext.jsx";
-import CheckSize from "../atoms/scene/CheckSize.jsx";
-import Effects from "../atoms/scene/Effects.jsx";
-import Paragraph from "../atoms/ui/Paragraph.jsx";
-import Heading from "../atoms/ui/Heading";
-import Project from "../atoms/project/Project.jsx";
-import { TestingFloor } from "../atoms/scene/testingFloor.jsx";
 import { Joystick } from "react-joystick-component";
-import LoadingSystems from "../atoms/ui/LoadingSystems.jsx";
-import { Html } from "@react-three/drei";
-import {
-  ACESFilmicToneMapping,
-  LinearToneMapping,
-  NoToneMapping,
-  ReinhardToneMapping,
-} from "three";
-import TextShader from "../atoms/scene/TextShader.jsx";
+import { Canvas } from "@react-three/fiber";
+import Camera from "../atoms/scene/image/Camera";
+import Effects from "../molecules/scene/effects/Effects";
+import TextShader from "../molecules/scene/text/TextShader";
+import ProjectLeft from "../molecules/project/ProjectLeft";
+import Project from "../molecules/project/Project";
+import ProjectRight from "../molecules/project/ProjectRight";
+import Lights from "../atoms/scene/ilumination/Lights";
 
 const projects = [
   {
@@ -294,21 +275,11 @@ export default function Experience() {
   const [scroll, setScroll] = useState(0);
   const scrollRef = useRef(0);
   const targetRef = useRef();
-  const joystickSpeed = useRef();
   const joystickHorizontalSpeed = useRef(null);
   const joystickVerticalSpeed = useRef(null);
-  const inputMethod = useInputMethod();
   const [turnOn, setTurnOn] = useState(false);
-  const {
-    toggleReflections,
-    language,
-    changeReflectionQuality,
-    reflections,
-    dpr,
-    reflectionQuality,
-    selectedProject,
-    changeSelectedProject,
-  } = useContext(AppContext);
+  const { language, dpr, selectedProject, changeSelectedProject } =
+    useContext(AppContext);
   const materialFloor = useRef(
     new THREE.MeshStandardMaterial({ color: "black" })
   );
@@ -409,8 +380,6 @@ export default function Experience() {
                 toneMapping: LinearToneMapping,
               }}
             >
-              {/* <OrbitControls></OrbitControls> */}
-              {/* <PerspectiveCamera></PerspectiveCamera> */}
               <Camera
                 scroll={scrollRef}
                 joystickLeft={joystickVerticalSpeed}
@@ -1124,21 +1093,6 @@ export default function Experience() {
                   }}
                 </Effects>
                 <MainScene scale={1} turnOn={turnOn} />
-                {/* <VideoLeft
-                  positionZ={-40}
-                  source={"videos/Testing_Video_h_264.mp4"}
-                  url={"https://www.primalports.com/"}
-                ></VideoLeft>
-                <VideoRight
-                  positionZ={-145}
-                  source={"videos/Testing_Video_h_264.mp4"}
-                  url={"https://humbertoragazzini.github.io/TheSuperGame/"}
-                ></VideoRight>*/}
-                {/* <VideoLeft
-                  positionZ={-51.7}
-                  source={"videos/Testing_Video_h_264.mp4"}
-                  url={"https://humbertoragazzini.github.io/thewebglglobe/dist/"}
-                /> */}
                 <>
                   {projects.map((project) => {
                     if (project.orientation == "left") {
