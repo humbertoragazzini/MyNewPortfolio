@@ -74,12 +74,13 @@ export default function ProjectRight({
             transform
           >
             <div
-              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${selectedProject
-                ? selectedProject == projectId
-                  ? ""
-                  : "blur-md"
-                : ""
-                }`}
+              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${
+                selectedProject
+                  ? selectedProject == projectId
+                    ? ""
+                    : "blur-md"
+                  : ""
+              }`}
               ref={mainContainerRef}
             >
               <div
@@ -97,23 +98,3 @@ export default function ProjectRight({
     </mesh>
   );
 }
-
-// {
-//   images.length > 0 &&
-//     images.map((url, i) => {
-//       return (
-//         <mesh
-//           ref={imageRef}
-//           position={[
-//             imagePosition[i].x,
-//             imagePosition[i].y,
-//             imagePosition[i].z,
-//           ]}
-//           material={textureMaterial[i]}
-//         >
-//           <boxGeometry args={[32, 18, 10]}></boxGeometry>
-//           {/* <meshStandardMaterial color={"white"}></meshStandardMaterial> */}
-//         </mesh>
-//       );
-//     });
-// }
