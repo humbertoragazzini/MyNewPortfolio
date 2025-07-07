@@ -6,15 +6,15 @@ import Paragraph from "../../../atoms/ui/Paragraph";
 export default function Final() {
   const { language } = useContext(AppContext);
   return (
-    <Html occlude={""} transform position={[0, 0, -1220]}>
+    <Html occlude={""} transform position={[0, 0, -1210]}>
       <div className="w-screen h-[100dvh] text-white bg-transparent">
-        <div className="grid grid-cols-12 p-14">
-          <div className="col-span-3 px-10">
+        <div className="grid grid-cols-12">
+          <div className="hidden px-2 md:block md:col-span-3 md:px-4 lg:px-10">
             <div className="rounded-full w-full max-w-[600px] aspect-square overflow-hidden">
               <img className="w-[105%]" src="./img/profile-photo.png"></img>
             </div>
           </div>
-          <div className="col-span-9">
+          <div className="col-span-12 md:col-span-9">
             <ul>
               <li className="mb-5 text-5xl font-semibold">
                 <Paragraph
@@ -43,32 +43,50 @@ export default function Final() {
                   language={language}
                 ></Paragraph>
               </li>
-              <li className="mb-6 text-3xl font-bold">
+              <li className="mb-6 text-3xl">
                 <Paragraph
                   text={{
-                    en: "Skills: JS, GLSL, React, NextJS, RTF, Tailwindcss, Bootstrap, Shell, Strapi, Prismic, C++, Linux, Blender",
-                    es: "Skills: JS, GLSL, React, NextJS, RTF, Tailwindcss, Bootstrap, Shell, Strapi, Prismic, C++, Linux, Blender",
+                    en: "Skills:",
+                    es: "Skills:",
                   }}
                   language={language}
+                  className={"inline font-bold mr-2"}
                 ></Paragraph>
-              </li>
-              <li className="mb-6 text-3xl font-bold">
                 <Paragraph
                   text={{
-                    en: "Hobbies: I really enjoy playing video games, I’m very into cinema, and above all, I love studying Blender and programming—where everything I learn in Blender blends perfectly with web development.",
-                    es: "Hobbies: Disfruto mucho jugar videojuegos, me encanta el cine, y sobre todo, me apasiona estudiar Blender y programación. Me motiva especialmente cuando puedo combinar lo que aprendo en Blender con el desarrollo web, uniendo creatividad y tecnología en un mismo espacio.",
+                    en: "JS, GLSL, React, NextJS, RTF, Tailwindcss, Bootstrap, Shell, Strapi, Prismic, C++, Linux, Blender",
+                    es: "JS, GLSL, React, NextJS, RTF, Tailwindcss, Bootstrap, Shell, Strapi, Prismic, C++, Linux, Blender",
                   }}
                   language={language}
+                  className={"inline"}
                 ></Paragraph>
               </li>
-              <li className="mb-6 text-3xl font-bold">
+              <li className="mb-6 text-3xl">
+                <Paragraph
+                  text={{
+                    en: "Hobbies:",
+                    es: "Hobbies:",
+                  }}
+                  language={language}
+                  className={"inline font-bold mr-2"}
+                ></Paragraph>
+                <Paragraph
+                  text={{
+                    en: "I really enjoy playing video games, I’m very into cinema, and above all, I love studying Blender and programming—where everything I learn in Blender blends perfectly with web development.",
+                    es: "Disfruto mucho jugar videojuegos, me encanta el cine, y sobre todo, me apasiona estudiar Blender y programación. Me motiva especialmente cuando puedo combinar lo que aprendo en Blender con el desarrollo web, uniendo creatividad y tecnología en un mismo espacio.",
+                  }}
+                  language={language}
+                  className={"inline"}
+                ></Paragraph>
+              </li>
+              <li className="mb-6 text-3xl">
                 <Paragraph
                   text={{
                     en: "Email:",
                     es: "Email:",
                   }}
                   language={language}
-                  className={"inline-block"}
+                  className={"inline-block font-bold"}
                 ></Paragraph>
                 <a
                   className="ml-2 underline hover:no-underline"
@@ -78,14 +96,14 @@ export default function Final() {
                   hmragazzini@hotmail.com
                 </a>
               </li>
-              <li className="mb-6 text-3xl font-bold">
+              <li className="mb-6 text-3xl">
                 <Paragraph
                   text={{
                     en: "Github:",
                     es: "Github:",
                   }}
                   language={language}
-                  className={"inline-block"}
+                  className={"inline-block font-bold"}
                 ></Paragraph>
                 <a
                   className="ml-2 underline hover:no-underline"
