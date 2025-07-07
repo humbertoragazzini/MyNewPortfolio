@@ -28,7 +28,7 @@ export default function Final() {
               <li className="mb-6 text-3xl">
                 <Paragraph
                   text={{
-                    en: "hi",
+                    en: "I'm open to new challenges and to continuing to grow. If you have a project in mind, let’s get in touch and make it a reality.",
                     es: "Estoy abierto a nuevos desafios y a seguir creciendo, si tenes algun projecto en mente, nos pongamos en contacto y hagamos de ese proejcto una realidad.",
                   }}
                   language={language}
@@ -37,7 +37,7 @@ export default function Final() {
               <li className="mb-6 text-3xl">
                 <Paragraph
                   text={{
-                    en: "hi",
+                    en: "I'm passionate about what I do. I love technology, I'm a daily Linux user, I believe in open source and its philosophy, and I enjoy creating new projects and bringing them to life.",
                     es: "Soy una persona apasionada de lon que hace, me gusta la technologias, soy un usuario diario de linux, creo en el opensource y su filosofia, disfruto de crear nuevos projectos y darle vida.",
                   }}
                   language={language}

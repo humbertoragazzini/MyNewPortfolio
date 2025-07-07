@@ -14,6 +14,7 @@ import Final from "../molecules/scene/screens/Final";
 import CheckSize from "../../helpers/CheckSize";
 import BuildProjects from "./BuildProjects";
 import CustomJoysticks from "../molecules/controls/Joysticks";
+import LoadingScreen from "../atoms/scene/screens/LoadingScreen";
 
 const projects = [
   {
@@ -324,14 +325,7 @@ export default function Experience() {
                 joystickRight={joystickHorizontalSpeed}
                 setTurnOn={setTurnOn}
               ></Camera>
-              <Suspense
-                fallback={
-                  <mesh position={[0, 0, -50]}>
-                    <boxGeometry args={[10, 10, 10]}></boxGeometry>
-                    <meshBasicMaterial color={"white"}></meshBasicMaterial>
-                  </mesh>
-                }
-              >
+              <Suspense fallback={<LoadingScreen></LoadingScreen>}>
                 <Effects scroll={scrollRef}>
                   {(texture) => {
                     return (
@@ -1080,6 +1074,7 @@ export default function Experience() {
                     );
                   }}
                 </Effects>
+                <LoadingScreen></LoadingScreen>
                 <MainScene scale={1} turnOn={turnOn} />
                 <BuildProjects projects={projects}></BuildProjects>
                 <Final></Final>
