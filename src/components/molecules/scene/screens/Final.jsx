@@ -1,6 +1,10 @@
 import { Html } from "@react-three/drei";
+import { useContext } from "react";
+import { AppContext } from "../../../../context/AppContext";
+import Paragraph from "../../../atoms/ui/Paragraph";
 
 export default function Final() {
+  const { language } = useContext(AppContext);
   return (
     <Html occlude={""} transform position={[0, 0, -1220]}>
       <div className="w-screen h-[100dvh] text-white bg-transparent">
@@ -13,23 +17,68 @@ export default function Final() {
           <div className="col-span-9">
             <ul>
               <li className="mb-5 text-5xl font-semibold">
-                Gracias por haber visitado mi portfolio
+                <Paragraph
+                  text={{
+                    en: "Thanks for visiting my portfolio",
+                    es: "Gracias por haber visitado mi portfolio",
+                  }}
+                  language={language}
+                ></Paragraph>
               </li>
               <li className="mb-6 text-3xl">
-                Estoy abierto a nuevos desafios y a seguir creciendo, si tenes
-                algun projecto en mente, nos pongamos en contacto y hagamos de
-                ese proejcto una realidad.
+                <Paragraph
+                  text={{
+                    en: "hi",
+                    es: "Estoy abierto a nuevos desafios y a seguir creciendo, si tenes algun projecto en mente, nos pongamos en contacto y hagamos de ese proejcto una realidad.",
+                  }}
+                  language={language}
+                ></Paragraph>
               </li>
               <li className="mb-6 text-3xl">
-                Soy una persona apasionada de lon que hace, me gusta la
-                technologias, soy un usuario diario de linux, creo en el
-                opensource y su filosofia, disfruto de crear nuevos projectos y
-                darle vida.
+                <Paragraph
+                  text={{
+                    en: "hi",
+                    es: "Soy una persona apasionada de lon que hace, me gusta la technologias, soy un usuario diario de linux, creo en el opensource y su filosofia, disfruto de crear nuevos projectos y darle vida.",
+                  }}
+                  language={language}
+                ></Paragraph>
               </li>
-              <li className="mb-6 text-3xl font-bold">Skills:</li>
-              <li className="mb-6 text-3xl font-bold">Hobbies:</li>
-              <li className="mb-6 text-3xl font-bold">Email:</li>
-              <li className="mb-6 text-3xl font-bold">Github:</li>
+              <li className="mb-6 text-3xl font-bold">
+                <Paragraph
+                  text={{
+                    en: "Skills:",
+                    es: "Skills:",
+                  }}
+                  language={language}
+                ></Paragraph>
+              </li>
+              <li className="mb-6 text-3xl font-bold">
+                <Paragraph
+                  text={{
+                    en: "Hobbies:",
+                    es: "Hobbies:",
+                  }}
+                  language={language}
+                ></Paragraph>
+              </li>
+              <li className="mb-6 text-3xl font-bold">
+                <Paragraph
+                  text={{
+                    en: "Email:",
+                    es: "Email:",
+                  }}
+                  language={language}
+                ></Paragraph>
+              </li>
+              <li className="mb-6 text-3xl font-bold">
+                <Paragraph
+                  text={{
+                    en: "Github:",
+                    es: "Github:",
+                  }}
+                  language={language}
+                ></Paragraph>
+              </li>
             </ul>
           </div>
         </div>
