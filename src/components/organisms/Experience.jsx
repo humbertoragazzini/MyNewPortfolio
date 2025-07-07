@@ -1074,7 +1074,6 @@ export default function Experience() {
                     );
                   }}
                 </Effects>
-                <LoadingScreen></LoadingScreen>
                 <MainScene scale={1} turnOn={turnOn} />
                 <BuildProjects projects={projects}></BuildProjects>
                 <Final></Final>

@@ -55,8 +55,8 @@ export default function Final() {
               <li className="mb-6 text-3xl font-bold">
                 <Paragraph
                   text={{
-                    en: "Hobbies: ",
-                    es: "Hobbies: ",
+                    en: "Hobbies: I really enjoy playing video games, I’m very into cinema, and above all, I love studying Blender and programming—where everything I learn in Blender blends perfectly with web development.",
+                    es: "Hobbies: Disfruto mucho jugar videojuegos, me encanta el cine, y sobre todo, me apasiona estudiar Blender y programación. Me motiva especialmente cuando puedo combinar lo que aprendo en Blender con el desarrollo web, uniendo creatividad y tecnología en un mismo espacio.",
                   }}
                   language={language}
                 ></Paragraph>
