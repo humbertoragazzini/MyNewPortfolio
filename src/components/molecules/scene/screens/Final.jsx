@@ -46,8 +46,8 @@ export default function Final() {
               <li className="mb-6 text-3xl font-bold">
                 <Paragraph
                   text={{
-                    en: "Skills:",
-                    es: "Skills:",
+                    en: "Skills: JS, GLSL, React, NextJS, RTF, Tailwindcss, Bootstrap, Shell, Strapi, Prismic, C++, Linux, Blender",
+                    es: "Skills: JS, GLSL, React, NextJS, RTF, Tailwindcss, Bootstrap, Shell, Strapi, Prismic, C++, Linux, Blender",
                   }}
                   language={language}
                 ></Paragraph>
@@ -55,8 +55,8 @@ export default function Final() {
               <li className="mb-6 text-3xl font-bold">
                 <Paragraph
                   text={{
-                    en: "Hobbies:",
-                    es: "Hobbies:",
+                    en: "Hobbies: ",
+                    es: "Hobbies: ",
                   }}
                   language={language}
                 ></Paragraph>
@@ -68,7 +68,15 @@ export default function Final() {
                     es: "Email:",
                   }}
                   language={language}
+                  className={"inline-block"}
                 ></Paragraph>
+                <a
+                  className="ml-2 underline hover:no-underline"
+                  href="mailto:hmragazzini@hotmail.com"
+                  target="_blank"
+                >
+                  hmragazzini@hotmail.com
+                </a>
               </li>
               <li className="mb-6 text-3xl font-bold">
                 <Paragraph
@@ -77,7 +85,15 @@ export default function Final() {
                     es: "Github:",
                   }}
                   language={language}
+                  className={"inline-block"}
                 ></Paragraph>
+                <a
+                  className="ml-2 underline hover:no-underline"
+                  href="https://github.com/humbertoragazzini"
+                  target="_blank"
+                >
+                  https://github.com/humbertoragazzini
+                </a>
               </li>
             </ul>
           </div>
