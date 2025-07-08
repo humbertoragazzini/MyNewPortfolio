@@ -16,7 +16,7 @@ export default function Final() {
           </div>
           <div className="col-span-12 md:col-span-9">
             <ul>
-              <li className="mb-5 text-5xl font-semibold">
+              <li className="mb-5 text-2xl font-semibold md:text-5xl">
                 <Paragraph
                   text={{
                     en: "Thanks for visiting my portfolio",
@@ -25,7 +25,7 @@ export default function Final() {
                   language={language}
                 ></Paragraph>
               </li>
-              <li className="mb-6 text-3xl">
+              <li className="mb-6 text-md lg:text-3xl">
                 <Paragraph
                   text={{
                     en: "I'm open to new challenges and to continuing to grow. If you have a project in mind, let’s get in touch and make it a reality.",
@@ -34,7 +34,7 @@ export default function Final() {
                   language={language}
                 ></Paragraph>
               </li>
-              <li className="mb-6 text-3xl">
+              <li className="mb-6 text-md lg:text-3xl">
                 <Paragraph
                   text={{
                     en: "I'm passionate about what I do. I love technology, I'm a daily Linux user, I believe in open source and its philosophy, and I enjoy creating new projects and bringing them to life.",
@@ -43,7 +43,7 @@ export default function Final() {
                   language={language}
                 ></Paragraph>
               </li>
-              <li className="mb-6 text-3xl">
+              <li className="mb-6 text-md lg:text-3xl">
                 <Paragraph
                   text={{
                     en: "Skills:",
@@ -61,7 +61,7 @@ export default function Final() {
                   className={"inline"}
                 ></Paragraph>
               </li>
-              <li className="mb-6 text-3xl">
+              <li className="mb-6 text-md lg:text-3xl">
                 <Paragraph
                   text={{
                     en: "Hobbies:",
@@ -79,7 +79,7 @@ export default function Final() {
                   className={"inline"}
                 ></Paragraph>
               </li>
-              <li className="mb-6 text-3xl">
+              <li className="mb-6 text-md lg:text-3xl">
                 <Paragraph
                   text={{
                     en: "Email:",
@@ -96,7 +96,7 @@ export default function Final() {
                   hmragazzini@hotmail.com
                 </a>
               </li>
-              <li className="mb-6 text-3xl">
+              <li className="mb-6 text-md lg:text-3xl">
                 <Paragraph
                   text={{
                     en: "Github:",

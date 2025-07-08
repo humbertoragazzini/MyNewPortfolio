@@ -8,7 +8,11 @@ export default function CustomJoysticks({
 }) {
   useEffect(() => {
     const joystickSpeedInterval = setInterval(() => {
-      if (scrollRef.current >= 0 && scrollRef.current < 1) {
+      if (
+        scrollRef.current >= 0 &&
+        scrollRef.current < 1 &&
+        scrollRef.current + joystickVerticalSpeed.current.y < 1
+      ) {
         if (joystickVerticalSpeed.current !== null) {
           scrollRef.current += joystickVerticalSpeed.current.y;
         }
@@ -20,6 +24,7 @@ export default function CustomJoysticks({
   }, []);
 
   function handleMoveLeftStick(e) {
+    console.log(e.y);
     const newValues = {
       y: e.y * 0.01,
       x: e.x * 10,
