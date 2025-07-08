@@ -69,6 +69,10 @@ export default function Project({ language, content, changeSelectedProject }) {
                     allow="encrypted-media"
                     allowFullScreen
                   ></iframe>
+                  <img
+                    className="block w-full lg:hidden"
+                    src={content.images[0]}
+                  ></img>
                 </div>
               )}
               {content.gif !== "" && content.gif !== null && (

@@ -57,7 +57,7 @@ const projects = [
     embeded: "7swmapUo9l8",
     gif: "",
     video: "",
-    images: [],
+    images: ["img/project-1.png"],
   },
   {
     positionZ: -40,
@@ -99,7 +99,7 @@ const projects = [
     embeded: "N-q0a1t_uSQ",
     gif: "",
     video: "",
-    images: [],
+    images: ["img/project-2.png"],
   },
   {
     positionZ: -145,
@@ -138,7 +138,7 @@ const projects = [
     embeded: "ole2GfpOjuA",
     gif: "",
     video: null,
-    images: [],
+    images: ["img/project-3.png"],
   },
   {
     positionZ: -145,
@@ -180,7 +180,7 @@ const projects = [
     embeded: "XWvOI_r0wl0",
     gif: "",
     video: "",
-    images: [],
+    images: ["img/project-4.png"],
   },
   {
     positionZ: -245,
@@ -232,7 +232,7 @@ const projects = [
     embeded: "gPavrQuxkfc",
     gif: "",
     video: "",
-    images: [],
+    images: ["img/project-5.png"],
   },
   {
     positionZ: -245,
@@ -271,7 +271,7 @@ const projects = [
     embeded: "uO9XDdfYJcY",
     gif: "",
     video: "",
-    images: [],
+    images: ["img/project-6.png"],
   },
 ];
 
