@@ -36,7 +36,7 @@ export default function Effects({ scroll, resolution, frames, children }) {
       ) {
         cube.position.z = THREE.MathUtils.lerp(
           cube.position.z,
-          75 - 1 * 1492 * scroll.current,
+          75 - 1 * 1260 * scroll.current,
           lerpSpeed
         );
 
