@@ -60,13 +60,13 @@ export default function Project({ language, content, changeSelectedProject }) {
               {content.embeded !== null && (
                 <div className="absolute w-full overflow-hidden -translate-x-5 translate-y-16 shadow-2xl rounded-3xl">
                   <iframe
-                    className="w-full"
+                    className="hidden w-full lg:block"
                     width="560"
                     height="315"
-                    src={`https://www.youtube.com/embed/${content.embeded}?autoplay=1&mute=1&loop=1&playlist=${content.embeded}`}
+                    src={`https://www.youtube.com/embed/${content.embeded}?&mute=1&loop=1&playlist=${content.embeded}`}
                     title="YouTube video"
                     frameBorder="0"
-                    allow="autoplay; encrypted-media"
+                    allow="encrypted-media"
                     allowFullScreen
                   ></iframe>
                 </div>

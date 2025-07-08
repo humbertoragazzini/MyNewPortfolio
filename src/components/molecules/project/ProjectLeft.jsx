@@ -57,7 +57,6 @@ export default function ProjectLeft({
     }
   }, [isMenuOpen]);
 
-
   return (
     <mesh
       ref={meshRef}
@@ -79,12 +78,13 @@ export default function ProjectLeft({
             transform
           >
             <div
-              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${selectedProject
+              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${
+                selectedProject
                   ? selectedProject == projectId
                     ? ""
                     : "blur-md"
                   : ""
-                }`}
+              }`}
               ref={mainContainerRef}
             >
               <div

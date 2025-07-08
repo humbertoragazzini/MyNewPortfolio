@@ -120,7 +120,6 @@ export default function Camera({
         if (targetZ < -200) {
           setTurnOn(true);
         }
-        console.log(scroll.current);
         joystickRight.current !== null
           ? (horizontal.current.x = -joystickRight.current.x)
           : null;
