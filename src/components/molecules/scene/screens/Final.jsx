@@ -1,13 +1,23 @@
 import { Html } from "@react-three/drei";
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { AppContext } from "../../../../context/AppContext";
 import Paragraph from "../../../atoms/ui/Paragraph";
+import gsap from "gsap";
 
-export default function Final() {
+export default function Final({ turnOn }) {
   const { language } = useContext(AppContext);
+  const htmlRef = useRef(null);
+  useEffect(() => {
+    if (turnOn && htmlRef.current) {
+      gsap.to(htmlRef.current, { opacity: 1, duration: 1, delay: 5 });
+    }
+  }, [turnOn]);
   return (
     <Html occlude={""} transform position={[0, 0, -1210]}>
-      <div className="w-screen h-[100dvh] text-white bg-transparent">
+      <div
+        ref={htmlRef}
+        className="w-screen h-[100dvh] text-white bg-transparent opacity-0"
+      >
         <div className="grid grid-cols-12">
           <div className="hidden px-2 md:block md:col-span-3 md:px-4 lg:px-10">
             <div className="rounded-full w-full max-w-[600px] aspect-square overflow-hidden">

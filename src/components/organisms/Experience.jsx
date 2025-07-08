@@ -818,7 +818,7 @@ export default function Experience() {
                 </Effects>
                 <MainScene scale={1} turnOn={turnOn} />
                 <BuildProjects projects={projects}></BuildProjects>
-                <Final></Final>
+                <Final turnOn={turnOn}></Final>
                 <Lights targetRef={targetRef}></Lights>
                 <CheckSize></CheckSize>
               </Suspense>
