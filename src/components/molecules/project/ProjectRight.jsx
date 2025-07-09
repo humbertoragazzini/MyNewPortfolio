@@ -85,7 +85,7 @@ export default function ProjectRight({
                 onClick={() => {
                   selectedProject ? null : changeSelectedProject(projectId);
                 }}
-                className="relative z-0"
+                className="relative z-0 w-1/2 mx-auto md:w-full"
               >
                 {children}
               </div>
