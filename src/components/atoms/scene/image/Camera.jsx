@@ -158,6 +158,12 @@ export default function Camera({
       }
     } else {
       if (cameraRef.current !== undefined) {
+        joystickRight.current !== null
+          ? (horizontal.current.x = -joystickRight.current.x)
+          : null;
+        joystickRight.current !== null
+          ? (horizontal.current.y = joystickRight.current.y)
+          : null;
         cameraRef.current.position.z = THREE.MathUtils.lerp(
           cameraRef.current.position.z,
           positionsArray[selectedProject].position.z,
@@ -165,12 +171,12 @@ export default function Camera({
         );
         cameraRef.current.rotation.x = THREE.MathUtils.lerp(
           cameraRef.current.rotation.x,
-          positionsArray[selectedProject].rotation.x,
+          positionsArray[selectedProject].rotation.x + horizontal.current.y,
           lerpSpeed
         );
         cameraRef.current.rotation.y = THREE.MathUtils.lerp(
           cameraRef.current.rotation.y,
-          positionsArray[selectedProject].rotation.y,
+          positionsArray[selectedProject].rotation.y + horizontal.current.x,
           lerpSpeed
         );
         cameraRef.current.rotation.z = THREE.MathUtils.lerp(

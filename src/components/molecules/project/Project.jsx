@@ -58,7 +58,7 @@ export default function Project({ language, content, changeSelectedProject }) {
                 </video>
               )}
               {content.embeded !== null && (
-                <div className="absolute w-full overflow-hidden -translate-x-5 translate-y-16 shadow-2xl rounded-3xl">
+                <div className="absolute w-full overflow-hidden -translate-x-5 translate-y-16 shadow-2xl md:block rounded-3xl">
                   <iframe
                     className="hidden w-full lg:block"
                     width="560"
