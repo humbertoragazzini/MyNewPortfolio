@@ -25,14 +25,19 @@ export default function Experience() {
   const joystickHorizontalSpeed = useRef(null);
   const joystickVerticalSpeed = useRef(null);
   const [turnOn, setTurnOn] = useState(false);
-  const [touches, settouches] = useState(false);
+  const [touchData, setTouchData] = useState(false);
   const { dpr, selectedProject, changeSelectedProject } =
     useContext(AppContext);
   const geometryFloor = useRef(new THREE.BoxGeometry(20, 1, 30));
   // Set the drag hook and define component movement based on gesture data.
   const bind = useGesture({
-    onPinch: ({ touches }) => {
-      settouches(touches);
+    onPinch: ({ touches, offset: [scale, angle], origin, velocity }) => {
+      const tData = {
+        touches: touches,
+        origin: origin,
+        velocity: velocity,
+      };
+      setTouchData(tData);
     },
   });
 
@@ -44,7 +49,9 @@ export default function Experience() {
         touchAction: "none",
       }}
     >
-      <div className="text-6xl text-white">Touches: {touches}</div>
+      <div className="text-xl text-white h-fit6">
+        Touches: {JSON.stringify(touchData)}
+      </div>
       <CustomJoysticks
         joystickHorizontalSpeed={joystickHorizontalSpeed}
         joystickVerticalSpeed={joystickVerticalSpeed}
