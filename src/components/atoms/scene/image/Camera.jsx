@@ -124,9 +124,10 @@ export default function Camera({
         }
         if (touchData.current !== null) {
           const [originX, originY] = touchData.current;
-          const xPercent = (-window.innerWidth / 2 + originX) * 0.001;
-          const yPercent = (-window.innerHeight / 2 + originY) * 0.001;
-          // console.log(yPercent);
+          const xPercent =
+            (1 * (-window.innerWidth / 2 + originX)) / window.innerWidth;
+          const yPercent =
+            (1 * (-window.innerHeight / 2 + originY)) / window.innerHeight;
           horizontal.current.y = -yPercent;
           horizontal.current.x = -xPercent;
         }
