@@ -11,6 +11,8 @@ export default function CustomJoysticks({
       if (
         scrollRef.current >= 0 &&
         scrollRef.current < 1 &&
+        joystickVerticalSpeed.current !== undefined &&
+        joystickVerticalSpeed.current !== null &&
         scrollRef.current + joystickVerticalSpeed.current.y < 1
       ) {
         if (joystickVerticalSpeed.current !== null) {

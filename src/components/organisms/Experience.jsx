@@ -16,7 +16,7 @@ import BuildProjects from "./BuildProjects";
 import CustomJoysticks from "../molecules/controls/Joysticks";
 import LoadingScreen from "../atoms/scene/screens/LoadingScreen";
 import projects from "../../data/projects";
-import { useDrag } from "@use-gesture/react";
+import { useGesture } from "@use-gesture/react";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -25,18 +25,20 @@ export default function Experience() {
   const joystickHorizontalSpeed = useRef(null);
   const joystickVerticalSpeed = useRef(null);
   const [turnOn, setTurnOn] = useState(false);
+  const [touches, settouches] = useState(false);
   const { dpr, selectedProject, changeSelectedProject } =
     useContext(AppContext);
   const geometryFloor = useRef(new THREE.BoxGeometry(20, 1, 30));
   // Set the drag hook and define component movement based on gesture data.
-  const bind = useDrag(({ down, movement: [mx, my] }) => {
-    api.start({ x: down ? mx : 0, y: down ? my : 0 });
+  const bind = useGesture({
+    onPinch: ({ touches }) => {
+      settouches(touches);
+    },
   });
-
-  useEffect(() => {}, []);
 
   return (
     <div className="w-full h-[100dvh] overflow-hidden bg-black">
+      <div className="text-6xl text-white">Touches:{touches}</div>
       <CustomJoysticks
         joystickHorizontalSpeed={joystickHorizontalSpeed}
         joystickVerticalSpeed={joystickVerticalSpeed}
