@@ -171,12 +171,12 @@ export default function Camera({
         );
         cameraRef.current.rotation.x = THREE.MathUtils.lerp(
           cameraRef.current.rotation.x,
-          positionsArray[selectedProject].rotation.x + horizontal.current.y,
+          positionsArray[selectedProject].rotation.x + horizontal.current.y / 5,
           lerpSpeed
         );
         cameraRef.current.rotation.y = THREE.MathUtils.lerp(
           cameraRef.current.rotation.y,
-          positionsArray[selectedProject].rotation.y + horizontal.current.x,
+          positionsArray[selectedProject].rotation.y + horizontal.current.x / 5,
           lerpSpeed
         );
         cameraRef.current.rotation.z = THREE.MathUtils.lerp(
