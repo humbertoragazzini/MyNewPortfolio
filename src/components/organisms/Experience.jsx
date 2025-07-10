@@ -49,9 +49,6 @@ export default function Experience() {
         touchAction: "none",
       }}
     >
-      <div className="text-xl text-white h-fit6">
-        Touches: {JSON.stringify(touchData)}
-      </div>
       <CustomJoysticks
         joystickHorizontalSpeed={joystickHorizontalSpeed}
         joystickVerticalSpeed={joystickVerticalSpeed}
@@ -88,6 +85,7 @@ export default function Experience() {
                 joystickLeft={joystickVerticalSpeed}
                 joystickRight={joystickHorizontalSpeed}
                 setTurnOn={setTurnOn}
+                touchData={touchData}
               ></Camera>
               <Suspense fallback={<LoadingScreen></LoadingScreen>}>
                 <Effects scroll={scrollRef}>

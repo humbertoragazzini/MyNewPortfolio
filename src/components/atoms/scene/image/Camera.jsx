@@ -92,6 +92,7 @@ export default function Camera({
   joystickRight,
   children,
   setTurnOn,
+  touchData,
 }) {
   const cameraRef = useRef();
   const lerpSpeed = 0.05;
@@ -119,6 +120,11 @@ export default function Camera({
         const targetZ = 75 - 1 * 1260 * scroll.current;
         if (targetZ < -200) {
           setTurnOn(true);
+        }
+        if (touchData !== null && touchData !== undefined) {
+          if (touchData.origin !== undefined) {
+            console.log(touchData.origin);
+          }
         }
         joystickRight.current !== null
           ? (horizontal.current.x = -joystickRight.current.x)
