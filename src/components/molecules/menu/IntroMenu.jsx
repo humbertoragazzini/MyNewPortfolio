@@ -202,8 +202,8 @@ export default function IntroMenu() {
                   }
                   level={1}
                   text={{
-                    en: "Controls",
-                    es: "Controles",
+                    en: "Touch controls",
+                    es: "Controles tactiles",
                   }}
                 ></Heading>
                 <img className="w-32 mx-auto" src="img/touch.svg"></img>
@@ -216,8 +216,8 @@ export default function IntroMenu() {
                   }
                   level={1}
                   text={{
-                    en: "Controls",
-                    es: "Controles",
+                    en: "On screen joysticks",
+                    es: "Controles en pantalla",
                   }}
                 ></Heading>
               </div>
@@ -229,8 +229,8 @@ export default function IntroMenu() {
                   }
                   level={1}
                   text={{
-                    en: "Controls",
-                    es: "Controles",
+                    en: "Regular web browsing",
+                    es: "Regular web browsing",
                   }}
                 ></Heading>
               </div>
