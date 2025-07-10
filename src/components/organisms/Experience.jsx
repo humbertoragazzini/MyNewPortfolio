@@ -37,8 +37,14 @@ export default function Experience() {
   });
 
   return (
-    <div className="w-full h-[100dvh] overflow-hidden bg-black">
-      <div className="text-6xl text-white">Touches:{touches}</div>
+    <div
+      className="w-full h-[100dvh] overflow-hidden bg-black"
+      {...bind()}
+      style={{
+        touchAction: "none",
+      }}
+    >
+      <div className="text-6xl text-white">Touches: {touches}</div>
       <CustomJoysticks
         joystickHorizontalSpeed={joystickHorizontalSpeed}
         joystickVerticalSpeed={joystickVerticalSpeed}
