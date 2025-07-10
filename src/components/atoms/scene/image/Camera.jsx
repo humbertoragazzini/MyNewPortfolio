@@ -10,6 +10,7 @@ import {
 } from "react";
 import * as THREE from "three";
 import { AppContext } from "../../../../context/AppContext";
+import { useGesture } from "@use-gesture/react";
 
 const positionsArray = {
   firstLeft: {
@@ -121,10 +122,13 @@ export default function Camera({
         if (targetZ < -200) {
           setTurnOn(true);
         }
-        if (touchData !== null && touchData !== undefined) {
-          if (touchData.origin !== undefined) {
-            console.log(touchData.origin);
-          }
+        if (touchData.current !== null) {
+          const [originX, originY] = touchData.current;
+          const xPercent = (-window.innerWidth / 2 + originX) * 0.001;
+          const yPercent = (-window.innerHeight / 2 + originY) * 0.001;
+          // console.log(yPercent);
+          horizontal.current.y = -yPercent;
+          horizontal.current.x = -xPercent;
         }
         joystickRight.current !== null
           ? (horizontal.current.x = -joystickRight.current.x)

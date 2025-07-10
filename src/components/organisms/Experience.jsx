@@ -25,7 +25,7 @@ export default function Experience() {
   const joystickHorizontalSpeed = useRef(null);
   const joystickVerticalSpeed = useRef(null);
   const [turnOn, setTurnOn] = useState(false);
-  const [touchData, setTouchData] = useState(false);
+  const touchData = useRef(null);
   const { dpr, selectedProject, changeSelectedProject } =
     useContext(AppContext);
   const geometryFloor = useRef(new THREE.BoxGeometry(20, 1, 30));
@@ -37,7 +37,7 @@ export default function Experience() {
         origin: origin,
         velocity: velocity,
       };
-      setTouchData(tData);
+      touchData.current = origin;
     },
   });
 
@@ -837,7 +837,7 @@ export default function Experience() {
                   }}
                 </Effects>
                 <MainScene scale={1} turnOn={turnOn} />
-                <BuildProjects projects={projects}></BuildProjects>
+                {/* <BuildProjects projects={projects}></BuildProjects> */}
                 <Final turnOn={turnOn}></Final>
                 <Lights targetRef={targetRef}></Lights>
                 <CheckSize></CheckSize>
