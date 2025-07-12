@@ -1,9 +1,11 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Heading from "../../atoms/ui/Heading";
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../../../context/AppContext";
 
 export default function MultiCarousel({ language }) {
+  const { controlsType, toggleControls } = useContext(AppContext);
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -40,10 +42,19 @@ export default function MultiCarousel({ language }) {
         <button
           className="w-32 mx-auto mb-3"
           onClick={() => {
-            alert("Changing control");
+            toggleControls("touch");
           }}
         >
-          <img className="w-32" src="img/touch.svg"></img>
+          <img className="w-32 mb-4" src="img/touch.svg"></img>
+          {
+            <p
+              className={`border-2 transition-all rounded-xl px-2 py-1 ${
+                controlsType == "touch" ? "border-white" : "border-transparent"
+              }`}
+            >
+              {controlsType == "touch" ? "Selected" : ""}
+            </p>
+          }
         </button>
       </div>
     </div>,
@@ -63,10 +74,21 @@ export default function MultiCarousel({ language }) {
         <button
           className="w-32 mx-auto mb-3"
           onClick={() => {
-            alert("Changing control");
+            toggleControls("joystick");
           }}
         >
-          <img className="w-32" src="img/joystick.svg"></img>
+          <img className="w-32 mb-4" src="img/joystick.svg"></img>
+          {
+            <p
+              className={`border-2 transition-all rounded-xl px-2 py-1 ${
+                controlsType == "joystick"
+                  ? "border-white"
+                  : "border-transparent"
+              }`}
+            >
+              {controlsType == "joystick" ? "Selected" : ""}
+            </p>
+          }
         </button>
       </div>
     </div>,
@@ -86,10 +108,19 @@ export default function MultiCarousel({ language }) {
         <button
           className="w-32 mx-auto mb-3"
           onClick={() => {
-            alert("Changing control");
+            toggleControls("mouse");
           }}
         >
-          <img className="w-32" src="img/mouse.svg"></img>
+          <img className="w-32 mb-4" src="img/mouse.svg"></img>
+          {
+            <p
+              className={`border-2 transition-all rounded-xl px-2 py-1 ${
+                controlsType == "mouse" ? "border-white" : "border-transparent"
+              }`}
+            >
+              {controlsType == "mouse" ? "Selected" : ""}
+            </p>
+          }
         </button>
       </div>
     </div>,

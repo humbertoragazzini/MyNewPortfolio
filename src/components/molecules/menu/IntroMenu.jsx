@@ -54,7 +54,11 @@ export default function IntroMenu() {
             width="92"
             height="92"
             viewBox="0 0 32 32"
-            className={language == "es" ? "" : "grayscale"}
+            className={
+              language == "es"
+                ? "[&_rect]:border-2 [&_rect]:border-white"
+                : "grayscale"
+            }
           >
             <path fill="#f1c142" d="M1 10H31V22H1z"></path>
             <path
@@ -104,7 +108,11 @@ export default function IntroMenu() {
             width="92"
             height="92"
             viewBox="0 0 32 32"
-            className={language == "en" ? "" : "grayscale"}
+            className={
+              language == "en"
+                ? "[&_rect]:border-2 [&_rect]:border-white"
+                : "grayscale"
+            }
           >
             <rect
               x="1"
@@ -114,6 +122,7 @@ export default function IntroMenu() {
               rx="4"
               ry="4"
               fill="#071b65"
+              id="main-rect"
             ></rect>
             <path
               d="M5.101,4h-.101c-1.981,0-3.615,1.444-3.933,3.334L26.899,28h.101c1.981,0,3.615-1.444,3.933-3.334L5.101,4Z"
