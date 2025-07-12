@@ -44,7 +44,9 @@ export default function IntroMenu() {
     >
       <div className="fixed top-0 right-0 flex flex-row mx-auto w-fit">
         <motion.div
-          className="[&_svg]:w-10 [&_svg]:h-14 mx-2 transition-all ease-in-out cursor-pointer hover:scale-125 "
+          className={`[&_svg]:w-10 [&_svg]:h-14 mx-2 transition-all ease-in-out cursor-pointer hover:scale-125 ${
+            language == "es" ? "scale-125" : ""
+          }`}
           onClick={(e) => {
             toggleLanguage("es");
           }}
@@ -54,11 +56,7 @@ export default function IntroMenu() {
             width="92"
             height="92"
             viewBox="0 0 32 32"
-            className={
-              language == "es"
-                ? "[&_rect]:border-2 [&_rect]:border-white"
-                : "grayscale"
-            }
+            className={language == "es" ? "" : "grayscale"}
           >
             <path fill="#f1c142" d="M1 10H31V22H1z"></path>
             <path
@@ -98,7 +96,9 @@ export default function IntroMenu() {
           </svg>
         </motion.div>
         <motion.div
-          className="[&_svg]:w-10 [&_svg]:h-14 mx-2 transition-all ease-in-out cursor-pointer hover:scale-125 "
+          className={`[&_svg]:w-10 [&_svg]:h-14 mx-2 transition-all ease-in-out cursor-pointer hover:scale-125 ${
+            language == "en" ? "scale-125" : ""
+          }`}
           onClick={(e) => {
             toggleLanguage("en");
           }}
@@ -108,11 +108,7 @@ export default function IntroMenu() {
             width="92"
             height="92"
             viewBox="0 0 32 32"
-            className={
-              language == "en"
-                ? "[&_rect]:border-2 [&_rect]:border-white"
-                : "grayscale"
-            }
+            className={language == "en" ? "" : "grayscale"}
           >
             <rect
               x="1"
