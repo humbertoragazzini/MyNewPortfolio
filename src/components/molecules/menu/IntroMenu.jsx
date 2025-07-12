@@ -3,6 +3,7 @@ import { AppContext } from "../../../context/AppContext";
 import MenuButton from "./MenuButton";
 import { motion } from "framer-motion";
 import Heading from "../../atoms/ui/Heading";
+import MultiCarousel from "../ui/MultiCarousel";
 
 export default function IntroMenu() {
   const {
@@ -180,59 +181,10 @@ export default function IntroMenu() {
                 es: "El portoflio fue cargado con las configuraciones de calidad minimas para evitar problemas en la velocidad de ejecucion del programa, puede aumentar la calidad por medio del menu de configuracion",
               }}
             ></Heading>
+
             <div className="grid w-full grid-cols-12">
               <div className="col-span-12 pb-3">
-                <Heading
-                  language={language}
-                  className={
-                    "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center"
-                  }
-                  level={1}
-                  text={{
-                    en: "You can use three different controllers",
-                    es: "Puedes usar tres controles differentes",
-                  }}
-                ></Heading>
-              </div>
-              <div className="col-span-12 lg:col-span-6 xl:col-span-4">
-                <Heading
-                  language={language}
-                  className={
-                    "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center"
-                  }
-                  level={1}
-                  text={{
-                    en: "Touch controls",
-                    es: "Controles tactiles",
-                  }}
-                ></Heading>
-                <img className="w-32 mx-auto" src="img/touch.svg"></img>
-              </div>
-              <div className="col-span-12 lg:col-span-6 xl:col-span-4">
-                <Heading
-                  language={language}
-                  className={
-                    "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center"
-                  }
-                  level={1}
-                  text={{
-                    en: "On screen joysticks",
-                    es: "Controles en pantalla",
-                  }}
-                ></Heading>
-              </div>
-              <div className="col-span-12 lg:col-start-4 lg:col-span-6 xl:col-span-4">
-                <Heading
-                  language={language}
-                  className={
-                    "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center"
-                  }
-                  level={1}
-                  text={{
-                    en: "Regular web browsing",
-                    es: "Regular web browsing",
-                  }}
-                ></Heading>
+                <MultiCarousel language={language}></MultiCarousel>
               </div>
             </div>
             {count == 0 && (
