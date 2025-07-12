@@ -45,20 +45,26 @@ export default function MultiCarousel({ language }) {
           }}
         >
           <img className="w-32 mb-4" src="img/touch.svg"></img>
-          {
+          {controlsType == "touch" && (
             <Paragraph
               language={language}
-              className={`border-2 transition-all rounded-xl px-2 py-1 ${
-                controlsType == "touch"
-                  ? "border-white"
-                  : "border-transparent text-transparent"
-              }`}
+              className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-green-600 !text-black`}
               text={{
-                en: "Selected",
+                en: "Enabled",
                 es: "Activado",
               }}
             ></Paragraph>
-          }
+          )}
+          {controlsType !== "touch" && (
+            <Paragraph
+              language={language}
+              className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-red-600`}
+              text={{
+                en: "Disabled",
+                es: "Desabilitado",
+              }}
+            ></Paragraph>
+          )}
         </button>
       </div>
     </div>,
@@ -81,20 +87,26 @@ export default function MultiCarousel({ language }) {
           }}
         >
           <img className="w-32 mb-4" src="img/joystick.svg"></img>
-          {
+          {controlsType == "joystick" && (
             <Paragraph
               language={language}
-              className={`border-2 transition-all rounded-xl px-2 py-1 ${
-                controlsType == "joystick"
-                  ? "border-white"
-                  : "border-transparent text-transparent"
-              }`}
+              className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-green-600 !text-black`}
               text={{
-                en: "Selected",
+                en: "Enabled",
                 es: "Activado",
               }}
             ></Paragraph>
-          }
+          )}
+          {controlsType !== "joystick" && (
+            <Paragraph
+              language={language}
+              className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-red-600`}
+              text={{
+                en: "Disabled",
+                es: "Desabilitado",
+              }}
+            ></Paragraph>
+          )}
         </button>
       </div>
     </div>,
@@ -117,20 +129,26 @@ export default function MultiCarousel({ language }) {
           }}
         >
           <img className="w-32 mb-4" src="img/mouse.svg"></img>
-          {
+          {controlsType == "mouse" && (
             <Paragraph
               language={language}
-              className={`border-2 transition-all rounded-xl px-2 py-1 ${
-                controlsType == "mouse"
-                  ? "border-white"
-                  : "border-transparent text-transparent"
-              }`}
+              className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-green-600 !text-black`}
               text={{
-                en: "Selected",
+                en: "Enabled",
                 es: "Activado",
               }}
             ></Paragraph>
-          }
+          )}
+          {controlsType !== "mouse" && (
+            <Paragraph
+              language={language}
+              className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-red-600`}
+              text={{
+                en: "Disabled",
+                es: "Desabilitado",
+              }}
+            ></Paragraph>
+          )}
         </button>
       </div>
     </div>,
