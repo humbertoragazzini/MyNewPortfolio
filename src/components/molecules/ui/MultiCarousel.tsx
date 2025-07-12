@@ -75,7 +75,7 @@ export default function MultiCarousel({ language }) {
               es: "Regular mouse web browsing",
             }}
           ></Heading>
-          <img className="w-32 mx-auto mb-3" src="img/touch.svg"></img>
+          <img className="w-32 mx-auto mb-3" src="img/mouse.svg"></img>
         </div>
       </div>
     </Carousel>
