@@ -7,11 +7,11 @@ export default function MultiCarousel({ language }) {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 3,
+      items: 2,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 2,
+      items: 1,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -43,10 +43,10 @@ export default function MultiCarousel({ language }) {
               es: "Controles tactiles",
             }}
           ></Heading>
-          <img className="w-32 mx-auto" src="img/touch.svg"></img>
+          <img className="w-32 mx-auto mb-3" src="img/touch.svg"></img>
         </div>
       </div>
-      <div className="w-full p-3 text-white">
+      <div className="w-full px-3 text-white py-9">
         <div className="col-span-12 lg:col-span-6 xl:col-span-4">
           <Heading
             language={language}
@@ -59,10 +59,10 @@ export default function MultiCarousel({ language }) {
               es: "Controles en pantalla",
             }}
           ></Heading>
-          <img className="w-32 mx-auto" src="img/touch.svg"></img>
+          <img className="w-32 mx-auto mb-3" src="img/touch.svg"></img>
         </div>
       </div>
-      <div className="w-full p-3 text-white">
+      <div className="w-full px-3 text-white py-9">
         <div className="col-span-12 lg:col-span-6 xl:col-span-4">
           <Heading
             language={language}
@@ -71,11 +71,11 @@ export default function MultiCarousel({ language }) {
             }
             level={1}
             text={{
-              en: "Touch controls",
-              es: "Controles tactiles",
+              en: "Regular web browsing",
+              es: "Regular web browsing",
             }}
           ></Heading>
-          <img className="w-32 mx-auto" src="img/touch.svg"></img>
+          <img className="w-32 mx-auto mb-3" src="img/touch.svg"></img>
         </div>
       </div>
     </Carousel>
