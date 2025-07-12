@@ -37,7 +37,12 @@ export default function MultiCarousel({ language }) {
             es: "Controles tactiles",
           }}
         ></Heading>
-        <button className="w-32 mx-auto mb-3">
+        <button
+          className="w-32 mx-auto mb-3"
+          onClick={() => {
+            alert("Changing control");
+          }}
+        >
           <img className="w-32" src="img/touch.svg"></img>
         </button>
       </div>
@@ -55,7 +60,12 @@ export default function MultiCarousel({ language }) {
             es: "Controles en pantalla",
           }}
         ></Heading>
-        <button className="w-32 mx-auto mb-3">
+        <button
+          className="w-32 mx-auto mb-3"
+          onClick={() => {
+            alert("Changing control");
+          }}
+        >
           <img className="w-32" src="img/joystick.svg"></img>
         </button>
       </div>
@@ -73,7 +83,12 @@ export default function MultiCarousel({ language }) {
             es: "Regular mouse web browsing",
           }}
         ></Heading>
-        <button className="w-32 mx-auto mb-3">
+        <button
+          className="w-32 mx-auto mb-3"
+          onClick={() => {
+            alert("Changing control");
+          }}
+        >
           <img className="w-32" src="img/mouse.svg"></img>
         </button>
       </div>

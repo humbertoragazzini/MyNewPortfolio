@@ -5,6 +5,7 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [controlsType, setControlsType] = useState("mouse");
   const [language, setLanguage] = useState("en");
   const [reflections, setReflections] = useState(false);
   const [postProcessing, setPostProcessing] = useState(false);
@@ -20,6 +21,9 @@ export const AppProvider = ({ children }) => {
     } else {
       setLanguage((prev) => (prev === "en" ? "es" : "en"));
     }
+  };
+  const toggleControls = (device) => {
+    setControlsType(device);
   };
   const toggleReflections = () => setReflections((prev) => !prev);
   const togglePostProcessing = () => setPostProcessing((prev) => !prev);
@@ -78,6 +82,8 @@ export const AppProvider = ({ children }) => {
         changeIlumination,
         selectedProject,
         changeSelectedProject,
+        controlsType,
+        toggleControls,
       }}
     >
       {children}
