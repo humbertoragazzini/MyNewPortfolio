@@ -59,7 +59,7 @@ export default function MultiCarousel({ language }) {
               es: "Controles en pantalla",
             }}
           ></Heading>
-          <img className="w-32 mx-auto mb-3" src="img/touch.svg"></img>
+          <img className="w-32 mx-auto mb-3" src="img/joystick.svg"></img>
         </div>
       </div>
       <div className="w-full px-3 text-white py-9">
@@ -71,8 +71,8 @@ export default function MultiCarousel({ language }) {
             }
             level={1}
             text={{
-              en: "Regular web browsing",
-              es: "Regular web browsing",
+              en: "Regular mouse web browsing",
+              es: "Regular mouse web browsing",
             }}
           ></Heading>
           <img className="w-32 mx-auto mb-3" src="img/touch.svg"></img>
