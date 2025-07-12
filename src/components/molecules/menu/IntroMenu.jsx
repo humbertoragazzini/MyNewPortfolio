@@ -34,6 +34,9 @@ export default function IntroMenu() {
 
   useEffect(() => {
     setIntro(true);
+    alert(
+      "To ensure smooth performance on all devices, the portfolio loads with low graphics settings by default. You can change this anytime in the settings menu."
+    );
   }, []);
 
   return (
