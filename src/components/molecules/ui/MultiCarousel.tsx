@@ -1,8 +1,8 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Heading from "../../atoms/ui/Heading";
 import React, { useContext } from "react";
 import { AppContext } from "../../../context/AppContext";
+import Paragraph from "../../atoms/ui/Paragraph";
 
 export default function MultiCarousel({ language }) {
   const { controlsType, toggleControls } = useContext(AppContext);
@@ -26,19 +26,18 @@ export default function MultiCarousel({ language }) {
     },
   };
   const carouselItems = [
-    <div className="w-full px-3 text-white py-9">
-      <div className="flex flex-col items-center justify-center col-span-12 lg:col-span-6 xl:col-span-4">
-        <Heading
+    <div className="w-full px-3 pt-4 text-white pb-9">
+      <div className="flex flex-col items-center justify-center">
+        <Paragraph
           language={language}
           className={
             "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center mb-6"
           }
-          level={1}
           text={{
             en: "Touch controls",
             es: "Controles tactiles",
           }}
-        ></Heading>
+        ></Paragraph>
         <button
           className="w-32 mx-auto mb-3"
           onClick={() => {
@@ -47,30 +46,34 @@ export default function MultiCarousel({ language }) {
         >
           <img className="w-32 mb-4" src="img/touch.svg"></img>
           {
-            <p
+            <Paragraph
+              language={language}
               className={`border-2 transition-all rounded-xl px-2 py-1 ${
-                controlsType == "touch" ? "border-white" : "border-transparent"
+                controlsType == "touch"
+                  ? "border-white"
+                  : "border-transparent text-transparent"
               }`}
-            >
-              {controlsType == "touch" ? "Selected" : ""}
-            </p>
+              text={{
+                en: "Selected",
+                es: "Activado",
+              }}
+            ></Paragraph>
           }
         </button>
       </div>
     </div>,
-    <div className="w-full px-3 text-white py-9">
+    <div className="w-full px-3 pt-4 text-white pb-9">
       <div className="flex flex-col items-center justify-center col-span-12 lg:col-span-6 xl:col-span-4">
-        <Heading
+        <Paragraph
           language={language}
           className={
             "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center mb-6"
           }
-          level={1}
           text={{
             en: "On screen joysticks",
             es: "Controles en pantalla",
           }}
-        ></Heading>
+        ></Paragraph>
         <button
           className="w-32 mx-auto mb-3"
           onClick={() => {
@@ -79,32 +82,34 @@ export default function MultiCarousel({ language }) {
         >
           <img className="w-32 mb-4" src="img/joystick.svg"></img>
           {
-            <p
+            <Paragraph
+              language={language}
               className={`border-2 transition-all rounded-xl px-2 py-1 ${
                 controlsType == "joystick"
                   ? "border-white"
-                  : "border-transparent"
+                  : "border-transparent text-transparent"
               }`}
-            >
-              {controlsType == "joystick" ? "Selected" : ""}
-            </p>
+              text={{
+                en: "Selected",
+                es: "Activado",
+              }}
+            ></Paragraph>
           }
         </button>
       </div>
     </div>,
-    <div className="w-full px-3 text-white py-9">
+    <div className="w-full px-3 pt-4 text-white pb-9">
       <div className="flex flex-col items-center justify-center col-span-12 lg:col-span-6 xl:col-span-4">
-        <Heading
+        <Paragraph
           language={language}
           className={
             "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center mb-6"
           }
-          level={1}
           text={{
             en: "Regular mouse web browsing",
             es: "Regular mouse web browsing",
           }}
-        ></Heading>
+        ></Paragraph>
         <button
           className="w-32 mx-auto mb-3"
           onClick={() => {
@@ -113,13 +118,18 @@ export default function MultiCarousel({ language }) {
         >
           <img className="w-32 mb-4" src="img/mouse.svg"></img>
           {
-            <p
+            <Paragraph
+              language={language}
               className={`border-2 transition-all rounded-xl px-2 py-1 ${
-                controlsType == "mouse" ? "border-white" : "border-transparent"
+                controlsType == "mouse"
+                  ? "border-white"
+                  : "border-transparent text-transparent"
               }`}
-            >
-              {controlsType == "mouse" ? "Selected" : ""}
-            </p>
+              text={{
+                en: "Selected",
+                es: "Activado",
+              }}
+            ></Paragraph>
           }
         </button>
       </div>
@@ -148,15 +158,27 @@ export default function MultiCarousel({ language }) {
   }
 
   return (
-    <Carousel
-      responsive={responsive}
-      showDots={true}
-      infinite={true}
-      slidesToSlide={1}
-      removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
-      customDot={<CustomDot />}
-    >
-      {carouselItems}
-    </Carousel>
+    <>
+      <Paragraph
+        language={language}
+        className={
+          "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center "
+        }
+        text={{
+          en: "Please select the type of controls, this can be changed from the setting menu later",
+          es: "Porfavor elegi el tipo de control, podras modificar esto mas tarde desde el menu de configuracion",
+        }}
+      ></Paragraph>
+      <Carousel
+        responsive={responsive}
+        showDots={true}
+        infinite={true}
+        slidesToSlide={1}
+        removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
+        customDot={<CustomDot />}
+      >
+        {carouselItems}
+      </Carousel>
+    </>
   );
 }
