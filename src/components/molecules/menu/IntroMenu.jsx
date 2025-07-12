@@ -172,7 +172,7 @@ export default function IntroMenu() {
             <Heading
               language={language}
               className={
-                "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center"
+                "text-white mb-3 font-semibold drop-shadow-[0_0_5px_#fff] text-center"
               }
               level={1}
               text={{
@@ -181,7 +181,7 @@ export default function IntroMenu() {
               }}
             ></Heading>
             <div className="grid w-full grid-cols-12">
-              <div className="col-span-12">
+              <div className="col-span-12 pb-3">
                 <Heading
                   language={language}
                   className={
