@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import Heading from "../../atoms/ui/Heading";
 import Paragraph from "../../atoms/ui/Paragraph";
 
 export default function Project({ language, content, changeSelectedProject }) {
+  useEffect(() => {
+    console.log("refresh Project");
+  }, []);
+
   return (
     <>
       <div

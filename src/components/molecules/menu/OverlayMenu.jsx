@@ -6,9 +6,11 @@ import { LuMenu } from "react-icons/lu";
 import LoadingSystems from "../../atoms/ui/LoadingSystems";
 import LiquidGlassEffect from "../../atoms/ui/LiquidGlassDev";
 import LiquidGlassDisplay from "../../atoms/ui/LiquidGlassDisplay";
+import MultiCarousel from "../ui/MultiCarousel";
 
 export default function OverlayMenu() {
   const {
+    language,
     toggleLanguage,
     isMenuOpen,
     toggleMenu,
@@ -42,17 +44,19 @@ export default function OverlayMenu() {
             toggleMenu();
             console.log("click menu");
           }}
-          className={`m-2 rounded-2xl right-[0px] duration-500 ease-initial cursor-pointer ${isMenuOpen ? "-translate-y-[calc(100%+50px)]" : "translate-y-0"
-            }`}
+          className={`m-2 rounded-2xl right-[0px] duration-500 ease-initial cursor-pointer ${
+            isMenuOpen ? "-translate-y-[calc(100%+50px)]" : "translate-y-0"
+          }`}
         >
           <LuMenu className="relative z-[1000] w-[35px] h-[35px] stroke-white pointer-events-none"></LuMenu>
         </button>
       </div>
       <div
-        className={`fixed ${isMenuOpen
-          ? "translate-y-0 bg-[rgba(120,0,110,0.40)] "
-          : "translate-y-[120vh] bg-[rgba(200,50,180,0.45)] "
-          } z-[9999] backdrop-blur-md transition-all duration-500 ease-initial trans h-[100dvh] w-screen flex justify-center items-center overflow-hidden`}
+        className={`fixed ${
+          isMenuOpen
+            ? "translate-y-0 bg-[rgba(120,0,110,0.40)] "
+            : "translate-y-[120vh] bg-[rgba(200,50,180,0.45)] "
+        } z-[9999] backdrop-blur-md transition-all duration-500 ease-initial trans h-[100dvh] w-screen flex justify-center items-center overflow-hidden`}
       >
         <div className="flex flex-col items-center justify-center">
           <motion.div
@@ -74,7 +78,7 @@ export default function OverlayMenu() {
             ></MenuButton>
             <MenuButton
               onClick={() => {
-                setMenu("settings");
+                setMenu("graph-and-controls");
               }}
               text={{
                 en: "SETTINGS",
@@ -112,7 +116,7 @@ export default function OverlayMenu() {
           </motion.div>
           <motion.div
             animate={{
-              x: menu == "settings" ? 0 : "110vw",
+              x: menu == "graphics" ? 0 : "110vw",
             }}
             className={"absolute flex flex-col flex-wrap"}
           >
@@ -303,7 +307,7 @@ export default function OverlayMenu() {
             </div>
             <MenuButton
               onClick={() => {
-                setMenu("main");
+                setMenu("graph-and-controls");
               }}
               text={{
                 en: "BACK",
@@ -311,6 +315,58 @@ export default function OverlayMenu() {
               }}
               className="text-lg md:text-xl lg:text-2xl xl:text-3xl"
             ></MenuButton>
+          </motion.div>
+          <motion.div
+            animate={{
+              x: menu == "graph-and-controls" ? 0 : "110vw",
+            }}
+            className={"absolute flex flex-col flex-wrap"}
+          >
+            <MenuButton
+              onClick={() => {
+                setMenu("graphics");
+                console.log("click menu");
+              }}
+              text={{
+                en: "Graphics",
+                es: "Graficos",
+              }}
+              className="m-3 text-3xl md:m-4 xl:m-5 md:text-4xl xl:text-6xl"
+            ></MenuButton>
+
+            <MenuButton
+              onClick={() => {
+                setMenu("controls");
+                console.log("click menu");
+              }}
+              text={{
+                en: "Controls",
+                es: "Controles",
+              }}
+              className="m-3 text-3xl md:m-4 xl:m-5 md:text-4xl xl:text-6xl"
+            ></MenuButton>
+
+            <MenuButton
+              onClick={() => {
+                setMenu("main");
+              }}
+              text={{
+                en: "Back",
+                es: "Atras",
+              }}
+              className="m-3 text-3xl md:m-4 xl:m-5 md:text-4xl xl:text-6xl"
+            ></MenuButton>
+          </motion.div>
+
+          <motion.div
+            animate={{
+              display: menu == "controls" ? "block" : "none",
+            }}
+            className={
+              "absolute flex flex-col flex-wrap overflow-hidden max-w-[100vw]"
+            }
+          >
+            <MultiCarousel language={language}></MultiCarousel>
           </motion.div>
         </div>
       </div>

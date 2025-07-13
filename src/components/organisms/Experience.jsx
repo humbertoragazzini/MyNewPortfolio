@@ -28,6 +28,11 @@ export default function Experience() {
   const touchData = useRef(null);
   const { dpr, selectedProject, controlsType } = useContext(AppContext);
   const geometryFloor = useRef(new THREE.BoxGeometry(20, 1, 30));
+
+  useEffect(() => {
+    console.log("Refresh Experience");
+  }, []);
+
   // Set the drag hook and define component movement based on gesture data.
   const bind = useGesture({
     onPinch: ({ touches, offset: [scale, angle], origin, velocity }) => {
