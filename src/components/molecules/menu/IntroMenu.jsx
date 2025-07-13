@@ -4,6 +4,7 @@ import MenuButton from "./MenuButton";
 import { motion } from "framer-motion";
 import Heading from "../../atoms/ui/Heading";
 import MultiCarousel from "../ui/MultiCarousel";
+import Paragraph from "../../atoms/ui/Paragraph";
 
 export default function IntroMenu() {
   const {
@@ -353,6 +354,18 @@ export default function IntroMenu() {
             >
               <div className="m-5 p-5 md:p-10 lg:p-14 w-full lg:w-3/4 h-fit bg-[rgba(0,0,65,0.75)] rounded-4xl border-4 border-white neon-box text-md md:text-lg lg:text-xl lg:leading-8 xl:leading-14">
                 <div className="grid w-full grid-cols-12">
+                  <div className="col-span-12 pb-3">
+                    <Paragraph
+                      language={language}
+                      className={
+                        "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center "
+                      }
+                      text={{
+                        en: "Please select the type of controls, this can be changed from the setting menu later",
+                        es: "Porfavor elegi el tipo de control, podras modificar esto mas tarde desde el menu de configuracion",
+                      }}
+                    ></Paragraph>
+                  </div>
                   <div className="col-span-12 pb-3">
                     <MultiCarousel language={language}></MultiCarousel>
                   </div>

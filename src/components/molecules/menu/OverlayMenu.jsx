@@ -7,6 +7,7 @@ import LoadingSystems from "../../atoms/ui/LoadingSystems";
 import LiquidGlassEffect from "../../atoms/ui/LiquidGlassDev";
 import LiquidGlassDisplay from "../../atoms/ui/LiquidGlassDisplay";
 import MultiCarousel from "../ui/MultiCarousel";
+import Paragraph from "../../atoms/ui/Paragraph";
 
 export default function OverlayMenu() {
   const {
@@ -120,6 +121,16 @@ export default function OverlayMenu() {
             }}
             className={"absolute flex flex-col flex-wrap"}
           >
+            <div className="flex items-center justify-center w-full">
+              <Paragraph
+                text={{
+                  en: "Graphics",
+                  es: "Graficos",
+                }}
+                language={language}
+                className="!mx-auto text-3xl md:text-4xl xl:text-6xl pb-5 orbitron font-[600] text-white drop-shadow-[0_0_5px_#fff]"
+              ></Paragraph>
+            </div>
             <MenuButton
               onClick={() => {
                 toggleReflections();
@@ -357,17 +368,27 @@ export default function OverlayMenu() {
               className="m-3 text-3xl md:m-4 xl:m-5 md:text-4xl xl:text-6xl"
             ></MenuButton>
           </motion.div>
-          {menu == "controls" && (
-            <motion.div
-              initial={{
-                x: "110vw",
-              }}
-              animate={{
-                x: menu == "controls" ? 0 : "110vw",
-              }}
-              className={"absolute overflow-hidden max-w-[100vw]"}
-            >
-              <MultiCarousel language={language}></MultiCarousel>
+          <motion.div
+            initial={{
+              x: "110vw",
+            }}
+            animate={{
+              x: menu == "controls" ? 0 : "110vw",
+            }}
+            className={"absolute overflow-hidden max-w-[100vw]"}
+          >
+            <div className="flex items-center justify-center w-full">
+              <Paragraph
+                text={{
+                  en: "Controls",
+                  es: "Controles",
+                }}
+                language={language}
+                className="!mx-auto text-3xl md:text-4xl xl:text-6xl pb-5 orbitron font-[600] text-white drop-shadow-[0_0_5px_#fff]"
+              ></Paragraph>
+            </div>
+            <MultiCarousel language={language}></MultiCarousel>
+            <div className="flex items-center justify-center w-full">
               <MenuButton
                 onClick={() => {
                   setMenu("graph-and-controls");
@@ -376,10 +397,10 @@ export default function OverlayMenu() {
                   en: "Back",
                   es: "Atras",
                 }}
-                className="!mx-auto text-3xl md:text-4xl xl:text-6xl"
+                className="!mx-auto text-3xl md:text-4xl xl:text-6xl pt-5"
               ></MenuButton>
-            </motion.div>
-          )}
+            </div>
+          </motion.div>
         </div>
       </div>
       {/* <LiquidGlassEffect></LiquidGlassEffect> */}

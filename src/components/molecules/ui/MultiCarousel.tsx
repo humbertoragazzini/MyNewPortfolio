@@ -47,16 +47,6 @@ export default function MultiCarousel({ language }) {
 
   return (
     <>
-      <Paragraph
-        language={language}
-        className={
-          "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center "
-        }
-        text={{
-          en: "Please select the type of controls, this can be changed from the setting menu later",
-          es: "Porfavor elegi el tipo de control, podras modificar esto mas tarde desde el menu de configuracion",
-        }}
-      ></Paragraph>
       <Carousel
         responsive={responsive}
         showDots={true}
