@@ -26,8 +26,7 @@ export default function Experience() {
   const joystickVerticalSpeed = useRef(null);
   const [turnOn, setTurnOn] = useState(false);
   const touchData = useRef(null);
-  const { dpr, selectedProject, changeSelectedProject } =
-    useContext(AppContext);
+  const { dpr, selectedProject, controlsType } = useContext(AppContext);
   const geometryFloor = useRef(new THREE.BoxGeometry(20, 1, 30));
   // Set the drag hook and define component movement based on gesture data.
   const bind = useGesture({
@@ -49,11 +48,14 @@ export default function Experience() {
         touchAction: "none",
       }}
     >
-      <CustomJoysticks
-        joystickHorizontalSpeed={joystickHorizontalSpeed}
-        joystickVerticalSpeed={joystickVerticalSpeed}
-        scrollRef={scrollRef}
-      ></CustomJoysticks>
+      {controlsType == "joystick" && (
+        <CustomJoysticks
+          joystickHorizontalSpeed={joystickHorizontalSpeed}
+          joystickVerticalSpeed={joystickVerticalSpeed}
+          scrollRef={scrollRef}
+        ></CustomJoysticks>
+      )}
+
       {/* Scrollable container */}
       <div
         ref={scrollContainerRef}

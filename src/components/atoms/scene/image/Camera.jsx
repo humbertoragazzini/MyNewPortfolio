@@ -100,11 +100,12 @@ export default function Camera({
   const horizontal = useRef({ x: 0, y: 0, z: 0 });
   const lateralDisplacement = useRef(0);
   const vertical = useRef(0);
-  const { selectedProject } = useContext(AppContext);
+  const { selectedProject, controlsType } = useContext(AppContext);
 
   useEffect(() => {
+    console.log(controlsType);
     const move = (e) => {
-      if (joystickRight.current == null) {
+      if (joystickRight.current == null && controlsType == "mouse") {
         horizontal.current.x =
           (-(e.clientX - window.outerWidth / 2) / window.outerWidth) * 1;
         horizontal.current.y =
@@ -113,7 +114,7 @@ export default function Camera({
     };
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
-  }, []);
+  }, [controlsType]);
 
   useFrame(() => {
     if (selectedProject == null) {
