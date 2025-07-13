@@ -357,17 +357,31 @@ export default function OverlayMenu() {
               className="m-3 text-3xl md:m-4 xl:m-5 md:text-4xl xl:text-6xl"
             ></MenuButton>
           </motion.div>
-
-          <motion.div
-            animate={{
-              display: menu == "controls" ? "block" : "none",
-            }}
-            className={
-              "absolute flex flex-col flex-wrap overflow-hidden max-w-[100vw]"
-            }
-          >
-            <MultiCarousel language={language}></MultiCarousel>
-          </motion.div>
+          {menu == "controls" && (
+            <motion.div
+              initial={{
+                x: "110vw",
+              }}
+              animate={{
+                x: menu == "controls" ? 0 : "110vw",
+              }}
+              className={
+                "absolute flex flex-col justify-center items-center overflow-hidden max-w-[100vw]"
+              }
+            >
+              <MultiCarousel language={language}></MultiCarousel>
+              <MenuButton
+                onClick={() => {
+                  setMenu("graph-and-controls");
+                }}
+                text={{
+                  en: "Back",
+                  es: "Atras",
+                }}
+                className="!mx-auto text-3xl md:text-4xl xl:text-6xl"
+              ></MenuButton>
+            </motion.div>
+          )}
         </div>
       </div>
       {/* <LiquidGlassEffect></LiquidGlassEffect> */}

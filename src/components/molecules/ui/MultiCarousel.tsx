@@ -26,7 +26,7 @@ export default function MultiCarousel({ language }) {
     },
   };
   const carouselItems = [
-    <div className="w-screen px-3 pt-4 text-white pb-9">
+    <div className="px-3 pt-4 mx-auto text-white w-fit pb-9">
       <div className="flex flex-col items-center justify-center">
         <Paragraph
           language={language}
@@ -68,7 +68,7 @@ export default function MultiCarousel({ language }) {
         </button>
       </div>
     </div>,
-    <div className="w-screen px-3 pt-4 text-white pb-9">
+    <div className="px-3 pt-4 mx-auto text-white w-fit pb-9">
       <div className="flex flex-col items-center justify-center col-span-12 lg:col-span-6 xl:col-span-4">
         <Paragraph
           language={language}
@@ -110,7 +110,7 @@ export default function MultiCarousel({ language }) {
         </button>
       </div>
     </div>,
-    <div className="w-screen px-3 pt-4 text-white pb-9">
+    <div className="px-3 pt-4 mx-auto text-white w-fit pb-9">
       <div className="flex flex-col items-center justify-center col-span-12 lg:col-span-6 xl:col-span-4">
         <Paragraph
           language={language}
@@ -193,7 +193,13 @@ export default function MultiCarousel({ language }) {
         infinite={false}
         slidesToSlide={1}
         removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
-        customDot={<CustomDot />}
+        customDot={
+          <CustomDot
+            onClick={() => {
+              console.log("change item");
+            }}
+          />
+        }
       >
         {carouselItems}
       </Carousel>
