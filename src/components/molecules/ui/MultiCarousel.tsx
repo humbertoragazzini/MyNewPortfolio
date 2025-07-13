@@ -25,135 +25,6 @@ export default function MultiCarousel({ language }) {
       items: 1,
     },
   };
-  const carouselItems = [
-    <div className="px-3 pt-4 mx-auto text-white w-fit pb-9">
-      <div className="flex flex-col items-center justify-center">
-        <Paragraph
-          language={language}
-          className={
-            "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center mb-6"
-          }
-          text={{
-            en: "Touch controls",
-            es: "Controles tactiles",
-          }}
-        ></Paragraph>
-        <button
-          className="w-32 mx-auto mb-3"
-          onClick={() => {
-            toggleControls("touch");
-          }}
-        >
-          <img className="w-32 mb-4" src="img/touch.svg"></img>
-          {controlsType == "touch" && (
-            <Paragraph
-              language={language}
-              className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-green-600 !text-black`}
-              text={{
-                en: "Enabled",
-                es: "Activado",
-              }}
-            ></Paragraph>
-          )}
-          {controlsType !== "touch" && (
-            <Paragraph
-              language={language}
-              className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-red-600`}
-              text={{
-                en: "Disabled",
-                es: "Desabilitado",
-              }}
-            ></Paragraph>
-          )}
-        </button>
-      </div>
-    </div>,
-    <div className="px-3 pt-4 mx-auto text-white w-fit pb-9">
-      <div className="flex flex-col items-center justify-center col-span-12 lg:col-span-6 xl:col-span-4">
-        <Paragraph
-          language={language}
-          className={
-            "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center mb-6"
-          }
-          text={{
-            en: "On screen joysticks",
-            es: "Controles en pantalla",
-          }}
-        ></Paragraph>
-        <button
-          className="w-32 mx-auto mb-3"
-          onClick={() => {
-            toggleControls("joystick");
-          }}
-        >
-          <img className="w-32 mb-4" src="img/joystick.svg"></img>
-          {controlsType == "joystick" && (
-            <Paragraph
-              language={language}
-              className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-green-600 !text-black`}
-              text={{
-                en: "Enabled",
-                es: "Activado",
-              }}
-            ></Paragraph>
-          )}
-          {controlsType !== "joystick" && (
-            <Paragraph
-              language={language}
-              className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-red-600`}
-              text={{
-                en: "Disabled",
-                es: "Desabilitado",
-              }}
-            ></Paragraph>
-          )}
-        </button>
-      </div>
-    </div>,
-    <div className="px-3 pt-4 mx-auto text-white w-fit pb-9">
-      <div className="flex flex-col items-center justify-center col-span-12 lg:col-span-6 xl:col-span-4">
-        <Paragraph
-          language={language}
-          className={
-            "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center mb-6"
-          }
-          text={{
-            en: "Regular mouse web browsing",
-            es: "Regular mouse web browsing",
-          }}
-        ></Paragraph>
-        <button
-          className="w-32 mx-auto mb-3"
-          onClick={() => {
-            toggleControls("mouse");
-          }}
-        >
-          <img className="w-32 mb-4" src="img/mouse.svg"></img>
-          {controlsType == "mouse" && (
-            <Paragraph
-              language={language}
-              className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-green-600 !text-black`}
-              text={{
-                en: "Enabled",
-                es: "Activado",
-              }}
-            ></Paragraph>
-          )}
-          {controlsType !== "mouse" && (
-            <Paragraph
-              language={language}
-              className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-red-600`}
-              text={{
-                en: "Disabled",
-                es: "Desabilitado",
-              }}
-            ></Paragraph>
-          )}
-        </button>
-      </div>
-    </div>,
-  ];
-
   function CustomDot({ onClick, ...rest }) {
     const {
       onMove,
@@ -161,8 +32,7 @@ export default function MultiCarousel({ language }) {
       active,
       carouselState: { currentSlide, deviceType },
     } = rest;
-    // onMove means if dragging or swiping in progress.
-    // active is provided by this lib for checking if the item is active or not.
+
     return (
       <button onClick={() => onClick()}>
         {/* {React.Children.toArray(carouselItems)[index]} */}
@@ -201,7 +71,132 @@ export default function MultiCarousel({ language }) {
           />
         }
       >
-        {carouselItems}
+        <div className="px-3 pt-4 mx-auto text-white w-fit pb-9">
+          <div className="flex flex-col items-center justify-center">
+            <Paragraph
+              language={language}
+              className={
+                "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center mb-6"
+              }
+              text={{
+                en: "Touch controls",
+                es: "Controles tactiles",
+              }}
+            ></Paragraph>
+            <button
+              className="w-32 mx-auto mb-3"
+              onClick={() => {
+                toggleControls("touch");
+              }}
+            >
+              <img className="w-32 mb-4" src="img/touch.svg"></img>
+              {controlsType == "touch" && (
+                <Paragraph
+                  language={language}
+                  className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-green-600 !text-black`}
+                  text={{
+                    en: "Enabled",
+                    es: "Activado",
+                  }}
+                ></Paragraph>
+              )}
+              {controlsType !== "touch" && (
+                <Paragraph
+                  language={language}
+                  className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-red-600`}
+                  text={{
+                    en: "Disabled",
+                    es: "Desabilitado",
+                  }}
+                ></Paragraph>
+              )}
+            </button>
+          </div>
+        </div>
+        <div className="px-3 pt-4 mx-auto text-white w-fit pb-9">
+          <div className="flex flex-col items-center justify-center col-span-12 lg:col-span-6 xl:col-span-4">
+            <Paragraph
+              language={language}
+              className={
+                "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center mb-6"
+              }
+              text={{
+                en: "On screen joysticks",
+                es: "Controles en pantalla",
+              }}
+            ></Paragraph>
+            <button
+              className="w-32 mx-auto mb-3"
+              onClick={() => {
+                toggleControls("joystick");
+              }}
+            >
+              <img className="w-32 mb-4" src="img/joystick.svg"></img>
+              {controlsType == "joystick" && (
+                <Paragraph
+                  language={language}
+                  className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-green-600 !text-black`}
+                  text={{
+                    en: "Enabled",
+                    es: "Activado",
+                  }}
+                ></Paragraph>
+              )}
+              {controlsType !== "joystick" && (
+                <Paragraph
+                  language={language}
+                  className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-red-600`}
+                  text={{
+                    en: "Disabled",
+                    es: "Desabilitado",
+                  }}
+                ></Paragraph>
+              )}
+            </button>
+          </div>
+        </div>
+        <div className="px-3 pt-4 mx-auto text-white w-fit pb-9">
+          <div className="flex flex-col items-center justify-center col-span-12 lg:col-span-6 xl:col-span-4">
+            <Paragraph
+              language={language}
+              className={
+                "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center mb-6"
+              }
+              text={{
+                en: "Regular mouse web browsing",
+                es: "Regular mouse web browsing",
+              }}
+            ></Paragraph>
+            <button
+              className="w-32 mx-auto mb-3"
+              onClick={() => {
+                toggleControls("mouse");
+              }}
+            >
+              <img className="w-32 mb-4" src="img/mouse.svg"></img>
+              {controlsType == "mouse" && (
+                <Paragraph
+                  language={language}
+                  className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-green-600 !text-black`}
+                  text={{
+                    en: "Enabled",
+                    es: "Activado",
+                  }}
+                ></Paragraph>
+              )}
+              {controlsType !== "mouse" && (
+                <Paragraph
+                  language={language}
+                  className={`border-2 transition-all rounded-xl px-2 py-1 border-white bg-red-600`}
+                  text={{
+                    en: "Disabled",
+                    es: "Desabilitado",
+                  }}
+                ></Paragraph>
+              )}
+            </button>
+          </div>
+        </div>
       </Carousel>
     </>
   );

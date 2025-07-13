@@ -365,9 +365,7 @@ export default function OverlayMenu() {
               animate={{
                 x: menu == "controls" ? 0 : "110vw",
               }}
-              className={
-                "absolute flex flex-col justify-center items-center overflow-hidden max-w-[100vw]"
-              }
+              className={"absolute overflow-hidden max-w-[100vw]"}
             >
               <MultiCarousel language={language}></MultiCarousel>
               <MenuButton
