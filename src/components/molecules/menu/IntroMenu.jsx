@@ -183,23 +183,21 @@ export default function IntroMenu() {
             }}
           ></Heading>
           {count == 0 && (
-            <div
+            <button
               onClick={() => {
                 setIsAcepted(true);
               }}
+              className="block px-5 py-3 m-2 text-black transition-all duration-500 border-2 border-black cursor-pointer bg-amber-400 rounded-xl w-fit hover:text-amber-400 hover:bg-black hover:border-amber-400"
             >
-              <Heading
+              <Paragraph
                 language={language}
-                className={
-                  "text-white font-semibold drop-shadow-[0_0_5px_#fff] hover:scale-125 transition-all ease-in-out cursor-pointer text-center"
-                }
-                level={1}
                 text={{
                   en: "Start",
                   es: "Continuar",
                 }}
-              ></Heading>
-            </div>
+                className="text-2xl orbitron font-[600]"
+              ></Paragraph>
+            </button>
           )}
           {count >= 1 && (
             <div>
