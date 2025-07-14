@@ -139,7 +139,7 @@ export default function OverlayMenu() {
                 es: `REFLEJOS:`,
               }}
               language={language}
-              className="orbitron text-center text-xl md:text-2xl xl:text-3xl font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
+              className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
             ></Paragraph>
             <div className="flex justify-center x-auto mb-5 text-xl md:text-2xl xl:text-3xl orbitron font-[600] text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
@@ -183,7 +183,7 @@ export default function OverlayMenu() {
                 es: `Postprocesado:`,
               }}
               language={language}
-              className="orbitron text-center text-xl md:text-2xl xl:text-3xl font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
+              className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
             ></Paragraph>
             <div className="flex justify-center mb-5 text-xl md:text-2xl xl:text-3xl orbitron font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
@@ -227,7 +227,7 @@ export default function OverlayMenu() {
                 es: "CALIDAD DE LOS REFLEJOS",
               }}
               language={language}
-              className="orbitron text-center text-xl md:text-2xl xl:text-3xl font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
+              className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
             ></Paragraph>
             <div className="flex justify-center flex-wrap mb-5 mx-6 text-xl md:text-2xl xl:text-3xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
@@ -281,7 +281,7 @@ export default function OverlayMenu() {
                 es: "ILUMINACION",
               }}
               language={language}
-              className="orbitron text-center text-xl md:text-2xl xl:text-3xl font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
+              className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
             ></Paragraph>
             <div className="flex justify-center flex-wrap mb-5 mx-6 text-xl md:text-2xl xl:text-3xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
@@ -307,15 +307,15 @@ export default function OverlayMenu() {
                 OFF
               </motion.div>
             </div>
-            <MenuButton
+            <Paragraph
               text={{
                 en: "RESOLUTION",
                 es: "RESOLUCION",
               }}
-              animated={false}
-              className="text-lg md:text-xl lg:text-2xl xl:text-3xl"
-            ></MenuButton>
-            <div className="flex justify-center mb-5 text-xl md:text-2xl xl:text-3xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
+              language={language}
+              className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
+            ></Paragraph>
+            <div className="flex justify-center mb-5 text-xl md:text-2xl xl:text-3xl orbitron font-[600] text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
                 className="mx-3"
                 onClick={() => {
