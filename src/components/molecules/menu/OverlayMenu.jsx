@@ -229,9 +229,9 @@ export default function OverlayMenu() {
               language={language}
               className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
             ></Paragraph>
-            <div className="flex justify-center flex-wrap mb-5 mx-6 text-xl md:text-2xl xl:text-3xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
+            <div className="flex justify-center flex-wrap mb-5 mx-6 text-xl md:text-2xl xl:text-3xl orbitron font-[600] text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
-                className="mx-3"
+                className="mx-3 transition-all duration-500 hover:scale-125 hover:cursor-pointer"
                 onClick={() => {
                   setReflectionSize(256);
                 }}
@@ -242,7 +242,7 @@ export default function OverlayMenu() {
                 LOW
               </motion.div>
               <motion.div
-                className="mx-3"
+                className="mx-3 transition-all duration-500 hover:scale-125 hover:cursor-pointer"
                 onClick={() => {
                   setReflectionSize(512);
                 }}
@@ -253,7 +253,7 @@ export default function OverlayMenu() {
                 MEDIUM
               </motion.div>
               <motion.div
-                className="mx-3"
+                className="mx-3 transition-all duration-500 hover:scale-125 hover:cursor-pointer"
                 onClick={() => {
                   setReflectionSize(1024);
                 }}
@@ -264,7 +264,7 @@ export default function OverlayMenu() {
                 HIGH
               </motion.div>
               <motion.div
-                className="mx-3"
+                className="mx-3 transition-all duration-500 hover:scale-125 hover:cursor-pointer"
                 onClick={() => {
                   setReflectionSize(2048);
                 }}
@@ -317,7 +317,7 @@ export default function OverlayMenu() {
             ></Paragraph>
             <div className="flex justify-center mb-5 text-xl md:text-2xl xl:text-3xl orbitron font-[600] text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
-                className="mx-3"
+                className="mx-3 transition-all duration-500 hover:scale-125 hover:cursor-pointer"
                 onClick={() => {
                   changeDpr("low");
                 }}
@@ -328,7 +328,7 @@ export default function OverlayMenu() {
                 LOW
               </motion.div>
               <motion.div
-                className="mx-3"
+                className="mx-3 transition-all duration-500 hover:scale-125 hover:cursor-pointer"
                 onClick={() => {
                   changeDpr("medium");
                 }}
@@ -339,7 +339,7 @@ export default function OverlayMenu() {
                 MEDIUM
               </motion.div>
               <motion.div
-                className="mx-3"
+                className="mx-3 transition-all duration-500 hover:scale-125 hover:cursor-pointer"
                 onClick={() => {
                   changeDpr("high");
                 }}
