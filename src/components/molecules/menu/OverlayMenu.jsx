@@ -134,14 +134,11 @@ export default function OverlayMenu() {
               ></Paragraph>
             </div>
             <MenuButton
-              onClick={() => {
-                toggleReflections();
-              }}
               text={{
                 en: `REFLECTION:`,
                 es: `REFLEJOS:`,
               }}
-              className="text-lg md:text-xl lg:text-2xl xl:text-3xl"
+              className="text-lg md:text-xl lg:text-2xl xl:text-3xl !scale-100"
             ></MenuButton>
             <div className="flex justify-center mb-5 text-xl md:text-2xl xl:text-3xl orbitron font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
@@ -149,16 +146,34 @@ export default function OverlayMenu() {
                 animate={{
                   opacity: reflections ? 1 : 0.25,
                 }}
+                onClick={() => {
+                  toggleReflections(true);
+                }}
               >
-                ON
+                <MenuButton
+                  text={{
+                    en: `ON`,
+                    es: `Activado`,
+                  }}
+                  className="text-lg md:text-xl lg:text-2xl !scale-100"
+                ></MenuButton>
               </motion.div>
               <motion.div
                 className="mx-3"
                 animate={{
                   opacity: !reflections ? 1 : 0.25,
                 }}
+                onClick={() => {
+                  toggleReflections(false);
+                }}
               >
-                OFF
+                <MenuButton
+                  text={{
+                    en: `OFF`,
+                    es: `Desactivado`,
+                  }}
+                  className="text-lg md:text-xl lg:text-2xl !scale-100"
+                ></MenuButton>
               </motion.div>
             </div>
             <MenuButton
