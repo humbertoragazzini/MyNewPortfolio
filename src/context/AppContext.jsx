@@ -26,7 +26,7 @@ export const AppProvider = ({ children }) => {
     setControlsType(device);
   };
   const toggleReflections = (value) => setReflections(value);
-  const togglePostProcessing = () => setPostProcessing((prev) => !prev);
+  const togglePostProcessing = (value) => setPostProcessing(value);
   const changeReflectionQuality = (quality) => {
     setReflectionQuality(quality);
   };

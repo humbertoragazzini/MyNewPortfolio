@@ -133,14 +133,15 @@ export default function OverlayMenu() {
                 className="!mx-auto text-3xl md:text-4xl xl:text-6xl pb-5 orbitron font-[600] text-white drop-shadow-[0_0_5px_#fff]"
               ></Paragraph>
             </div>
-            <MenuButton
+            <Paragraph
               text={{
                 en: `REFLECTION:`,
                 es: `REFLEJOS:`,
               }}
-              className="text-lg md:text-xl lg:text-2xl xl:text-3xl !scale-100"
-            ></MenuButton>
-            <div className="flex justify-center mb-5 text-xl md:text-2xl xl:text-3xl orbitron font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
+              language={language}
+              className="orbitron text-center text-xl md:text-2xl xl:text-3xl font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
+            ></Paragraph>
+            <div className="flex justify-center x-auto mb-5 text-xl md:text-2xl xl:text-3xl orbitron font-[600] text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
                 className="mx-3"
                 animate={{
@@ -155,7 +156,7 @@ export default function OverlayMenu() {
                     en: `ON`,
                     es: `Activado`,
                   }}
-                  className="text-lg md:text-xl lg:text-2xl !scale-100"
+                  className="text-lg md:text-xl lg:text-2xl"
                 ></MenuButton>
               </motion.div>
               <motion.div
@@ -172,20 +173,18 @@ export default function OverlayMenu() {
                     en: `OFF`,
                     es: `Desactivado`,
                   }}
-                  className="text-lg md:text-xl lg:text-2xl !scale-100"
+                  className="text-lg md:text-xl lg:text-2xl"
                 ></MenuButton>
               </motion.div>
             </div>
-            <MenuButton
-              onClick={() => {
-                togglePostProcessing();
-              }}
+            <Paragraph
               text={{
                 en: `Postprocessing:`,
                 es: `Postprocesado:`,
               }}
-              className="text-lg md:text-xl lg:text-2xl xl:text-3xl"
-            ></MenuButton>
+              language={language}
+              className="orbitron text-center text-xl md:text-2xl xl:text-3xl font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
+            ></Paragraph>
             <div className="flex justify-center mb-5 text-xl md:text-2xl xl:text-3xl orbitron font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
                 className="mx-3"
@@ -193,7 +192,16 @@ export default function OverlayMenu() {
                   opacity: postProcessing ? 1 : 0.25,
                 }}
               >
-                ON
+                <MenuButton
+                  onClick={() => {
+                    togglePostProcessing(true);
+                  }}
+                  text={{
+                    en: `ON`,
+                    es: `Actiavado`,
+                  }}
+                  className="text-lg md:text-xl lg:text-2xl"
+                ></MenuButton>
               </motion.div>
               <motion.div
                 className="mx-3"
@@ -201,17 +209,26 @@ export default function OverlayMenu() {
                   opacity: !postProcessing ? 1 : 0.25,
                 }}
               >
-                OFF
+                <MenuButton
+                  onClick={() => {
+                    togglePostProcessing(false);
+                  }}
+                  text={{
+                    en: `OFF`,
+                    es: `Desactivado`,
+                  }}
+                  className="text-lg md:text-xl lg:text-2xl"
+                ></MenuButton>
               </motion.div>
             </div>
-            <MenuButton
+            <Paragraph
               text={{
                 en: "REFLECTION QUALITY",
                 es: "CALIDAD DE LOS REFLEJOS",
               }}
-              animated={false}
-              className="text-lg md:text-xl lg:text-2xl xl:text-3xl"
-            ></MenuButton>
+              language={language}
+              className="orbitron text-center text-xl md:text-2xl xl:text-3xl font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
+            ></Paragraph>
             <div className="flex justify-center flex-wrap mb-5 mx-6 text-xl md:text-2xl xl:text-3xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
                 className="mx-3"
@@ -258,14 +275,14 @@ export default function OverlayMenu() {
                 ULTRA
               </motion.div>
             </div>
-            <MenuButton
+            <Paragraph
               text={{
                 en: "ILUMINATION",
                 es: "ILUMINACION",
               }}
-              animated={false}
-              className="text-lg md:text-xl lg:text-2xl xl:text-3xl"
-            ></MenuButton>
+              language={language}
+              className="orbitron text-center text-xl md:text-2xl xl:text-3xl font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
+            ></Paragraph>
             <div className="flex justify-center flex-wrap mb-5 mx-6 text-xl md:text-2xl xl:text-3xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
                 className="mx-3"
