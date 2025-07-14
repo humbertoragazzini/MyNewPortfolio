@@ -42,7 +42,7 @@ export default function Project({ language, content, changeSelectedProject }) {
                 {content.technologies.length > 0 &&
                   content.technologies.map((tech) => {
                     return (
-                      <div className="px-4 py-3 m-2 text-black bg-amber-400 rounded-xl">
+                      <div className="block px-5 py-3 mt-3 mr-2 text-xl orbitron font-[600] text-black transition-all duration-500 border-2 border-black cursor-pointer bg-amber-400 rounded-xl w-fit hover:text-amber-400 hover:bg-black hover:border-amber-400">
                         <p className="font-semibold">{tech}</p>
                       </div>
                     );
@@ -96,7 +96,7 @@ export default function Project({ language, content, changeSelectedProject }) {
                   <a
                     href={link.url}
                     target="_blank"
-                    className="block px-4 py-3 m-2 text-black cursor-pointer bg-amber-400 rounded-xl w-fit"
+                    className="block px-5 py-3 mt-3 text-xl orbitron font-[600] text-black transition-all duration-500 border-2 border-black cursor-pointer bg-amber-400 rounded-xl w-fit hover:text-amber-400 hover:bg-black hover:border-amber-400"
                   >
                     <Paragraph
                       language={language}
@@ -115,7 +115,7 @@ export default function Project({ language, content, changeSelectedProject }) {
                   console.log("change to free view");
                   changeSelectedProject(null);
                 }}
-                className="block px-4 py-3 m-2 text-black cursor-pointer bg-amber-400 rounded-xl w-fit"
+                className="block px-5 py-3 mt-3 text-xl orbitron font-[600] text-black transition-all duration-500 border-2 border-black cursor-pointer bg-amber-400 rounded-xl w-fit hover:text-amber-400 hover:bg-black hover:border-amber-400"
               >
                 <Paragraph
                   language={language}
