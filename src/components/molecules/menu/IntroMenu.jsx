@@ -187,7 +187,7 @@ export default function IntroMenu() {
               onClick={() => {
                 setIsAcepted(true);
               }}
-              className="block px-5 py-3 m-2 text-black transition-all duration-500 border-2 border-black cursor-pointer bg-amber-400 rounded-xl w-fit hover:text-amber-400 hover:bg-black hover:border-amber-400"
+              className="block px-5 py-3 m-2 text-xl orbitron font-[600] text-black transition-all duration-500 border-2 border-black cursor-pointer bg-amber-400 rounded-xl w-fit hover:text-amber-400 hover:bg-black hover:border-amber-400"
             >
               <Paragraph
                 language={language}
@@ -195,7 +195,6 @@ export default function IntroMenu() {
                   en: "Start",
                   es: "Continuar",
                 }}
-                className="text-2xl orbitron font-[600]"
               ></Paragraph>
             </button>
           )}
