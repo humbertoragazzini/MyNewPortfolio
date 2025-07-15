@@ -211,7 +211,7 @@ export default [
         url: "https://github.com/humbertoragazzini/TheSuperGame?tab=readme-ov-file",
       },
     ],
-    embeded: "gPavrQuxkfc",
+    embeded: "UrZKLTwbFvw",
     gif: "",
     video: "",
     images: ["img/project-5.png"],
