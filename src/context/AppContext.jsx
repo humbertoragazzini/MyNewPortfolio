@@ -27,6 +27,7 @@ export const AppProvider = ({ children }) => {
     setControlsType(device);
   };
   const toggleReflections = (value) => setReflections(value);
+  const currentResolutionSet = (value) => setCurrentResolution(value);
   const togglePostProcessing = (value) => setPostProcessing(value);
   const changeReflectionQuality = (quality) => {
     setReflectionQuality(quality);
@@ -86,7 +87,7 @@ export const AppProvider = ({ children }) => {
         controlsType,
         toggleControls,
         currentResolution,
-        setCurrentResolution,
+        currentResolutionSet,
       }}
     >
       {children}

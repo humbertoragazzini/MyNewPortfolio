@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense, useRef, useState } from "react";
 import "./App.css";
 import Experience from "./components/organisms/Experience";
 import { AppProvider } from "./context/AppContext";

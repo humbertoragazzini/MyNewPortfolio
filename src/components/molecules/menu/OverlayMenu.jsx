@@ -32,6 +32,9 @@ export default function OverlayMenu() {
   useEffect(() => {
     changeReflectionQuality(reflectionSize);
   }, [reflectionSize]);
+  useEffect(() => {
+    console.log(currentResolution);
+  }, []);
 
   return (
     <>
@@ -352,7 +355,7 @@ export default function OverlayMenu() {
               </motion.div>
             </div>
             {currentResolution !== null && (
-              <div className="orbitron mb-5 text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] ">
+              <div className="orbitron mb-5 text-center text-xl md:text-2xl xl:text-3xl uppercase font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] ">
                 <span className="m-2">
                   {Math.round(currentResolution.width)}
                 </span>
@@ -449,11 +452,6 @@ export default function OverlayMenu() {
           </motion.div>
         </div>
       </div>
-      {/* <LiquidGlassEffect></LiquidGlassEffect> */}
-      {/* TODO make the monitors to show the interface of the ship this maybe will be done on blender */}
-      {/* <div className="fixed top-0 left-0 z-[9999] w-[400px] h-[200px]">
-        <LoadingSystems></LoadingSystems>
-      </div> */}
     </>
   );
 }

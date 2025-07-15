@@ -7,32 +7,21 @@ import MultiCarousel from "../ui/MultiCarousel";
 import Paragraph from "../../atoms/ui/Paragraph";
 
 export default function IntroMenu() {
-  const {
-    language,
-    toggleLanguage,
-    isMenuOpen,
-    toggleMenu,
-    toggleReflections,
-    reflections,
-    changeReflectionQuality,
-    dpr,
-    changeDpr,
-    postProcessing,
-    togglePostProcessing,
-  } = useContext(AppContext);
+  const { language, toggleLanguage, currentResolution } =
+    useContext(AppContext);
   const [intro, setIntro] = useState(false);
   const [isAcepted, setIsAcepted] = useState(false);
   const [count, setCount] = useState(10);
 
-  useEffect(() => {
-    if (count === 0) return; // Stop when count reaches 0
+  // useEffect(() => {
+  //   if (count === 0) return; // Stop when count reaches 0
 
-    const timer = setInterval(() => {
-      setCount((prev) => prev - 1);
-    }, 1000);
+  //   const timer = setInterval(() => {
+  //     setCount((prev) => prev - 1);
+  //   }, 1000);
 
-    return () => clearInterval(timer); // Clean up interval
-  }, [count]);
+  //   return () => clearInterval(timer); // Clean up interval
+  // }, [count]);
 
   useEffect(() => {
     setIntro(true);
@@ -182,6 +171,20 @@ export default function IntroMenu() {
               es: "El portoflio fue cargado con las configuraciones de calidad minimas para evitar problemas en la velocidad de ejecucion del programa, puede aumentar la calidad por medio del menu de configuracion",
             }}
           ></Heading>
+          <button
+            onClick={() => {
+              setIsAcepted(true);
+            }}
+            className="block lg:scale-125 px-5 py-3 m-2 text-xl orbitron font-[600] text-black transition-all duration-500 border-2 border-black cursor-pointer bg-amber-400 rounded-xl w-fit hover:text-amber-400 hover:bg-black hover:border-amber-400"
+          >
+            <Paragraph
+              language={language}
+              text={{
+                en: "Start",
+                es: "Continuar",
+              }}
+            ></Paragraph>
+          </button>
           {count == 0 && (
             <button
               onClick={() => {
@@ -367,6 +370,20 @@ export default function IntroMenu() {
                     <MultiCarousel language={language}></MultiCarousel>
                   </div>
                 </div>
+                <button
+                  onClick={() => {
+                    setIntro(false);
+                  }}
+                  className="block px-5 py-3 mx-auto mt-3 text-xl orbitron font-[600] text-black transition-all duration-500 border-2 border-black cursor-pointer bg-amber-400 rounded-xl w-fit hover:text-amber-400 hover:bg-black hover:border-amber-400"
+                >
+                  <Paragraph
+                    language={language}
+                    text={{
+                      en: "Start",
+                      es: "Continuar",
+                    }}
+                  ></Paragraph>
+                </button>
                 {count == 0 && (
                   <button
                     onClick={() => {
