@@ -847,6 +847,7 @@ export default function Experience() {
                 <BuildProjects projects={projects}></BuildProjects>
                 <Final turnOn={turnOn}></Final>
                 <Lights targetRef={targetRef}></Lights>
+                <CheckSize></CheckSize>
               </Suspense>
             </Canvas>
           </motion.div>

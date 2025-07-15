@@ -12,6 +12,7 @@ export const AppProvider = ({ children }) => {
   const [reflectionQuality, setReflectionQuality] = useState(256);
   const [ilumination, setIlumination] = useState(false);
   const [dpr, setDpr] = useState([0.25, 0.35]);
+  const [currentResolution, setCurrentResolution] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
   // Example of toggling values
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
@@ -84,6 +85,8 @@ export const AppProvider = ({ children }) => {
         changeSelectedProject,
         controlsType,
         toggleControls,
+        currentResolution,
+        setCurrentResolution,
       }}
     >
       {children}
