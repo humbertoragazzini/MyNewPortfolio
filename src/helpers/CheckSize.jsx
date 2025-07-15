@@ -4,14 +4,15 @@ import { AppContext } from "../context/AppContext";
 
 export default function CheckSize() {
   const { gl, size } = useThree();
-  const { currentResolutionSet } = useContext(AppContext);
+  const { currentResolutionSet, dpr } = useContext(AppContext);
 
   useEffect(() => {
     const dpr = gl.getPixelRatio();
     const actualWidth = size.width * dpr;
     const actualHeight = size.height * dpr;
-    currentResolutionSet({ width: actualWidth, height: actualHeight });
-  }, [gl, size]);
+    const resolutionObj = { width: actualWidth, height: actualHeight };
+    currentResolutionSet(resolutionObj);
+  }, [dpr]);
 
   return null;
 }

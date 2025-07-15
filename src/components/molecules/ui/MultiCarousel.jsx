@@ -1,3 +1,33 @@
+// import React from "react";
+// import Slider from "react-slick";
+
+// export default function MultiCarousel({ language }) {
+//   const settings = {
+//     speed: 500,
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//   };
+
+//   return (
+//     <div className="relative z-[500]">
+//       <Slider {...settings}>
+//         <div>
+//           <div className="bg-white w-[250px]">caca</div>
+//         </div>
+//         <div>
+//           <div className="bg-white w-[250px]">caca</div>
+//         </div>
+//         <div>
+//           <div className="bg-white w-[250px]">caca</div>
+//         </div>
+//         <div>
+//           <div className="bg-white w-[250px]">caca</div>
+//         </div>
+//       </Slider>
+//     </div>
+//   );
+// }
+
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import React, { useContext } from "react";

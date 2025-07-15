@@ -6,9 +6,9 @@ import { LuMenu } from "react-icons/lu";
 import LoadingSystems from "../../atoms/ui/LoadingSystems";
 import LiquidGlassEffect from "../../atoms/ui/LiquidGlassDev";
 import LiquidGlassDisplay from "../../atoms/ui/LiquidGlassDisplay";
-import MultiCarousel from "../ui/MultiCarousel";
 import Paragraph from "../../atoms/ui/Paragraph";
 import CheckSize from "../../../helpers/CheckSize";
+import MultiCarousel from "../ui/MultiCarousel";
 
 export default function OverlayMenu() {
   const {
