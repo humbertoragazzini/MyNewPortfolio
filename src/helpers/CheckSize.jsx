@@ -8,8 +8,7 @@ export default function CheckSize() {
     const dpr = gl.getPixelRatio();
     const actualWidth = size.width * dpr;
     const actualHeight = size.height * dpr;
-
-    // console.log('Actual resolution:', actualWidth, 'x', actualHeight);
+    return { width: actualWidth, height: actualHeight };
   }, [gl, size]);
 
   return null;

@@ -174,7 +174,7 @@ export default function IntroMenu() {
           <Heading
             language={language}
             className={
-              "text-white mb-3 font-semibold drop-shadow-[0_0_5px_#fff] text-center"
+              "text-white text-lg md:text-2xl lg:text-4xl md:leading-11 lg:leading-16 mb-3 font-semibold drop-shadow-[0_0_5px_#fff] text-center max-w-[1500px] mx-auto"
             }
             level={1}
             text={{
@@ -187,7 +187,7 @@ export default function IntroMenu() {
               onClick={() => {
                 setIsAcepted(true);
               }}
-              className="block px-5 py-3 m-2 text-xl orbitron font-[600] text-black transition-all duration-500 border-2 border-black cursor-pointer bg-amber-400 rounded-xl w-fit hover:text-amber-400 hover:bg-black hover:border-amber-400"
+              className="block lg:scale-125 px-5 py-3 m-2 text-xl orbitron font-[600] text-black transition-all duration-500 border-2 border-black cursor-pointer bg-amber-400 rounded-xl w-fit hover:text-amber-400 hover:bg-black hover:border-amber-400"
             >
               <Paragraph
                 language={language}
@@ -202,7 +202,7 @@ export default function IntroMenu() {
             <div>
               <h2
                 className={
-                  "text-white font-semibold drop-shadow-[0_0_5px_#fff] hover:scale-125 transition-all ease-in-out cursor-pointer text-center"
+                  "text-white text-lg md:text-2xl lg:text-4xl md:leading-11 lg:leading-16 font-semibold drop-shadow-[0_0_5px_#fff] hover:scale-125 transition-all ease-in-out cursor-pointer text-center"
                 }
               >
                 {count}
