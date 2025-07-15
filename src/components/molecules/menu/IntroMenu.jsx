@@ -11,14 +11,14 @@ export default function IntroMenu() {
     useContext(AppContext);
   const [intro, setIntro] = useState(false);
   const [isAcepted, setIsAcepted] = useState(false);
-  const [count, setCount] = useState(10);
+  const [count, setCount] = useState(5);
 
   useEffect(() => {
     if (count === 0) return; // Stop when count reaches 0
 
     const timer = setInterval(() => {
       setCount((prev) => prev - 1);
-    }, 100);
+    }, 1000);
 
     return () => clearInterval(timer); // Clean up interval
   }, [count]);
