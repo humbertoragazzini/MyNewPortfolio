@@ -250,7 +250,7 @@ export default [
         url: "https://humbertoragazzini.github.io/3DWorldWithScroll/",
       },
     ],
-    embeded: "uO9XDdfYJcY",
+    embeded: "VGajSIhZMwM",
     gif: "",
     video: "",
     images: ["img/project-6.png"],
