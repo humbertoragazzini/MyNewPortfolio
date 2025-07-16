@@ -32,9 +32,6 @@ export default function OverlayMenu() {
   useEffect(() => {
     changeReflectionQuality(reflectionSize);
   }, [reflectionSize]);
-  useEffect(() => {
-    console.log(currentResolution);
-  }, []);
 
   return (
     <>
@@ -51,7 +48,6 @@ export default function OverlayMenu() {
         <button
           onClick={() => {
             toggleMenu();
-            console.log("click menu");
           }}
           className={`rounded-2xl p-4 right-[0px] cursor-pointer`}
         >
@@ -75,7 +71,6 @@ export default function OverlayMenu() {
             <MenuButton
               onClick={() => {
                 toggleMenu();
-                console.log("click menu");
               }}
               text={{
                 en: "START",
@@ -95,7 +90,6 @@ export default function OverlayMenu() {
             ></MenuButton>
             <MenuButton
               onClick={() => {
-                console.log("working");
                 toggleLanguage();
               }}
               text={{
@@ -385,7 +379,6 @@ export default function OverlayMenu() {
             <MenuButton
               onClick={() => {
                 setMenu("graphics");
-                console.log("click menu");
               }}
               text={{
                 en: "Graphics",

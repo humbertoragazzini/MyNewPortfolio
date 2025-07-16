@@ -35,24 +35,31 @@ export default function LoadingSystems() {
     const checkSize = () => {
       if (containerRef.current) {
         const rect = containerRef.current.getBoundingClientRect();
-        console.log(rect.width)
-        console.log(rect.height)
+        //console.log(rect.width)
+        //console.log(rect.height)
         setWidth(rect.width);
         setHeight(rect.height);
       }
     };
 
-    window.addEventListener('resize', checkSize);
+    window.addEventListener("resize", checkSize);
     checkSize(); // Call initially
 
     return () => {
-      window.removeEventListener('resize', checkSize);
+      window.removeEventListener("resize", checkSize);
     };
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-full mt-2 pl-[86px] pr-[86px] pt-[15px] pb-[15px]">
-      <LiquidGlassDisplay width={width} height={height} className={""}></LiquidGlassDisplay>
+    <div
+      ref={containerRef}
+      className="relative w-full h-full mt-2 pl-[86px] pr-[86px] pt-[15px] pb-[15px]"
+    >
+      <LiquidGlassDisplay
+        width={width}
+        height={height}
+        className={""}
+      ></LiquidGlassDisplay>
       <div className="rounded-4xl orbitron w-full h-full z-[9999] text-[rgba(255,255,255,1)] overflow-hidden">
         <motion.div
           initial={{
