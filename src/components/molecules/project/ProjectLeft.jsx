@@ -39,7 +39,6 @@ export default function ProjectLeft({
   });
 
   useEffect(() => {
-    console.log("refresh ProjectLeft");
     if (geoRef.current) {
       setGeometry(geoRef.current.geometry);
       setShow(true);

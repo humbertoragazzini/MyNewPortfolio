@@ -3,10 +3,6 @@ import Heading from "../../atoms/ui/Heading";
 import Paragraph from "../../atoms/ui/Paragraph";
 
 export default function Project({ language, content, changeSelectedProject }) {
-  useEffect(() => {
-    console.log("refresh Project");
-  }, []);
-
   return (
     <>
       <div
@@ -112,7 +108,6 @@ export default function Project({ language, content, changeSelectedProject }) {
             <div className="col-span-6">
               <button
                 onClick={() => {
-                  console.log("change to free view");
                   changeSelectedProject(null);
                 }}
                 className="block px-5 py-3 mt-3 text-xl orbitron font-[600] text-black transition-all duration-500 border-2 border-black cursor-pointer bg-amber-400 rounded-xl w-fit hover:text-amber-400 hover:bg-black hover:border-amber-400"
