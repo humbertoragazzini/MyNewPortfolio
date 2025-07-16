@@ -390,7 +390,6 @@ export default function OverlayMenu() {
             <MenuButton
               onClick={() => {
                 setMenu("controls");
-                console.log("click menu");
               }}
               text={{
                 en: "Controls",
