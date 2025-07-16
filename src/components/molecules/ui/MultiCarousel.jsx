@@ -96,7 +96,7 @@ export default function MultiCarousel({ language }) {
             <Paragraph
               language={language}
               className={
-                "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center mb-6"
+                "text-lg md:text-xl lg:text-2xl text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center mb-6"
               }
               text={{
                 en: "Touch controls",
