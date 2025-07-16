@@ -101,9 +101,13 @@ export default function Camera({
   const lateralDisplacement = useRef(0);
   const vertical = useRef(0);
   const { selectedProject, controlsType } = useContext(AppContext);
+  const controlsRef = useRef(null);
 
   useEffect(() => {
-    console.log(controlsType);
+    controlsRef.current = controlsType;
+  }, [controlsType]);
+
+  useEffect(() => {
     const move = (e) => {
       if (joystickRight.current == null && controlsType == "mouse") {
         horizontal.current.x =
