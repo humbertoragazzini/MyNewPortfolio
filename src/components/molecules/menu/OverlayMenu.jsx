@@ -145,7 +145,7 @@ export default function OverlayMenu() {
               language={language}
               className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
             ></Paragraph>
-            <div className="flex justify-center x-auto mb-5 text-xl md:text-2xl xl:text-3xl orbitron font-[600] text-white drop-shadow-[0_0_5px_#fff]">
+            <div className="flex justify-center x-auto text-xl md:text-2xl xl:text-3xl orbitron font-[600] text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
                 className="mx-3"
                 animate={{
@@ -189,7 +189,7 @@ export default function OverlayMenu() {
               language={language}
               className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
             ></Paragraph>
-            <div className="flex justify-center mb-5 text-xl md:text-2xl xl:text-3xl orbitron font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
+            <div className="flex justify-center text-xl md:text-2xl xl:text-3xl orbitron font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
                 className="mx-3"
                 animate={{
@@ -233,7 +233,7 @@ export default function OverlayMenu() {
               language={language}
               className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
             ></Paragraph>
-            <div className="flex justify-center flex-wrap mb-5 mx-6 text-xl md:text-2xl xl:text-3xl orbitron font-[600] text-white drop-shadow-[0_0_5px_#fff]">
+            <div className="flex justify-center flex-wrap mx-6 text-xl md:text-2xl xl:text-3xl orbitron font-[600] text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
                 className="mx-3 transition-all duration-500 hover:scale-125 hover:cursor-pointer"
                 onClick={() => {
@@ -287,7 +287,7 @@ export default function OverlayMenu() {
               language={language}
               className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
             ></Paragraph>
-            <div className="flex justify-center flex-wrap mb-5 mx-6 text-xl md:text-2xl xl:text-3xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
+            <div className="flex justify-center flex-wrap mx-6 text-xl md:text-2xl xl:text-3xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
                 className="mx-3"
                 onClick={() => {
@@ -319,7 +319,7 @@ export default function OverlayMenu() {
               language={language}
               className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
             ></Paragraph>
-            <div className="flex justify-center mb-3 text-xl md:text-2xl xl:text-3xl orbitron font-[600] text-white drop-shadow-[0_0_5px_#fff]">
+            <div className="flex justify-center text-xl md:text-2xl xl:text-3xl orbitron font-[600] text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
                 className="mx-3 transition-all duration-500 hover:scale-125 hover:cursor-pointer"
                 onClick={() => {
