@@ -53,7 +53,12 @@ export default function ProjectLeft({
         delay: Math.random() * 2,
       });
     }
+    const all = 100 / (currentResolution.width + currentResolution.height);
+    const ratioHeight = all * currentResolution.height;
+    const ratioWidht = all * currentResolution.width;
     console.log(currentResolution);
+    console.log(ratioWidht);
+    console.log(ratioHeight);
   }, [isMenuOpen]);
 
   return (
