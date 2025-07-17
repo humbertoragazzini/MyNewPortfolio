@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 export default function MovingLight({ position }) {
   const ligthStrRef1 = useRef();
