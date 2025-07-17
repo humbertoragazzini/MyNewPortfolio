@@ -35,8 +35,6 @@ export default function LoadingSystems() {
     const checkSize = () => {
       if (containerRef.current) {
         const rect = containerRef.current.getBoundingClientRect();
-        //console.log(rect.width)
-        //console.log(rect.height)
         setWidth(rect.width);
         setHeight(rect.height);
       }
