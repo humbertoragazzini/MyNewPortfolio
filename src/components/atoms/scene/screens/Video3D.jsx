@@ -1,12 +1,11 @@
-import { useAspect, useTexture, useVideoTexture } from "@react-three/drei";
+import { useVideoTexture } from "@react-three/drei";
 import { Suspense } from "react";
 
 export default function Video3D({ scale, source }) {
   return (
     <mesh scale={scale}>
       <planeGeometry args={[16, 9]} />
-      {/* <Suspense fallback={<FallbackMaterial url="10.jpg" />}> */}
-      <Suspense >
+      <Suspense>
         <VideoMaterial url={source} />
       </Suspense>
     </mesh>

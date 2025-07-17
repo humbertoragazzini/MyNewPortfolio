@@ -1,4 +1,3 @@
-import { Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useContext, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
