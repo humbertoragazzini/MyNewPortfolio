@@ -1,16 +1,8 @@
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
-import { useThree, useFrame } from "@react-three/fiber";
-import {
-  createContext,
-  useContext,
-  useRef,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { PerspectiveCamera } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { useContext, useRef, useEffect } from "react";
 import * as THREE from "three";
 import { AppContext } from "../../../../context/AppContext";
-import { useGesture } from "@use-gesture/react";
 
 const positionsArray = {
   firstLeft: {
@@ -91,7 +83,6 @@ export default function Camera({
   scroll,
   joystickLeft,
   joystickRight,
-  children,
   setTurnOn,
   touchData,
 }) {
@@ -205,10 +196,5 @@ export default function Camera({
     }
   });
 
-  return (
-    <>
-      {/* <OrbitControls></OrbitControls> */}
-      <PerspectiveCamera ref={cameraRef} makeDefault far={25000} />
-    </>
-  );
+  return <PerspectiveCamera ref={cameraRef} makeDefault far={25000} />;
 }
