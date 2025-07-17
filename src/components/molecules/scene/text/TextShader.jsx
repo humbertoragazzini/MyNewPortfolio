@@ -1,4 +1,4 @@
-import { Center, Float, Text, Text3D } from "@react-three/drei";
+import { Center, Text3D } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useRef } from "react";

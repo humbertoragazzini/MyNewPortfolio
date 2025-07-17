@@ -1,12 +1,5 @@
 import React, { useContext, useEffect, useMemo, useRef } from "react";
-import { MeshReflectorMaterial, useGLTF, useTexture } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
-import {
-  LinearMipmapLinearFilter,
-  RGBFormat,
-  WebGLCubeRenderTarget,
-} from "three";
-// import { useEnvMap } from "./atoms/Camera";
+import { useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import gsap from "gsap";
 import { AppContext } from "../../context/AppContext";

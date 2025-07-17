@@ -1,6 +1,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { AppContext } from "../../../context/AppContext";
 import Paragraph from "../../atoms/ui/Paragraph";
 
