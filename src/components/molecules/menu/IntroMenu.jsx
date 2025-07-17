@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../../context/AppContext";
-import MenuButton from "./MenuButton";
 import { motion } from "framer-motion";
 import Heading from "../../atoms/ui/Heading";
 import Paragraph from "../../atoms/ui/Paragraph";

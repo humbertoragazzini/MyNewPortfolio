@@ -26,7 +26,6 @@ export default function CustomJoysticks({
   }, []);
 
   function handleMoveLeftStick(e) {
-    //console.log(e.y);
     const newValues = {
       y: e.y * 0.01,
       x: e.x * 10,

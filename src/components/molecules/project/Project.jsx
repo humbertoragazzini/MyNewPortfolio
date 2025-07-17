@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Heading from "../../atoms/ui/Heading";
 import Paragraph from "../../atoms/ui/Paragraph";
 
