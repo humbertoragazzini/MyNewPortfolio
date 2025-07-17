@@ -9,9 +9,11 @@ import MultiCarousel from "../ui/MultiCarousel";
 export default function IntroMenu() {
   const { language, toggleLanguage, currentResolution } =
     useContext(AppContext);
-  const [intro, setIntro] = useState(false);
+  const [intro, setIntro] = useState(true);
   const [isAcepted, setIsAcepted] = useState(false);
   const [count, setCount] = useState(5);
+
+  if (JSON.parse(localStorage.getItem("intro")) == false) return;
 
   useEffect(() => {
     if (count === 0) return; // Stop when count reaches 0
@@ -23,9 +25,10 @@ export default function IntroMenu() {
     return () => clearInterval(timer); // Clean up interval
   }, [count]);
 
-  useEffect(() => {
-    setIntro(true);
-  }, []);
+  const handleIntro = () => {
+    localStorage.setItem("intro", false);
+    setIntro(false);
+  };
 
   return (
     <>
@@ -358,9 +361,7 @@ export default function IntroMenu() {
                 </div>
                 {count == 0 && (
                   <button
-                    onClick={() => {
-                      setIntro(false);
-                    }}
+                    onClick={() => handleIntro()}
                     className="block px-5 py-3 mx-auto mt-3 text-xl orbitron font-[600] text-black transition-all duration-500 border-2 border-black cursor-pointer bg-amber-400 rounded-xl w-fit hover:text-amber-400 hover:bg-black hover:border-amber-400"
                   >
                     <Paragraph

@@ -53,13 +53,7 @@ export default function MultiCarousel({ language }) {
         infinite={false}
         slidesToSlide={1}
         removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
-        customDot={
-          <CustomDot
-            onClick={() => {
-              console.log("change item");
-            }}
-          />
-        }
+        customDot={<CustomDot onClick={() => {}} />}
       >
         <div className="px-3 pt-4 mx-auto text-white w-fit pb-9">
           <div className="flex flex-col items-center justify-center">
