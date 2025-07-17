@@ -1,5 +1,4 @@
 import React, { createContext, useState } from "react";
-import { RGBA_ASTC_4x4_Format } from "three";
 
 export const AppContext = createContext();
 

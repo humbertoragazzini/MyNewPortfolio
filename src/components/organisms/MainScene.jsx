@@ -1,10 +1,9 @@
-import React, { useContext, useEffect, useMemo, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import gsap from "gsap";
 import { AppContext } from "../../context/AppContext";
 import CustomShaderMaterial from "../atoms/scene/shaders/CustomShaderMaterial";
-import CheckSize from "../../helpers/CheckSize";
 
 export default function MainScene(props) {
   const { nodes, materials } = useGLTF("./blender/main-scene.glb");
