@@ -14,19 +14,25 @@ export default function ProjectLeft({
   const htmlRef = useRef();
   const meshRef = useRef();
   const geoRef = useRef();
+  const [ratio, setRatio] = useState();
   const mainContainerRef = useRef();
   const [geometry, setGeometry] = useState();
   const [show, setShow] = useState(false);
-  const { isMenuOpen, language, selectedProject, changeSelectedProject } =
-    useContext(AppContext);
+  const {
+    isMenuOpen,
+    language,
+    selectedProject,
+    changeSelectedProject,
+    currentResolution,
+  } = useContext(AppContext);
   useFrame(() => {
     if (geoRef.current && mainContainerRef.current && htmlRef.current) {
       const geometry = geoRef.current.geometry;
       geometry.computeBoundingBox();
       const size = new THREE.Vector3();
       geometry.boundingBox.getSize(size);
-      mainContainerRef.current.style.width = `${size.x * 37}px`;
-      mainContainerRef.current.style.height = `${size.y * 36}px`;
+      mainContainerRef.current.style.width = `${size.x * 39}px`;
+      mainContainerRef.current.style.height = `${size.y * 39}px`;
     }
   });
 
@@ -47,6 +53,7 @@ export default function ProjectLeft({
         delay: Math.random() * 2,
       });
     }
+    console.log(currentResolution);
   }, [isMenuOpen]);
 
   return (
