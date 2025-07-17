@@ -29,22 +29,20 @@ export default function ProjectLeft({
     currentResolution,
   } = useContext(AppContext);
   useFrame(() => {
-    if (geoRef.current && mainContainerRef.current && htmlRef.current) {
+    if (geoRef.current && mainContainerRef.current && htmlRef.current && currentResolution) {
+
+      const all = 100 / (currentResolution.width + currentResolution.height);
+      const ratioHeight = all * currentResolution.height;
+      const ratioWidht = all * currentResolution.width;
+
+      const size = new THREE.Vector3();
+      geoRef.current.geometry.dispose(); // cleanup
+      geoRef.current.geometry = new THREE.PlaneGeometry(ratioWidht / 1.5, ratioHeight / 1.5);
       const geometry = geoRef.current.geometry;
       geometry.computeBoundingBox();
-      const size = new THREE.Vector3();
       geometry.boundingBox.getSize(size);
       mainContainerRef.current.style.width = `${size.x * 37}px`;
       mainContainerRef.current.style.height = `${size.y * 37}px`;
-      console.log(currentResolution)
-      if (currentResolution) {
-        const all = 100 / (currentResolution.width + currentResolution.height);
-        const ratioHeight = all * currentResolution.height;
-        const ratioWidht = all * currentResolution.width;
-        console.log(currentResolution);
-        ratio.current.x = ratioWidht;
-        ratio.current.y = ratioHeight;
-      }
     }
   });
 
@@ -74,7 +72,7 @@ export default function ProjectLeft({
       rotation={[0, Math.PI / 4, 0]}
     >
       <mesh ref={geoRef} position={[0, 0, 0]}>
-        <planeGeometry args={[0.7, 0.7, 2]}></planeGeometry>
+        <planeGeometry args={[35, 25, 2]}></planeGeometry>
         <meshBasicMaterial
           color={[1.5, 1.5, 1.5]}
           opacity={1}
