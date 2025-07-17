@@ -4,7 +4,6 @@ import { useContext, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { AppContext } from "../../../context/AppContext";
 import gsap from "gsap";
-import { MeshReflectorMaterial, useGLTF, useTexture } from "@react-three/drei";
 
 export default function ProjectLeft({
   positionZ,
@@ -12,21 +11,14 @@ export default function ProjectLeft({
   children,
   images,
 }) {
-  const imagePosition = [
-    { x: 11, y: -7, z: 1 },
-    { x: 4, y: -4, z: 4 },
-    { x: 9, y: -1.5, z: 6 },
-  ];
   const htmlRef = useRef();
   const meshRef = useRef();
   const geoRef = useRef();
-  const imageRef = useRef();
   const mainContainerRef = useRef();
   const [geometry, setGeometry] = useState();
   const [show, setShow] = useState(false);
   const { isMenuOpen, language, selectedProject, changeSelectedProject } =
     useContext(AppContext);
-  const { camera } = useThree();
   useFrame(() => {
     if (geoRef.current && mainContainerRef.current && htmlRef.current) {
       const geometry = geoRef.current.geometry;

@@ -1,4 +1,4 @@
-import { Html, useTexture } from "@react-three/drei";
+import { Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useContext, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
@@ -14,7 +14,6 @@ export default function ProjectRight({
   const htmlRef = useRef();
   const meshRef = useRef();
   const geoRef = useRef();
-  const imageRef = useRef();
   const mainContainerRef = useRef();
   const [geometry, setGeometry] = useState();
   const [show, setShow] = useState(false);

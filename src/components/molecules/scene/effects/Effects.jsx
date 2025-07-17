@@ -13,9 +13,6 @@ import { BlendFunction } from "postprocessing";
 export default function Effects({ scroll, resolution, frames, children }) {
   const cameraRef = useRef();
   const lerpSpeed = 0.05;
-  const envMap = useRef(null);
-  const [envMapTexture, setEnvMapTexture] = useState(null);
-  const bloomRef = useRef(null);
   const {
     isMenuOpen,
     reflections,
@@ -95,8 +92,3 @@ export default function Effects({ scroll, resolution, frames, children }) {
     </group>
   );
 }
-
-// focusDistance={0.02}
-// focalLength={0.02}
-// bokehScale={2}
-// height={480}
