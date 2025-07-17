@@ -14,7 +14,10 @@ export default function ProjectLeft({
   const htmlRef = useRef();
   const meshRef = useRef();
   const geoRef = useRef();
-  const [ratio, setRatio] = useState();
+  const ratio = useRef({
+    x: 1,
+    y: 1
+  })
   const mainContainerRef = useRef();
   const [geometry, setGeometry] = useState();
   const [show, setShow] = useState(false);
@@ -31,8 +34,17 @@ export default function ProjectLeft({
       geometry.computeBoundingBox();
       const size = new THREE.Vector3();
       geometry.boundingBox.getSize(size);
-      mainContainerRef.current.style.width = `${size.x * 39}px`;
-      mainContainerRef.current.style.height = `${size.y * 39}px`;
+      mainContainerRef.current.style.width = `${size.x * 37}px`;
+      mainContainerRef.current.style.height = `${size.y * 37}px`;
+      console.log(currentResolution)
+      if (currentResolution) {
+        const all = 100 / (currentResolution.width + currentResolution.height);
+        const ratioHeight = all * currentResolution.height;
+        const ratioWidht = all * currentResolution.width;
+        console.log(currentResolution);
+        ratio.current.x = ratioWidht;
+        ratio.current.y = ratioHeight;
+      }
     }
   });
 
@@ -53,12 +65,6 @@ export default function ProjectLeft({
         delay: Math.random() * 2,
       });
     }
-    const all = 100 / (currentResolution.width + currentResolution.height);
-    const ratioHeight = all * currentResolution.height;
-    const ratioWidht = all * currentResolution.width;
-    console.log(currentResolution);
-    console.log(ratioWidht);
-    console.log(ratioHeight);
   }, [isMenuOpen]);
 
   return (
@@ -68,7 +74,7 @@ export default function ProjectLeft({
       rotation={[0, Math.PI / 4, 0]}
     >
       <mesh ref={geoRef} position={[0, 0, 0]}>
-        <planeGeometry args={[35, 25, 2]}></planeGeometry>
+        <planeGeometry args={[0.7, 0.7, 2]}></planeGeometry>
         <meshBasicMaterial
           color={[1.5, 1.5, 1.5]}
           opacity={1}
@@ -82,13 +88,12 @@ export default function ProjectLeft({
             transform
           >
             <div
-              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${
-                selectedProject
-                  ? selectedProject == projectId
-                    ? ""
-                    : "blur-md"
-                  : ""
-              }`}
+              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${selectedProject
+                ? selectedProject == projectId
+                  ? ""
+                  : "blur-md"
+                : ""
+                }`}
               ref={mainContainerRef}
             >
               <div
