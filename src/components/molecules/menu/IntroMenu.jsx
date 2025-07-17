@@ -13,9 +13,13 @@ export default function IntroMenu() {
   const [isAcepted, setIsAcepted] = useState(false);
   const [count, setCount] = useState(5);
 
-  if (JSON.parse(localStorage.getItem("intro")) == false) return;
-
   useEffect(() => {
+    if (JSON.parse(localStorage.getItem("intro")) == false) {
+      setIsAcepted(true);
+      setIntro(false);
+      return;
+    }
+
     if (count === 0) return; // Stop when count reaches 0
 
     const timer = setInterval(() => {
