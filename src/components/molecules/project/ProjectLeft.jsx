@@ -49,13 +49,13 @@ export default function ProjectLeft({
       } else {
         geoRef.current.geometry = new THREE.PlaneGeometry(
           ratioWidht / 1.75,
-          ratioWidht / 1.75
+          ratioWidht / 1
         );
       }
       const geometry = geoRef.current.geometry;
       geometry.computeBoundingBox();
       geometry.boundingBox.getSize(size);
-      mainContainerRef.current.style.width = `${size.x * 37}px`;
+      mainContainerRef.current.style.width = `${size.x * 35}px`;
       mainContainerRef.current.style.height = `${size.y * 35}px`;
     }
   });
