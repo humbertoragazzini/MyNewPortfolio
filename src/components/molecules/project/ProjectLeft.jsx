@@ -14,7 +14,10 @@ export default function ProjectLeft({
   const htmlRef = useRef();
   const meshRef = useRef();
   const geoRef = useRef();
-  const [ratio, setRatio] = useState();
+  const ratio = useRef({
+    x: 1,
+    y: 1,
+  });
   const mainContainerRef = useRef();
   const [geometry, setGeometry] = useState();
   const [show, setShow] = useState(false);
@@ -26,13 +29,34 @@ export default function ProjectLeft({
     currentResolution,
   } = useContext(AppContext);
   useFrame(() => {
-    if (geoRef.current && mainContainerRef.current && htmlRef.current) {
+    if (
+      geoRef.current &&
+      mainContainerRef.current &&
+      htmlRef.current &&
+      currentResolution
+    ) {
+      const all = 100 / (currentResolution.width + currentResolution.height);
+      const ratioHeight = all * currentResolution.height;
+      const ratioWidht = all * currentResolution.width;
+
+      const size = new THREE.Vector3();
+      geoRef.current.geometry.dispose(); // cleanup
+      if (ratioWidht > ratioHeight) {
+        geoRef.current.geometry = new THREE.PlaneGeometry(
+          ratioWidht / 1.75,
+          ratioHeight / 1.25
+        );
+      } else {
+        geoRef.current.geometry = new THREE.PlaneGeometry(
+          ratioWidht / 1.75,
+          ratioWidht / 1.75
+        );
+      }
       const geometry = geoRef.current.geometry;
       geometry.computeBoundingBox();
-      const size = new THREE.Vector3();
       geometry.boundingBox.getSize(size);
       mainContainerRef.current.style.width = `${size.x * 37}px`;
-      mainContainerRef.current.style.height = `${size.y * 36}px`;
+      mainContainerRef.current.style.height = `${size.y * 35}px`;
     }
   });
 
@@ -76,19 +100,20 @@ export default function ProjectLeft({
             transform
           >
             <div
-              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${selectedProject
-                ? selectedProject == projectId
-                  ? ""
-                  : "blur-md"
-                : ""
-                }`}
+              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${
+                selectedProject
+                  ? selectedProject == projectId
+                    ? ""
+                    : "blur-md"
+                  : ""
+              }`}
               ref={mainContainerRef}
             >
               <div
                 onClick={() => {
                   selectedProject ? null : changeSelectedProject(projectId);
                 }}
-                className="relative z-0"
+                className="relative z-0 h-full"
               >
                 {children}
               </div>

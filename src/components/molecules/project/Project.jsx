@@ -5,7 +5,7 @@ export default function Project({ language, content, changeSelectedProject }) {
   return (
     <>
       <div
-        className={`relative z-10 grid w-full h-full grid-cols-3 text-white`}
+        className={`relative z-10 grid w-full h-full overflow-y-scroll lg:overflow-visible grid-cols-3 text-white`}
       >
         <div className="col-span-3 p-13">
           {content.projectName && (
@@ -24,14 +24,14 @@ export default function Project({ language, content, changeSelectedProject }) {
             ></Paragraph>
           )}
           <div className="grid grid-cols-12">
-            <div className="col-span-6">
+            <div className="col-span-12 mt-5 lg:col-span-6">
               <Paragraph
                 language={language}
                 text={{
                   en: "Technologies:",
                   es: "Tecnologias usadas:",
                 }}
-                className="mb-4 text-2xl orbitron font-[600]"
+                className="my-7 text-4xl orbitron font-[600]"
               ></Paragraph>
               <div className="text-2xl orbitron font-[400] mr-12 flex flex-wrap">
                 {content.technologies.length > 0 &&
@@ -43,11 +43,50 @@ export default function Project({ language, content, changeSelectedProject }) {
                     );
                   })}
               </div>
+
+              <div className="grid grid-cols-6 text-2xl">
+                <div className="col-span-6">
+                  {content.links.map((link) => {
+                    return (
+                      <div className="grid grid-cols-6 mt-6 text-2xl">
+                        <div className="col-span-12">
+                          <a
+                            href={link.url}
+                            target="_blank"
+                            className="block px-5 py-3 text-xl orbitron font-[600] text-black transition-all duration-500 border-2 border-black cursor-pointer bg-amber-400 rounded-xl w-fit hover:text-amber-400 hover:bg-black hover:border-amber-400"
+                          >
+                            <Paragraph
+                              language={language}
+                              text={link.label}
+                              className="font-semibold"
+                            ></Paragraph>
+                          </a>
+                        </div>
+                      </div>
+                    );
+                  })}
+                  <button
+                    onClick={() => {
+                      changeSelectedProject(null);
+                    }}
+                    className="block px-5 py-3 mt-6 text-xl orbitron font-[600] text-black transition-all duration-500 border-2 border-black cursor-pointer bg-amber-400 rounded-xl w-fit hover:text-amber-400 hover:bg-black hover:border-amber-400"
+                  >
+                    <Paragraph
+                      language={language}
+                      text={{
+                        en: "Click here to go back to free view",
+                        es: "Clickea aqui para volver a vista libre",
+                      }}
+                      className="text-2xl orbitron font-[600]"
+                    ></Paragraph>
+                  </button>
+                </div>
+              </div>
             </div>
-            <div className="relative col-span-6">
+            <div className="relative col-span-12 lg:col-span-6">
               {content.video !== null && content.video !== "" && (
                 <video
-                  className="absolute w-full -translate-x-5 translate-y-16 shadow-2xl rounded-3xl"
+                  className="w-full -translate-x-5 translate-y-16 shadow-2xl rounded-3xl"
                   autoPlay
                   muted
                   loop
@@ -58,9 +97,9 @@ export default function Project({ language, content, changeSelectedProject }) {
                 </video>
               )}
               {content.embeded !== null && (
-                <div className="absolute w-full overflow-hidden -translate-x-5 translate-y-16 shadow-2xl md:block rounded-3xl">
+                <div className="w-full mt-10 mb-16 overflow-hidden shadow-2xl lg:-translate-x-5 lg:translate-y-16 aspect-video md:block rounded-3xl">
                   <iframe
-                    className="hidden w-full lg:block"
+                    className="hidden w-full h-full lg:block "
                     width="560"
                     height="315"
                     src={`https://www.youtube.com/embed/${content.embeded}?&mute=1&loop=1&playlist=${content.embeded}`}
@@ -82,44 +121,6 @@ export default function Project({ language, content, changeSelectedProject }) {
                   alt="GIF"
                 />
               )}
-            </div>
-          </div>
-          {content.links.map((link) => {
-            return (
-              <div className="grid grid-cols-6 mt-5 text-2xl">
-                <div className="col-span-12">
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    className="block px-5 py-3 mt-3 text-xl orbitron font-[600] text-black transition-all duration-500 border-2 border-black cursor-pointer bg-amber-400 rounded-xl w-fit hover:text-amber-400 hover:bg-black hover:border-amber-400"
-                  >
-                    <Paragraph
-                      language={language}
-                      text={link.label}
-                      className="font-semibold"
-                    ></Paragraph>
-                  </a>
-                </div>
-              </div>
-            );
-          })}
-          <div className="grid grid-cols-6 mt-5 text-2xl">
-            <div className="col-span-6">
-              <button
-                onClick={() => {
-                  changeSelectedProject(null);
-                }}
-                className="block px-5 py-3 mt-3 text-xl orbitron font-[600] text-black transition-all duration-500 border-2 border-black cursor-pointer bg-amber-400 rounded-xl w-fit hover:text-amber-400 hover:bg-black hover:border-amber-400"
-              >
-                <Paragraph
-                  language={language}
-                  text={{
-                    en: "Click here to go back to free view",
-                    es: "Clickea aqui para volver a vista libre",
-                  }}
-                  className="text-2xl orbitron font-[600]"
-                ></Paragraph>
-              </button>
             </div>
           </div>
         </div>
