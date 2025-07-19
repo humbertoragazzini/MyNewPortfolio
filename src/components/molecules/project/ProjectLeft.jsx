@@ -100,13 +100,12 @@ export default function ProjectLeft({
             transform
           >
             <div
-              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${
-                selectedProject
+              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${selectedProject
                   ? selectedProject == projectId
                     ? ""
                     : "blur-md"
                   : ""
-              }`}
+                }`}
               ref={mainContainerRef}
             >
               <div
@@ -124,23 +123,3 @@ export default function ProjectLeft({
     </mesh>
   );
 }
-
-// {
-//   images.length > 0 &&
-//     images.map((url, i) => {
-//       return (
-//         <mesh
-//           ref={imageRef}
-//           position={[
-//             imagePosition[i].x,
-//             imagePosition[i].y,
-//             imagePosition[i].z,
-//           ]}
-//           material={textureMaterial[i]}
-//         >
-//           <boxGeometry args={[9, 5, 2]}></boxGeometry>
-//           {/* <meshStandardMaterial color={"white"}></meshStandardMaterial> */}
-//         </mesh>
-//       );
-//     });
-// }
