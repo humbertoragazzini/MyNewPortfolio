@@ -1,11 +1,11 @@
 import { Html } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { useContext, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { AppContext } from "../../../context/AppContext";
 import gsap from "gsap";
 
-export default function ProjectRight({
+export default function ProjectLeft({
   positionZ,
   projectId,
   children,
@@ -14,20 +14,49 @@ export default function ProjectRight({
   const htmlRef = useRef();
   const meshRef = useRef();
   const geoRef = useRef();
+  const ratio = useRef({
+    x: 1,
+    y: 1,
+  });
   const mainContainerRef = useRef();
   const [geometry, setGeometry] = useState();
   const [show, setShow] = useState(false);
-  const { isMenuOpen, language, selectedProject, changeSelectedProject } =
-    useContext(AppContext);
-
+  const {
+    isMenuOpen,
+    language,
+    selectedProject,
+    changeSelectedProject,
+    currentResolution,
+  } = useContext(AppContext);
   useFrame(() => {
-    if (geoRef.current && mainContainerRef.current && htmlRef.current) {
+    if (
+      geoRef.current &&
+      mainContainerRef.current &&
+      htmlRef.current &&
+      currentResolution
+    ) {
+      const all = 100 / (currentResolution.width + currentResolution.height);
+      const ratioHeight = all * currentResolution.height;
+      const ratioWidht = all * currentResolution.width;
+
+      const size = new THREE.Vector3();
+      geoRef.current.geometry.dispose(); // cleanup
+      if (ratioWidht > ratioHeight) {
+        geoRef.current.geometry = new THREE.PlaneGeometry(
+          ratioWidht / 1.75,
+          ratioHeight / 1.25
+        );
+      } else {
+        geoRef.current.geometry = new THREE.PlaneGeometry(
+          ratioWidht / 1.75,
+          ratioWidht / 1
+        );
+      }
       const geometry = geoRef.current.geometry;
       geometry.computeBoundingBox();
-      const size = new THREE.Vector3();
       geometry.boundingBox.getSize(size);
-      mainContainerRef.current.style.width = `${size.x * 37}px`;
-      mainContainerRef.current.style.height = `${size.y * 36}px`;
+      mainContainerRef.current.style.width = `${size.x * 35}px`;
+      mainContainerRef.current.style.height = `${size.y * 35}px`;
     }
   });
 
@@ -71,20 +100,19 @@ export default function ProjectRight({
             transform
           >
             <div
-              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${
-                selectedProject
-                  ? selectedProject == projectId
-                    ? ""
-                    : "blur-md"
-                  : ""
-              }`}
+              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${selectedProject
+                ? selectedProject == projectId
+                  ? ""
+                  : "blur-md"
+                : ""
+                }`}
               ref={mainContainerRef}
             >
               <div
                 onClick={() => {
                   selectedProject ? null : changeSelectedProject(projectId);
                 }}
-                className="relative z-0"
+                className="relative z-0 h-full"
               >
                 {children}
               </div>
