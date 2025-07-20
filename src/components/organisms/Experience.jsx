@@ -1,7 +1,6 @@
-import { Suspense, useContext, useEffect, useRef, useState } from "react";
+import { Suspense, useContext, useRef, useState } from "react";
 import { AppContext } from "../../context/AppContext";
 import * as THREE from "three";
-import { Joystick } from "react-joystick-component";
 import { Canvas } from "@react-three/fiber";
 import Camera from "../atoms/scene/image/Camera";
 import Effects from "../molecules/scene/effects/Effects";

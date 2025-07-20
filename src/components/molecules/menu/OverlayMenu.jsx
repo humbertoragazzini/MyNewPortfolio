@@ -133,7 +133,7 @@ export default function OverlayMenu() {
                 es: `REFLEJOS:`,
               }}
               language={language}
-              className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
+              className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] text-white drop-shadow-[0_0_5px_#fff] "
             ></Paragraph>
             <div className="flex justify-center x-auto text-xl md:text-2xl xl:text-3xl orbitron font-[600] text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
@@ -177,7 +177,7 @@ export default function OverlayMenu() {
                 es: `Postprocesado:`,
               }}
               language={language}
-              className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
+              className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] text-white drop-shadow-[0_0_5px_#fff] "
             ></Paragraph>
             <div className="flex justify-center text-xl md:text-2xl xl:text-3xl orbitron font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
@@ -221,7 +221,7 @@ export default function OverlayMenu() {
                 es: "CALIDAD DE LOS REFLEJOS",
               }}
               language={language}
-              className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
+              className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] text-white drop-shadow-[0_0_5px_#fff] "
             ></Paragraph>
             <div className="flex justify-center flex-wrap mx-6 text-xl md:text-2xl xl:text-3xl orbitron font-[600] text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
@@ -275,7 +275,7 @@ export default function OverlayMenu() {
                 es: "ILUMINACION",
               }}
               language={language}
-              className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
+              className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] text-white drop-shadow-[0_0_5px_#fff] "
             ></Paragraph>
             <div className="flex justify-center flex-wrap mx-6 text-xl md:text-2xl xl:text-3xl orbitron font-[600] hover:scale-125 transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
@@ -307,7 +307,7 @@ export default function OverlayMenu() {
                 es: "RESOLUCION",
               }}
               language={language}
-              className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] "
+              className="orbitron text-center text-xl md:text-2xl xl:text-3xl uppercase mb-2 mt-3 font-[600] text-white drop-shadow-[0_0_5px_#fff] "
             ></Paragraph>
             <div className="flex justify-center text-xl md:text-2xl xl:text-3xl orbitron font-[600] text-white drop-shadow-[0_0_5px_#fff]">
               <motion.div
@@ -345,7 +345,7 @@ export default function OverlayMenu() {
               </motion.div>
             </div>
             {currentResolution !== null && (
-              <div className="orbitron mb-5 text-center text-xl md:text-2xl xl:text-3xl uppercase font-[600] transition-all duration-500 hover:cursor-pointer text-white drop-shadow-[0_0_5px_#fff] ">
+              <div className="orbitron mb-5 text-center text-xl md:text-2xl xl:text-3xl uppercase font-[600] text-white drop-shadow-[0_0_5px_#fff] ">
                 <span className="m-2">
                   {Math.round(currentResolution.width)}
                 </span>
