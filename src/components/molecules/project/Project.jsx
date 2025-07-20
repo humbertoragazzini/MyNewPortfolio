@@ -7,7 +7,7 @@ export default function Project({ language, content, changeSelectedProject }) {
       <div
         className={`relative z-10 grid w-full h-full overflow-y-scroll lg:overflow-visible grid-cols-3 text-white`}
       >
-        <div className="col-span-3 p-13">
+        <div className="col-span-3 p-13 ">
           {content.projectName && (
             <Heading
               className="text-6xl mb-9 orbitron font-[600]"
@@ -83,7 +83,7 @@ export default function Project({ language, content, changeSelectedProject }) {
                 </div>
               </div>
             </div>
-            <div className="relative col-span-12 lg:col-span-6">
+            <div className="relative col-span-12 lg:col-span-6 lg:p-5 ">
               {content.video !== null && content.video !== "" && (
                 <video
                   className="w-full -translate-x-5 translate-y-16 shadow-2xl rounded-3xl"
@@ -97,7 +97,7 @@ export default function Project({ language, content, changeSelectedProject }) {
                 </video>
               )}
               {content.embeded !== null && (
-                <div className="w-full mt-10 mb-16 overflow-hidden shadow-2xl lg:-translate-x-5 lg:translate-y-16 aspect-video md:block rounded-3xl">
+                <div className="w-full mt-10 mb-16 overflow-hidden shadow-2xl lg:translate-y-16 aspect-video md:block rounded-3xl">
                   <iframe
                     className="hidden w-full h-full lg:block "
                     width="560"
