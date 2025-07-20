@@ -34,18 +34,13 @@ export default function OverlayMenu() {
       <div
         className={`${
           isMenuOpen ? "-translate-y-[calc(100%+50px)]" : "translate-y-0"
-        } fixed duration-500 ease-initial  top-0 right-0 z-[9999] bg-[rgba(66.6,0.179,58.318,0.4)] flex justify-end items-end`}
+        } rounded-full fixed duration-500 ease-initial top-0 right-0 z-[9999] bg-[rgba(66.6,0.179,58.318,0.4)] m-2 flex justify-end items-end`}
       >
-        {/* <div className="w-[280px] flex items-end justify-end flex-col">
-          <div className="life h-[25px] bg-amber-500 w-4/5 mb-1"></div>
-          <div className="shield h-[15px] bg-blue-800 w-3/4 mb-1"></div>
-          <div className="mb-1 bullet"></div>
-        </div> */}
         <button
           onClick={() => {
             toggleMenu();
           }}
-          className={`rounded-2xl p-4 right-[0px] cursor-pointer`}
+          className={`p-4 right-[0px] cursor-pointer`}
         >
           <LuMenu className="relative z-[1000] w-[35px] h-[35px] stroke-white pointer-events-none"></LuMenu>
         </button>
