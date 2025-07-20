@@ -35,7 +35,6 @@ export default function MultiCarousel({ language }) {
 
     return (
       <button onClick={() => onClick()}>
-        {/* {React.Children.toArray(carouselItems)[index]} */}
         <div
           className={`w-4 h-4 m-1 border-2 border-white rounded-full ${
             active ? "bg-[rgba(255,255,255,0.25)]" : "bg-black"
@@ -102,7 +101,7 @@ export default function MultiCarousel({ language }) {
             <Paragraph
               language={language}
               className={
-                "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center mb-6"
+                "text-lg md:text-xl lg:text-2xl text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center mb-6"
               }
               text={{
                 en: "On screen joysticks",
@@ -144,7 +143,7 @@ export default function MultiCarousel({ language }) {
             <Paragraph
               language={language}
               className={
-                "text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center mb-6"
+                "text-lg md:text-xl lg:text-2xl text-white font-semibold drop-shadow-[0_0_5px_#fff] text-center mb-6"
               }
               text={{
                 en: "Regular mouse web browsing",
