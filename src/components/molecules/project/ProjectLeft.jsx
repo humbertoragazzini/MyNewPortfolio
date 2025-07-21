@@ -48,8 +48,8 @@ export default function ProjectLeft({
         );
       } else {
         geoRef.current.geometry = new THREE.PlaneGeometry(
-          ratioWidht / 1.75,
-          ratioWidht / 1.25
+          ratioWidht / 1.55,
+          ratioHeight / 1.55
         );
       }
       const geometry = geoRef.current.geometry;
