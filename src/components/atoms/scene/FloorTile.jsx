@@ -17,7 +17,7 @@ export default function FloorTile({ position, envMap, geometry }) {
           duration: 2,
           yoyo: true,
           repeat: -1,
-          ease: "none",
+          ease: "power1.inOut",
         }
       );
       gsap.fromTo(
@@ -31,7 +31,7 @@ export default function FloorTile({ position, envMap, geometry }) {
           duration: 2,
           yoyo: true,
           repeat: -1,
-          ease: "none",
+          ease: "power1.inOut",
         }
       );
       gsap.fromTo(
@@ -45,7 +45,7 @@ export default function FloorTile({ position, envMap, geometry }) {
           duration: 2,
           yoyo: true,
           repeat: -1,
-          ease: "none",
+          ease: "power1.inOut",
         }
       );
       gsap.fromTo(
@@ -59,7 +59,7 @@ export default function FloorTile({ position, envMap, geometry }) {
           duration: 2,
           yoyo: true,
           repeat: -1,
-          ease: "none",
+          ease: "power1.inOut",
         }
       );
       gsap.fromTo(
@@ -73,7 +73,7 @@ export default function FloorTile({ position, envMap, geometry }) {
           duration: 2,
           yoyo: true,
           repeat: -1,
-          ease: "none",
+          ease: "power1.inOut",
         }
       );
       gsap.fromTo(
@@ -87,13 +87,18 @@ export default function FloorTile({ position, envMap, geometry }) {
           duration: 2,
           yoyo: true,
           repeat: -1,
-          ease: "none",
+          ease: "power1.inOut",
         }
       );
     }
   }, []);
   return (
-    <mesh ref={tile} geometry={geometry.current} position={position}>
+    <mesh
+      scale={[1, 0.1, 1]}
+      ref={tile}
+      geometry={geometry.current}
+      position={position}
+    >
       <meshStandardMaterial
         roughness={0}
         metalness={1.0}
