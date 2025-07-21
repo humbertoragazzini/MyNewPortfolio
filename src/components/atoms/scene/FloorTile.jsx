@@ -9,10 +9,10 @@ export default function FloorTile({ position, envMap, geometry }) {
       gsap.fromTo(
         tile.current.position,
         {
-          x: position[0] - 5.5,
+          x: position[0] - 0.5,
         },
         {
-          x: position[0] + 5.5,
+          x: position[0] + 0.5,
           delay: Math.random() * 1.5,
           duration: 2,
           yoyo: true,
@@ -23,10 +23,10 @@ export default function FloorTile({ position, envMap, geometry }) {
       gsap.fromTo(
         tile.current.position,
         {
-          y: position[1] - 5.5,
+          y: position[1] - 0.5,
         },
         {
-          y: position[1] + 5.5,
+          y: position[1] + 0.5,
           delay: Math.random() * 1.5,
           duration: 2,
           yoyo: true,
@@ -37,10 +37,10 @@ export default function FloorTile({ position, envMap, geometry }) {
       gsap.fromTo(
         tile.current.position,
         {
-          z: position[2] - 5.5,
+          z: position[2] - 0.5,
         },
         {
-          z: position[2] + 5.5,
+          z: position[2] + 0.5,
           delay: Math.random() * 1.5,
           duration: 2,
           yoyo: true,
@@ -51,10 +51,10 @@ export default function FloorTile({ position, envMap, geometry }) {
       gsap.fromTo(
         tile.current.rotation,
         {
-          x: 0,
+          x: -0.005,
         },
         {
-          x: position[0] + 5.5,
+          x: 0.005,
           delay: Math.random() * 1.5,
           duration: 2,
           yoyo: true,
@@ -65,10 +65,10 @@ export default function FloorTile({ position, envMap, geometry }) {
       gsap.fromTo(
         tile.current.rotation,
         {
-          y: 0,
+          y: -0.005,
         },
         {
-          y: position[1] + 5.5,
+          y: 0.005,
           delay: Math.random() * 1.5,
           duration: 2,
           yoyo: true,
@@ -79,10 +79,10 @@ export default function FloorTile({ position, envMap, geometry }) {
       gsap.fromTo(
         tile.current.rotation,
         {
-          z: 0,
+          z: -0.005,
         },
         {
-          z: position[2] + 5.5,
+          z: 0.005,
           delay: Math.random() * 1.5,
           duration: 2,
           yoyo: true,
