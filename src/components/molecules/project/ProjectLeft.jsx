@@ -49,7 +49,7 @@ export default function ProjectLeft({
       } else {
         geoRef.current.geometry = new THREE.PlaneGeometry(
           ratioWidht / 1.75,
-          ratioWidht / 1
+          ratioWidht / 1.25
         );
       }
       const geometry = geoRef.current.geometry;
@@ -100,12 +100,13 @@ export default function ProjectLeft({
             transform
           >
             <div
-              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${selectedProject
+              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${
+                selectedProject
                   ? selectedProject == projectId
                     ? ""
                     : "blur-md"
                   : ""
-                }`}
+              }`}
               ref={mainContainerRef}
             >
               <div
