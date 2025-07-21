@@ -94,7 +94,7 @@ export default function FloorTile({ position, envMap, geometry }) {
   }, []);
   return (
     <mesh
-      scale={[1, 0.1, 1]}
+      scale={[1, 0.05, 1]}
       ref={tile}
       geometry={geometry.current}
       position={position}
