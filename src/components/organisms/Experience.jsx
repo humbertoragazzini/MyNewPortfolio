@@ -16,6 +16,7 @@ import CustomJoysticks from "../molecules/controls/Joysticks";
 import LoadingScreen from "../atoms/scene/screens/LoadingScreen";
 import projects from "../../data/projects";
 import { useGesture } from "@use-gesture/react";
+import FloorTile from "../atoms/scene/FloorTile";
 
 export default function Experience() {
   const scrollContainerRef = useRef();
@@ -95,18 +96,18 @@ export default function Experience() {
                     return (
                       <mesh>
                         <group>
-                          <mesh
-                            geometry={geometryFloor.current}
+                          <FloorTile
+                            geometry={geometryFloor}
                             position={[0, -20, 45]}
-                          >
-                            <meshStandardMaterial
-                              roughness={0}
-                              metalness={1.0}
-                              color="#000022"
-                              envMap={texture ?? undefined}
-                            />
-                          </mesh>
-                          <mesh
+                            envMap={texture}
+                          ></FloorTile>
+
+                          <FloorTile
+                            geometry={geometryFloor}
+                            position={[0, -20, 5]}
+                            envMap={texture}
+                          ></FloorTile>
+                          {/* <mesh
                             geometry={geometryFloor.current}
                             position={[0, -20, 5]}
                           >
@@ -116,7 +117,7 @@ export default function Experience() {
                               color="#000022"
                               envMap={texture ?? undefined}
                             />
-                          </mesh>
+                          </mesh> */}
                           <mesh
                             geometry={geometryFloor.current}
                             position={[0, -20, -35]}

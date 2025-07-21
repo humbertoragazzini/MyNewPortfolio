@@ -49,7 +49,7 @@ export default function ProjectLeft({
       } else {
         geoRef.current.geometry = new THREE.PlaneGeometry(
           ratioWidht / 1.75,
-          ratioHeight / 1.75
+          ratioWidht / 1
         );
       }
       const geometry = geoRef.current.geometry;
@@ -87,21 +87,20 @@ export default function ProjectLeft({
     >
       <mesh ref={geoRef} position={[0, 0, 0]}>
         <planeGeometry args={[35, 25, 2]}></planeGeometry>
-        <meshStandardMaterial
+        <meshBasicMaterial
           color={[1.5, 1.5, 1.5]}
-          opacity={0}
-          transparent
-        ></meshStandardMaterial>
+          opacity={1}
+        ></meshBasicMaterial>
         {show && (
           <Html
             ref={htmlRef}
             portal={geoRef.current}
-            position={[0, 0, 3]}
+            position={[0, 0, 1]}
             occlude="blending"
             transform
           >
             <div
-              className={`relative border-8 border-black bg-white ${
+              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${
                 selectedProject
                   ? selectedProject == projectId
                     ? ""

@@ -100,12 +100,13 @@ export default function ProjectLeft({
             transform
           >
             <div
-              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${selectedProject
-                ? selectedProject == projectId
-                  ? ""
-                  : "blur-md"
-                : ""
-                }`}
+              className={`relative bg-gradient-to-br from-purple-600 to-red-900 ${
+                selectedProject
+                  ? selectedProject == projectId
+                    ? ""
+                    : "blur-md"
+                  : ""
+              }`}
               ref={mainContainerRef}
             >
               <div
