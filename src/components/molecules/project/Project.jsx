@@ -5,7 +5,7 @@ export default function Project({ language, content, changeSelectedProject }) {
   return (
     <>
       <div
-        className={`relative z-10 grid w-full h-full overflow-y-scroll lg:overflow-visible grid-cols-3 text-white`}
+        className={`relative z-10 grid w-full h-full overflow-y-scroll lg:overflow-visible grid-cols-3 text-black`}
       >
         <div className="flex flex-col items-center justify-center col-span-3 p-13">
           {content.projectName && (
