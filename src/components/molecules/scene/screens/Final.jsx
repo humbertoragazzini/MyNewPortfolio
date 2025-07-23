@@ -16,7 +16,7 @@ export default function Final({ turnOn }) {
     <Html occlude={""} transform position={[0, 0, -1210]}>
       <div
         ref={htmlRef}
-        className="w-screen orbitron h-[100dvh] text-white bg-transparent opacity-0"
+        className="w-screen orbitron h-[100dvh] text-black bg-transparent opacity-0"
       >
         <div className="grid grid-cols-12">
           <div className="hidden px-2 md:block md:col-span-3 md:px-4 lg:px-10">
