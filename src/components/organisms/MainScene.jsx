@@ -5,6 +5,8 @@ import gsap from "gsap";
 import { AppContext } from "../../context/AppContext";
 import CustomShaderMaterial from "../atoms/scene/shaders/CustomShaderMaterial";
 
+const offsetCubes = 80
+
 export default function MainScene(props) {
   const { nodes, materials } = useGLTF("./blender/main-scene.glb");
   const { isMenuOpen } = useContext(AppContext);
@@ -172,7 +174,7 @@ export default function MainScene(props) {
         recieveShadow
         geometry={nodes.Cube2649.geometry}
         material={materials.Material}
-        position={[63, 0, -418.933]}
+        position={[63, 0, -418.933 - offsetCubes]}
         rotation={[-Math.PI, 0, 0]}
         scale={[1, 1, 5]}
       >
@@ -182,7 +184,7 @@ export default function MainScene(props) {
         recieveShadow
         geometry={nodes.Cube2650.geometry}
         material={materials.Material}
-        position={[-63.061, 0, -396.16]}
+        position={[-63.061, 0, -396.16 - offsetCubes]}
         rotation={[-Math.PI, 0, 0]}
         scale={[1, 1, 5]}
       >
@@ -191,7 +193,7 @@ export default function MainScene(props) {
       <mesh
         recieveShadow
         geometry={nodes.Cube2656.geometry}
-        position={[63, 21, -401.633]}
+        position={[63, 21, -401.633 - offsetCubes]}
         rotation={[-Math.PI, 0, 0]}
         scale={[1, 1, 5]}
       >
@@ -200,7 +202,7 @@ export default function MainScene(props) {
       <mesh
         recieveShadow
         geometry={nodes.Cube2657.geometry}
-        position={[-63.061, 21, -408.171]}
+        position={[-63.061, 21, -408.171 - offsetCubes]}
         rotation={[-Math.PI, 0, 0]}
         scale={[1, 1, 5]}
       >
@@ -209,7 +211,7 @@ export default function MainScene(props) {
       <mesh
         recieveShadow
         geometry={nodes.Cube2660.geometry}
-        position={[0, -42, -418.492]}
+        position={[0, -42, -418.492 - offsetCubes]}
         rotation={[-Math.PI, 0, 0]}
         scale={[1, 1, 5]}
       >
@@ -218,7 +220,7 @@ export default function MainScene(props) {
       <mesh
         recieveShadow
         geometry={nodes.Cube2661.geometry}
-        position={[21, -42, -400.634]}
+        position={[21, -42, -400.634 - offsetCubes]}
         rotation={[-Math.PI, 0, 0]}
         scale={[1, 1, 5]}
       >
@@ -227,7 +229,7 @@ export default function MainScene(props) {
       <mesh
         recieveShadow
         geometry={nodes.Cube2666.geometry}
-        position={[-21, -42, -422.56]}
+        position={[-21, -42, -422.56 - offsetCubes]}
         rotation={[-Math.PI, 0, 0]}
         scale={[1, 1, 5]}
       >
@@ -236,7 +238,7 @@ export default function MainScene(props) {
       <mesh
         recieveShadow
         geometry={nodes.Cube2669.geometry}
-        position={[42, -21, -403.822]}
+        position={[42, -21, -403.822 - offsetCubes]}
         rotation={[-Math.PI, 0, 0]}
         scale={[1, 1, 5]}
       >
@@ -245,7 +247,7 @@ export default function MainScene(props) {
       <mesh
         recieveShadow
         geometry={nodes.Cube2672.geometry}
-        position={[-42.061, -21, -395.497]}
+        position={[-42.061, -21, -395.497 - offsetCubes]}
         rotation={[-Math.PI, 0, 0]}
         scale={[1, 1, 5]}
       >
@@ -254,7 +256,7 @@ export default function MainScene(props) {
       <mesh
         recieveShadow
         geometry={nodes.Cube2674.geometry}
-        position={[0, 84, -400.586]}
+        position={[0, 84, -400.586 - offsetCubes]}
         rotation={[-Math.PI, 0, 0]}
         scale={[1, 1, 5]}
       >
@@ -264,7 +266,7 @@ export default function MainScene(props) {
         recieveShadow
         geometry={nodes.Cube2675.geometry}
         material={materials.Material}
-        position={[21, 84, -411.277]}
+        position={[21, 84, -411.277 - offsetCubes]}
         rotation={[-Math.PI, 0, 0]}
         scale={[1, 1, 5]}
       >
@@ -273,7 +275,7 @@ export default function MainScene(props) {
       <mesh
         recieveShadow
         geometry={nodes.Cube2680.geometry}
-        position={[-21, 84, -414.72]}
+        position={[-21, 84, -414.72 - offsetCubes]}
         rotation={[-Math.PI, 0, 0]}
         scale={[1, 1, 5]}
       >
@@ -282,7 +284,7 @@ export default function MainScene(props) {
       <mesh
         recieveShadow
         geometry={nodes.Cube2691.geometry}
-        position={[63, 42, -395.69]}
+        position={[63, 42, -395.69 - offsetCubes]}
         rotation={[-Math.PI, 0, 0]}
         scale={[1, 1, 5]}
       >
@@ -291,7 +293,7 @@ export default function MainScene(props) {
       <mesh
         recieveShadow
         geometry={nodes.Cube2692.geometry}
-        position={[-63.061, 42, -415.9]}
+        position={[-63.061, 42, -415.9 - offsetCubes]}
         rotation={[-Math.PI, 0, 0]}
         scale={[1, 1, 5]}
       >
@@ -300,7 +302,7 @@ export default function MainScene(props) {
       <mesh
         recieveShadow
         geometry={nodes.Cube2697.geometry}
-        position={[42, 63, -400.424]}
+        position={[42, 63, -400.424 - offsetCubes]}
         rotation={[-Math.PI, 0, 0]}
         scale={[1, 1, 5]}
       >
@@ -309,7 +311,7 @@ export default function MainScene(props) {
       <mesh
         recieveShadow
         geometry={nodes.Cube2700.geometry}
-        position={[-42.061, 63, -409.944]}
+        position={[-42.061, 63, -409.944 - offsetCubes]}
         rotation={[-Math.PI, 0, 0]}
         scale={[1, 1, 5]}
       >
