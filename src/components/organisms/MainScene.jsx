@@ -174,6 +174,7 @@ export default function MainScene(props) {
         material={materials.Material}
         position={[63, 0, -418.933]}
         rotation={[-Math.PI, 0, 0]}
+        scale={[1, 1, 5]}
       >
         <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
@@ -183,6 +184,7 @@ export default function MainScene(props) {
         material={materials.Material}
         position={[-63.061, 0, -396.16]}
         rotation={[-Math.PI, 0, 0]}
+        scale={[1, 1, 5]}
       >
         <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
@@ -191,6 +193,7 @@ export default function MainScene(props) {
         geometry={nodes.Cube2656.geometry}
         position={[63, 21, -401.633]}
         rotation={[-Math.PI, 0, 0]}
+        scale={[1, 1, 5]}
       >
         <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
@@ -199,6 +202,7 @@ export default function MainScene(props) {
         geometry={nodes.Cube2657.geometry}
         position={[-63.061, 21, -408.171]}
         rotation={[-Math.PI, 0, 0]}
+        scale={[1, 1, 5]}
       >
         <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
@@ -207,6 +211,7 @@ export default function MainScene(props) {
         geometry={nodes.Cube2660.geometry}
         position={[0, -42, -418.492]}
         rotation={[-Math.PI, 0, 0]}
+        scale={[1, 1, 5]}
       >
         <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
@@ -215,6 +220,7 @@ export default function MainScene(props) {
         geometry={nodes.Cube2661.geometry}
         position={[21, -42, -400.634]}
         rotation={[-Math.PI, 0, 0]}
+        scale={[1, 1, 5]}
       >
         <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
@@ -223,6 +229,7 @@ export default function MainScene(props) {
         geometry={nodes.Cube2666.geometry}
         position={[-21, -42, -422.56]}
         rotation={[-Math.PI, 0, 0]}
+        scale={[1, 1, 5]}
       >
         <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
@@ -231,6 +238,7 @@ export default function MainScene(props) {
         geometry={nodes.Cube2669.geometry}
         position={[42, -21, -403.822]}
         rotation={[-Math.PI, 0, 0]}
+        scale={[1, 1, 5]}
       >
         <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
@@ -239,6 +247,7 @@ export default function MainScene(props) {
         geometry={nodes.Cube2672.geometry}
         position={[-42.061, -21, -395.497]}
         rotation={[-Math.PI, 0, 0]}
+        scale={[1, 1, 5]}
       >
         <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
@@ -247,6 +256,7 @@ export default function MainScene(props) {
         geometry={nodes.Cube2674.geometry}
         position={[0, 84, -400.586]}
         rotation={[-Math.PI, 0, 0]}
+        scale={[1, 1, 5]}
       >
         <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
@@ -256,6 +266,7 @@ export default function MainScene(props) {
         material={materials.Material}
         position={[21, 84, -411.277]}
         rotation={[-Math.PI, 0, 0]}
+        scale={[1, 1, 5]}
       >
         <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
@@ -264,6 +275,7 @@ export default function MainScene(props) {
         geometry={nodes.Cube2680.geometry}
         position={[-21, 84, -414.72]}
         rotation={[-Math.PI, 0, 0]}
+        scale={[1, 1, 5]}
       >
         <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
@@ -272,6 +284,7 @@ export default function MainScene(props) {
         geometry={nodes.Cube2691.geometry}
         position={[63, 42, -395.69]}
         rotation={[-Math.PI, 0, 0]}
+        scale={[1, 1, 5]}
       >
         <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
@@ -280,6 +293,7 @@ export default function MainScene(props) {
         geometry={nodes.Cube2692.geometry}
         position={[-63.061, 42, -415.9]}
         rotation={[-Math.PI, 0, 0]}
+        scale={[1, 1, 5]}
       >
         <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
@@ -288,6 +302,7 @@ export default function MainScene(props) {
         geometry={nodes.Cube2697.geometry}
         position={[42, 63, -400.424]}
         rotation={[-Math.PI, 0, 0]}
+        scale={[1, 1, 5]}
       >
         <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>
@@ -296,6 +311,7 @@ export default function MainScene(props) {
         geometry={nodes.Cube2700.geometry}
         position={[-42.061, 63, -409.944]}
         rotation={[-Math.PI, 0, 0]}
+        scale={[1, 1, 5]}
       >
         <CustomShaderMaterial turnOn={props.turnOn}></CustomShaderMaterial>
       </mesh>

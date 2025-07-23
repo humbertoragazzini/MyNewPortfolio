@@ -61,9 +61,8 @@ export default function Experience() {
       {/* Scrollable container */}
       <div
         ref={scrollContainerRef}
-        className={`scroller elative z-[9900] w-screen h-[100dvh] ${
-          selectedProject ? "overflow-y-hidden" : "overflow-y-scroll"
-        }`}
+        className={`scroller elative z-[9900] w-screen h-[100dvh] ${selectedProject ? "overflow-y-hidden" : "overflow-y-scroll"
+          }`}
         onScroll={(e) => {
           const target = e.currentTarget;
           const scrollTop = target.scrollTop;
