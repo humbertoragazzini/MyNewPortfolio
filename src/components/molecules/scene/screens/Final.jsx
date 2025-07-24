@@ -13,10 +13,10 @@ export default function Final({ turnOn }) {
     }
   }, [turnOn]);
   return (
-    <Html occlude={""} transform position={[0, 0, -1210]}>
+    <Html occlude={""} transform position={[0, 0, -1230]}>
       <div
         ref={htmlRef}
-        className="w-screen orbitron h-[100dvh] text-black bg-transparent opacity-0"
+        className="w-screen orbitron h-[100dvh] text-black bg-transparent opacity-0 flex justify-center items-center"
       >
         <div className="grid grid-cols-12">
           <div className="hidden px-2 md:block md:col-span-3 md:px-4 lg:px-10">
