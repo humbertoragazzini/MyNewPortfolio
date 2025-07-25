@@ -46,6 +46,14 @@ export default function Project({ language, content, changeSelectedProject }) {
 
               <div className="grid grid-cols-6 text-2xl">
                 <div className="col-span-6">
+                  <Paragraph
+                    language={language}
+                    text={{
+                      en: "Links:",
+                      es: "Enalces:",
+                    }}
+                    className="my-7 text-4xl orbitron font-[600]"
+                  ></Paragraph>
                   {content.links.map((link) => {
                     return (
                       <div className="grid grid-cols-6 mt-6 text-2xl">
