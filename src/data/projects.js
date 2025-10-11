@@ -197,7 +197,7 @@ export default [
           en: "Click to visit the super game",
           es: "Clieckea aqui para visitar el super juego",
         },
-        url: "https://humbertoragazzini.github.io/TheSuperGame/",
+        url: "https://gum-game.vercel.app/",
       },
       {
         title: {
